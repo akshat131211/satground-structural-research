@@ -80,6 +80,8 @@ The freeze stores configuration, checkpoint, and audit-manifest hashes. A ledger
 
 Stress conditions are `resolution`, `blur`, `occlusion`, `yaw_error`, and `position_error`, supplied with `generate --stress`. Targets retain the original camera for input-pose-error tests. These are controlled perturbations, not claims about actual sensor-error distributions.
 
+Position stress shifts the width offset by 10 original pixels. If the positive shift would leave the tile, it shifts inward by 10 instead; the actual perturbed input camera is saved for every prediction.
+
 ## 6. Reliability and the server decision
 
 Use the three selected A3 seeds to generate and evaluate the calibration split. Run `ensemble --evaluations DIR1 DIR2 DIR3 --output scores.jsonl`, then `calibrate --scores scores.jsonl --output calibration.json`. Repeat with `--score entropy` for the entropy baseline. Constant-confidence error is reported alongside the fitted model. A4 currently predicts the mean structural error across independent adapters; it does not create or score a new ensemble RGB image.

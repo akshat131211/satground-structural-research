@@ -225,3 +225,11 @@ def test_bad_histogram_cannot_condition_a_scientific_run(tmp_path):
     save_json(tmp_path / 'bad.json', dict(source_split='train', synthetic=False, histogram=[0] * 270))
     with pytest.raises(ResearchError, match='sum to one'):
         load_style(tmp_path / 'bad.json')
+
+
+def test_position_stress_keeps_full_magnitude_at_tile_edges():
+    from satground.camera import perturb_position_width
+    for original in [-320, -315, 0, 310, 315, 320]:
+        perturbed = perturb_position_width(original)
+        assert -320 <= perturbed <= 320
+        assert abs(perturbed - original) == 10

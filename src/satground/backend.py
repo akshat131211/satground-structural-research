@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import sys
+import os
 from pathlib import Path
 
 import torch
@@ -75,7 +76,9 @@ class Sat3DBackend:
         else:
             features = self.encode(satellite_tensor(image_path))
             path.parent.mkdir(parents=True, exist_ok=True)
-            torch.save(features.cpu(), path)
+            temp = path.with_suffix('.tmp')
+            torch.save(features.cpu(), temp)
+            os.replace(temp, path)
         if tuple(features.shape) != (1, 64, 320, 320) or not torch.isfinite(features).all():
             raise ResearchError('Invalid cached scene features.')
         return features

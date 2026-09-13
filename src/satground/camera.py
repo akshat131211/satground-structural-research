@@ -8,6 +8,13 @@ from PIL import Image
 from .common import ResearchError
 
 
+def perturb_position_width(offset, pixels=10):
+    """Use the positive shift unless it exits the tile, then shift inward."""
+    if not -320 <= offset <= 320 or not 0 < pixels <= 320:
+        raise ResearchError('Invalid camera offset or perturbation size.')
+    return offset + pixels if offset + pixels <= 320 else offset - pixels
+
+
 def camera_matrices(h_offset, w_offset, yaw=0.0, pitch=0.0, fov=90.0, size=128, sr_factor=2):
     if not (10 <= fov <= 150) or abs(pitch) > 60:
         raise ResearchError("Unsupported field of view or pitch.")

@@ -3,7 +3,7 @@
     {
       "command": "python -m pytest -q",
       "exit_code": 0,
-      "output": ".......................                                                  [100%]\n23 passed in 8.17s"
+      "output": "........................                                                 [100%]\n24 passed in 9.95s"
     },
     {
       "command": "python -m pip check",
@@ -19,7 +19,7 @@
   ],
   "provenance": {
     "code_revision": "70763aff4d9fc5508e67685c906f84d3cebb34fe",
-    "created_utc": "2026-09-13T10:24:51.685654+00:00",
+    "created_utc": "2026-09-13T10:29:50.934217+00:00",
     "model_revision": "fa0ed75aff7f42dcd749764787c0184fcab0b12c",
     "packages": {
       "diffusers": "0.35.2",
@@ -30,7 +30,7 @@
       "torchvision": "0.21.0+cu124",
       "transformers": "4.57.1"
     },
-    "pipeline_source_hash": "749c3cb4ac1cfdd29c1c9586f652a2d148791a24ac6a1c6de279c9a610baa3da",
+    "pipeline_source_hash": "87056975e6e3743c5b4433d8b6221caaeaa6a4d73ce18555eb75b466be7e6ce6",
     "platform": "Windows-10-10.0.26200-SP0",
     "python": "3.10.21"
   },

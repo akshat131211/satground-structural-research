@@ -12,7 +12,7 @@ import torch
 from PIL import Image
 
 from .backend import Sat3DBackend, load_style
-from .camera import crop_panorama
+from .camera import crop_panorama, perturb_position_width
 from .common import (ROOT, ResearchError, load_json, object_hash, provenance, read_jsonl,
                      require_development, safe_data_path, save_json, seed_everything, sha256, write_jsonl)
 from .manifests import assert_disjoint, require_files
@@ -273,13 +273,14 @@ def generate(config_path, manifest, data_root, output, checkpoint_path=None, aud
         if stress == 'yaw_error':
             camera['yaw'] += 5
         if stress == 'position_error':
-            camera['w_offset'] += 10
+            camera['w_offset'] = perturb_position_width(camera['w_offset'])
         with torch.no_grad():
             pred = backend.render(raw, camera, adapted=bool(checkpoint_path))
         name = f"{row['sample_id']}.png"
         array = (pred[0].clamp(0, 1).cpu().numpy().transpose(1, 2, 0) * 255).round().astype(np.uint8)
         Image.fromarray(array).save(out / name)
-        predictions.append(dict(sample_id=row['sample_id'], prediction=name, sha256=sha256(out / name)))
+        predictions.append(dict(sample_id=row['sample_id'], prediction=name, sha256=sha256(out / name),
+                                input_camera={k: camera[k] for k in ('h_offset', 'w_offset', 'yaw', 'pitch', 'fov', 'size')}))
         del raw, pred
     write_jsonl(out / 'predictions.jsonl', predictions)
     record = dict(config=cfg, manifest_sha256=sha256(manifest), style_sha256=sha256(cfg['style']),

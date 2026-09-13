@@ -2,6 +2,8 @@
 
 The user authorized creating a new repository and committing/pushing this project on 13 September 2026. The selected repository is private so unpublished work remains private by default.
 
+Repository: [akshat131211/satground-structural-research](https://github.com/akshat131211/satground-structural-research). The initial implementation was pushed in commit `14a25b4`; subsequent commits retain the same source/data separation.
+
 GitHub CLI authentication uses the local credential manager. Passwords, access tokens, and device codes are never stored in project files. Use `gh auth login --hostname github.com --git-protocol https --web` to authenticate on another machine.
 
 Track source, configurations, tests, dependency locks, documentation, and compact verified reports. Ignore original data, model weights, generated labels and images, environments, caches, credentials, and detailed per-location records. Keep third-party code in an ignored pinned checkout downloaded by bootstrap.

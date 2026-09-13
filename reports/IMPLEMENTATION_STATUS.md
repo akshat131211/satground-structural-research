@@ -12,7 +12,7 @@ The laptop research infrastructure is implemented. Original VIGOR RGB access is 
 - Peak allocated VRAM: 1904.0 MiB; peak PyTorch reserved memory: 2220.0 MiB. These exclude the desktop/driver's separate allocations.
 - Trainable adapter parameters: 4,448; frozen model parameters: 381,022,223.
 - Median warm synthetic optimizer-step time: 3.78 seconds. This is not a real-dataset or server throughput estimate; frozen features were already cached in memory.
-- Protocol and CUDA reference-renderer checks: `23 passed in 8.17s`.
+- Protocol and CUDA reference-renderer checks: `24 passed in 9.95s`.
 - Dependency consistency check passed. Real-data training rejects missing original images before creating a run.
 - Public metadata split preparation produced 22,488 fixed-view records from 3,000 selected overhead tiles: 2,000 train, 250 validation, 250 calibration, 500 audit. RGB validation reports 8,622 missing files. Seattle imagery was not opened.
 
