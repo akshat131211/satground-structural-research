@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "command": "python -m pytest -q",
+      "exit_code": 0,
+      "output": ".......................                                                  [100%]\n23 passed in 8.17s"
+    },
+    {
+      "command": "python -m pip check",
+      "exit_code": 0,
+      "output": "No broken requirements found."
+    },
+    {
+      "command": "real-data training rejects absent RGB",
+      "exit_code": 2,
+      "output": "Missing original VIGOR images; no training run created.",
+      "passed": true
+    }
+  ],
+  "provenance": {
+    "code_revision": "70763aff4d9fc5508e67685c906f84d3cebb34fe",
+    "created_utc": "2026-09-13T10:24:51.685654+00:00",
+    "model_revision": "fa0ed75aff7f42dcd749764787c0184fcab0b12c",
+    "packages": {
+      "diffusers": "0.35.2",
+      "lpips": "0.1.4",
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "transformers": "4.57.1"
+    },
+    "pipeline_source_hash": "749c3cb4ac1cfdd29c1c9586f652a2d148791a24ac6a1c6de279c9a610baa3da",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.10.21"
+  },
+  "status": "passed"
+}

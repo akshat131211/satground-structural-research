@@ -1,0 +1,9 @@
+{
+  "comparisons": [],
+  "review": {
+    "human_review_complete": false,
+    "no_frequent_new_hallucinations": false,
+    "provenance_complete": false,
+    "audit_frozen_before_evaluation": false
+  }
+}

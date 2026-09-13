@@ -1,0 +1,20 @@
+name: Research protocol checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  protocol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: pip
+      - run: pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -r requirements-model.txt -e .
+      - name: Checkout reference code for camera equivalence tests
+        run: |
+          git clone https://github.com/qianmingduowan/Sat3DGen.git external/Sat3DGen
+          git -C external/Sat3DGen checkout --detach 70763aff4d9fc5508e67685c906f84d3cebb34fe
+      - run: python -m pytest -q

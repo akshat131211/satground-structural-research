@@ -1,0 +1,77 @@
+{
+  "accumulation": 8,
+  "amp": false,
+  "chunk_rows": 4,
+  "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "elapsed_seconds": 52.74050860013813,
+  "frozen_parameters": 381022223,
+  "full_loss": true,
+  "gradient_norms": [
+    2.3751564025878906,
+    1.8763701915740967,
+    2.4467947483062744,
+    1.6538418531417847,
+    2.0308079719543457,
+    2.052952527999878,
+    1.6243107318878174,
+    2.463381290435791,
+    1.1470799446105957,
+    0.8882597088813782
+  ],
+  "losses": [
+    0.36368517205119133,
+    0.2817259691655636,
+    0.32410979084670544,
+    0.2836006134748459,
+    0.31892930157482624,
+    0.31349397264420986,
+    0.28664707764983177,
+    0.3465669546276331,
+    0.23298859223723412,
+    0.23017647862434387
+  ],
+  "peak_reserved_mib": 2220.0,
+  "peak_vram_mib": 1903.955078125,
+  "provenance": {
+    "code_revision": "70763aff4d9fc5508e67685c906f84d3cebb34fe",
+    "created_utc": "2026-09-13T10:21:00.469711+00:00",
+    "model_revision": "fa0ed75aff7f42dcd749764787c0184fcab0b12c",
+    "packages": {
+      "diffusers": "0.35.2",
+      "lpips": "0.1.4",
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "transformers": "4.57.1"
+    },
+    "pipeline_source_hash": "6aa4033732cfb22e19653ae7218f05467fbab673cd9ffa4b4b244c96172f8586",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.10.21"
+  },
+  "resume_step_finite": true,
+  "scientific_improvement_evidence": false,
+  "size": 256,
+  "status": "passed",
+  "step_seconds": [
+    4.331799800042063,
+    3.662231999915093,
+    3.711501100100577,
+    3.7836980000138283,
+    3.7183451000601053,
+    3.870527199935168,
+    3.8681578002870083,
+    3.745553500019014,
+    4.085386099759489,
+    4.432829599827528
+  ],
+  "steps_requested": 10,
+  "structural_segmenter": {
+    "input_size": 256,
+    "model_id": "nvidia/segformer-b0-finetuned-cityscapes-1024-1024",
+    "revision": "21b3847fae21ddee674abd31129307b6a1235bd9"
+  },
+  "synthetic": true,
+  "trainable_parameters": 4448,
+  "zero_adapter_max_rgb_difference": 0.0
+}

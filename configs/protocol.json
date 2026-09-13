@@ -1,0 +1,18 @@
+{
+  "protocol_version": 1,
+  "pilot_output_size": 256,
+  "seeds": [17, 29, 43],
+  "initial_optimizer_steps": 5000,
+  "extension_optimizer_steps": 10000,
+  "extension_requires": "A recorded validation learning-curve diagnosis, before audit access",
+  "validation_loss_grid": {"region_weight": [0.1, 0.5], "boundary_weight": [0.1, 0.5]},
+  "failure_event": "normalized symmetric building-boundary error > 0.03",
+  "thresholds": {"relative_boundary_reduction": 0.1, "minimum_boundary_ci95": 0, "minimum_iou_change": -0.01, "maximum_relative_lpips_change": 0.05},
+  "stress_tests": {"resolution": "64px downsample then 256px input", "blur": "Gaussian radius 2 at 256px", "occlusion": "central 64x64 grey square", "yaw_error": "positive 5 degrees", "position_error": "positive 10 original satellite pixels along width"},
+  "footprint_guard_m": 100,
+  "footprint_guard_status": "conservative provisional bound; verify image scale before main experiment",
+  "manual_development_review_target": 200,
+  "manual_audit_review_required": true,
+  "Seattle_status": "sealed",
+  "server_training_status": "conditional_on_measured_gate"
+}

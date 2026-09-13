@@ -1,0 +1,10 @@
+{
+  "data_validation_sha256": "REPLACE_WITH_HASH_OF_REVIEWED_REPORT",
+  "footprint_bound_verified": false,
+  "pairing_review_complete": false,
+  "near_duplicate_review_complete": false,
+  "reviewer": "",
+  "reviewed_utc": "",
+  "alignment_views_reviewed": 0,
+  "notes": "Complete only after real imagery and spatial QA. Save locally as data/qa/review.json."
+}

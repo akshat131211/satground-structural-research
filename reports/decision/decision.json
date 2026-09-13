@@ -1,0 +1,13 @@
+{
+  "comparisons": [],
+  "gate": {
+    "missing": [
+      "human_review_complete",
+      "no_frequent_new_hallucinations",
+      "provenance_complete",
+      "audit_frozen_before_evaluation",
+      "three_distinct_training_seeds"
+    ],
+    "status": "insufficient_evidence"
+  }
+}

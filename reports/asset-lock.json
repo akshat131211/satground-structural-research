@@ -1,0 +1,30 @@
+{
+  "code_revision": "70763aff4d9fc5508e67685c906f84d3cebb34fe",
+  "created_utc": "2026-09-13T06:43:49.834613+00:00",
+  "dataset_metadata_revision": "37d4ddf300eee77d5d8e54ca3cf1bdfc2dcee744",
+  "files": [
+    {
+      "file": "data\\metadata\\train__corrected_all_3city_remove_building.txt",
+      "sha256": "3518dd89e4c7329a30a0a7fc3952e0695c0dd3352ea25de909e059a03b42241c"
+    },
+    {
+      "file": "data\\metadata\\test_remove_building.txt",
+      "sha256": "ebfd9902746b53825fcd6980388332a18ecfb2a173e5d1d440c6a98b4d7195ed"
+    },
+    {
+      "file": "data\\metadata\\README.md",
+      "sha256": "67b97a2b70bf65401df39d43d69bb5c199c9ee755d1e0ecc9ef920b509a74743"
+    },
+    {
+      "file": "artifacts\\Sat3DGen\\config.json",
+      "sha256": "4783fb3278e0f397c041c84e654c39c185a4f523b445410058913241932145d2"
+    },
+    {
+      "file": "artifacts\\Sat3DGen\\diffusion_pytorch_model.safetensors",
+      "sha256": "8770de3ea777d586160036a78d29bd8f1cc2ae2d1d9900f01945c6c8f4377846"
+    }
+  ],
+  "model_revision": "fa0ed75aff7f42dcd749764787c0184fcab0b12c",
+  "rgb_downloaded": false,
+  "test_images_opened": false
+}

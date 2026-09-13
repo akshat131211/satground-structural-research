@@ -1,0 +1,17 @@
+.venv/
+external/
+artifacts/
+data/
+runs/
+.cache/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+*.pyc
+.env*
+*.pem
+*.key
+local.json
+*.local.json
+reports/data-readiness.json
+reports/*-raw.json

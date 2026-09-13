@@ -1,0 +1,37 @@
+{
+  "Seattle_opened": false,
+  "block_m": 1000,
+  "counts": {
+    "audit": {
+      "available_tiles": 3219,
+      "requested_tiles": 500,
+      "selected_tiles": 500
+    },
+    "calibration": {
+      "available_tiles": 4051,
+      "requested_tiles": 250,
+      "selected_tiles": 250
+    },
+    "train": {
+      "available_tiles": 16020,
+      "requested_tiles": 2000,
+      "selected_tiles": 2000
+    },
+    "validation": {
+      "available_tiles": 2976,
+      "requested_tiles": 250,
+      "selected_tiles": 250
+    }
+  },
+  "excluded": {
+    "edge_guard_pairs": 28975
+  },
+  "footprint_bound_verified": false,
+  "guard_m": 100,
+  "holdout_may_have_been_seen_in_pretraining": true,
+  "metadata_sha256": "3518dd89e4c7329a30a0a7fc3952e0695c0dd3352ea25de909e059a03b42241c",
+  "pairs_in_source": 78188,
+  "rgb_verified": false,
+  "rows_written": 22488,
+  "seed": 17
+}
