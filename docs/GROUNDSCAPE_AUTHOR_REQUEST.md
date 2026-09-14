@@ -1,5 +1,7 @@
 # Draft only - not sent
 
+**Inactive:** the user obtained VIGOR access and confirmed the original approach on 14 September 2026. This draft is retained as reference and is not queued for sending.
+
 Contact addresses are listed in the [paper](https://arxiv.org/html/2504.15786v1): Ningli Xu, `xu.3961@buckeyemail.osu.edu`; Rongjun Qin, `qin.324@osu.edu`.
 
 Subject: Research access to a small complete Sat2GroundScape subset

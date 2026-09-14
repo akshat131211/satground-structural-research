@@ -1,5 +1,7 @@
 # Can we use the supplied GroundScape paper's dataset?
 
+**Inactive reference:** the user subsequently confirmed VIGOR access and an ongoing download on 14 September 2026, choosing to continue with VIGOR. The access investigation below is retained as background; no GroundScape migration or author outreach is planned.
+
 Reviewed 14 September 2026. **Yes, conditionally.** Its public release is useful, but it is not a complete replacement for the overhead/real-ground pairs required by our current training experiment. No academic login was required for the inspected metadata and viewer endpoints.
 
 ## Public release evidence

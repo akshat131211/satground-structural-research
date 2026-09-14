@@ -1,8 +1,8 @@
-# Implementation status — 13 September 2026
+# Implementation status — updated 14 September 2026
 
-The laptop research infrastructure is implemented. Original VIGOR RGB access is pending, so no real-data A0 quality baseline, A1–A3 comparison, calibrated reliability result, or research improvement has been demonstrated.
+The laptop research infrastructure is implemented. On 14 September 2026, the user reported obtaining VIGOR access and starting its download, and confirmed continuation of the original approach. Download completion and local validation are pending. No real-data A0 quality baseline, A1–A3 comparison, calibrated reliability result, or research improvement has been demonstrated.
 
-## Verified locally
+## Verified locally on 13 September 2026
 
 - Pinned Sat3DGen source and safetensors checkpoint downloaded and loaded on native Windows.
 - NVIDIA RTX 4050 Laptop GPU; PyTorch 2.6.0+cu124 reports CUDA available.
@@ -20,13 +20,13 @@ The controlled native-renderer equality check disables importance resampling to 
 
 ## What remains
 
-1. Obtain academic VIGOR RGB access and the three training-city sky-mask supplements.
+1. After the user reports download completion and the local folder, validate the VIGOR RGB files and confirm availability of the three training-city sky-mask supplements.
 2. Verify real image scale/footprints, duplicates, camera alignment and dates; review development building boundaries.
 3. Run a real 100-view learning check, then matched A1/A2/A3 experiments with seeds 17/29/43 and validation-only selection.
 4. Freeze the audit, complete independent/manual evaluation, and assess structural and reliability gates.
 5. Start server, external-geometry, and 3D phases only if the preceding gates pass.
 
-Current server decision: **insufficient evidence**. All GPU profile losses and checkpoints in this report are synthetic diagnostics, not research scores or trained useful adapters. The complete real-data pipeline has not yet been exercised end to end because the required images are absent. Optional KID has not been run on a real dataset. Human annotations have not been fabricated.
+Current server decision: **insufficient evidence**. All GPU profile losses and checkpoints in this report are synthetic diagnostics, not research scores or trained useful adapters. The complete real-data pipeline has not yet been exercised end to end; the user's download has not yet been validated locally. Optional KID has not been run on a real dataset. Human annotations have not been fabricated.
 
 ## Implementation corrections during verification
 

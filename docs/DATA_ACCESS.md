@@ -2,13 +2,13 @@
 
 ## Current dependency
 
-The user confirmed on 13 September 2026 that they do not have VIGOR access. The downloaded public supplement contains metadata and optional derived resources, not the original paired satellite and street RGB photographs.
+On 14 September 2026, the user confirmed that they obtained VIGOR access and started downloading the dataset. They explicitly chose to continue the original VIGOR + Sat3DGen approach. Download completion, the local data path and file validation are pending the user's update. Do not treat the dataset as locally ready yet.
 
-VIGOR is required by the current data adapter, not by the research question. The [14 September alternative-data review](DATA_ALTERNATIVES.md) recommends testing IGN Panoramax ground panoramas paired with open BD ORTHO aerial imagery. Public ground-image access was checked, but pairing, camera validation and the replacement adapter remain to be implemented.
+The previously downloaded public supplement contains metadata and optional derived resources, not the original paired satellite and street RGB photographs. The [alternative-data review](DATA_ALTERNATIVES.md) is retained as background; no replacement data adapter or alternative acquisition is planned.
 
-Request academic access using the [official VIGOR form](https://docs.google.com/forms/d/e/1FAIpQLScTSD6AFZgre3yLNbl7OqBcjrJF0-u2cpwgubqSQnyVzPKJzA/viewform?usp=sf_link), following the [maintainers' dataset instructions](https://github.com/Jeff-Zilence/VIGOR/blob/main/data/DATASET.md). The repository states academic use and no redistribution. No access request has been submitted on the user's behalf.
+For future reproduction, the [official VIGOR form](https://docs.google.com/forms/d/e/1FAIpQLScTSD6AFZgre3yLNbl7OqBcjrJF0-u2cpwgubqSQnyVzPKJzA/viewform?usp=sf_link) and [maintainers' dataset instructions](https://github.com/Jeff-Zilence/VIGOR/blob/main/data/DATASET.md) document the access route. The repository states academic use and no redistribution. No new access request is needed for the user's current download.
 
-After approval, download through the supplied access route and extract to a local folder such as `data/vigor`. Keep the original folder and filename structure:
+Once the download finishes, identify its local folder and extract as needed. `data/vigor` is one possible location; an existing folder can be passed through `--data-root` without moving the dataset. Keep the original folder and filename structure:
 
 ```text
 data/vigor/

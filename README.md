@@ -2,11 +2,9 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
-**Current status:** the pinned checkpoint runs on the RTX 4050 laptop. Synthetic software tests exercise the complete differentiable rendering and loss path. **There are no real-data adaptation results or demonstrated research improvements yet. Original VIGOR RGB access is pending.** See [the measured status](reports/IMPLEMENTATION_STATUS.md).
+**Current status:** the pinned checkpoint runs on the RTX 4050 laptop. Synthetic software tests exercise the complete differentiable rendering and loss path. On 14 September 2026, the user confirmed that they obtained VIGOR access and started downloading it. **VIGOR remains the selected dataset; download completion and local validation are pending. There are no real-data adaptation results or demonstrated research improvements yet.** See [the measured status](reports/IMPLEMENTATION_STATUS.md).
 
-VIGOR is optional for the research direction. See the [verified access review and proposed open-data alternative](docs/DATA_ALTERNATIVES.md): IGN Panoramax ground panoramas paired with BD ORTHO aerial imagery. A replacement data adapter and aligned pilot are not yet implemented.
-
-The supplied CVPR paper remains a candidate: [GroundScape release audit and access requirements](docs/GROUNDSCAPE_ACCESS_AUDIT.md). Both public downloads omit real ground-image bytes and supply satellite conditions already rendered from ground cameras.
+We are continuing the original VIGOR + Sat3DGen structural-adapter approach. The [alternative-data review](docs/DATA_ALTERNATIVES.md) and [GroundScape access audit](docs/GROUNDSCAPE_ACCESS_AUDIT.md) are retained as background only; no dataset migration is planned.
 
 ## What is implemented
 
@@ -18,7 +16,7 @@ The supplied CVPR paper remains a candidate: [GroundScape release audit and acce
 - Validation checkpoint selection, an audit freeze, geographic paired bootstrap, a conservative server gate, and calibration utilities for A4.
 - CPU protocol tests, an opt-in CUDA comparison against the official renderer, and GitHub Actions tests.
 
-Real RGB preparation, the 100-view learning check, the controlled three-seed experiments, and human annotation review remain to be performed after authorized data access. External geometry and 3D expansion are conditional later phases, not completed features.
+Real RGB preparation, the 100-view learning check, the controlled three-seed experiments, and human annotation review remain to be performed after the download is complete and validated. External geometry and 3D expansion are conditional later phases, not completed features.
 
 ## Quick start on this laptop
 

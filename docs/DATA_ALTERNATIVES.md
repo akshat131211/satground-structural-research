@@ -1,5 +1,7 @@
 # Alternatives if VIGOR access is unavailable
 
+**Inactive reference:** later on 14 September 2026, the user confirmed that they obtained VIGOR access and started downloading it. They chose to keep the original VIGOR approach. The recommendations below record the earlier fallback investigation and are not the current work plan.
+
 Access review: 14 September 2026. This is a dataset recommendation and feasibility record, not a completed dataset migration or training result.
 
 The user's supplied GroundScape dataset was also checked in both release formats. See the [GroundScape access audit](GROUNDSCAPE_ACCESS_AUDIT.md) for the missing real targets and raw-overhead distinction. The IGN route below is a fallback if complete usable benchmark pairs cannot be obtained.
