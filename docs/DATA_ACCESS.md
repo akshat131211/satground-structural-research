@@ -4,6 +4,8 @@
 
 The user confirmed on 13 September 2026 that they do not have VIGOR access. The downloaded public supplement contains metadata and optional derived resources, not the original paired satellite and street RGB photographs.
 
+VIGOR is required by the current data adapter, not by the research question. The [14 September alternative-data review](DATA_ALTERNATIVES.md) recommends testing IGN Panoramax ground panoramas paired with open BD ORTHO aerial imagery. Public ground-image access was checked, but pairing, camera validation and the replacement adapter remain to be implemented.
+
 Request academic access using the [official VIGOR form](https://docs.google.com/forms/d/e/1FAIpQLScTSD6AFZgre3yLNbl7OqBcjrJF0-u2cpwgubqSQnyVzPKJzA/viewform?usp=sf_link), following the [maintainers' dataset instructions](https://github.com/Jeff-Zilence/VIGOR/blob/main/data/DATASET.md). The repository states academic use and no redistribution. No access request has been submitted on the user's behalf.
 
 After approval, download through the supplied access route and extract to a local folder such as `data/vigor`. Keep the original folder and filename structure:
@@ -34,5 +36,7 @@ Pilot holdouts may have been seen by the pretrained model. They assess adaptatio
 ## Other datasets
 
 [Sat2GroundScape-Perspective](https://huggingface.co/datasets/GDAOSU/Sat2GroundScape-Perspective) remains a later comparison option. Its rendered conditions and panorama identifiers are not a complete interchangeable single-overhead/ground RGB dataset. Complete geometry and authorized target access must be verified first.
+
+The [current GroundScape access audit](GROUNDSCAPE_ACCESS_AUDIT.md) checks both Perspective and Panorama downloads and lists the concrete requirements for using the supplied paper's dataset. An author-request draft is available there; no message has been sent.
 
 Do not substitute bulk Google Street View acquisition for missing research data. The [Google Maps Platform terms](https://cloud.google.com/maps-platform/terms), section 3.2.3, restrict model training and evaluation uses of Maps content; a dataset-card license alone does not establish permission for that separate acquisition route. CVUSA, VIGOR++, and HoliCity are later candidates with their own access and compatibility checks.

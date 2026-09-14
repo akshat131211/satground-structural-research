@@ -4,6 +4,10 @@ A research pipeline for predicting a camera-specified ground view from one overh
 
 **Current status:** the pinned checkpoint runs on the RTX 4050 laptop. Synthetic software tests exercise the complete differentiable rendering and loss path. **There are no real-data adaptation results or demonstrated research improvements yet. Original VIGOR RGB access is pending.** See [the measured status](reports/IMPLEMENTATION_STATUS.md).
 
+VIGOR is optional for the research direction. See the [verified access review and proposed open-data alternative](docs/DATA_ALTERNATIVES.md): IGN Panoramax ground panoramas paired with BD ORTHO aerial imagery. A replacement data adapter and aligned pilot are not yet implemented.
+
+The supplied CVPR paper remains a candidate: [GroundScape release audit and access requirements](docs/GROUNDSCAPE_ACCESS_AUDIT.md). Both public downloads omit real ground-image bytes and supply satellite conditions already rendered from ground cameras.
+
 ## What is implemented
 
 - Pinned public model and metadata downloads, checksums, isolated Python environment.
