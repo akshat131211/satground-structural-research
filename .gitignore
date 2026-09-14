@@ -2,6 +2,7 @@
 external/
 artifacts/
 data/
+dataset/
 runs/
 .cache/
 __pycache__/

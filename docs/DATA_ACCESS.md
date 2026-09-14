@@ -2,13 +2,13 @@
 
 ## Current dependency
 
-On 14 September 2026, the user confirmed that they obtained VIGOR access and started downloading the dataset. They explicitly chose to continue the original VIGOR + Sat3DGen approach. Download completion, the local data path and file validation are pending the user's update. Do not treat the dataset as locally ready yet.
+On 15 September 2026, the user provided `F:\research paper on Satellite imagery CVPR\dataset`. The fixed pilot was selectively extracted to `data/vigor`: 3,000 overhead tiles and 5,622 panoramas. All six selected training-city archives passed gzip integrity checks, and all 8,622 selected RGB files passed decoding with no missing files or exact cross-split duplicates. Two near-duplicate candidates remain for review. Seattle imagery was not extracted or decoded. See [the import commands and city mapping](RUNBOOK.md) and [the compact evidence report](../reports/DATA_INGEST_STATUS.json).
 
-The previously downloaded public supplement contains metadata and optional derived resources, not the original paired satellite and street RGB photographs. The [alternative-data review](DATA_ALTERNATIVES.md) is retained as background; no replacement data adapter or alternative acquisition is planned.
+The pinned public supplement supplied the 3,747 sky masks needed for training panoramas; these were downloaded and verified separately. The [alternative-data review](DATA_ALTERNATIVES.md) is retained as background; no replacement data adapter or alternative acquisition is planned.
 
 For future reproduction, the [official VIGOR form](https://docs.google.com/forms/d/e/1FAIpQLScTSD6AFZgre3yLNbl7OqBcjrJF0-u2cpwgubqSQnyVzPKJzA/viewform?usp=sf_link) and [maintainers' dataset instructions](https://github.com/Jeff-Zilence/VIGOR/blob/main/data/DATASET.md) document the access route. The repository states academic use and no redistribution. No new access request is needed for the user's current download.
 
-Once the download finishes, identify its local folder and extract as needed. `data/vigor` is one possible location; an existing folder can be passed through `--data-root` without moving the dataset. Keep the original folder and filename structure:
+The raw archives remain unchanged in `dataset/`, including two candidate duplicate satellite downloads identified by matching sizes and sampled bytes. They have not been deleted or fully certified as duplicates. Use `--data-root data/vigor` for the extracted pilot, which follows this layout:
 
 ```text
 data/vigor/

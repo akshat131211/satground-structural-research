@@ -4,7 +4,7 @@ import subprocess
 from pathlib import PurePosixPath
 
 paths = subprocess.check_output(['git', 'ls-files', '-z'], text=True).split('\0')
-forbidden = {'.venv', 'external', 'artifacts', 'data', 'runs', '.cache'}
+forbidden = {'.venv', 'external', 'artifacts', 'data', 'dataset', 'runs', '.cache'}
 patterns = [re.compile(rb'gh[pousr]_[A-Za-z0-9]{30,}'), re.compile(rb'github_pat_[A-Za-z0-9_]{30,}'),
             re.compile(rb'hf_[A-Za-z0-9]{25,}'), re.compile(rb'-----BEGIN [A-Z ]*PRIVATE KEY-----')]
 errors = []

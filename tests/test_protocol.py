@@ -116,6 +116,27 @@ def test_only_real_training_style_allowed(tmp_path):
         load_style(path, 'def')
 
 
+def test_training_sky_preprocessing_matches_pinned_release():
+    from satground.semantics import training_sky_histogram
+    from PIL import Image
+    vendor = ROOT / 'external' / 'Sat3DGen'
+    if not vendor.exists():
+        pytest.skip('Run bootstrap for pinned-reference histogram check')
+    sys.path.insert(0, str(vendor))
+    from source.sky_histogram import compute_sky_histogram
+    rng = np.random.default_rng(2)
+    rgb = Image.fromarray(rng.integers(0, 256, (1024, 2048, 3), dtype=np.uint8))
+    mask = Image.fromarray(np.where(np.indices((1024, 2048))[0] < 300, 255, 0).astype(np.uint8))
+    from torchvision.transforms.functional import to_tensor
+    reference_rgb = to_tensor(rgb.resize((512, 128)))
+    reference_mask = to_tensor(mask.resize((512, 128), Image.Resampling.NEAREST))
+    reference = compute_sky_histogram(((reference_rgb * reference_mask) * 2 - 1).numpy())
+    np.testing.assert_array_equal(training_sky_histogram(rgb, mask), reference)
+    assert training_sky_histogram(rgb, Image.new('L', rgb.size)) is None
+    with pytest.raises(ResearchError, match='aligned'):
+        training_sky_histogram(rgb, Image.new('L', (10, 10)))
+
+
 def test_empty_masks_and_shifted_buildings():
     blank = np.zeros((32, 32), dtype=bool)
     building = blank.copy()

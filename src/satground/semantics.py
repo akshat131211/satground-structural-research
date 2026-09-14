@@ -88,20 +88,9 @@ def make_style(manifest, data_root, output):
         path = safe_data_path(data_root, row['sky_mask'])
         if not path.is_file():
             raise ResearchError(f'Training sky mask missing: {path}. Obtain the public city sky-mask supplement.')
-        rgb = np.asarray(Image.open(safe_data_path(data_root, row['panorama'])).convert('RGB'), dtype=np.float32) / 255
-        mask = np.asarray(Image.open(path).convert('L')) >= 128
-        if mask.shape != rgb.shape[:2]:
-            raise ResearchError(f'Sky mask is not aligned: {path}')
-        if not mask.any():
-            continue
-        image = (rgb * mask[..., None]) * 2 - 1
-        values = []
-        for channel in image.transpose(2, 0, 1):
-            histogram = np.histogram(channel, bins=100, range=(-1, 1))[0][10:].astype(np.float64)
-            if histogram.sum() <= 0:
-                break
-            values.extend(histogram / histogram.sum())
-        if len(values) == 270:
+        with Image.open(safe_data_path(data_root, row['panorama'])) as panorama, Image.open(path) as mask:
+            values = training_sky_histogram(panorama, mask)
+        if values is not None:
             histograms.append(values)
             sources.append(dict(panorama=row['panorama'], image_sha256=sha256(safe_data_path(data_root, row['panorama'])),
                                 mask_sha256=sha256(path)))
@@ -109,6 +98,23 @@ def make_style(manifest, data_root, output):
         raise ResearchError('No usable training sky pixels. Cannot create a scientific illumination code.')
     record = dict(source_split='train', synthetic=False, manifest_sha256=sha256(manifest),
                   histogram=np.mean(histograms, axis=0).tolist(), panorama_count=len(histograms), sources=sources,
-                  method='mean_per_panorama_RGB_100bins_drop_first10_pinned_Sat3DGen')
+                  method='mean_per_panorama_RGB_100bins_drop_first10_pinned_Sat3DGen_resize512x128',
+                  preprocessing={'size': [512, 128], 'rgb': 'PIL_bicubic', 'mask': 'nearest'})
     save_json(output, record)
     return {k: v for k, v in record.items() if k not in ('sources', 'histogram')}
+
+
+def training_sky_histogram(panorama, mask):
+    """Match the pinned release's illumination preprocessing before averaging."""
+    if panorama.size != mask.size:
+        raise ResearchError('Sky mask is not aligned with its panorama.')
+    rgb = np.asarray(panorama.convert('RGB').resize((512, 128), Image.Resampling.BICUBIC), dtype=np.float32) / 255
+    sky = np.asarray(mask.convert('L').resize((512, 128), Image.Resampling.NEAREST), dtype=np.float32) / 255
+    image = (rgb * sky[..., None]) * 2 - 1
+    values = []
+    for channel in image.transpose(2, 0, 1):
+        histogram = np.histogram(channel, bins=100, range=(-1, 1))[0][10:].astype(np.float64)
+        if histogram.sum() <= 0:
+            return None
+        values.extend(histogram / histogram.sum())
+    return values

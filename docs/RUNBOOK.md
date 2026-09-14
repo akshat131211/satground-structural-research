@@ -17,6 +17,29 @@ Remove-Item Env:SATGROUND_GPU_TESTS
 
 ## 2. Obtain and verify RGB data
 
+### Import the user's compressed downloads
+
+The supplied downloads are under `dataset/`; extracted pilot files use `data/vigor/`. Both directories are excluded from Git. Archive suffixes do not identify cities: inspect member filenames and coordinates before constructing the local mapping.
+
+`configs/archive-map.local.json` is a local JSON list of objects with `path`, `city`, and `kind` (`satellite` or `panorama`). Supply exactly one archive for each required training city/modality. For the current downloads, the inspected mapping is:
+
+| City | Satellite archive | Panorama archive |
+|---|---|---|
+| Chicago | `satellite-002.tar.gz` | `panorama-002.tar.gz` |
+| NewYork | `satellite-004.tar.gz` | `panorama-001.tar.gz` |
+| SanFrancisco | `satellite-005.tar.gz` | `panorama-006.tar.gz` |
+
+These names are specific to this download. The importer extracts only images listed in the existing pilot manifest, preserves source archives, rejects unsafe paths and conflicting existing files, and checks each selected source archive through gzip EOF. Compressed checksums and member records are saved locally in `data/ingest/`. It rejects Seattle. A successful import still needs RGB validation below.
+
+```powershell
+& .\.venv\python.exe scripts/import_vigor.py --mapping configs/archive-map.local.json --workers 3
+& .\.venv\python.exe scripts/import_vigor_sky.py
+```
+
+The sky-mask command fetches the three required city archives at the revision in the asset lock and extracts only training-panorama masks. It does not obtain test masks, depth, or DSM data.
+
+### Validate the extracted pilot
+
 Follow [DATA_ACCESS.md](DATA_ACCESS.md), then:
 
 ```powershell
@@ -31,6 +54,20 @@ Review the validation report before training. Resolve exact cross-split duplicat
 For main training, complete `configs/data-qa-template.json` from actual review and save it locally as `data/qa/review.json`, including the SHA-256 of the reviewed `reports/data-readiness.json`. Training beyond step 100 requires this record. Preliminary learning checks still require complete file and exact-duplicate verification. Do not fill review booleans merely to bypass the gate.
 
 For the planned 100-view learning check, create a deterministic subset of training views in a separate manifest, copy the A1/A3 configurations with that manifest path and a short step budget, then regenerate its style and labels. Keep those learning-check runs separate from the pilot. Do not tune against the audit set.
+
+The implemented preliminary selection takes the first 100 sample-ID-sorted training views and 24 validation views from the existing manifests, without selecting by image content or results:
+
+```powershell
+& .\.venv\python.exe scripts/prepare_learning_check.py
+.\scripts\run.ps1 style --manifest data/manifests/learning100/train.jsonl --data-root data/vigor --output data/style/learning100-train-mean.json
+.\scripts\run.ps1 labels --manifest data/manifests/learning100/train.jsonl --data-root data/vigor --output data/labels/learning100
+.\scripts\run.ps1 generate --config configs/learning100/A0.yaml --manifest data/manifests/learning100/validation.jsonl --data-root data/vigor --output runs/learning100-A0-validation
+.\scripts\run.ps1 evaluate --manifest data/manifests/learning100/validation.jsonl --predictions runs/learning100-A0-validation --data-root data/vigor --output runs/learning100-A0-validation-eval
+.\scripts\run.ps1 train --config configs/learning100/A1.yaml --data-root data/vigor --output runs/learning100-A1-seed17 --stop-after 10
+.\scripts\run.ps1 train --config configs/learning100/A1.yaml --data-root data/vigor --output runs/learning100-A1-seed17 --resume
+```
+
+Apply the same 100-step budget to A3 for a preliminary learning check. This small single-seed run is not the main three-seed study and cannot establish the server decision. The illumination histogram uses the pinned release's 512 x 128 RGB/mask preprocessing and averages training panoramas only.
 
 ## 3. Baseline and controlled adaptation
 

@@ -2,7 +2,7 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
-**Current status:** the pinned checkpoint runs on the RTX 4050 laptop. Synthetic software tests exercise the complete differentiable rendering and loss path. On 14 September 2026, the user confirmed that they obtained VIGOR access and started downloading it. **VIGOR remains the selected dataset; download completion and local validation are pending. There are no real-data adaptation results or demonstrated research improvements yet.** See [the measured status](reports/IMPLEMENTATION_STATUS.md).
+**Current status (15 September 2026):** the supplied VIGOR archives have been imported for the fixed pilot. All 8,622 required RGB files decode successfully, with no missing files or exact cross-split duplicates. The frozen checkpoint has generated and scored 24 real validation views on the RTX 4050 laptop. A preliminary adaptation check is underway; **no research improvement or server-training decision has been established**. See [the measured status](reports/IMPLEMENTATION_STATUS.md) and [data-ingest evidence](reports/DATA_INGEST_STATUS.json).
 
 We are continuing the original VIGOR + Sat3DGen structural-adapter approach. The [alternative-data review](docs/DATA_ALTERNATIVES.md) and [GroundScape access audit](docs/GROUNDSCAPE_ACCESS_AUDIT.md) are retained as background only; no dataset migration is planned.
 
@@ -16,7 +16,7 @@ We are continuing the original VIGOR + Sat3DGen structural-adapter approach. The
 - Validation checkpoint selection, an audit freeze, geographic paired bootstrap, a conservative server gate, and calibration utilities for A4.
 - CPU protocol tests, an opt-in CUDA comparison against the official renderer, and GitHub Actions tests.
 
-Real RGB preparation, the 100-view learning check, the controlled three-seed experiments, and human annotation review remain to be performed after the download is complete and validated. External geometry and 3D expansion are conditional later phases, not completed features.
+The 100-view learning check, controlled three-seed experiments, and human annotation review are distinct milestones. Two approximate-hash duplicate candidates still need review; building masks are currently pseudo-labels. External geometry and 3D expansion are conditional later phases, not completed features.
 
 ## Quick start on this laptop
 

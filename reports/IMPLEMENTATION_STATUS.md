@@ -1,6 +1,21 @@
-# Implementation status — updated 14 September 2026
+# Implementation status — updated 15 September 2026
 
-The laptop research infrastructure is implemented. On 14 September 2026, the user reported obtaining VIGOR access and starting its download, and confirmed continuation of the original approach. Download completion and local validation are pending. No real-data A0 quality baseline, A1–A3 comparison, calibrated reliability result, or research improvement has been demonstrated.
+The laptop research infrastructure now runs on real VIGOR inputs. The user supplied the archive folder on 15 September 2026. The selected pilot has been imported and decoded, and a 24-view A0 baseline has been generated and evaluated. Preliminary adaptation checks are underway. No controlled three-seed improvement, calibrated reliability result, or server gate has been established.
+
+## Real-data milestone on 15 September 2026
+
+- Six training-city RGB archives passed full gzip EOF/CRC checks and received SHA-256 records.
+- All 3,000 satellite tiles and 5,622 panoramas required by the existing pilot were found and decoded: zero missing, invalid, or exact cross-split duplicates.
+- Two dHash near-duplicate candidate pairs are pending review; these are not confirmed duplicates.
+- All 3,747 training panorama sky masks were retrieved from the pinned supplement. Original downloads remain in `dataset/`; the selected files are in `data/vigor/`. Neither directory is tracked by Git.
+- Seattle archive member names were inspected to identify the city; its imagery was not extracted, decoded, or used.
+- A fixed preliminary subset has 100 training views and 24 validation views from 10 validation geographic groups. Selection preceded predictions and metrics.
+- The 24-view frozen baseline finished at 256 x 256: 1,949.8 MiB peak PyTorch allocation and 36.2 seconds for the generation loop, including cache misses but excluding model startup. These timings are specific to this small run.
+- Baseline group-weighted pseudo-label metrics: building IoU 0.5316, normalized boundary error 0.2040, LPIPS 0.5659, SSIM 0.1566. The independent B1 evaluation segmenter differs from B0 training supervision; zero masks have human verification. This small adaptation holdout may have been seen by the pretrained model.
+- Illumination preprocessing now matches the pinned 512 x 128 RGB/mask resize before averaging training histograms; the reference equivalence test passes.
+- Protocol, archive integrity/path handling, and illumination checks: 28 tests passed.
+
+See [machine-readable ingest and baseline evidence](DATA_INGEST_STATUS.json). Full manifests, archive/member hashes, predictions, and per-view results remain local under ignored data/run directories.
 
 ## Verified locally on 13 September 2026
 
@@ -20,13 +35,13 @@ The controlled native-renderer equality check disables importance resampling to 
 
 ## What remains
 
-1. After the user reports download completion and the local folder, validate the VIGOR RGB files and confirm availability of the three training-city sky-mask supplements.
-2. Verify real image scale/footprints, duplicates, camera alignment and dates; review development building boundaries.
-3. Run a real 100-view learning check, then matched A1/A2/A3 experiments with seeds 17/29/43 and validation-only selection.
+1. Complete and inspect the preliminary 100-view learning and checkpoint/resume checks.
+2. Review real image scale/footprints, the two near-duplicate candidates, camera alignment and dates; annotate development building boundaries.
+3. Run matched main A1/A2/A3 experiments with seeds 17/29/43 and validation-only selection after the required review.
 4. Freeze the audit, complete independent/manual evaluation, and assess structural and reliability gates.
 5. Start server, external-geometry, and 3D phases only if the preceding gates pass.
 
-Current server decision: **insufficient evidence**. All GPU profile losses and checkpoints in this report are synthetic diagnostics, not research scores or trained useful adapters. The complete real-data pipeline has not yet been exercised end to end; the user's download has not yet been validated locally. Optional KID has not been run on a real dataset. Human annotations have not been fabricated.
+Current server decision: **insufficient evidence**. The 13 September GPU profiles below are synthetic diagnostics. The new baseline uses real images, but the main controlled adaptation study and human review remain incomplete. Optional KID has not been run on a real dataset. Human annotations have not been fabricated.
 
 ## Implementation corrections during verification
 

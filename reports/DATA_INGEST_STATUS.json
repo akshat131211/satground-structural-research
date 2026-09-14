@@ -1,0 +1,50 @@
+{
+  "adaptation_status": "real-data learning check in progress",
+  "archive_import": {
+    "Seattle_extracted": false,
+    "archives_completed": 6,
+    "selected_files": 8622,
+    "status": "complete"
+  },
+  "data_source": "user-supplied VIGOR archives",
+  "human_review_pending": [
+    "camera alignment and footprint",
+    "two near-duplicate pairs",
+    "development building masks"
+  ],
+  "main_pilot_started": false,
+  "preliminary_A0": {
+    "geographic_groups": 10,
+    "manually_reviewed_count": 0,
+    "metrics": {
+      "boundary_error": 0.20395733287237067,
+      "building_iou": 0.531612735706335,
+      "lpips": 0.5659093183775743,
+      "ssim": 0.1565592054776716
+    },
+    "peak_vram_mib": 1949.8125,
+    "reference_labels": "independent segmenter pseudo-labels",
+    "render_loop_seconds": 36.21037960005924,
+    "target_images_used_for_conditioning": false,
+    "views": 24
+  },
+  "research_improvement_demonstrated": false,
+  "rgb_validation": {
+    "cross_split_exact_duplicate_count": 0,
+    "files": 8622,
+    "image_dimensions": {
+      "(1664, 832)": 994,
+      "(2048, 1024)": 4628,
+      "(640, 640)": 3000
+    },
+    "invalid_count": 0,
+    "manifest_sha256": "5c7d94bf5e72a9bbcfb645bd81bfd8ee53c428b94a3026eaa8bef75836e4baf5",
+    "missing_count": 0,
+    "near_duplicate_candidate_pairs": 2,
+    "report_sha256": "920196977e73ea6c08c0d74fac75fc229bc7894a960f7890a40fc0a941eb4838",
+    "status": "ready_for_review"
+  },
+  "server_decision": "insufficient_evidence",
+  "training_sky_masks": 3747,
+  "updated_utc": "2026-09-14T21:02:29.893329+00:00"
+}
