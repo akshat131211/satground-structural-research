@@ -15,7 +15,7 @@ from .common import ROOT, MODEL_REV, ResearchError, check_vendor, load_json, obj
 
 
 class Sat3DBackend:
-    def __init__(self, size=128, chunk_rows=4, checkpoint_rays=True, amp=False, width=16):
+    def __init__(self, size=128, chunk_rows=4, checkpoint_rays=True, amp=False, width=16, field_mode=None):
         if not torch.cuda.is_available():
             raise ResearchError('The pinned Sat3DGen renderer requires an NVIDIA CUDA device.')
         if size < 32 or size % 2 or chunk_rows < 1:
@@ -24,6 +24,9 @@ class Sat3DBackend:
         sys.path.insert(0, str(vendor))
         from source.generator import Sat3DGen
         self.size, self.chunk_rows, self.checkpoint_rays, self.amp = size, chunk_rows, checkpoint_rays, amp
+        if field_mode not in (None, 'density', 'joint'):
+            raise ResearchError('Training field mode must be density or joint, or absent for the original renderer.')
+        self.field_mode = field_mode
         model_path = ROOT / 'artifacts' / 'Sat3DGen'
         if not (model_path / 'diffusion_pytorch_model.safetensors').exists():
             raise ResearchError('Missing pretrained checkpoint. Run bootstrap.')
@@ -84,6 +87,10 @@ class Sat3DBackend:
         return features
 
     def render(self, features, camera, adapted=False):
+        if self.field_mode is not None:
+            from .fields import render_fields
+            mode = self.field_mode if adapted else 'base'
+            return render_fields(self, features, camera, (mode,))[mode]['rgb']
         from source.xyz2thetaphi import xyz2thetaphi
         if self.sky is None:
             raise ResearchError('A fixed training-only illumination code is required.')

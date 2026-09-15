@@ -1,0 +1,227 @@
+{
+  "Seattle_used": false,
+  "audit_used": false,
+  "building_identity_method_implemented": false,
+  "created_utc": "2026-09-15T11:16:42.993954+00:00",
+  "diagnostics": {
+    "A1": {
+      "checkpoint_sha256": "345ddae1408144b0d1d92db282c2a934276fee3e025c263da7eff02ae9bcaca5",
+      "count": 24,
+      "elapsed_seconds": 19.433532800059766,
+      "evidence_sha256": {
+        "runs/fields-A1-seed17/effects.jsonl": "d1fa21161ae766789ea223129fcedc567c10075943906f22a896b41e80c177d1",
+        "runs/fields-A1-seed17/protocol.json": "63311c107eab8d08ea0811cf55035131acdbac82a5a41100b0551816deb68acc",
+        "runs/fields-A1-seed17/summary.json": "d0066a9db6b5b15840f1e80bfd6abbb9b2380f425fd1a4c1cd52eca88bb7690e"
+      },
+      "geographic_groups": 10,
+      "geometry_control_checks_passed": true,
+      "geometry_is_ground_truth": false,
+      "group_weighted_effects": {
+        "appearance_opacity_mae_from_base": 0.0,
+        "appearance_radial_mae_from_base": 0.0,
+        "appearance_rgb_mae_from_base": 0.042037870331356926,
+        "base_opacity_mae_from_base": 0.0,
+        "base_radial_mae_from_base": 0.0,
+        "base_rgb_mae_from_base": 0.0,
+        "density_opacity_mae_from_base": 0.003570335046485222,
+        "density_radial_mae_from_base": 0.00749785331233094,
+        "density_rgb_mae_from_base": 0.02582052005454898,
+        "joint_opacity_mae_from_base": 0.003570335046485222,
+        "joint_radial_mae_from_base": 0.00749785331233094,
+        "joint_rgb_mae_from_base": 0.05035818433389068,
+        "native_vs_shared_joint_rgb_mae": 0.03115718304179609
+      },
+      "modes": {
+        "appearance": {
+          "boundary_error": 0.20199371408600872,
+          "building_iou": 0.5354500880599161,
+          "lpips": 0.5630788043141365,
+          "ssim": 0.17205203508929995
+        },
+        "base": {
+          "boundary_error": 0.20395733287237067,
+          "building_iou": 0.531612735706335,
+          "lpips": 0.5659093183775743,
+          "ssim": 0.1565592054776716
+        },
+        "density": {
+          "boundary_error": 0.2027058015395021,
+          "building_iou": 0.5331980959955614,
+          "lpips": 0.5665589705109596,
+          "ssim": 0.1587903695683553
+        },
+        "joint": {
+          "boundary_error": 0.20327467102794122,
+          "building_iou": 0.5247722584519625,
+          "lpips": 0.5643951597313086,
+          "ssim": 0.17420398782248334
+        }
+      },
+      "native_baseline_max_rgb_difference": 0.0,
+      "peak_vram_mib": 296.34814453125,
+      "pipeline_source_hash": "8cbfd8ba836eb993083924b96e729adfbfb0222bc6d3b786b50aa6e2c92dffab",
+      "vs_base": {
+        "appearance": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.0009066586900209587,
+              0.004995175849293696
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": 0.0019636187863619372,
+            "samples": 24,
+            "weighting": "equal_geographic_group"
+          },
+          "iou_change": 0.0038373523535810694,
+          "relative_boundary_reduction": 0.009627595922676199,
+          "relative_lpips_change": -0.005001709587593855
+        },
+        "density": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.0034375338021111978,
+              0.007890436328553773
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": 0.0012515313328685558,
+            "samples": 24,
+            "weighting": "equal_geographic_group"
+          },
+          "iou_change": 0.0015853602892264007,
+          "relative_boundary_reduction": 0.0061362409247218905,
+          "relative_lpips_change": 0.001147979212019011
+        },
+        "joint": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.0012197018101324623,
+              0.0029204470994666477
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": 0.0006826618444294365,
+            "samples": 24,
+            "weighting": "equal_geographic_group"
+          },
+          "iou_change": -0.0068404772543725345,
+          "relative_boundary_reduction": 0.0033470816411226064,
+          "relative_lpips_change": -0.002675620628772629
+        }
+      }
+    },
+    "A3": {
+      "checkpoint_sha256": "56d332db5b6d7a88a2dcf5fa016f781d619e90b32db988a99e2e174e3124859b",
+      "count": 24,
+      "elapsed_seconds": 20.20249370019883,
+      "evidence_sha256": {
+        "runs/fields-A3-seed17/effects.jsonl": "ea11529798480dcc69fbbba959e86f3ae47c7194cc60cdecf7e6ba16bc4f2f35",
+        "runs/fields-A3-seed17/protocol.json": "de42ac0e50f50c267e629b8823e4598bbf5feda1f3fd7cedb52b13d30cc4bcaf",
+        "runs/fields-A3-seed17/summary.json": "1f269acc4eacca867a016017a9af7deb3012d5baab1ae8ab7aaddfef07105158"
+      },
+      "geographic_groups": 10,
+      "geometry_control_checks_passed": true,
+      "geometry_is_ground_truth": false,
+      "group_weighted_effects": {
+        "appearance_opacity_mae_from_base": 0.0,
+        "appearance_radial_mae_from_base": 0.0,
+        "appearance_rgb_mae_from_base": 0.0038843893543040998,
+        "base_opacity_mae_from_base": 0.0,
+        "base_radial_mae_from_base": 0.0,
+        "base_rgb_mae_from_base": 0.0,
+        "density_opacity_mae_from_base": 0.001721742558462817,
+        "density_radial_mae_from_base": 0.002134053848567419,
+        "density_rgb_mae_from_base": 0.0068890831937703,
+        "joint_opacity_mae_from_base": 0.001721742558462817,
+        "joint_radial_mae_from_base": 0.002134053848567419,
+        "joint_rgb_mae_from_base": 0.008036496998587002,
+        "native_vs_shared_joint_rgb_mae": 0.020794418756850064
+      },
+      "modes": {
+        "appearance": {
+          "boundary_error": 0.2038043793319607,
+          "building_iou": 0.5348258600978174,
+          "lpips": 0.5659688524901867,
+          "ssim": 0.15639280495796623
+        },
+        "base": {
+          "boundary_error": 0.20395733287237067,
+          "building_iou": 0.531612735706335,
+          "lpips": 0.5659093183775743,
+          "ssim": 0.1565592054776716
+        },
+        "density": {
+          "boundary_error": 0.20395166110459498,
+          "building_iou": 0.5285656830196108,
+          "lpips": 0.5659734763205051,
+          "ssim": 0.15629082510708275
+        },
+        "joint": {
+          "boundary_error": 0.20284882581281033,
+          "building_iou": 0.5322841026855687,
+          "lpips": 0.5662036528189978,
+          "ssim": 0.15610482321767566
+        }
+      },
+      "native_baseline_max_rgb_difference": 0.0,
+      "peak_vram_mib": 296.34814453125,
+      "pipeline_source_hash": "8cbfd8ba836eb993083924b96e729adfbfb0222bc6d3b786b50aa6e2c92dffab",
+      "vs_base": {
+        "appearance": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.0005315087596971351,
+              0.0008205619217603105
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": 0.0001529535404099336,
+            "samples": 24,
+            "weighting": "equal_geographic_group"
+          },
+          "iou_change": 0.003213124391482358,
+          "relative_boundary_reduction": 0.0007499291065239167,
+          "relative_lpips_change": 0.00010520079927835804
+        },
+        "density": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.0014973545911495243,
+              0.001803510311565737
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": 5.6717677756965535e-06,
+            "samples": 24,
+            "weighting": "equal_geographic_group"
+          },
+          "iou_change": -0.0030470526867242276,
+          "relative_boundary_reduction": 2.7808599454662414e-05,
+          "relative_lpips_change": 0.00011337141984997673
+        },
+        "joint": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.0009300115797213445,
+              0.004059313318347827
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": 0.0011085070595603307,
+            "samples": 24,
+            "weighting": "equal_geographic_group"
+          },
+          "iou_change": 0.0006713669792336452,
+          "relative_boundary_reduction": 0.0054349948783356675,
+          "relative_lpips_change": 0.0005201088440587946
+        }
+      }
+    }
+  },
+  "human_review_pending": true,
+  "inference": "one overhead RGB plus camera and fixed training illumination",
+  "limitations": [
+    "24 repeatedly inspected validation views; 10 geographic groups; one seed",
+    "pseudo-mask scores; no independently measured geometric accuracy",
+    "frozen proposal can miss newly occupied space",
+    "exploratory bootstrap intervals; no multiple-comparison correction"
+  ],
+  "manually_verified_masks": 0,
+  "server_decision": "insufficient_evidence",
+  "stage": "preliminary_single_seed_development_probe"
+}

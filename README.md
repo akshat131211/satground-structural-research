@@ -8,6 +8,8 @@ We are continuing the original VIGOR + Sat3DGen structural-adapter approach. The
 
 The [research-direction assessment](docs/RESEARCH_DIRECTION_ASSESSMENT.md) explains the actual DINOv3/Sat3DGen model, current evidence, newly identified overlap with prior work, and a proposed study of building identity and geometry updates. It distinguishes proposed methods from completed experiments and recommends diagnostics before new training.
 
+The [laptop geometry probe](docs/GEOMETRY_PILOT.md) now implements separate density/appearance interventions and matched GJ/GD training controls. All 24 views passed baseline equality and field-isolation checks; [the aggregate diagnostic](reports/geometry-pilot/report.md) records the effects. The new controls are being tested locally. See [the codebase guide](docs/CODEBASE_GUIDE.md) for a plain-language explanation of the actual model and source files.
+
 ## What is implemented
 
 - Pinned public model and metadata downloads, checksums, isolated Python environment.
@@ -17,6 +19,7 @@ The [research-direction assessment](docs/RESEARCH_DIRECTION_ASSESSMENT.md) expla
 - Fixed-pose prediction, perturbation tests, independent-segmenter evaluation, building IoU and normalized symmetric boundary distance, LPIPS/PSNR/SSIM, optional KID, and failure galleries.
 - Validation checkpoint selection, an audit freeze, geographic paired bootstrap, a conservative server gate, and calibration utilities for A4.
 - CPU protocol tests, an opt-in CUDA comparison against the official renderer, and GitHub Actions tests.
+- Shared-sampling density/appearance interventions, raw geometric-change exports, and separate geometry-only adaptation controls with CUDA gradient/isolation checks.
 
 The 100-view learning check is complete; the controlled three-seed experiments and human annotation review remain. A local 200-view development review packet is prepared with exact target crops and unfilled review records; follow [the review guide](docs/REVIEW_GUIDE.md). Two approximate-hash duplicate candidates still need review; building masks are currently pseudo-labels. External geometry and 3D expansion are conditional later phases, not completed features.
 
@@ -48,6 +51,8 @@ On a fresh Windows machine with Conda and Git installed, run `scripts/setup.ps1`
 | A2 | Same adapter | A1 + building-region loss |
 | A3 | Same adapter | A2 + building-boundary loss |
 | A4 | No extra image generator | Calibrated error prediction from independent A3 adapters |
+| GJ | Adapter changes density and color fields | A3 losses, frozen-baseline importance proposal |
+| GD | Adapter changes density only; baseline color field | Same A3 losses and proposal as GJ |
 
 The main comparison is A3 versus A1. Use the same samples, rendering settings, training budget, fixed training illumination, and seeds 17, 29, and 43. Current configurations use 256-pixel outputs after successful laptop profiling; 128 pixels remains a fallback. Change every compared configuration and regenerate manifests together when choosing a different resolution.
 

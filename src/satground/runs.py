@@ -22,8 +22,11 @@ from .semantics import rgb_tensor
 def read_config(path):
     import yaml
     cfg = yaml.safe_load(Path(path).read_text())
-    if cfg['experiment'] not in ('A0', 'A1', 'A2', 'A3'):
+    if cfg['experiment'] not in ('A0', 'A1', 'A2', 'A3', 'GJ', 'GD'):
         raise ResearchError('Unknown experiment. A4 operates on the trained A3 ensemble.')
+    expected_mode = {'GJ': 'joint', 'GD': 'density'}.get(cfg['experiment'])
+    if cfg.get('field_mode') != expected_mode:
+        raise ResearchError('GJ/GD require their explicit shared-sampling field mode; original A experiments must retain their renderer.')
     if cfg['experiment'] in ('A0', 'A1') and (cfg['region_weight'] or cfg['boundary_weight']):
         raise ResearchError('A0/A1 must not use structural losses.')
     if cfg['experiment'] == 'A2' and cfg['boundary_weight']:
@@ -35,7 +38,8 @@ def read_config(path):
 
 def backend_from(cfg):
     return Sat3DBackend(size=cfg['size'], chunk_rows=cfg['chunk_rows'],
-                        checkpoint_rays=cfg['checkpoint_rays'], amp=cfg['amp'], width=cfg['adapter_width'])
+                        checkpoint_rays=cfg['checkpoint_rays'], amp=cfg['amp'], width=cfg['adapter_width'],
+                        field_mode=cfg.get('field_mode'))
 
 
 def rng_state():
