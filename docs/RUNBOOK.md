@@ -69,6 +69,19 @@ The implemented preliminary selection takes the first 100 sample-ID-sorted train
 
 Apply the same 100-step budget to A3 for a preliminary learning check. This small single-seed run is not the main three-seed study and cannot establish the server decision. The illumination histogram uses the pinned release's 512 x 128 RGB/mask preprocessing and averages training panoramas only.
 
+```powershell
+.\scripts\run.ps1 train --config configs/learning100/A3.yaml --data-root data/vigor --output runs/learning100-A3-seed17
+
+foreach ($experiment in @('A1', 'A3')) {
+    .\scripts\run.ps1 generate --config "configs/learning100/$experiment.yaml" --checkpoint "runs/learning100-$experiment-seed17/step-000100.pt" --manifest data/manifests/learning100/validation.jsonl --data-root data/vigor --output "runs/learning100-$experiment-validation"
+    .\scripts\run.ps1 evaluate --manifest data/manifests/learning100/validation.jsonl --predictions "runs/learning100-$experiment-validation" --data-root data/vigor --output "runs/learning100-$experiment-validation-eval"
+}
+& .\.venv\python.exe scripts/report_learning_check.py
+& .\.venv\python.exe scripts/prepare_review_packet.py
+```
+
+Use fresh run/output directories when repeating completed experiments. The report checks matching resources, provenance, complete paired validation rows, and finite training records. Its output in `reports/learning100/` is explicitly preliminary. The 200-view review packet is local under `data/review/development200/`; start with [the review guide](REVIEW_GUIDE.md). The packet contains pending records, not completed annotations.
+
 ## 3. Baseline and controlled adaptation
 
 ```powershell

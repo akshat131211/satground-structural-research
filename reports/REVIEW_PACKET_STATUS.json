@@ -1,0 +1,29 @@
+{
+  "audit_or_Seattle_opened": false,
+  "city_counts": {
+    "Chicago": 63,
+    "NewYork": 71,
+    "SanFrancisco": 66
+  },
+  "contact_sheets": 20,
+  "created_utc": "2026-09-15T05:57:16.713852+00:00",
+  "geographic_groups": 82,
+  "guide": "docs/REVIEW_GUIDE.md",
+  "human_review_complete": false,
+  "manual_index_sha256": "f911e5dedf975e69b9dff50322034800ee0471974f06d7fbcb8110315815f61a",
+  "manual_masks_created": false,
+  "packet_local_path": "data/review/development200",
+  "review_manifest_sha256": "cd6efb24811f5785c0c96b0c5d187555ec2d9d7ee0ca2da97b83b4f6b4070282",
+  "reviewed_count": 0,
+  "selection": "Round-robin cities/geographic groups; sample-ID order within groups; unique tiles and panoramas; no metric or content filtering.",
+  "source_manifests": {
+    "train": "1abc8b50acf273d7af62bcfb03f1b47dcc5b80b9f6715aa532fbbe65a9608e9c",
+    "validation": "da6100f5f79dfa944874c020ef1a4396b5de36180bf0c00e1f81a8700676f548"
+  },
+  "split_counts": {
+    "train": 100,
+    "validation": 100
+  },
+  "target_integrity_check": "all 200 dimensions and SHA-256 hashes verified",
+  "views": 200
+}

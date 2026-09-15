@@ -1,6 +1,19 @@
 # Implementation status — updated 15 September 2026
 
-The laptop research infrastructure now runs on real VIGOR inputs. The user supplied the archive folder on 15 September 2026. The selected pilot has been imported and decoded, and a 24-view A0 baseline has been generated and evaluated. Preliminary adaptation checks are underway. No controlled three-seed improvement, calibrated reliability result, or server gate has been established.
+The laptop research infrastructure now runs on real VIGOR inputs. The selected pilot has been imported and decoded. A1 and A3 each completed 100 optimizer steps, and all three A0/A1/A3 variants were evaluated on the same 24 validation views. The preliminary comparison does not show a meaningful structural gain. No controlled three-seed improvement, calibrated reliability result, or server gate has been established.
+
+## Completed preliminary adaptation check
+
+- A1 and A3 each trained a 4,448-parameter adapter for 100 steps, with gradient accumulation of eight, 100 fixed training views, seed 17, and 256 x 256 outputs.
+- A1 was stopped at step 10 and resumed through step 100. Both final checkpoints and every logged optimizer step have finite values; the first-step RGB/LPIPS losses match exactly before any update.
+- A1: boundary error 0.200953, building IoU 0.540302, LPIPS 0.561346. A3: boundary error 0.200765, building IoU 0.531960, LPIPS 0.565367.
+- A3 versus A1 boundary reduction: 0.09%; the paired geographic-bootstrap 95% interval for the absolute improvement is [-0.003246, 0.004538]. The interval spans zero. IoU fell 0.83 percentage points and LPIPS worsened 0.72% relative.
+- Three views receive the maximum boundary penalty in every variant. One involves tiny uncertain mask fragments; these views remain in all primary scores and need human-mask review.
+- A1 training-loop time was 719.2 seconds with 1,971.8 MiB peak allocated VRAM. A3 took 605.2 seconds with 668.1 MiB after reusing the feature cache. These are not controlled speed or memory comparisons; initialization and driver allocations are excluded.
+- A 200-view review packet (100 train, 100 validation; 82 geographic groups) is prepared locally. All target crop dimensions and hashes were verified. Twenty contact sheets, a pairing checklist, and a pending annotation index are available; zero human masks were created or certified.
+- Verification: 32 tests passed, one opt-in GPU test skipped; dependency consistency passed. The GPU equality test was previously completed on 13 September and was not rerun for these reporting-only additions.
+
+See [the full preliminary comparison](learning100/report.md), [machine-readable measurements](learning100/summary.json), and [review instructions](../docs/REVIEW_GUIDE.md). The local first-six gallery preserves manifest order and is not selected by metric performance.
 
 ## Real-data milestone on 15 September 2026
 
@@ -35,13 +48,12 @@ The controlled native-renderer equality check disables importance resampling to 
 
 ## What remains
 
-1. Complete and inspect the preliminary 100-view learning and checkpoint/resume checks.
-2. Review real image scale/footprints, the two near-duplicate candidates, camera alignment and dates; annotate development building boundaries.
-3. Run matched main A1/A2/A3 experiments with seeds 17/29/43 and validation-only selection after the required review.
-4. Freeze the audit, complete independent/manual evaluation, and assess structural and reliability gates.
-5. Start server, external-geometry, and 3D phases only if the preceding gates pass.
+1. Review the prepared development packet, real image scale/footprints, the two near-duplicate candidates, camera alignment, and any available date evidence; annotate development building boundaries.
+2. Run matched main A1/A2/A3 experiments with seeds 17/29/43 and validation-only selection after the required review. The 100-step result alone neither validates nor conclusively rejects the hypothesis.
+3. Freeze the audit, complete independent/manual evaluation, and assess structural and reliability gates.
+4. Start server, external-geometry, and 3D phases only if the preceding gates pass.
 
-Current server decision: **insufficient evidence**. The 13 September GPU profiles below are synthetic diagnostics. The new baseline uses real images, but the main controlled adaptation study and human review remain incomplete. Optional KID has not been run on a real dataset. Human annotations have not been fabricated.
+Current server decision: **insufficient evidence**. The 13 September GPU profiles are synthetic diagnostics. The new 100-step comparison uses real images, but the main controlled adaptation study and human review remain incomplete. Optional KID has not been run on a real dataset. Human annotations have not been fabricated.
 
 ## Implementation corrections during verification
 

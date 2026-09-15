@@ -1,0 +1,120 @@
+{
+  "A3_vs_A1": {
+    "bootstrap": {
+      "ci95": [
+        -0.003245817405840927,
+        0.004537635212456192
+      ],
+      "geographic_groups": 10,
+      "mean_improvement": 0.00018747790972971703,
+      "samples": 24,
+      "weighting": "equal_geographic_group"
+    },
+    "boundary_ci95": [
+      -0.003245817405840927,
+      0.004537635212456192
+    ],
+    "iou_change": -0.008342019628976627,
+    "relative_boundary_reduction": 0.0009329461270721542,
+    "relative_lpips_change": 0.007162015070452906,
+    "seed": 17
+  },
+  "geographic_groups": 10,
+  "limitations": [
+    "Single seed and 100 optimizer steps; 24 validation views, not the sealed audit.",
+    "Reference building masks are independent-segmenter pseudo-labels, not human annotations.",
+    "The pretrained model may have seen these training-city holdouts.",
+    "The bootstrap is exploratory with only ten geographic groups.",
+    "Training timing excludes initialization; A1 populated caches that A3 reused."
+  ],
+  "manifest_sha256": "c462091a2707ef1f102d2182a4059cd2944b6ca185ae4f26bd751fe11e96ede1",
+  "methods": {
+    "A0": {
+      "checkpoint_sha256": null,
+      "evaluation_summary_sha256": "ad4ae4650631213501fb450cf67b0dbd30b2d9b541bd1314c1fd4a69cada6e65",
+      "extra_building_mask_views": 1,
+      "manually_reviewed_count": 0,
+      "metrics": {
+        "boundary_error": 0.20395733287237067,
+        "building_iou": 0.531612735706335,
+        "lpips": 0.5659093183775743,
+        "ssim": 0.1565592054776716
+      },
+      "missing_building_mask_views": 1,
+      "per_view_metrics_sha256": "e3edbc75ed99f7d0dd8590735a932ca7c90ba2791a0a18a67129e4e77cc70d33",
+      "saturated_boundary_penalty_views": 3
+    },
+    "A1": {
+      "checkpoint_sha256": "6dc5370564d975f89e990535343d49170b6d2beb5f3ac049b2abf2a91b68dcf7",
+      "evaluation_summary_sha256": "ba7f2beaa7b412ea2b570551d293de34ac839b2511542813c6e42b783678c35a",
+      "extra_building_mask_views": 1,
+      "manually_reviewed_count": 0,
+      "metrics": {
+        "boundary_error": 0.20095255694783315,
+        "building_iou": 0.540302496528099,
+        "lpips": 0.5613464916745821,
+        "ssim": 0.17344855934968167
+      },
+      "missing_building_mask_views": 1,
+      "per_view_metrics_sha256": "fe4e12011a2a02c82e48a5ae818769aab1cc42db8a0e732e6a9086c320cdb0ed",
+      "saturated_boundary_penalty_views": 3,
+      "training": {
+        "elapsed_seconds": 719.1519641997293,
+        "log_sha256": "0a2f30435df6d256b7d40837fd6ae00edf0b34e98b6c9d76c1d842dc3bba447a",
+        "peak_vram_mib": 1971.849609375,
+        "steps": 100,
+        "summary_sha256": "c78579f7e58cbea39fb929f09c9a747956d0bd4c774d13845425cc59cc315f23",
+        "trainable_parameters": 4448
+      }
+    },
+    "A3": {
+      "checkpoint_sha256": "e23c9a8049fbfab8f594d66dc37678993563d691b9943d560f82ba6b4b3f38d5",
+      "evaluation_summary_sha256": "f9040f7ecca2db08edad1f4d8933467afbb7ec9b80c0d7223391efaebd766906",
+      "extra_building_mask_views": 1,
+      "manually_reviewed_count": 0,
+      "metrics": {
+        "boundary_error": 0.20076507903810342,
+        "building_iou": 0.5319604768991224,
+        "lpips": 0.5653668637077013,
+        "ssim": 0.15626587122320673
+      },
+      "missing_building_mask_views": 1,
+      "per_view_metrics_sha256": "f4eba97c256634e699dbfb64cd7aeabcc85c6ad6297ad58f4d707870147b6eaf",
+      "saturated_boundary_penalty_views": 3,
+      "training": {
+        "elapsed_seconds": 605.1681241001934,
+        "log_sha256": "e14be5f45abff9be1f22a64d70ed871fd800526da8cd88419bf8ee7ef5cb52c2",
+        "peak_vram_mib": 668.07861328125,
+        "steps": 100,
+        "summary_sha256": "4395cd559aba79fd807e143029710af28b35a948e0e940846f312bd95c6712ea",
+        "trainable_parameters": 4448
+      }
+    }
+  },
+  "research_improvement_demonstrated": false,
+  "server_decision": "insufficient_evidence",
+  "source": {
+    "code_revision": "70763aff4d9fc5508e67685c906f84d3cebb34fe",
+    "created_utc": "2026-09-15T05:51:22.689750+00:00",
+    "model_revision": "fa0ed75aff7f42dcd749764787c0184fcab0b12c",
+    "packages": {
+      "diffusers": "0.35.2",
+      "lpips": "0.1.4",
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "transformers": "4.57.1"
+    },
+    "pipeline_source_hash": "d6e320c10eff85cb172013d47dc94908b9c9a3464442602262028826c41db284",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.10.21"
+  },
+  "stage": "preliminary_learning_check",
+  "style_sha256": "5f951b975896b8336b3922a237c72721951ac326a9a8e7e4de876562b4feef23",
+  "train_manifest_sha256": "c87dc5fee1ecb964041c92124a99b07ed9490f6efdbec7399b25eda32461b36c",
+  "training_seed": 17,
+  "training_views": 100,
+  "updated_utc": "2026-09-15T06:03:40.869866+00:00",
+  "validation_views": 24
+}

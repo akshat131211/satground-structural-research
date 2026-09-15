@@ -1,5 +1,5 @@
 {
-  "adaptation_status": "real-data learning check in progress",
+  "adaptation_status": "preliminary A1/A3 100-step comparison complete; no meaningful structural gain demonstrated",
   "archive_import": {
     "Seattle_extracted": false,
     "archives_completed": 6,
@@ -28,7 +28,9 @@
     "target_images_used_for_conditioning": false,
     "views": 24
   },
+  "preliminary_comparison": "reports/learning100/summary.json",
   "research_improvement_demonstrated": false,
+  "review_packet": "reports/REVIEW_PACKET_STATUS.json",
   "rgb_validation": {
     "cross_split_exact_duplicate_count": 0,
     "files": 8622,
@@ -46,5 +48,5 @@
   },
   "server_decision": "insufficient_evidence",
   "training_sky_masks": 3747,
-  "updated_utc": "2026-09-14T21:02:29.893329+00:00"
+  "updated_utc": "2026-09-15T06:04:59.223869+00:00"
 }
