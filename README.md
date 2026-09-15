@@ -12,8 +12,10 @@ The [laptop geometry probe](docs/GEOMETRY_PILOT.md) implements separate density/
 
 Guided review is underway. Three pairing observations are recorded; their six
 target crops match the original release exactly, which verifies preprocessing
-but not real building identity. One revised building-mask component has explicit
-user acceptance; its validity component still needs correction. The
+but not real building identity. One earlier building-mask version has explicit
+user acceptance. A further proposal adds tree-gap labels and restores visible
+wall scoring; both changed components remain pending review. Enlarged regional
+comparisons show the exact added pixels. The
 [exact-mask workflow](docs/MASK_REVIEW_GUIDE.md) versions proposals and requires
 both components before reviewed evaluation. See [aggregate review progress](reports/REVIEW_PROGRESS.json).
 

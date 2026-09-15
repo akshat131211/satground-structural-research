@@ -60,6 +60,7 @@ kept separate in the manifests and run records.
 | `scripts/prepare_multiview_review.py` | Prepare training-only candidate camera pairs with empty building-identity review records |
 | `scripts/prepare_mask_review.py` | Show target-only automatic mask proposals for separate building/validity checks |
 | `scripts/patch_mask_proposal.py` | Version explicit pixel corrections without inheriting prior approval |
+| `scripts/preview_mask_regions.py` | Enlarge named target regions and highlight exact mask changes without modifying labels or recording approval |
 
 ## What the new controls mean
 

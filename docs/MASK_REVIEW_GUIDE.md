@@ -26,6 +26,12 @@ possible. Approval of building pixels alone does not approve validity pixels.
 Small facade fragments behind leaves may need careful corrections or an explicit
 uncertain region; confidently inventing the hidden wall is not valid annotation.
 
+When a reviewer describes a gap as uncertain, preserve that uncertainty. A
+requested addition is a proposal, not an accepted label. If it adds building
+pixels beyond the accepted building mask, update both proposed components and
+review the changed components; validity alone must not turn a missing building
+label into scored non-building. The earlier accepted version remains archived.
+
 The initial proposals use the pinned B1 evaluation segmenter at input size 256.
 After rejection of view 1, a separate proposal was generated with input size
 1024. That operates on an upsampled 256-pixel target; it does not add measured
@@ -88,3 +94,24 @@ Keep imagery, proposals, raw human responses, correction plans, and exact-locati
 records local. GitHub receives the code, documentation, and aggregate status.
 The [main review requirements](REVIEW_GUIDE.md) and [building-identity review](IDENTITY_REVIEW_GUIDE.md)
 remain separate tasks; a few mask approvals do not complete them.
+
+## Inspect small gaps with regional comparisons
+
+Prepare a local JSON file listing named rectangles in exact target pixels:
+
+```json
+{"regions": [{"name": "Upper tree", "box_xyxy": [76, 34, 152, 66]}]}
+```
+
+Then compare two immutable proposal versions:
+
+```powershell
+& .\.venv\python.exe scripts/preview_mask_regions.py --packet data/review/mask-first3-v7 --previous data/review/mask-first3-v6 --sample-id SAMPLE_ID --regions data/review/regions.json --output data/review/tree-detail-new.png
+```
+
+The left column is the exact target; the next columns show building and validity
+proposals. Yellow marks additions and magenta marks removals. Nearest-neighbor
+enlargement reveals the actual scoring pixels; it adds no measured detail.
+The sidecar records input/output hashes and change counts. This command writes
+only a visual aid and its provenance, never masks, decisions, or an approved
+index. Use the complete mask cards alongside regional views for review.
