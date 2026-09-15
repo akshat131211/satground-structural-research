@@ -2,6 +2,21 @@
 
 The laptop research infrastructure now runs on real VIGOR inputs. The selected pilot has been imported and decoded. A1 and A3 each completed 100 optimizer steps, and all three A0/A1/A3 variants were evaluated on the same 24 validation views. The preliminary comparison does not show a meaningful structural gain. No controlled three-seed improvement, calibrated reliability result, or server gate has been established.
 
+## Completed geometry control on the laptop
+
+- Implemented density/appearance interventions with frozen-A0 importance samples and a separate density-only training mode. The original A0/A1/A3 configuration paths retain their renderer.
+- Diagnosed both completed A1/A3 adapters on all 24 fixed validation views. Shared baselines matched the original chunked baseline exactly. Appearance-only interventions preserved opacity/radial maps exactly; density-only and joint interventions shared identical geometric maps.
+- Native versus shared-proposal adapted renders differed, so hybrid comparisons explicitly use one shared sampling convention. Radial maps are model-coordinate diagnostics, not measured geometric accuracy.
+- New GJ and GD runs each completed 100 steps on the same 100 training views, with 4,448 parameters, seed 17, accumulation eight, 256-pixel RGB, and identical A3 image-space losses. GD completed a 10-step stop/resume check. Initial losses were identical; all logged losses/gradients and final adapter/optimizer tensors were finite.
+- GJ: boundary error **0.203285**, IoU **0.532346**, LPIPS **0.566210**. GD: boundary **0.203049**, IoU **0.535316**, LPIPS **0.566611**.
+- GD versus GJ: **0.116%** relative boundary reduction, paired geographic-bootstrap absolute-improvement CI **[-0.000998, 0.001481]**, IoU **+0.297 percentage points**, LPIPS **+0.071% relative**. The interval spans zero. **Density routing alone has not demonstrated a meaningful gain in this short probe.**
+- GD loop time: **682.4 seconds**; GJ: **721.8 seconds**. Both peaked at **668.1 MiB** allocated CUDA memory with existing feature caches. These exclude initialization and separate desktop/driver allocations; no statistical speed claim is made.
+- All three maximum-boundary-penalty cases remain in both evaluations. Their contribution is about 61% of the A0 group-weighted boundary error; no view was excluded to improve a score.
+- Prepared a training-only candidate identity-review packet: **24 tiles, 48 distinct panorama positions, 192 perspective views, 24 training groups**, eight tiles per city. Every exported image's dimensions/hash and every preserved manifest row were verified. Empty identity/annotation records are not training-eligible. Guided human pairing observations are kept locally and separately from certified masks and full data QA.
+- Validation: **38 CPU/protocol tests passed, two opt-in CUDA tests skipped in that run**; both CUDA integration tests were separately run successfully on this laptop. Dependency consistency passed. The baseline/intervention CUDA check retains 48 importance samples and verifies checkpointed versus direct gradients.
+
+The [full geometry report](geometry-pilot/report.md), [protocol](../docs/GEOMETRY_PILOT.md), and [codebase explanation](../docs/CODEBASE_GUIDE.md) distinguish this completed control from the unimplemented building-identity method. The next research step needs reviewed correspondences and direct semantic-rendering supervision/control; larger GPUs are not justified by these results.
+
 ## Completed preliminary adaptation check
 
 - A1 and A3 each trained a 4,448-parameter adapter for 100 steps, with gradient accumulation of eight, 100 fixed training views, seed 17, and 256 x 256 outputs.

@@ -69,7 +69,7 @@ If the apparent gains persist mainly through color changes while density-derived
 
 The proposed extension would infer soft building-instance regions from the overhead RGB image and link only unambiguous training instances to their ground-view annotations. Distinguish an observed roof region from a true ground footprint: off-nadir imaging, overhangs, vegetation, and temporal changes can make them disagree. Ambiguous regions must retain an unknown label rather than an invented correspondence.
 
-A small geometry branch would predict residual density adjustments from scene features and 3D position. During the first geometry experiment, the color pathway remains frozen and reads the baseline features. A later appearance branch can be optimized with density fixed. These are proposed changes; the current implementation has only the shared adapter.
+A small geometry branch would predict residual density adjustments from scene features and 3D position. During the first geometry experiment, the color pathway remains frozen and reads the baseline features. A later appearance branch can be optimized with density fixed. Update after this assessment: the [GJ/GD laptop control](../reports/geometry-pilot/report.md) now routes the existing adapter to joint versus density-only queries using shared A0 proposals. Its 100-step comparison did not establish a meaningful gain. A dedicated position-conditioned residual branch and rendered building-identity supervision remain proposed.
 
 The crucial supervision would compare **rendered building identity or occupancy**, not just buildings recognized in a completed RGB image. For a ray r, a standard semantic volume-rendering construction is:
 

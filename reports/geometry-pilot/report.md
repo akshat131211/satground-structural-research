@@ -19,6 +19,17 @@ Each row uses the same frozen-baseline ray samples. Lower boundary/LPIPS and hig
 
 Unchanged opacity/radial maps in the appearance-only intervention are a software control. Changes in the density intervention do not establish more accurate buildings. Raw maps and every preselected view remain in the ignored local runs directory.
 
+## Matched 100-step control
+
+| Run | Boundary error | Building IoU | LPIPS | Loop seconds | Peak allocated MiB |
+|---|---:|---:|---:|---:|---:|
+| GJ | 0.203285 | 0.532346 | 0.566210 | 721.8 | 668.1 |
+| GD | 0.203049 | 0.535316 | 0.566611 | 682.4 | 668.1 |
+
+GD versus GJ: boundary reduction **0.12%**; paired geographic-bootstrap 95% interval for absolute improvement [-0.000998, 0.001481]. IoU change 0.30 percentage points; LPIPS change 0.07%.
+
+Both use the same A3 image-space losses, adapter capacity, samples, and optimizer budget. GJ adapts density and color features; GD uses baseline color features. All feature caches were already populated. Loop memory excludes initialization and separate desktop/driver allocations.
+
 ## Interpretation limits
 
 - 24 repeatedly inspected validation views; 10 geographic groups; one seed.

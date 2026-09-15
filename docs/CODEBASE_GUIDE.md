@@ -56,6 +56,7 @@ kept separate in the manifests and run records.
 | `scripts/diagnose_fields.py` | Four interventions on a completed A1/A3 checkpoint; export RGB and raw geometric maps |
 | `scripts/report_geometry_pilot.py` | Verify matched records and rebuild the aggregate geometry-pilot report |
 | `scripts/geometry_gallery.py` | First six validation views in fixed order, with explicitly labelled change maps |
+| `scripts/prepare_multiview_review.py` | Prepare training-only candidate camera pairs with empty building-identity review records |
 
 ## What the new controls mean
 
@@ -112,3 +113,7 @@ ground-view instances and supervise a rendered identity/occupancy field. That
 requires explicit unknown labels for ambiguous pairs and a generic semantic
 rendering baseline. It remains a proposed experiment, described in the
 [research assessment](RESEARCH_DIRECTION_ASSESSMENT.md).
+
+A 24-tile, 48-panorama candidate packet is now prepared for that later review.
+It has no certified correspondences or masks. Follow the
+[identity review guide](IDENTITY_REVIEW_GUIDE.md) to understand its purpose.

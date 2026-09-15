@@ -64,6 +64,19 @@ pairing, footprint-bound, and duplicate review is complete. Do not interpret
 multiple short experiments as completion of that review or as the main study.
 The calibration, audit, and Seattle sets are not opened in this probe.
 
+## Recorded outcome
+
+Both 100-step controls completed on the laptop. GD reduced boundary error by
+0.116% relative to GJ, with an absolute-improvement 95% interval spanning zero
+([-0.000998, 0.001481]). This confirms the new backward path fits the laptop but
+does not demonstrate a useful accuracy improvement. See the
+[complete measured comparison](../reports/geometry-pilot/report.md).
+
+A 24-tile, 48-camera-position [training review packet](IDENTITY_REVIEW_GUIDE.md)
+is prepared for the later identity-supervision question. It is a candidate cohort,
+not approved training supervision; no instance masks or correspondences were
+automatically certified.
+
 ## Commands
 
 Run from the repository root. Use a fresh output directory for each generation.

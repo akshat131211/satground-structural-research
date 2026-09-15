@@ -2,7 +2,7 @@
   "Seattle_used": false,
   "audit_used": false,
   "building_identity_method_implemented": false,
-  "created_utc": "2026-09-15T11:16:42.993954+00:00",
+  "created_utc": "2026-09-15T11:43:08.876610+00:00",
   "diagnostics": {
     "A1": {
       "checkpoint_sha256": "345ddae1408144b0d1d92db282c2a934276fee3e025c263da7eff02ae9bcaca5",
@@ -223,5 +223,82 @@
   ],
   "manually_verified_masks": 0,
   "server_decision": "insufficient_evidence",
-  "stage": "preliminary_single_seed_development_probe"
+  "stage": "preliminary_single_seed_development_probe",
+  "training": {
+    "GD_vs_GJ": {
+      "boundary_bootstrap": {
+        "ci95": [
+          -0.0009980089163733057,
+          0.0014806405477037303
+        ],
+        "geographic_groups": 10,
+        "mean_improvement": 0.00023649842648341778,
+        "samples": 24,
+        "weighting": "equal_geographic_group"
+      },
+      "iou_change": 0.002970098907215224,
+      "relative_boundary_reduction": 0.001163381461181397,
+      "relative_lpips_change": 0.0007079464196401098
+    },
+    "first_step_losses_identical": true,
+    "runs": {
+      "GD": {
+        "checkpoint_sha256": "76a03fbd82e6f8597546cd5c76dc21e989e42db1f94e68738c2f25506a0472ff",
+        "elapsed_seconds": 682.3508628997952,
+        "first_step": {
+          "boundary": 0.024312122957780957,
+          "elapsed_seconds": 6.333453599829227,
+          "gradient_norm": 0.06987733393907547,
+          "lpips": 0.5827790647745132,
+          "peak_vram_mib": 668.03369140625,
+          "region": 0.533098055049777,
+          "rgb": 0.2049324605613947,
+          "step": 1,
+          "total": 0.5419154576957226
+        },
+        "metrics": {
+          "boundary_error": 0.20304886787396037,
+          "building_iou": 0.5353164552942632,
+          "lpips": 0.5666106497248015,
+          "ssim": 0.15589104361621248
+        },
+        "peak_vram_mib": 668.0703125,
+        "pipeline_source_hash": "8cbfd8ba836eb993083924b96e729adfbfb0222bc6d3b786b50aa6e2c92dffab",
+        "status": "budget_complete",
+        "step": 100,
+        "trainable_parameters": 4448,
+        "training_identity_hash": "d21b8fed0692dde25f6e1dc296b809aa82a559297ee826bc5b8294f02845f0be",
+        "validation_selection_pending": true
+      },
+      "GJ": {
+        "checkpoint_sha256": "e9409ea8e47cc4525d9975950ad23101698fefc7e75fd8040562d9826fa42ac1",
+        "elapsed_seconds": 721.8049213001505,
+        "first_step": {
+          "boundary": 0.024312122957780957,
+          "elapsed_seconds": 8.849719200283289,
+          "gradient_norm": 0.10837885737419128,
+          "lpips": 0.5827790647745132,
+          "peak_vram_mib": 668.03369140625,
+          "region": 0.533098055049777,
+          "rgb": 0.2049324605613947,
+          "step": 1,
+          "total": 0.5419154576957226
+        },
+        "metrics": {
+          "boundary_error": 0.20328536630044378,
+          "building_iou": 0.532346356387048,
+          "lpips": 0.5662098035216332,
+          "ssim": 0.1560718047707481
+        },
+        "peak_vram_mib": 668.0703125,
+        "pipeline_source_hash": "8cbfd8ba836eb993083924b96e729adfbfb0222bc6d3b786b50aa6e2c92dffab",
+        "status": "budget_complete",
+        "step": 100,
+        "trainable_parameters": 4448,
+        "training_identity_hash": "16799958f952ff34844dab2b795103281fc0fb063c7eb1b62f0eb438c5c3696b",
+        "validation_selection_pending": true
+      }
+    },
+    "sample_count": 24
+  }
 }
