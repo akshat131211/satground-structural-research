@@ -1,0 +1,29 @@
+{
+  "actual_source_pair_records_checked": 6,
+  "annotation_scope": "First guided validation view; target-only correction cards, not a blind review. Full data QA remains incomplete.",
+  "building_mask_components_explicitly_accepted": 1,
+  "building_mask_review_started": true,
+  "camera_audit_sha256": "d9385e7239427fd114a228349c5860aa78d874d73e33531e277fa9c4a2404c00",
+  "certified_instance_correspondences": 0,
+  "full_data_qa_complete": false,
+  "fully_reviewed_building_and_validity_mask_pairs": 0,
+  "guided_pairing_observations": 3,
+  "implementation_consistency_does_not_validate_real_heading": true,
+  "initial_building_proposal_rejected": true,
+  "maximum_crop_difference_from_release": 0.0,
+  "maximum_rotation_difference_from_release": 0.0,
+  "observations": [
+    "suspected mismatch requiring investigation",
+    "shared building reported; no feature reason supplied",
+    "tentative match based on similar color/brick; explicit uncertainty retained"
+  ],
+  "observations_scope": "ground-to-ground recognition only",
+  "old_experiment_scores_changed": false,
+  "review_packet_policy": "Raw human responses, imagery, coordinates, mask files, and correction plans remain local.",
+  "revised_building_mask_still_pending": false,
+  "samples_removed": 0,
+  "source_records_sha256": "269973e0cdab73862cf5c68bcb15dba030b2d9bd2109214b53723ad0b2f96214",
+  "training_beyond_preliminary_budget_ready": false,
+  "updated_utc": "2026-09-15T12:15:43.051368+00:00",
+  "validity_components_pending": 1
+}

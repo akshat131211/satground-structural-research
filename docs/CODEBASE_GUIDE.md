@@ -52,11 +52,14 @@ kept separate in the manifests and run records.
 | `src/satground/semantics.py` | Frozen SegFormer labels; B0 supplies training supervision and B1 evaluates predictions |
 | `src/satground/runs.py` | Training, resume, fixed-camera generation, and resource profiling |
 | `src/satground/readiness.py` | Check data provenance and require review before main training |
+| `src/satground/annotations.py` | Require explicit, exact-file review of building and validity masks before evaluation |
 | `src/satground/metrics.py` | Building metrics, geographic bootstrap, and server decision gates |
 | `scripts/diagnose_fields.py` | Four interventions on a completed A1/A3 checkpoint; export RGB and raw geometric maps |
 | `scripts/report_geometry_pilot.py` | Verify matched records and rebuild the aggregate geometry-pilot report |
 | `scripts/geometry_gallery.py` | First six validation views in fixed order, with explicitly labelled change maps |
 | `scripts/prepare_multiview_review.py` | Prepare training-only candidate camera pairs with empty building-identity review records |
+| `scripts/prepare_mask_review.py` | Show target-only automatic mask proposals for separate building/validity checks |
+| `scripts/patch_mask_proposal.py` | Version explicit pixel corrections without inheriting prior approval |
 
 ## What the new controls mean
 
@@ -117,3 +120,5 @@ rendering baseline. It remains a proposed experiment, described in the
 A 24-tile, 48-panorama candidate packet is now prepared for that later review.
 It has no certified correspondences or masks. Follow the
 [identity review guide](IDENTITY_REVIEW_GUIDE.md) to understand its purpose.
+The [mask review guide](MASK_REVIEW_GUIDE.md) explains how individual reviewed
+outlines can later be used safely in evaluation.

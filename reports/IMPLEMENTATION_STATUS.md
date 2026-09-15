@@ -2,6 +2,18 @@
 
 The laptop research infrastructure now runs on real VIGOR inputs. The selected pilot has been imported and decoded. A1 and A3 each completed 100 optimizer steps, and all three A0/A1/A3 variants were evaluated on the same 24 validation views. The preliminary comparison does not show a meaningful structural gain. No controlled three-seed improvement, calibrated reliability result, or server gate has been established.
 
+## Guided annotation and camera audit
+
+- Saved three actual human ground-view pairing observations, preserving a suspected mismatch and explicit uncertainty. These are not certified roof/facade correspondences.
+- Checked all six source records against the pinned training metadata. Their perspective crops and rotation matrices match the release exactly, including the flagged pair. This verifies implementation consistency; independent heading, capture date, scale, and building identity remain unresolved.
+- Prepared three target-only building/validity mask proposals. The user rejected view 1's initial building mask. A larger segmentation input and explicit pixel corrections were saved as separate proposal versions; no earlier labels or experiment outputs were overwritten.
+- The user explicitly accepted the corrected building mask, including visible patches through foliage. The separate validity mask is still rejected pending a more specific correction. **Zero complete reviewed mask pairs have been exported or used for evaluation.**
+- Added exact target/mask/card checksums, separate component decisions, versioned pixel edits, and a reviewed-index exporter. Changes invalidate the affected approval; unchanged component acceptance can be retained only after exact artifact equality checks. Evaluation rejects altered masks, target mismatches, unrelated sample indices, and mismatched reviewed labels between comparisons.
+- Annotation records distinguish machine proposals and assistant corrections from human decisions. These development views were previously shown with generated results, so the guided review is not blind. Original A/G experiment scores remain unchanged.
+- Current checks: **46 tests passed, two optional CUDA tests skipped**, dependency consistency passed. The renderer was unchanged by these annotation/evaluation edits.
+
+See [the mask review guide](../docs/MASK_REVIEW_GUIDE.md) and [aggregate review progress](REVIEW_PROGRESS.json). More GPU training is not the next dependency; the current labels and correspondence assumptions need review first.
+
 ## Completed geometry control on the laptop
 
 - Implemented density/appearance interventions with frozen-A0 importance samples and a separate density-only training mode. The original A0/A1/A3 configuration paths retain their renderer.

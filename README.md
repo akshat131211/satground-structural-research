@@ -10,6 +10,13 @@ The [research-direction assessment](docs/RESEARCH_DIRECTION_ASSESSMENT.md) expla
 
 The [laptop geometry probe](docs/GEOMETRY_PILOT.md) implements separate density/appearance interventions and matched GJ/GD training controls. Both A1 and A3 diagnostics passed baseline equality and field-isolation checks on all 24 views. The [codebase guide](docs/CODEBASE_GUIDE.md) explains the actual model and source files. A [24-tile multiple-view review packet](docs/IDENTITY_REVIEW_GUIDE.md) is prepared for the proposed identity-supervision stage; it contains no certified correspondences or masks.
 
+Guided review is underway. Three pairing observations are recorded; their six
+target crops match the original release exactly, which verifies preprocessing
+but not real building identity. One revised building-mask component has explicit
+user acceptance; its validity component still needs correction. The
+[exact-mask workflow](docs/MASK_REVIEW_GUIDE.md) versions proposals and requires
+both components before reviewed evaluation. See [aggregate review progress](reports/REVIEW_PROGRESS.json).
+
 ## What is implemented
 
 - Pinned public model and metadata downloads, checksums, isolated Python environment.

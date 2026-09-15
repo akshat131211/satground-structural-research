@@ -1,6 +1,6 @@
 # Review before the main experiment
 
-The preliminary 100-step runs establish that real-image adaptation executes on this laptop. Main training requires evidence about data alignment, spatial separation, and evaluation labels. No completed human review is currently recorded.
+The preliminary 100-step runs establish that real-image adaptation executes on this laptop. Main training requires evidence about data alignment, spatial separation, and evaluation labels. Three guided human pairing observations have been recorded separately; the full data review and certified pixel masks remain incomplete. See the [exact-mask review guide](MASK_REVIEW_GUIDE.md) for the new proposal/correction workflow.
 
 ## Prepared packet
 
@@ -19,6 +19,14 @@ For each view:
 - Record the actual reviewer, completion time, and reasons for any corrections or exclusions.
 
 Edit a copy of `manual-index.pending.json`; change `reviewed` only after the masks are completed and checked. A partial evaluation index must contain only completed entries. The evaluator rejects entries without reviewer/date information or masks of the correct dimensions. Manual annotation should be based on the target image before looking at generated alternatives. Evaluate training and validation subsets separately when reporting generalization.
+
+Reviewed entries now also require the exact `target_image` path and SHA-256
+fields `target_image_sha256`, `building_mask_sha256`, and `valid_mask_sha256`.
+Masks must be single-channel PNGs with values 0 and 255. The evaluator rejects
+changed masks and targets, rather than silently reusing an older approval.
+The guided export command in the mask guide prepares these fields only after
+both mask components have explicit review decisions. Previously generated
+pending templates remain unapproved and must be completed with current hashes.
 
 ## Separate spatial and duplicate checks
 

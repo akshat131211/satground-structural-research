@@ -74,6 +74,8 @@ def prepare(manifest_dir, data_root, output):
         index[sid] = dict(reviewed=False, reviewer='', reviewed_utc='',
             building_mask=str(out / 'masks' / f'{sid}-building.png'),
             valid_mask=str(out / 'masks' / f'{sid}-valid.png'),
+            target_image=str(target_path), target_image_sha256=sha256(target_path),
+            building_mask_sha256='', valid_mask_sha256='', annotation_method='manual_drawing_pending',
             target_sha256=sha256(target_path), instance_errors=None,
             notes='Unannotated. Create exact-size binary masks and review them before setting reviewed=true.')
         checklist.append(dict(number=number + 1, sample_id=sid, split=row['split'], city=row['city'],

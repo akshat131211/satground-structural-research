@@ -11,6 +11,7 @@ from skimage.metrics import peak_signal_noise_ratio, structural_similarity
 from .camera import crop_panorama
 from .common import (ResearchError, load_json, read_jsonl, require_development, safe_data_path,
                      save_json, sha256, write_jsonl)
+from .common import provenance as pipeline_provenance
 from .metrics import building_metrics, grouped_mean, paired_group_bootstrap, server_gate
 from .semantics import EVAL_SEGMENTER, TRAIN_SEGMENTER, Segmenter, rgb_tensor
 
@@ -28,6 +29,8 @@ def evaluate(manifest, predictions, data_root, output, model_id=EVAL_SEGMENTER, 
     if set(predicted_index) != {r['sample_id'] for r in rows}:
         raise ResearchError('Missing or extra predictions; paired evaluation must be complete.')
     manual = load_json(manual_index) if manual_index else {}
+    if not set(manual).issubset({r['sample_id'] for r in rows}):
+        raise ResearchError('Reviewed mask index contains samples outside this evaluation manifest.')
     segmenter = Segmenter(model_id, revision)
     import lpips
     perceptual = lpips.LPIPS(net='alex').cuda().eval().requires_grad_(False)
@@ -58,13 +61,9 @@ def evaluate(manifest, predictions, data_root, output, model_id=EVAL_SEGMENTER, 
         provenance = 'independent_segmenter_pseudo_label'
         target_mask = t_label == 2
         if sid in manual:
+            from .annotations import verified_reviewed_masks
             entry = manual[sid]
-            if entry.get('reviewed') is not True or not entry.get('reviewer') or not entry.get('reviewed_utc'):
-                raise ResearchError('Manual mask lacks explicit reviewer, date, and completed review.')
-            target_mask = np.asarray(Image.open(entry['building_mask']).convert('L')) >= 128
-            valid = np.asarray(Image.open(entry['valid_mask']).convert('L')) >= 128
-            if target_mask.shape != t_label.shape or valid.shape != t_label.shape:
-                raise ResearchError('Manual masks must match the exact target crop.')
+            target_mask, valid = verified_reviewed_masks(entry, target)
             provenance = 'manually_reviewed'
         metric = building_metrics(p_label == 2, target_mask, valid)
         psnr = float(peak_signal_noise_ratio(target, predicted, data_range=255))
@@ -76,6 +75,8 @@ def evaluate(manifest, predictions, data_root, output, model_id=EVAL_SEGMENTER, 
                     (1 - building_probability) * np.log(1 - building_probability + 1e-8))
         results.append(dict(sample_id=sid, geo_group=row['geo_group'], split=row['split'],
                             label_provenance=provenance, **metric, lpips=perceptual_value,
+                            annotation_method=manual.get(sid, {}).get('annotation_method', provenance),
+                            review_blinded_to_model_predictions=manual.get(sid, {}).get('review_blinded_to_model_predictions'),
                             instance_errors=manual.get(sid, {}).get('instance_errors'),
                             psnr=psnr if np.isfinite(psnr) else None, identical_rgb=bool(np.array_equal(predicted, target)),
                             ssim=float(structural_similarity(target, predicted, channel_axis=2, data_range=255)),
@@ -83,8 +84,11 @@ def evaluate(manifest, predictions, data_root, output, model_id=EVAL_SEGMENTER, 
     write_jsonl(out / 'metrics.jsonl', results)
     summary = dict(count=len(results), manifest_sha256=sha256(manifest), generation_sha256=sha256(Path(predictions) / 'generation.json'),
                     generation=generation,
+                    evaluation_provenance=pipeline_provenance(),
                     segmenter=model_id, segmenter_revision=segmenter.revision, training_segmenter_different=True,
                     manually_reviewed_count=sum(r['label_provenance'] == 'manually_reviewed' for r in results),
+                    manual_index_sha256=sha256(manual_index) if manual_index else None,
+                    mixed_manual_and_pseudo_labels=0 < len(manual) < len(rows),
                     group_weighted={k: grouped_mean(results, k) for k in ('building_iou', 'boundary_error', 'lpips', 'ssim')},
                     kid=None, fid=None, empty_mask_convention='both_empty: IoU1,error0; one_empty: error1')
     if kid:
@@ -117,6 +121,8 @@ def select_checkpoint(candidates_path, reference_summary, output):
             raise ResearchError('Checkpoint selection may only use validation metrics.')
         if summary['manifest_sha256'] != reference['manifest_sha256']:
             raise ResearchError('Checkpoint selection uses mismatched validation manifests.')
+        if summary.get('manual_index_sha256') != reference.get('manual_index_sha256'):
+            raise ResearchError('Checkpoint selection must use identical reviewed evaluation labels.')
         if summary['group_weighted']['lpips'] <= reference_lpips * 1.05:
             candidates.append((summary['group_weighted']['boundary_error'], candidate))
     if not candidates:
@@ -182,6 +188,8 @@ def make_report(specification, output):
             raise ResearchError('Server decisions require final audit metrics, not development results.')
         if control['segmenter_revision'] != proposed['segmenter_revision']:
             raise ResearchError('Evaluation segmenters differ between compared experiments.')
+        if control.get('manual_index_sha256') != proposed.get('manual_index_sha256'):
+            raise ResearchError('Compared experiments must use identical reviewed evaluation labels.')
         if min(control['manually_reviewed_count'], proposed['manually_reviewed_count']) == 0:
             review['human_review_complete'] = False
     results = [comparison(run['control_metrics'], run['proposed_metrics'], run['seed']) for run in spec.get('comparisons', [])]
