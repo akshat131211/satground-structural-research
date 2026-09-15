@@ -15,6 +15,9 @@ satground = "satground.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+satground = ["editor_ui/*.html", "editor_ui/*.css", "editor_ui/*.js"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Local drawing editor for SatGround building and validity masks.">
+  <meta name="editor-token" content="__EDITOR_TOKEN__">
+  <title>SatGround · Draw your masks</title>
+  <link rel="stylesheet" href="/editor.css">
+  <script src="/editor-core.js" defer></script>
+  <script src="/editor.js" defer></script>
+</head>
+<body>
+<main id="editor">
+  <header><div><h1>Draw your masks</h1><p>Edit visible building surfaces and the pixels to score.</p></div><span id="save-status" role="status" aria-live="polite">Loading image…</span></header>
+  <fieldset id="controls" disabled>
+    <legend class="sr-only">Drawing and viewing controls</legend>
+    <div class="toolbar">
+      <label>Editing<select id="component"><option value="building">Building mask</option><option value="valid">Validity mask</option></select></label>
+      <label>Tool<select id="tool"><option value="paint">Paint — include</option><option value="erase">Erase — exclude</option><option value="polygon-paint">Polygon — include</option><option value="polygon-erase">Polygon — exclude</option><option value="pan">Pan image</option></select></label>
+      <label>Brush <output id="brush-value">5 px</output><input id="brush" type="range" min="1" max="40" value="5"></label>
+      <div class="buttons"><button id="undo" type="button" disabled>Undo</button><button id="redo" type="button" disabled>Redo</button></div>
+      <div class="buttons save-buttons"><button id="save" class="primary" type="button">Save version</button><button id="download" type="button" disabled>Download PNGs</button></div>
+    </div>
+    <div class="toolbar view-tools">
+      <label>Area<select id="area"><option value="full">Full image</option><option value="tree">Whole tree</option><option value="upper">Upper gaps</option><option value="middle">Middle gaps</option><option value="lower">Lower wall</option></select></label>
+      <label>Zoom <output id="zoom-value">1×</output><input id="zoom" type="range" min="1" max="8" step="0.25" value="1"></label>
+      <label>Overlay <output id="opacity-value">45%</output><input id="opacity" type="range" min="0" max="85" step="5" value="45"></label>
+      <label>Display<select id="display"><option value="overlay">Image + mask</option><option value="binary">Black-and-white mask</option><option value="original">Original image only</option></select></label>
+      <label class="check"><input id="changes" type="checkbox">Highlight my changes</label>
+    </div>
+  </fieldset>
+  <div id="instructions"><strong id="mask-instruction">Building: include visible walls, windows and entrances. Exclude leaves, cars and road.</strong><span id="tool-instruction">Draw on the right image. Brush size uses original image pixels.</span></div>
+  <div class="stage">
+    <figure><figcaption>Original · reference</figcaption><canvas id="reference" width="1024" height="1024" aria-label="Original ground image; drag to pan. Drawing is only enabled in the right panel."></canvas></figure>
+    <figure><figcaption id="mask-caption">Building · red = included</figcaption><canvas id="drawing" tabindex="0" width="1024" height="1024" aria-label="Editable mask. Paint or erase by dragging, or use polygon clicks. Keyboard shortcuts are listed below."></canvas></figure>
+  </div>
+  <div class="details"><output id="position">Exact mask: 256 × 256 pixels</output><div id="polygon-actions" hidden><button id="close-polygon" type="button">Fill polygon</button><button id="cancel-polygon" type="button">Cancel polygon</button></div><span id="edit-count">No edits yet</span></div>
+  <footer><span><kbd>B</kbd> paint · <kbd>E</kbd> erase · <kbd>H</kbd> pan · hold <kbd>O</kbd> original · <kbd>Ctrl Z</kbd> undo · <kbd>Ctrl S</kbd> save version</span><span>Drafts save automatically on this laptop. Saving does not approve a mask for evaluation.</span></footer>
+  <section id="saved-result" hidden><strong>Version saved</strong><p id="saved-path"></p><p>Tell Codex “my masks are ready” when you have finished.</p></section>
+  <details class="backup"><summary>Backup and recovery</summary><div class="buttons"><button id="backup" type="button" disabled>Download editable backup</button><label class="file-button">Restore backup<input id="restore" type="file" accept="application/json,.json" disabled></label></div><p>A backup restores both masks for this exact source image.</p></details>
+</main>
+</body>
+</html>

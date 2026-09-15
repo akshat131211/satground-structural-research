@@ -18,3 +18,8 @@ jobs:
           git clone https://github.com/qianmingduowan/Sat3DGen.git external/Sat3DGen
           git -C external/Sat3DGen checkout --detach 70763aff4d9fc5508e67685c906f84d3cebb34fe
       - run: python -m pytest -q
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check src/satground/editor_ui/editor.js
+      - run: node tests/editor_core_test.cjs

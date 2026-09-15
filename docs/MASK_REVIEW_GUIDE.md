@@ -1,5 +1,9 @@
 # Review exact building and validity masks
 
+For direct drawing, use the [local mask editor](DRAWING_TOOL.md). It saves
+resumable drafts and new PNG proposal versions; the final review requirements
+below still apply.
+
 Pairing observations answer whether two views might share a building. They do
 not certify the building's pixel outline. This workflow keeps those decisions
 separate and preserves every annotation proposal and response.

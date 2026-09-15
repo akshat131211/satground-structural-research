@@ -19,6 +19,10 @@ comparisons show the exact added pixels. The
 [exact-mask workflow](docs/MASK_REVIEW_GUIDE.md) versions proposals and requires
 both components before reviewed evaluation. See [aggregate review progress](reports/REVIEW_PROGRESS.json).
 
+To correct the masks yourself, double-click **Open Mask Editor.cmd**. The local
+[drawing tool](docs/DRAWING_TOOL.md) supports brushes, erasing, polygons, zoom,
+undo/redo, resumable drafts and PNG export. Saved versions remain pending review.
+
 ## What is implemented
 
 - Pinned public model and metadata downloads, checksums, isolated Python environment.

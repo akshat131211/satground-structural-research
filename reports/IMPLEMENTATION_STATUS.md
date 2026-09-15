@@ -4,6 +4,9 @@ The laptop research infrastructure now runs on real VIGOR inputs. The selected p
 
 ## Guided annotation and camera audit
 
+- Added a local drawing editor with paint/erase brushes, polygon inclusion/exclusion, zoom/pan, independent building and validity masks, undo/redo, resumable automatic drafts, immutable saved versions, and ZIP export of binary PNGs. A one-click Windows launcher reuses the active editor for the same draft. Its source targets/proposals remain unchanged; saving creates pending decisions rather than approval.
+- Browser smoke testing used a separate ignored output directory: one-pixel painting, undo/redo, saving, and reload recovery were exercised. Saved PNGs were checked for exact 256 x 256 size, L mode and 0/255 values; the original target and separate validity mask remained unchanged. These automated test drawings are not user annotations. Storage/API tests and JavaScript drawing-operation tests passed; the expanded Python suite reports **50 passed, two optional CUDA tests skipped**.
+
 - Saved three actual human ground-view pairing observations, preserving a suspected mismatch and explicit uncertainty. These are not certified roof/facade correspondences.
 - Checked all six source records against the pinned training metadata. Their perspective crops and rotation matrices match the release exactly, including the flagged pair. This verifies implementation consistency; independent heading, capture date, scale, and building identity remain unresolved.
 - Prepared three target-only building/validity mask proposals. The user rejected view 1's initial building mask. A larger segmentation input and explicit pixel corrections were saved as separate proposal versions; no earlier labels or experiment outputs were overwritten.
