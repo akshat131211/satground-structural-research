@@ -66,7 +66,7 @@ def mask_card(target, mask, component):
 
 
 class MaskEditorStore:
-    def __init__(self, packet, output, sample_id=None):
+    def __init__(self, packet, output, sample_id=None, *, score_building_additions=False):
         self.root, self.output = Path(packet).resolve(), Path(output).resolve()
         self.record = load_json(self.root / 'packet.json')
         samples = self.record['samples']
@@ -75,6 +75,7 @@ class MaskEditorStore:
             raise ResearchError('Specify exactly one sample to edit.')
         self.sample = matches[0]
         self.sid = self.sample['sample_id']
+        self.score_building_additions = bool(score_building_additions)
         self.packet_hash = sha256(self.root / 'packet.json')
         self.output = self.output / self.sid / self.packet_hash[:12]
         self.lock = threading.RLock()
@@ -111,6 +112,7 @@ class MaskEditorStore:
             self.draft = self._read_draft()
             source = safe_data_path(self.root, self.sample['target_image'])
             return dict(sample_id=self.sid, view_number=self.sample['number'],
+                        score_building_additions=self.score_building_additions,
                         width=self.target.shape[1], height=self.target.shape[0],
                         target='data:image/png;base64,' + base64.b64encode(source.read_bytes()).decode('ascii'),
                         source_packet_sha256=self.packet_hash, target_sha256=self.sample['target_image_sha256'],

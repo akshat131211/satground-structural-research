@@ -1,26 +1,30 @@
 {
   "actual_source_pair_records_checked": 6,
   "all_user_added_building_pixels_scored": true,
-  "annotation_scope": "Two guided validation views with user-reviewed masks derived from machine proposals. View 1 includes assisted corrections and an authorized scoring extension; view 2 uses both user-edited masks exactly as submitted. Review was not blind. Full data QA remains incomplete.",
-  "approved_index_sha256": "67d346610972dab0e1dcc01800526d0563ddc0048a0340922bb54df979b9b35d",
+  "annotation_scope": "Three guided validation views with user-reviewed masks derived from machine proposals. Views 1 and 3 include explicitly authorized validity extensions; view 2 uses both user-edited masks exactly as submitted. Review was not blind. Full data QA remains incomplete.",
+  "approved_index_sha256": "b43d37b58c6c2c30a037f5cf5ee2ee1785aa4cfc80e9fc7f3639975c6e54799e",
   "assisted_proposal_before_manual_edits_version": 7,
-  "building_mask_components_explicitly_accepted": 2,
+  "building_mask_components_explicitly_accepted": 3,
   "building_mask_review_started": true,
   "camera_audit_sha256": "d9385e7239427fd114a228349c5860aa78d874d73e33531e277fa9c4a2404c00",
   "certified_instance_correspondences": 0,
   "completed_guided_view_numbers": [
     1,
-    2
+    2,
+    3
   ],
-  "evaluation_change_verification_sha256": "b7344274d7138a193e15fc7f135139f6a378ab48373271bfc3b9a402cdbfae17",
+  "editor_validity_manual_overrides_allowed": true,
+  "evaluation_change_verification_sha256": "93c464ffbc684c57418b8784144aa97de3c50d91cb5646d80a55ad1b0734469d",
   "full_data_qa_complete": false,
-  "fully_reviewed_building_and_validity_mask_pairs": 2,
+  "fully_reviewed_building_and_validity_mask_pairs": 3,
+  "guided_mask_practice_complete": true,
   "guided_pairing_observations": 3,
   "implementation_consistency_does_not_validate_real_heading": true,
   "initial_building_proposal_rejected": true,
   "maximum_crop_difference_from_release": 0.0,
   "maximum_rotation_difference_from_release": 0.0,
-  "next_guided_view_number": 3,
+  "new_editor_sessions_score_building_additions": true,
+  "next_guided_view_number": null,
   "observations": [
     "suspected mismatch requiring investigation",
     "shared building reported; no feature reason supplied",
@@ -28,14 +32,14 @@
   ],
   "observations_scope": "ground-to-ground recognition only",
   "old_experiment_scores_changed": false,
-  "pseudo_label_targets_per_24_view_rerun": 22,
+  "pseudo_label_targets_per_24_view_rerun": 21,
   "regional_preview_available": true,
-  "remaining_guided_views_unreviewed": 1,
+  "remaining_guided_views_unreviewed": 0,
   "review_packet_policy": "Raw human responses, imagery, coordinates, mask files, and correction plans remain local.",
-  "reviewed_label_report": "reports/reviewed-labels-2/summary.json",
+  "reviewed_label_report": "reports/reviewed-labels-3/summary.json",
   "reviewed_label_report_hash_encoding": "UTF-8 with LF line endings, matching the Git artifact",
-  "reviewed_label_report_sha256": "c9c3b7d1a93a170802d18a5cd365126c36b57bba4eff03e716c3a43b8fa660e8",
-  "reviewed_targets_per_24_view_rerun": 2,
+  "reviewed_label_report_sha256": "d8e0045f943af215eaac1798adc881072c161dd64229621835565f55c77b2e9f",
+  "reviewed_targets_per_24_view_rerun": 3,
   "reviewed_view_coverage": [
     {
       "review_view_number": 1,
@@ -46,6 +50,11 @@
       "review_view_number": 2,
       "valid_pixels": 59175,
       "validity_fraction": 0.9029388427734375
+    },
+    {
+      "review_view_number": 3,
+      "valid_pixels": 46266,
+      "validity_fraction": 0.705963134765625
     }
   ],
   "reviewer_reported_tree_gap_uncertainty": true,
@@ -54,9 +63,9 @@
   "source_records_sha256": "269973e0cdab73862cf5c68bcb15dba030b2d9bd2109214b53723ad0b2f96214",
   "submitted_building_and_target_unchanged": true,
   "training_beyond_preliminary_budget_ready": false,
-  "updated_utc": "2026-09-16T11:20:29.616480+00:00",
+  "updated_utc": "2026-09-16T11:33:40.282031+00:00",
   "user_added_building_pixels": 413,
-  "valid_mask_components_explicitly_accepted": 2,
+  "valid_mask_components_explicitly_accepted": 3,
   "view1_accepted_edit_verification_sha256": "29a0084383639684012fdd127d748265b4df41f2320fab41ac4c8adef15e9a29",
   "view1_user_authorized_validity_pixels_added": 411,
   "view2_accepted_edit_verification_sha256": "fb281982e05c458148e086fbcb781a7cd189452aa9db1d96499b16362949fc0f",
@@ -67,5 +76,11 @@
   "view2_saved_validity_pixels_removed": 735,
   "view2_submitted_masks_and_target_unchanged": true,
   "view2_used_for_reviewed_evaluation": true,
-  "view2_validity_user_edit_pending": false
+  "view2_validity_user_edit_pending": false,
+  "view3_accepted_edit_verification_sha256": "84b0521ccbf8063fd203b1481fa16c4d6c840e75944d88e6280dda78b4ab1ab7",
+  "view3_all_added_building_pixels_scored": true,
+  "view3_building_and_target_unchanged": true,
+  "view3_user_added_building_pixels": 143,
+  "view3_user_authorized_validity_pixels_added": 111,
+  "view3_user_removed_building_pixels": 1594
 }

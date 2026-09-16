@@ -14,5 +14,11 @@
     for(let i=0;i<masks.building.length;i++)if(masks.building[i]&&!originals.building[i]){added++;if(masks.valid[i])scored++;}
     return {added,scored,excluded:added-scored};
   }
-  const api={pack,unpack,stamp,line,polygon,clone,History,scoringCoverage};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.MaskCore=api;
+  function scoreNewBuildingPixels(masks,originals,before){
+    if(masks.building.length!==masks.valid.length||masks.building.length!==originals.building.length||masks.building.length!==before.length)throw Error('Wrong mask dimensions');
+    let included=0;
+    for(let i=0;i<before.length;i++)if(masks.building[i]&&!before[i]&&!originals.building[i]&&!masks.valid[i]){masks.valid[i]=1;included++;}
+    return included;
+  }
+  const api={pack,unpack,stamp,line,polygon,clone,History,scoringCoverage,scoreNewBuildingPixels};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.MaskCore=api;
 })(typeof window!=='undefined'?window:globalThis);

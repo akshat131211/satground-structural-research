@@ -10,14 +10,16 @@ The [research-direction assessment](docs/RESEARCH_DIRECTION_ASSESSMENT.md) expla
 
 The [laptop geometry probe](docs/GEOMETRY_PILOT.md) implements separate density/appearance interventions and matched GJ/GD training controls. Both A1 and A3 diagnostics passed baseline equality and field-isolation checks on all 24 views. The [codebase guide](docs/CODEBASE_GUIDE.md) explains the actual model and source files. A [24-tile multiple-view review packet](docs/IDENTITY_REVIEW_GUIDE.md) is prepared for the proposed identity-supervision stage; it contains no certified correspondences or masks.
 
-Guided review has completed **two building/validity mask pairs**. Both saved
-GJ/GD predictions have been re-scored with exactly the same reviewed labels.
-The [two-view diagnostic](reports/reviewed-labels-2/report.md) reports each view
-separately: scoring covers 41.3% of view 1 and 90.3% of view 2. No model was
-retrained, and no model-improvement claim is supported. The remaining 22 views
-retain pseudo-labels; the [original one-view report](reports/reviewed-label-probe/report.md)
-is preserved. The third guided image is ready for review. Full data QA and
-building-identity verification remain incomplete. See the
+Guided review has completed **all three practice building/validity mask pairs**.
+The [three-view diagnostic](reports/reviewed-labels-3/report.md) scores the same
+saved GJ/GD predictions with identical reviewed labels and reports each view
+separately. View 3 has only about 7.5% building IoU for either variant and a
+visible mismatch with the real buildings; this needs pairing/camera and model
+error analysis. No model was retrained, and no model-improvement claim is
+supported. The remaining 21 views retain pseudo-labels. Earlier
+[one-view](reports/reviewed-label-probe/report.md) and
+[two-view](reports/reviewed-labels-2/report.md) reports are preserved. Full data QA
+and building-identity verification remain incomplete. See the
 [exact-mask workflow](docs/MASK_REVIEW_GUIDE.md) and
 [aggregate review progress](reports/REVIEW_PROGRESS.json).
 
@@ -36,7 +38,7 @@ undo/redo, resumable drafts and PNG export. Saved versions remain pending review
 - CPU protocol tests, an opt-in CUDA comparison against the official renderer, and GitHub Actions tests.
 - Shared-sampling density/appearance interventions, raw geometric-change exports, and separate geometry-only adaptation controls with CUDA gradient/isolation checks.
 
-The 100-view learning check is complete; the controlled three-seed experiments and human annotation review remain. A local 200-view development review packet is prepared with exact target crops and unfilled review records; follow [the review guide](docs/REVIEW_GUIDE.md). Two approximate-hash duplicate candidates still need review; all but the two accepted guided mask pairs remain unverified proposals or pseudo-labels. External geometry and 3D expansion are conditional later phases, not completed features.
+The 100-view learning check is complete; the controlled three-seed experiments and human annotation review remain. A local 200-view development review packet is prepared with exact target crops and unfilled review records; follow [the review guide](docs/REVIEW_GUIDE.md). Two approximate-hash duplicate candidates still need review; all but the three accepted guided mask pairs remain unverified proposals or pseudo-labels. External geometry and 3D expansion are conditional later phases, not completed features.
 
 ## Quick start on this laptop
 

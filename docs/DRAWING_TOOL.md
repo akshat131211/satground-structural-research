@@ -21,9 +21,11 @@ it rather than opening a second writer for the same draft.
 
 Building white pixels mean visible building surfaces; foliage, cars, people and
 road are excluded. Validity white pixels mean confidently assessable pixels;
-uncertain, hidden and dynamic regions are excluded. Editing one mask does not
-silently change the other. For a newly labelled building gap, review its validity
-too. The counter below the images reports how many of your newly added building
+uncertain, hidden and dynamic regions are excluded. The page states the current scoring rule. By default the masks are independent.
+With the optional building-additions rule enabled, each newly painted or polygon-filled
+building pixel is also scored. Erasing a building label does not erase validity: a
+clear static non-building object can still be scored. You can edit validity afterward
+to exclude a pixel explicitly. Undo/redo includes the automatic scoring change. The counter below the images reports how many of your newly added building
 pixels are scored and how many validity excludes. This is feedback only; it does
 not change either mask. An uncertain gap may remain unscored.
 
@@ -63,3 +65,17 @@ The tests cover exact PNG export, resumability, immutable versions, wrong-source
 and stale-draft rejection, local request restrictions, binary brush/polygon
 operations, and undo/redo across both masks. UI smoke-test drawings are kept in a
 separate ignored runs directory and never counted as user annotations.
+
+## Automatically score new building pixels
+
+The user requested this preference on 16 September 2026. New sessions read
+`score_building_additions` from the local, untracked
+`data/review/editor-policy.json`. The heading explains whether it is enabled.
+Existing sessions retain their startup policy; finish/save and restart their
+server to change it. The launcher warns if a reused session has a different policy.
+
+Use `--score-building-additions` or `--no-score-building-additions` for an explicit
+session override. The rule applies to new brush/polygon additions, preserves
+existing drafts and backups, and does not infer human acceptance. Later manual
+validity exclusions remain possible; painting elsewhere does not re-score a
+previously excluded building pixel unless it is erased and newly painted again.

@@ -56,6 +56,7 @@ def test_editor_saves_exact_resumable_unapproved_versions(tmp_path):
     assert decisions['building']['decision'] == decisions['valid']['decision'] == 'pending'
     resumed = MaskEditorStore(store.root, tmp_path / 'edits')
     assert resumed.state()['view_number'] == 1
+    assert resumed.state()['score_building_additions'] is False
     assert resumed.state()['draft']['revision'] == 1
     assert resumed.state()['latest_version']['draft_revision'] == 1
     assert unpack_mask(resumed.draft['masks']['building'], (16, 16)).sum() == 20
@@ -125,3 +126,12 @@ def test_loopback_api_rejects_cross_origin_and_unauthenticated_writes(tmp_path):
         server.shutdown()
         server.server_close()
         thread.join(timeout=3)
+
+
+def test_scoring_policy_does_not_rewrite_existing_drafts(tmp_path):
+    store = make_store(tmp_path)
+    store.save(payload(store))
+    before = store.state()['draft']
+    enabled = MaskEditorStore(store.root, tmp_path / 'edits', score_building_additions=True)
+    assert enabled.state()['score_building_additions'] is True
+    assert enabled.state()['draft'] == before
