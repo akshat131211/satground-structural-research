@@ -4,6 +4,13 @@
 
 Can a small shared adapter improve building structure in ground images predicted from one overhead RGB image, relative to ordinary adaptation with the same resources? The scene input at prediction is overhead RGB plus requested camera metadata and a single fixed training-derived illumination code. Ground photographs supervise training and evaluation but never provide test-time style, sky, masks, or depth conditioning.
 
+Scope confirmed on 16 September 2026: continue this original structural-fidelity
+question using VIGOR and Sat3DGen. The discussion of equations for building
+height does not introduce a new research track. Shadow-height estimation,
+solar-angle acquisition and metric-height prediction are outside the current
+study. The running 500-step A1/A3 comparison continues unchanged. Camera and
+coverage checks remain diagnostics for interpreting the original experiment.
+
 Unseen facade appearance is underdetermined. The intended claim concerns measured visible structure, not exact recovery of signs, windows, hidden entrances, or metric height. See the ambiguity discussion in [ControlS2S](https://arxiv.org/abs/2502.03498).
 
 ## Hypotheses
@@ -13,7 +20,7 @@ Unseen facade appearance is underdetermined. The intended claim concerns measure
 3. H3: Independent geometry improves results beyond information inferred from the same RGB.
 4. H4: Improved structure translates to better connected views and measurable 3D geometry.
 
-Only H1 infrastructure and initial H2 utilities are implemented now. H3/H4 depend on the earlier evidence gates. This is a candidate contribution, not an established first-ever novelty claim.
+Only H1 infrastructure and initial H2 utilities are implemented now. H1 is the active experiment; H2 remains conditional within the original plan. H3/H4 are retained as historical conditional extensions, not active work. This is a candidate contribution, not an established first-ever novelty claim.
 
 ## Laptop allocation
 

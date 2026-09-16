@@ -6,6 +6,11 @@ A research pipeline for predicting a camera-specified ground view from one overh
 
 We are continuing the original VIGOR + Sat3DGen structural-adapter approach. The [alternative-data review](docs/DATA_ALTERNATIVES.md) and [GroundScape access audit](docs/GROUNDSCAPE_ACCESS_AUDIT.md) are retained as background only; no dataset migration is planned.
 
+**Scope confirmed:** the active question remains whether building-region and
+boundary supervision improve structural fidelity beyond ordinary adaptation.
+The discussed shadow-based height-estimation idea is not part of this study.
+The current A1/A3 job and its fixed evaluation protocol continue unchanged.
+
 The [research-direction assessment](docs/RESEARCH_DIRECTION_ASSESSMENT.md) explains the actual DINOv3/Sat3DGen model, current evidence, newly identified overlap with prior work, and a proposed study of building identity and geometry updates. It distinguishes proposed methods from completed experiments and recommends diagnostics before new training.
 
 The [laptop geometry probe](docs/GEOMETRY_PILOT.md) implements separate density/appearance interventions and matched GJ/GD training controls. Both A1 and A3 diagnostics passed baseline equality and field-isolation checks on all 24 views. The [codebase guide](docs/CODEBASE_GUIDE.md) explains the actual model and source files. A [24-tile multiple-view review packet](docs/IDENTITY_REVIEW_GUIDE.md) is prepared for the proposed identity-supervision stage; it contains no certified correspondences or masks.

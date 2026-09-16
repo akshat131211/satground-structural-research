@@ -1,5 +1,11 @@
 # Building identity and geometric fidelity in satellite-to-ground generation
 
+Scope note, 16 September 2026: this document retains candidate mechanisms and
+prior-work analysis supporting the original structural-fidelity question.
+It does not authorize additional research tracks. The active study is the
+matched Sat3DGen A1/A3 experiment in [the protocol](RESEARCH_PROTOCOL.md).
+The subsequent discussion of shadow-based height estimation is outside scope.
+
 The recommended next step is a small mechanism study on the existing VIGOR pipeline, followed by a narrowly defined geometry adaptation experiment if the diagnosis supports it. The current result establishes laptop feasibility. It does not yet establish a contribution suitable for a main-track computer-vision conference. This assessment covers primary literature available through 15 September 2026 and distinguishes existing methods, measured project results, and proposed research.
 
 The candidate question is: **Can building identity inferred from a single overhead image constrain a shared 3D representation so that ground-view adaptation corrects building extent and separation, rather than satisfying structural image losses through appearance changes?** A second, optional question concerns identifying regions whose structural predictions remain unreliable. Neither question is a verified first-ever novelty claim.
