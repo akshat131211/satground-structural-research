@@ -8,5 +8,11 @@
   function polygon(mask,width,height,points,value){if(points.length<3)return;const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);for(let y=Math.max(0,Math.floor(Math.min(...ys)));y<=Math.min(height-1,Math.ceil(Math.max(...ys)));y++)for(let x=Math.max(0,Math.floor(Math.min(...xs)));x<=Math.min(width-1,Math.ceil(Math.max(...xs)));x++){let inside=false;const px=x+.5,py=y+.5;for(let i=0,j=points.length-1;i<points.length;j=i++){const a=points[i],b=points[j];if((a[1]>py)!==(b[1]>py)&&px<(b[0]-a[0])*(py-a[1])/(b[1]-a[1])+a[0])inside=!inside;}if(inside)mask[y*width+x]=value;}}
   function clone(masks){return {building:masks.building.slice(),valid:masks.valid.slice()};}
   class History{constructor(limit=60){this.limit=limit;this.past=[];this.future=[];}push(masks){this.past.push(clone(masks));if(this.past.length>this.limit)this.past.shift();this.future=[];}undo(masks){if(!this.past.length)return null;this.future.push(clone(masks));return this.past.pop();}redo(masks){if(!this.future.length)return null;this.past.push(clone(masks));return this.future.pop();}}
-  const api={pack,unpack,stamp,line,polygon,clone,History};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.MaskCore=api;
+  function scoringCoverage(masks,originals){
+    if(masks.building.length!==masks.valid.length||masks.building.length!==originals.building.length)throw Error('Wrong mask dimensions');
+    let added=0,scored=0;
+    for(let i=0;i<masks.building.length;i++)if(masks.building[i]&&!originals.building[i]){added++;if(masks.valid[i])scored++;}
+    return {added,scored,excluded:added-scored};
+  }
+  const api={pack,unpack,stamp,line,polygon,clone,History,scoringCoverage};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.MaskCore=api;
 })(typeof window!=='undefined'?window:globalThis);

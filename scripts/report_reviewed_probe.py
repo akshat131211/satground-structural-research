@@ -7,7 +7,6 @@ import numpy as np
 from PIL import Image
 
 from satground.common import ResearchError, load_json, read_jsonl, save_json, sha256, utc_now
-from satground.metrics import grouped_mean
 
 
 def report(index_path, output):
@@ -20,6 +19,7 @@ def report(index_path, output):
         raise ResearchError('Reviewed validity mask changed.')
     result = dict(updated_utc=utc_now(), purpose='Label-review diagnostic on fixed saved predictions',
         reviewed_views=1, manually_drawn_from_scratch=False, annotation_method=annotation['annotation_method'],
+        annotation_source=annotation.get('proposal_provenance'),
         review_blinded_to_model_predictions=annotation['review_blinded_to_model_predictions'],
         validity_fraction_of_reviewed_view=float(valid.mean()),
         valid_pixels_in_reviewed_view=int(valid.sum()), manual_index_sha256=sha256(index_path),
@@ -62,11 +62,14 @@ def report(index_path, output):
         'The same reviewed masks are applied to both models; all other views retain their original pseudo-label scoring.')
     out = Path(output)
     save_json(out / 'summary.json', result)
+    annotation_note = ('The annotation combines a machine proposal, assistant corrections, the user\'s own drawing, '
+        'and an explicitly requested extension of the scoring region.'
+        if result['annotation_source'] == 'user_edited_machine_proposal_with_explicit_user_authorized_validity_extension'
+        else 'The annotation was assisted by a segmenter and explicit corrections, then reviewed by the user.')
     lines = ['# One-view reviewed-label diagnostic', '', result['interpretation'], '',
         f"Reviewed scoring covers **{result['validity_fraction_of_reviewed_view']:.1%}** of this image. "
-        'The remaining pixels are excluded because of occlusion, ambiguity, or dynamic objects. '
-        'The annotation was assisted by a segmenter and explicit assistant corrections, then reviewed by the user. '
-        'This was not a blind annotation study.', '',
+        'The remaining pixels are outside the accepted validity mask. '
+        + annotation_note + ' This was not a blind annotation study.', '',
         '| Saved model | Reviewed-view boundary error | Reviewed-view building IoU | Same-view LPIPS |',
         '|---|---:|---:|---:|']
     for name, run in result['runs'].items():

@@ -55,6 +55,7 @@ def test_editor_saves_exact_resumable_unapproved_versions(tmp_path):
     decisions = load_json(path / 'decisions/test-sample.pending.json')
     assert decisions['building']['decision'] == decisions['valid']['decision'] == 'pending'
     resumed = MaskEditorStore(store.root, tmp_path / 'edits')
+    assert resumed.state()['view_number'] == 1
     assert resumed.state()['draft']['revision'] == 1
     assert resumed.state()['latest_version']['draft_revision'] == 1
     assert unpack_mask(resumed.draft['masks']['building'], (16, 16)).sum() == 20

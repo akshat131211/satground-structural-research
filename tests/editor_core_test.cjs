@@ -22,4 +22,13 @@ const undone=history.undo(masks);
 assert.equal(undone.valid[8*16+8],1);
 assert.deepEqual(undone.building,mask);
 assert.deepEqual(history.redo(undone).valid,beforeUndo);
-console.log('Editor brush, continuous stroke, erase, polygon, binary round-trip and two-mask undo/redo passed.');
+const originalBuilding=Uint8Array.from([1,0,0,0,0]);
+const coverageMasks={building:Uint8Array.from([0,1,1,0,1]),valid:Uint8Array.from([1,1,0,1,0])};
+const coverageBefore=core.clone(coverageMasks);
+assert.deepEqual(core.scoringCoverage(coverageMasks,{building:originalBuilding}),{added:3,scored:1,excluded:2});
+assert.deepEqual(coverageMasks,coverageBefore); // Reading coverage must never change either annotation.
+coverageMasks.valid[2]=coverageMasks.valid[4]=1;
+assert.deepEqual(core.scoringCoverage(coverageMasks,{building:originalBuilding}),{added:3,scored:3,excluded:0});
+assert.deepEqual(core.scoringCoverage({building:originalBuilding,valid:originalBuilding},{building:originalBuilding}),{added:0,scored:0,excluded:0});
+assert.throws(()=>core.scoringCoverage({building:originalBuilding,valid:new Uint8Array(3)},{building:originalBuilding}),/dimensions/);
+console.log('Editor drawing, undo/redo, binary round-trip and independent scoring coverage passed.');

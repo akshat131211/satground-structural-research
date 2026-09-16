@@ -1,0 +1,63 @@
+{
+  "annotation_method": "human_reviewed_machine_proposal",
+  "annotation_source": "user_edited_machine_proposal_with_explicit_user_authorized_validity_extension",
+  "full_data_qa_complete": false,
+  "improvement_claim": false,
+  "interpretation": "Differences from earlier scores come from the reviewed target mask and validity region, not a changed model. One previously inspected view with partial visibility is insufficient for an accuracy claim. The same reviewed masks are applied to both models; all other views retain their original pseudo-label scoring.",
+  "manual_index_sha256": "79ec0c812f0b151f72a06fb5a357685774f64c30760d1bad73db4b8f3422d031",
+  "manually_drawn_from_scratch": false,
+  "model_retrained": false,
+  "purpose": "Label-review diagnostic on fixed saved predictions",
+  "review_blinded_to_model_predictions": false,
+  "reviewed_views": 1,
+  "runs": {
+    "GD": {
+      "descriptive_mixed_label_aggregate": {
+        "boundary_error": 0.2019244164644037,
+        "building_iou": 0.537866574145019,
+        "lpips": 0.5666106497248015,
+        "ssim": 0.15589104361621248
+      },
+      "evaluated_views": 24,
+      "evaluation_source_hash": "825f56f85c3d487004b509c9979f0d382352ea065abfa22a70d105998f363ce4",
+      "previous_pseudo_metrics_for_same_view": {
+        "boundary_error": 0.1278764984772734,
+        "building_iou": 0.7258959147253171
+      },
+      "pseudo_label_views": 23,
+      "reviewed_view_metrics": {
+        "boundary_error": 0.08289844209500725,
+        "building_iou": 0.8279006687555535,
+        "lpips": 0.5585906505584717
+      },
+      "reviewed_views": 1,
+      "saved_generation_sha256": "1fbf4bb0a9e568d1d98e578ad7aa73412249751357ec9e8399d9253f4ede7178"
+    },
+    "GJ": {
+      "descriptive_mixed_label_aggregate": {
+        "boundary_error": 0.2021840396546702,
+        "building_iou": 0.5341552685743075,
+        "lpips": 0.5662098035216332,
+        "ssim": 0.1560718047707481
+      },
+      "evaluated_views": 24,
+      "evaluation_source_hash": "825f56f85c3d487004b509c9979f0d382352ea065abfa22a70d105998f363ce4",
+      "previous_pseudo_metrics_for_same_view": {
+        "boundary_error": 0.12702707283073894,
+        "building_iou": 0.7345669874167283
+      },
+      "pseudo_label_views": 23,
+      "reviewed_view_metrics": {
+        "boundary_error": 0.08297400699979472,
+        "building_iou": 0.8069234749071069,
+        "lpips": 0.5575257539749146
+      },
+      "reviewed_views": 1,
+      "saved_generation_sha256": "79c8166f8983b57b3988eed949261d288d85e1adeb1f6c2c0f419c6911f56b6c"
+    }
+  },
+  "server_decision": "insufficient_evidence",
+  "updated_utc": "2026-09-16T05:44:18.561744+00:00",
+  "valid_pixels_in_reviewed_view": 27095,
+  "validity_fraction_of_reviewed_view": 0.4134368896484375
+}

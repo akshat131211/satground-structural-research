@@ -2,7 +2,7 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
-**Current status (15 September 2026):** the new density-only (GD) and matched joint (GJ) controls each completed 100 real-data optimizer steps on the RTX 4050. GD reduced boundary error by only **0.12% relative to GJ**, with a confidence interval spanning zero; both used about 668 MiB peak allocated CUDA memory with cached features. **The laptop can run these controls, but no meaningful structural improvement or server-scaling case is established.** See [the geometry comparison](reports/geometry-pilot/report.md), [implementation status](reports/IMPLEMENTATION_STATUS.md), and [data-ingest evidence](reports/DATA_INGEST_STATUS.json). All 8,622 pilot RGB files decode; the earlier A1/A3 check is retained [here](reports/learning100/report.md).
+**Current status (16 September 2026):** the new density-only (GD) and matched joint (GJ) controls each completed 100 real-data optimizer steps on the RTX 4050. GD reduced boundary error by only **0.12% relative to GJ**, with a confidence interval spanning zero; both used about 668 MiB peak allocated CUDA memory with cached features. **The laptop can run these controls, but no meaningful structural improvement or server-scaling case is established.** See [the geometry comparison](reports/geometry-pilot/report.md), [implementation status](reports/IMPLEMENTATION_STATUS.md), and [data-ingest evidence](reports/DATA_INGEST_STATUS.json). All 8,622 pilot RGB files decode; the earlier A1/A3 check is retained [here](reports/learning100/report.md).
 
 We are continuing the original VIGOR + Sat3DGen structural-adapter approach. The [alternative-data review](docs/DATA_ALTERNATIVES.md) and [GroundScape access audit](docs/GROUNDSCAPE_ACCESS_AUDIT.md) are retained as background only; no dataset migration is planned.
 
@@ -10,14 +10,17 @@ The [research-direction assessment](docs/RESEARCH_DIRECTION_ASSESSMENT.md) expla
 
 The [laptop geometry probe](docs/GEOMETRY_PILOT.md) implements separate density/appearance interventions and matched GJ/GD training controls. Both A1 and A3 diagnostics passed baseline equality and field-isolation checks on all 24 views. The [codebase guide](docs/CODEBASE_GUIDE.md) explains the actual model and source files. A [24-tile multiple-view review packet](docs/IDENTITY_REVIEW_GUIDE.md) is prepared for the proposed identity-supervision stage; it contains no certified correspondences or masks.
 
-Guided review is underway. Three pairing observations are recorded; their six
-target crops match the original release exactly, which verifies preprocessing
-but not real building identity. One earlier building-mask version has explicit
-user acceptance. A further proposal adds tree-gap labels and restores visible
-wall scoring; both changed components remain pending review. Enlarged regional
-comparisons show the exact added pixels. The
-[exact-mask workflow](docs/MASK_REVIEW_GUIDE.md) versions proposals and requires
-both components before reviewed evaluation. See [aggregate review progress](reports/REVIEW_PROGRESS.json).
+Guided review has completed **one building/validity mask pair**. The user's
+saved building edits and explicitly requested scoring extension were verified
+and used to re-evaluate the same saved GJ/GD predictions. All 413 newly painted
+building pixels are now scored; 411 needed a validity-mask extension. No model
+was retrained. The [one-view diagnostic](reports/reviewed-label-probe/report.md)
+covers 41.3% of that image and makes no improvement claim. The other 23 views
+retain pseudo-labels. The remaining two guided views and full data QA still
+need review. Three earlier pairing observations and matching release crops
+verify preprocessing, not real building identity. See the
+[exact-mask workflow](docs/MASK_REVIEW_GUIDE.md) and
+[aggregate review progress](reports/REVIEW_PROGRESS.json).
 
 To correct the masks yourself, double-click **Open Mask Editor.cmd**. The local
 [drawing tool](docs/DRAWING_TOOL.md) supports brushes, erasing, polygons, zoom,
@@ -34,7 +37,7 @@ undo/redo, resumable drafts and PNG export. Saved versions remain pending review
 - CPU protocol tests, an opt-in CUDA comparison against the official renderer, and GitHub Actions tests.
 - Shared-sampling density/appearance interventions, raw geometric-change exports, and separate geometry-only adaptation controls with CUDA gradient/isolation checks.
 
-The 100-view learning check is complete; the controlled three-seed experiments and human annotation review remain. A local 200-view development review packet is prepared with exact target crops and unfilled review records; follow [the review guide](docs/REVIEW_GUIDE.md). Two approximate-hash duplicate candidates still need review; building masks are currently pseudo-labels. External geometry and 3D expansion are conditional later phases, not completed features.
+The 100-view learning check is complete; the controlled three-seed experiments and human annotation review remain. A local 200-view development review packet is prepared with exact target crops and unfilled review records; follow [the review guide](docs/REVIEW_GUIDE.md). Two approximate-hash duplicate candidates still need review; all but the first accepted guided mask pair remain unverified proposals or pseudo-labels. External geometry and 3D expansion are conditional later phases, not completed features.
 
 ## Quick start on this laptop
 

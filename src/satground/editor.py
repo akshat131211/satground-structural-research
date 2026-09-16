@@ -110,7 +110,8 @@ class MaskEditorStore:
             self.verify_source()
             self.draft = self._read_draft()
             source = safe_data_path(self.root, self.sample['target_image'])
-            return dict(sample_id=self.sid, width=self.target.shape[1], height=self.target.shape[0],
+            return dict(sample_id=self.sid, view_number=self.sample['number'],
+                        width=self.target.shape[1], height=self.target.shape[0],
                         target='data:image/png;base64,' + base64.b64encode(source.read_bytes()).decode('ascii'),
                         source_packet_sha256=self.packet_hash, target_sha256=self.sample['target_image_sha256'],
                         original_masks={c: pack_mask(m) for c, m in self.original.items()},

@@ -10,7 +10,7 @@ it rather than opening a second writer for the same draft.
    them. The left image remains an unmodified reference.
 3. For larger regions, choose a polygon tool, click its corners, and use **Fill
    polygon** or Enter. Escape cancels an unfinished polygon.
-4. Use **Area**, **Zoom**, and **Pan** to reach small foliage gaps. Brush sizes
+4. Use **Area**, **Zoom**, and **Pan** to reach small details. Brush sizes
    always refer to original image pixels. Hold O to see the original; B/E/H
    select paint/erase/pan when the drawing canvas is focused.
 5. **Undo** and **Redo** restore both mask states. Drafts save after completed
@@ -23,10 +23,13 @@ Building white pixels mean visible building surfaces; foliage, cars, people and
 road are excluded. Validity white pixels mean confidently assessable pixels;
 uncertain, hidden and dynamic regions are excluded. Editing one mask does not
 silently change the other. For a newly labelled building gap, review its validity
-too. An uncertain gap may remain unscored.
+too. The counter below the images reports how many of your newly added building
+pixels are scored and how many validity excludes. This is feedback only; it does
+not change either mask. An uncertain gap may remain unscored.
 
-The editor starts from proposal 7 for the first guided view. It records changes
-relative to that source. All stored masks are exact-size, single-channel PNGs
+The default launcher starts from proposal 7 for the first guided view. A review
+session opened for another sample shows its view number in the page heading.
+It records changes relative to that source. All stored masks are exact-size, single-channel PNGs
 containing only 0 and 255; brush and polygon operations do not introduce blended
 labels. Zoom affects the display, not the mask dimensions.
 
