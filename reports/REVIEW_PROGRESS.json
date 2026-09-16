@@ -5,7 +5,7 @@
   "annotation_scope": "First guided validation view, combining a machine proposal, assistant corrections, user drawing and an explicitly authorized validity extension. Review was not blind. Full data QA remains incomplete.",
   "approved_index_sha256": "79ec0c812f0b151f72a06fb5a357685774f64c30760d1bad73db4b8f3422d031",
   "assisted_proposal_before_manual_edits_version": 7,
-  "building_mask_components_explicitly_accepted": 1,
+  "building_mask_components_explicitly_accepted": 2,
   "building_mask_review_started": true,
   "camera_audit_sha256": "d9385e7239427fd114a228349c5860aa78d874d73e33531e277fa9c4a2404c00",
   "certified_instance_correspondences": 0,
@@ -38,10 +38,15 @@
   "source_records_sha256": "269973e0cdab73862cf5c68bcb15dba030b2d9bd2109214b53723ad0b2f96214",
   "submitted_building_and_target_unchanged": true,
   "training_beyond_preliminary_budget_ready": false,
-  "updated_utc": "2026-09-16T05:52:14.326490+00:00",
+  "updated_utc": "2026-09-16T06:01:17.056815+00:00",
   "user_added_building_pixels": 413,
   "user_authorized_validity_pixels_added": 411,
   "valid_mask_components_explicitly_accepted": 1,
   "valid_pixels_in_reviewed_view": 27095,
-  "validity_fraction_of_reviewed_view": 0.4134368896484375
+  "validity_fraction_of_reviewed_view": 0.4134368896484375,
+  "view2_assistant_validity_proposal_applied": false,
+  "view2_original_validity_pixels_in_erased_truck_region": 701,
+  "view2_saved_building_pixels_removed": 1231,
+  "view2_used_for_reviewed_evaluation": false,
+  "view2_validity_user_edit_pending": true
 }
