@@ -1,0 +1,161 @@
+{
+  "a0_reference": {
+    "comparison_a3_vs_a0": {
+      "bootstrap": {
+        "ci95": [
+          0.0038775816420066073,
+          0.020412405072357413
+        ],
+        "geographic_groups": 10,
+        "mean_improvement": 0.011268452063301553,
+        "samples": 24,
+        "weighting": "equal_geographic_group"
+      },
+      "boundary_ci95": [
+        0.0038775816420066073,
+        0.020412405072357413
+      ],
+      "iou_change": 0.03436868151628425,
+      "relative_boundary_reduction": 0.05753242145394812,
+      "relative_lpips_change": 0.0034633258542458136,
+      "seed": 17
+    },
+    "evaluation_sha256": "ad1e8cc7630de7fe581dc53455e8063460383f1b728a161a8bb20be49f39c9d6",
+    "metrics": {
+      "boundary_error": 0.19586264194218533,
+      "building_iou": 0.5333139808161311,
+      "lpips": 0.5659093183775743,
+      "ssim": 0.1565592054776716
+    },
+    "purpose": "Post-run check against the frozen model, using the same current labels.",
+    "unchanged_original_predictions": 24
+  },
+  "all_views_retained": true,
+  "boundary_sensitivity": {
+    "dominant_group_views": 1,
+    "dominant_view_metrics": {
+      "A0": {
+        "boundary_error": 0.0,
+        "building_iou": 1.0,
+        "predicted_building_pixels": 0,
+        "target_building_pixels": 0,
+        "valid_pixels": 40327
+      },
+      "A1": {
+        "boundary_error": 1.0,
+        "building_iou": 0.0,
+        "predicted_building_pixels": 13,
+        "target_building_pixels": 0,
+        "valid_pixels": 40327
+      },
+      "A3": {
+        "boundary_error": 0.0,
+        "building_iou": 1.0,
+        "predicted_building_pixels": 0,
+        "target_building_pixels": 0,
+        "valid_pixels": 40327
+      }
+    },
+    "group_differences_sorted": [
+      -0.007901930368228813,
+      0.0,
+      0.000720965369339896,
+      0.0035559519424108836,
+      0.009679153353062797,
+      0.014210102961553863,
+      0.0255856103063892,
+      0.06840751683825191,
+      0.14783898710057441,
+      1.0
+    ],
+    "selection": "Post-hoc group with largest contribution; retained in primary results.",
+    "share_of_net_improvement": 0.792332529964807
+  },
+  "finite_checkpoint_tensors": {
+    "A1": {
+      "adapter_tensor_values": 4448,
+      "optimizer_tensor_values": 8902
+    },
+    "A3": {
+      "adapter_tensor_values": 4448,
+      "optimizer_tensor_values": 8902
+    }
+  },
+  "initial_rgb_and_lpips_equal": true,
+  "interpretation": "Aggregate A3/A1 gain does not establish structural improvement; the empty-mask convention dominates and all three reviewed boundaries worsen.",
+  "primary_report_recomputed_equal": true,
+  "primary_report_sha256": "5b4299eefc27da287f72d078f7fc689fd0679bd9b532bbf0949a4d81c6d4f291",
+  "reviewed_views": [
+    {
+      "metrics": {
+        "A0": {
+          "boundary_error": 0.08093091707529294,
+          "building_iou": 0.810689170182841,
+          "lpips": 0.5565270185470581,
+          "ssim": 0.06251055864427892
+        },
+        "A1": {
+          "boundary_error": 0.07235516492556017,
+          "building_iou": 0.6910805611598555,
+          "lpips": 0.5917548537254333,
+          "ssim": 0.1147041352759125
+        },
+        "A3": {
+          "boundary_error": 0.09421497808029236,
+          "building_iou": 0.8426281750866997,
+          "lpips": 0.5793043375015259,
+          "ssim": 0.06828739860407552
+        }
+      },
+      "review_view_number": 1
+    },
+    {
+      "metrics": {
+        "A0": {
+          "boundary_error": 0.061055452443305874,
+          "building_iou": 0.5839868513735619,
+          "lpips": 0.5674464702606201,
+          "ssim": 0.20333929317797375
+        },
+        "A1": {
+          "boundary_error": 0.04304302804649299,
+          "building_iou": 0.46869300911854106,
+          "lpips": 0.5802315473556519,
+          "ssim": 0.2502670320768972
+        },
+        "A3": {
+          "boundary_error": 0.06575825070425295,
+          "building_iou": 0.6149497196348301,
+          "lpips": 0.573045015335083,
+          "ssim": 0.2049372853706353
+        }
+      },
+      "review_view_number": 2
+    },
+    {
+      "metrics": {
+        "A0": {
+          "boundary_error": 0.21471298053310756,
+          "building_iou": 0.07572475841386204,
+          "lpips": 0.6308760046958923,
+          "ssim": 0.16053577805846272
+        },
+        "A1": {
+          "boundary_error": 0.08195949041243838,
+          "building_iou": 0.13669332341454343,
+          "lpips": 0.657891571521759,
+          "ssim": 0.20656632578053116
+        },
+        "A3": {
+          "boundary_error": 0.21885074463901588,
+          "building_iou": 0.0759065003716858,
+          "lpips": 0.6356871128082275,
+          "ssim": 0.16329938736721744
+        }
+      },
+      "review_view_number": 3
+    }
+  ],
+  "server_gate": "not_eligible",
+  "verified_utc": "2026-09-16T21:37:44.687859+00:00"
+}

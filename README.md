@@ -2,16 +2,16 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
-**Current status (16 September 2026):** a user-authorized **500-step A1/A3 exploratory comparison is running on the RTX 4050**. It uses the same 100 training views and 24 validation views, with a fixed final checkpoint and automatic evaluation. Incomplete data review is recorded explicitly; it is not treated as approval. See [the experiment specification](docs/EXPLORATORY_TRAINING.md), [progress snapshot](reports/EXPLORATORY_RUN_STATUS.json), and [implementation status](reports/IMPLEMENTATION_STATUS.md). The earlier [A1/A3](reports/learning100/report.md) and [GJ/GD](reports/geometry-pilot/report.md) 100-step controls showed no meaningful gain. **No structural improvement or server-scaling case is established yet.** All 8,622 pilot RGB files decode; [ingest evidence](reports/DATA_INGEST_STATUS.json) is preserved.
+**Current status (17 September 2026, India):** the user-authorized **500-step A1/A3 exploratory comparison completed on the RTX 4050**. A3 has 40.6% lower aggregate boundary error than A1, but **79.2% of that gain comes from a 13-pixel segmentation event in one building-free target**. Boundary error worsens on all three manually reviewed views. Against the frozen A0 reference, A3 improves aggregate boundary error by 5.8%, with slightly worse LPIPS. These mixed development results do not establish structural improvement or justify server scaling. Read the [result interpretation](reports/exploratory500/interpretation.md), [unchanged primary comparison](reports/exploratory500/report.md), [completion evidence](reports/exploratory500/completion-audit.json), and [implementation status](reports/IMPLEMENTATION_STATUS.md). Data review remains incomplete. All 8,622 pilot RGB files decode; [ingest evidence](reports/DATA_INGEST_STATUS.json) is preserved.
 
 We are continuing the original VIGOR + Sat3DGen structural-adapter approach. The [alternative-data review](docs/DATA_ALTERNATIVES.md) and [GroundScape access audit](docs/GROUNDSCAPE_ACCESS_AUDIT.md) are retained as background only; no dataset migration is planned.
 
 **Scope confirmed:** the active question remains whether building-region and
 boundary supervision improve structural fidelity beyond ordinary adaptation.
 The discussed shadow-based height-estimation idea is not part of this study.
-The current A1/A3 job and its fixed evaluation protocol continue unchanged.
+The completed A1/A3 comparison retained its fixed evaluation protocol and every validation view.
 
-The [research-direction assessment](docs/RESEARCH_DIRECTION_ASSESSMENT.md) explains the actual DINOv3/Sat3DGen model, current evidence, newly identified overlap with prior work, and a proposed study of building identity and geometry updates. It distinguishes proposed methods from completed experiments and recommends diagnostics before new training.
+The [research-direction assessment](docs/RESEARCH_DIRECTION_ASSESSMENT.md) explains the actual DINOv3/Sat3DGen model, earlier evidence, and overlap with prior work. Its additional method proposals remain background; the active question above is unchanged.
 
 The [laptop geometry probe](docs/GEOMETRY_PILOT.md) implements separate density/appearance interventions and matched GJ/GD training controls. Both A1 and A3 diagnostics passed baseline equality and field-isolation checks on all 24 views. The [codebase guide](docs/CODEBASE_GUIDE.md) explains the actual model and source files. A [24-tile multiple-view review packet](docs/IDENTITY_REVIEW_GUIDE.md) is prepared for the proposed identity-supervision stage; it contains no certified correspondences or masks.
 

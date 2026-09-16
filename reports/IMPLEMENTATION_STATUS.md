@@ -1,6 +1,6 @@
-# Implementation status — updated 16 September 2026
+# Implementation status — updated 17 September 2026 (India)
 
-## Active longer exploratory experiment
+## Completed 500-step exploratory experiment
 
 The user explicitly requested continuing beyond the 100-step cap. An opt-in
 exploratory mode now permits this while retaining missing data-review fields
@@ -8,18 +8,40 @@ in the run identity, checkpoint, summary and generation provenance. File
 integrity and split checks remain enforced; exploratory runs cannot open the
 sealed audit or support a main-study server decision. No QA record was approved.
 
-A serial laptop job is running a fresh matched A1/A3 comparison with 500 steps
+A serial laptop job completed a fresh matched A1/A3 comparison with 500 steps
 per model, seed 17, the existing 100 training views and 24 validation views,
 256-pixel outputs and accumulation eight. Checkpoints are saved every 100 steps;
 only the preselected final step is evaluated. Both evaluations use the same
 three accepted target-mask pairs and remaining 21 pseudo-labels. Previous runs
-are preserved. The runner automatically generates, evaluates and verifies a
-paired report, stopping on errors or changes to its pinned code/inputs.
+are preserved. All six training/generation/evaluation stages completed. Both
+checkpoints, all 500 log rows per model, prediction hashes and matched inputs
+passed verification; the paired report was independently recomputed exactly.
 
-See the [protocol amendment](../docs/EXPLORATORY_TRAINING.md) and
-[timestamped snapshot](EXPLORATORY_RUN_STATUS.json). These are ongoing runs,
-not completed improvement evidence. A recurring task check follows progress
-and will verify and publish aggregate results after completion.
+The aggregate A3/A1 boundary reduction is **40.6%**, with paired geographic
+bootstrap absolute-improvement CI **[0.007997, 0.328013]**. However, **79.2% of
+the net reduction comes from one group**: the target has no building pixels,
+and A1 has 13 predicted building pixels while A3 has zero. The pre-existing
+empty-mask convention assigns boundary error 1 versus 0. Every view is retained;
+this post-run diagnostic does not revise the metric or primary comparison.
+
+On all three reviewed views, A3 boundary error is worse than both A1 and A0.
+Reviewed-view IoU improves versus A1 on views 1 and 2 and worsens on view 3.
+Visual inspection confirms that sharp facade textures can coexist with wrong
+building shape and missing distant buildings. These are assistant observations,
+not new human approvals or verified instance-error counts.
+
+A freshly generated frozen A0 reference reproduces all 24 original prediction
+hashes and was scored with the same current labels. A3/A0 aggregate boundary
+reduction is **5.75%**, IoU changes **+3.44 percentage points**, and LPIPS worsens
+**0.35% relative**. This is a post-run reference check. A1 itself degraded from
+the frozen baseline, so the larger A3/A1 difference is not a demonstrated
+building-structure improvement. No server gate or reliability claim is supported.
+
+See the [full interpretation](exploratory500/interpretation.md),
+[primary report](exploratory500/report.md), [reproducible completion audit](exploratory500/completion-audit.json),
+[protocol amendment](../docs/EXPLORATORY_TRAINING.md), and
+[final run snapshot](EXPLORATORY_RUN_STATUS.json). The original research question
+remains active; shadow-based height estimation is outside this study.
 
 Camera-context diagrams for all three practice views were generated locally.
 View 3 plausibly contains distant buildings outside the supplied overhead crop;
@@ -29,7 +51,7 @@ addresses footprint mismatch with spatial tokens, so no new-method claim follows
 See the [coverage diagnosis](reviewed-labels-3/coverage-context.md).
 
 Current verification: **77 Python tests passed, two optional CUDA tests skipped**;
-JavaScript mask-editing tests passed. Live training is separately exercising
+JavaScript mask-editing tests passed. Both completed runs separately exercised
 the actual GPU. The renderer and model weights were not changed by the mode
 and provenance update.
 
@@ -57,7 +79,7 @@ The laptop research infrastructure now runs on real VIGOR inputs. The selected p
 - Annotation records distinguish machine proposals and assistant corrections from human decisions. These development views were previously shown with generated results, so the guided review is not blind. Original A/G experiment scores remain unchanged.
 - Latest checks: **24 focused editor/annotation/reporting tests passed**. The complete Python suite passed **63 tests with two optional CUDA tests skipped**; JavaScript drawing, scoring-rule, and undo/redo checks passed. The renderer is unchanged by this update.
 
-See [the mask review guide](../docs/MASK_REVIEW_GUIDE.md) and [aggregate review progress](REVIEW_PROGRESS.json). The current labels and correspondence assumptions still need review for the main study; the user-authorized longer exploratory comparison above proceeds with those limitations recorded.
+See [the mask review guide](../docs/MASK_REVIEW_GUIDE.md) and [aggregate review progress](REVIEW_PROGRESS.json). The current labels and correspondence assumptions still need review for the main study; the completed exploratory comparison records these limitations.
 
 ## Completed geometry control on the laptop
 
