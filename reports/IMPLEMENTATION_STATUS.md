@@ -1,5 +1,38 @@
 # Implementation status — updated 16 September 2026
 
+## Active longer exploratory experiment
+
+The user explicitly requested continuing beyond the 100-step cap. An opt-in
+exploratory mode now permits this while retaining missing data-review fields
+in the run identity, checkpoint, summary and generation provenance. File
+integrity and split checks remain enforced; exploratory runs cannot open the
+sealed audit or support a main-study server decision. No QA record was approved.
+
+A serial laptop job is running a fresh matched A1/A3 comparison with 500 steps
+per model, seed 17, the existing 100 training views and 24 validation views,
+256-pixel outputs and accumulation eight. Checkpoints are saved every 100 steps;
+only the preselected final step is evaluated. Both evaluations use the same
+three accepted target-mask pairs and remaining 21 pseudo-labels. Previous runs
+are preserved. The runner automatically generates, evaluates and verifies a
+paired report, stopping on errors or changes to its pinned code/inputs.
+
+See the [protocol amendment](../docs/EXPLORATORY_TRAINING.md) and
+[timestamped snapshot](EXPLORATORY_RUN_STATUS.json). These are ongoing runs,
+not completed improvement evidence. A recurring task check follows progress
+and will verify and publish aggregate results after completion.
+
+Camera-context diagrams for all three practice views were generated locally.
+View 3 plausibly contains distant buildings outside the supplied overhead crop;
+the center viewing ray reaches that crop edge after 228 pixel-coordinate units.
+This is not a metric depth or certified building correspondence. Sat3DGen already
+addresses footprint mismatch with spatial tokens, so no new-method claim follows.
+See the [coverage diagnosis](reviewed-labels-3/coverage-context.md).
+
+Current verification: **77 Python tests passed, two optional CUDA tests skipped**;
+JavaScript mask-editing tests passed. Live training is separately exercising
+the actual GPU. The renderer and model weights were not changed by the mode
+and provenance update.
+
 The laptop research infrastructure now runs on real VIGOR inputs. The selected pilot has been imported and decoded. A1 and A3 each completed 100 optimizer steps, and all three A0/A1/A3 variants were evaluated on the same 24 validation views. The preliminary comparison does not show a meaningful structural gain. No controlled three-seed improvement, calibrated reliability result, or server gate has been established.
 
 ## Guided annotation and camera audit
@@ -24,7 +57,7 @@ The laptop research infrastructure now runs on real VIGOR inputs. The selected p
 - Annotation records distinguish machine proposals and assistant corrections from human decisions. These development views were previously shown with generated results, so the guided review is not blind. Original A/G experiment scores remain unchanged.
 - Latest checks: **24 focused editor/annotation/reporting tests passed**. The complete Python suite passed **63 tests with two optional CUDA tests skipped**; JavaScript drawing, scoring-rule, and undo/redo checks passed. The renderer is unchanged by this update.
 
-See [the mask review guide](../docs/MASK_REVIEW_GUIDE.md) and [aggregate review progress](REVIEW_PROGRESS.json). More GPU training is not the next dependency; the current labels and correspondence assumptions need review first.
+See [the mask review guide](../docs/MASK_REVIEW_GUIDE.md) and [aggregate review progress](REVIEW_PROGRESS.json). The current labels and correspondence assumptions still need review for the main study; the user-authorized longer exploratory comparison above proceeds with those limitations recorded.
 
 ## Completed geometry control on the laptop
 

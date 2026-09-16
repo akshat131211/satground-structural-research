@@ -103,7 +103,7 @@ def train(config_path, data_root, output, seed=None, resume=False, stop_after=No
     identity = dict(config=cfg, train_manifest_sha256=sha256(cfg['train_manifest']),
                     validation_manifest_sha256=sha256(cfg['validation_manifest']),
                     style_sha256=sha256(cfg['style']), data_digest=data_digest, label_record=label_record,
-                    pipeline_source_hash=provenance()['pipeline_source_hash'])
+                    pipeline_source_hash=provenance()['pipeline_source_hash'], readiness=readiness)
     identity_hash = object_hash(identity)
     out = Path(output)
     if out.exists() and any(out.iterdir()) and not resume:
@@ -138,7 +138,8 @@ def train(config_path, data_root, output, seed=None, resume=False, stop_after=No
                 write_jsonl(log_path, [r for r in log if r['step'] <= start])
     else:
         save_json(out / 'run.json', dict(provenance=provenance(), identity=identity, identity_hash=identity_hash,
-                                        status='running', scientific=True, human_review_pending=True))
+                                        status='running', scientific=True, human_review_pending=True,
+                                        readiness=readiness))
     # Model/metric initialization may consume randomness differently in A1 vs A3.
     if not resume:
         seed_everything(cfg['seed'])
@@ -191,7 +192,8 @@ def train(config_path, data_root, output, seed=None, resume=False, stop_after=No
                     peak_vram_mib=torch.cuda.max_memory_allocated() / 2**20,
                     elapsed_seconds=prior_elapsed + time.perf_counter() - begin,
                     trainable_parameters=sum(p.numel() for p in backend.adapter.parameters()),
-                    checkpoint_sha256=sha256(checkpoint_path), validation_selection_pending=True)
+                    checkpoint_sha256=sha256(checkpoint_path), validation_selection_pending=True,
+                    readiness=readiness)
     save_json(out / 'summary.json', summary)
     return summary
 
@@ -230,6 +232,8 @@ def generate(config_path, manifest, data_root, output, checkpoint_path=None, aud
         raise ResearchError('Prediction directory already exists. Do not overwrite fixed evaluation outputs.')
     checkpoint_hash = sha256(checkpoint_path) if checkpoint_path else None
     if rows[0]['split'] == 'audit':
+        if cfg.get('data_review_mode') == 'exploratory':
+            raise ResearchError('Exploratory runs with pending data review cannot open the sealed audit.')
         if not audit_freeze:
             raise ResearchError('Audit generation requires an immutable validation selection freeze.')
         frozen = load_json(audit_freeze)
@@ -294,6 +298,7 @@ def generate(config_path, manifest, data_root, output, checkpoint_path=None, aud
                   trained_steps=state['step'] if checkpoint_path else 0,
                   training_identity_hash=state['identity_hash'] if checkpoint_path else None,
                   training_provenance=state['provenance'] if checkpoint_path else None,
+                  training_readiness=state.get('readiness') if checkpoint_path else None,
                   train_manifest_sha256=state['train_manifest_sha256'] if checkpoint_path else sha256(cfg['train_manifest']),
                   train_data_digest=state['train_data_digest'] if checkpoint_path else None,
                   audit_freeze_sha256=sha256(audit_freeze) if audit_freeze else None,

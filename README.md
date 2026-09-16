@@ -2,7 +2,7 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
-**Current status (16 September 2026):** the new density-only (GD) and matched joint (GJ) controls each completed 100 real-data optimizer steps on the RTX 4050. GD reduced boundary error by only **0.12% relative to GJ**, with a confidence interval spanning zero; both used about 668 MiB peak allocated CUDA memory with cached features. **The laptop can run these controls, but no meaningful structural improvement or server-scaling case is established.** See [the geometry comparison](reports/geometry-pilot/report.md), [implementation status](reports/IMPLEMENTATION_STATUS.md), and [data-ingest evidence](reports/DATA_INGEST_STATUS.json). All 8,622 pilot RGB files decode; the earlier A1/A3 check is retained [here](reports/learning100/report.md).
+**Current status (16 September 2026):** a user-authorized **500-step A1/A3 exploratory comparison is running on the RTX 4050**. It uses the same 100 training views and 24 validation views, with a fixed final checkpoint and automatic evaluation. Incomplete data review is recorded explicitly; it is not treated as approval. See [the experiment specification](docs/EXPLORATORY_TRAINING.md), [progress snapshot](reports/EXPLORATORY_RUN_STATUS.json), and [implementation status](reports/IMPLEMENTATION_STATUS.md). The earlier [A1/A3](reports/learning100/report.md) and [GJ/GD](reports/geometry-pilot/report.md) 100-step controls showed no meaningful gain. **No structural improvement or server-scaling case is established yet.** All 8,622 pilot RGB files decode; [ingest evidence](reports/DATA_INGEST_STATUS.json) is preserved.
 
 We are continuing the original VIGOR + Sat3DGen structural-adapter approach. The [alternative-data review](docs/DATA_ALTERNATIVES.md) and [GroundScape access audit](docs/GROUNDSCAPE_ACCESS_AUDIT.md) are retained as background only; no dataset migration is planned.
 
@@ -23,6 +23,11 @@ released preprocessing for all three views. Full data QA and building-identity
 verification remain incomplete. See the
 [exact-mask workflow](docs/MASK_REVIEW_GUIDE.md) and
 [aggregate review progress](reports/REVIEW_PROGRESS.json).
+
+The new [coverage-context diagnosis](reports/reviewed-labels-3/coverage-context.md)
+identifies limited satellite coverage as a plausible contributor to view 3's
+failure. Its four-direction diagrams follow the released camera convention;
+they do not certify real-world building correspondence or introduce a new model.
 
 To correct the masks yourself, double-click **Open Mask Editor.cmd**. The local
 [drawing tool](docs/DRAWING_TOOL.md) supports brushes, erasing, polygons, zoom,

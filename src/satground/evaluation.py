@@ -170,6 +170,9 @@ def make_report(specification, output):
         control = load_json(Path(run['control_metrics']).parent / 'summary.json')
         proposed = load_json(Path(run['proposed_metrics']).parent / 'summary.json')
         ga, gb = control['generation'], proposed['generation']
+        if any(g['config'].get('data_review_mode') == 'exploratory' or
+               (g.get('training_readiness') or {}).get('main_study_eligible') is False for g in (ga, gb)):
+            raise ResearchError('Exploratory training cannot support a main-study server decision.')
         if ga['config']['experiment'] != 'A1' or gb['config']['experiment'] != 'A3':
             raise ResearchError('Server gate must compare A3 with the matched A1 control.')
         shared_keys = ('render_seed', 'size', 'adapter_width', 'chunk_rows', 'checkpoint_rays', 'amp',

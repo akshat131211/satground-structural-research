@@ -1,0 +1,30 @@
+{
+  "a1_all_logged_values_finite": true,
+  "a1_checkpoint_sha256": "90729a73a70dd25fd7f53168e3256966b9070f279b9635f9b77cda79db179d89",
+  "a1_last_checkpoint_step": 100,
+  "a1_last_logged_step": 109,
+  "a1_peak_allocated_vram_mib": 597.45458984375,
+  "a1_training_loop_seconds": 645.5839333999902,
+  "budget_steps_per_model": 500,
+  "checkpoint_adapter_finite": true,
+  "comparison_report_expected": "reports/exploratory500/report.md",
+  "completed_stages": [],
+  "current_stage": "A1-train",
+  "main_study_eligible": false,
+  "model": "Pinned Sat3DGen with frozen DINOv3 encoder and 4448-parameter adapter",
+  "pending_data_qa": true,
+  "pipeline_source_hash": "dd2e153c320f7896e377fbe9f6a0dd4de40a9ac8909d66e8a71893524d9ee141",
+  "results_available": false,
+  "reviewed_validation_masks": 3,
+  "server_gate": "insufficient_evidence",
+  "snapshot_utc": "2026-09-16T16:41:38.323244+00:00",
+  "status": "running",
+  "tests": {
+    "javascript_passed": true,
+    "optional_cuda_skipped": 2,
+    "python_passed": 77
+  },
+  "train_views": 100,
+  "training_seed": 17,
+  "validation_views": 24
+}

@@ -1,6 +1,6 @@
 # Review before the main experiment
 
-The preliminary 100-step runs establish that real-image adaptation executes on this laptop. Main training requires evidence about data alignment, spatial separation, and evaluation labels. Three guided human pairing observations have been recorded separately; the full data review and certified pixel masks remain incomplete. See the [exact-mask review guide](MASK_REVIEW_GUIDE.md) for the new proposal/correction workflow.
+The preliminary runs establish that real-image adaptation executes on this laptop. Three guided human pairing observations and three accepted practice building/validity mask pairs are recorded separately. The larger data and annotation review remains incomplete. Main training still requires alignment and spatial-separation evidence; the user-authorized [exploratory mode](EXPLORATORY_TRAINING.md) allows longer diagnostic training meanwhile. See the [mask review guide](MASK_REVIEW_GUIDE.md).
 
 ## Prepared packet
 
@@ -40,7 +40,7 @@ After those checks, copy `configs/data-qa-template.json` to `data/qa/review.json
 Get-FileHash -Algorithm SHA256 -LiteralPath reports/data-readiness.json
 ```
 
-Use the lowercase hexadecimal checksum in JSON. Review records must follow the current manifests; changing data or splits invalidates old approvals. The code requires completed footprint, pairing, and near-duplicate review before training beyond step 100. This is the implemented research protocol, not an extra publishing permission requirement.
+Use lowercase hexadecimal checksums. Review records must follow the current manifests; changing data or splits invalidates old approvals. Default reviewed mode requires completed footprint, pairing and duplicate review beyond step 100. Explicit exploratory mode permits longer diagnostics with pending QA recorded in their provenance; it does not qualify their results for a server decision.
 
 ## What comes next
 
