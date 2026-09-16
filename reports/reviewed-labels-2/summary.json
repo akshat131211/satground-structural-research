@@ -1,0 +1,95 @@
+{
+  "full_data_qa_complete": false,
+  "improvement_claim": false,
+  "interpretation": "These are annotation-review diagnostics on fixed model outputs. Changes from earlier scores reflect changed target labels and validity regions. The small, previously inspected review set does not establish model improvement or complete the main data QA.",
+  "manual_index_sha256": "67d346610972dab0e1dcc01800526d0563ddc0048a0340922bb54df979b9b35d",
+  "model_retrained": false,
+  "purpose": "Reviewed-label diagnostic on unchanged saved predictions",
+  "reviewed_views": 2,
+  "runs": {
+    "GD": {
+      "descriptive_mixed_label_aggregate": {
+        "boundary_error": 0.2014639990151693,
+        "building_iou": 0.537503095884934,
+        "lpips": 0.5666106497248015,
+        "ssim": 0.15589104361621248
+      },
+      "evaluated_views": 24,
+      "evaluation_source_hash": "6ed69542fc25cfdd6e402cfd4156fdccedc1286ab79f807a95bbcb66a4b33640",
+      "evaluation_summary_sha256": "9e1e9554fdc85d80cef2d6b53a69cbfac3ae4f742b5ec3d02f34850c92e99329",
+      "pseudo_label_views": 22,
+      "reviewed_view_metrics": [
+        {
+          "boundary_error": 0.08289844209500725,
+          "building_iou": 0.8279006687555535,
+          "lpips": 0.5585906505584717,
+          "psnr": 11.191542326180784,
+          "review_view_number": 1,
+          "ssim": 0.06181503772657365
+        },
+        {
+          "boundary_error": 0.062389045954831364,
+          "building_iou": 0.588301673876246,
+          "lpips": 0.5665093660354614,
+          "psnr": 11.190235704908813,
+          "review_view_number": 2,
+          "ssim": 0.20236606517006608
+        }
+      ],
+      "reviewed_views": 2,
+      "saved_generation_sha256": "1fbf4bb0a9e568d1d98e578ad7aa73412249751357ec9e8399d9253f4ede7178"
+    },
+    "GJ": {
+      "descriptive_mixed_label_aggregate": {
+        "boundary_error": 0.20166611813244245,
+        "building_iou": 0.5337819321584677,
+        "lpips": 0.5662098035216332,
+        "ssim": 0.1560718047707481
+      },
+      "evaluated_views": 24,
+      "evaluation_source_hash": "6ed69542fc25cfdd6e402cfd4156fdccedc1286ab79f807a95bbcb66a4b33640",
+      "evaluation_summary_sha256": "ba2e5774578ff59db003effa0eb1fff08433858bb204f574f12c45b3bf29ad1f",
+      "pseudo_label_views": 22,
+      "reviewed_view_metrics": [
+        {
+          "boundary_error": 0.08297400699979472,
+          "building_iou": 0.8069234749071069,
+          "lpips": 0.5575257539749146,
+          "psnr": 11.20705339757503,
+          "review_view_number": 1,
+          "ssim": 0.06222096736916608
+        },
+        {
+          "boundary_error": 0.06186900384314011,
+          "building_iou": 0.585435887780079,
+          "lpips": 0.5671799778938293,
+          "psnr": 11.210469655947579,
+          "review_view_number": 2,
+          "ssim": 0.20333180851147634
+        }
+      ],
+      "reviewed_views": 2,
+      "saved_generation_sha256": "79c8166f8983b57b3988eed949261d288d85e1adeb1f6c2c0f419c6911f56b6c"
+    }
+  },
+  "server_decision": "insufficient_evidence",
+  "updated_utc": "2026-09-16T11:18:31.852531+00:00",
+  "views": [
+    {
+      "annotation_method": "human_reviewed_machine_proposal",
+      "annotation_source": "user_edited_machine_proposal_with_explicit_user_authorized_validity_extension",
+      "review_blinded_to_model_predictions": false,
+      "review_view_number": 1,
+      "valid_pixels": 27095,
+      "validity_fraction": 0.4134368896484375
+    },
+    {
+      "annotation_method": "human_reviewed_machine_proposal",
+      "annotation_source": "user_edited_building_and_validity_masks_from_machine_proposal",
+      "review_blinded_to_model_predictions": false,
+      "review_view_number": 2,
+      "valid_pixels": 59175,
+      "validity_fraction": 0.9029388427734375
+    }
+  ]
+}

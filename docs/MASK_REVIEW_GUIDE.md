@@ -119,3 +119,19 @@ enlargement reveals the actual scoring pixels; it adds no measured detail.
 The sidecar records input/output hashes and change counts. This command writes
 only a visual aid and its provenance, never masks, decisions, or an approved
 index. Use the complete mask cards alongside regional views for review.
+
+## Report several completed review views
+
+Combine only exported approved indices, preserving their source hashes and unique
+`review_view_number` values. Keep the combined index and exact-image records
+local. For each saved model, evaluate into a fresh output named
+`runs/geometry100-MODEL-validation-TAG-eval`; retain the original outputs.
+
+```powershell
+& .\.venv\python.exe scripts/report_reviewed_cohort.py --index data/review/manual-scored-first2/approved-index.json --evaluation-tag human2-verified --output reports/new-reviewed-diagnostic
+```
+
+The report requires identical reviewed labels for GJ/GD, checks that predictions,
+view sets, and unrelated metrics have not changed, and reports each reviewed
+view's scoring coverage. It rejects an existing output directory. A small guided
+review is an annotation diagnostic, not a passed scientific or server gate.
