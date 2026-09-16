@@ -18,8 +18,9 @@ visible mismatch with the real buildings; this needs pairing/camera and model
 error analysis. No model was retrained, and no model-improvement claim is
 supported. The remaining 21 views retain pseudo-labels. Earlier
 [one-view](reports/reviewed-label-probe/report.md) and
-[two-view](reports/reviewed-labels-2/report.md) reports are preserved. Full data QA
-and building-identity verification remain incomplete. See the
+[two-view](reports/reviewed-labels-2/report.md) reports are preserved. The [source/camera audit](reports/reviewed-labels-3/failure-audit.md) matches the
+released preprocessing for all three views. Full data QA and building-identity
+verification remain incomplete. See the
 [exact-mask workflow](docs/MASK_REVIEW_GUIDE.md) and
 [aggregate review progress](reports/REVIEW_PROGRESS.json).
 
