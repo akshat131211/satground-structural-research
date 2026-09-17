@@ -1,4 +1,4 @@
-"""Prepare three target-only pseudo-mask proposals with separate human checks."""
+"""Prepare target-only pseudo-mask proposals with separate human checks."""
 import argparse
 from pathlib import Path
 
@@ -12,7 +12,7 @@ from satground.common import (ResearchError, read_jsonl, require_development, sa
 from satground.semantics import EVAL_SEGMENTER, Segmenter, rgb_tensor
 
 
-def review_card(target, mask, component, number):
+def review_card(target, mask, component, number, total=3):
     size = 384
     canvas = Image.new('RGB', (size * 3, size + 76), 'white')
     draw = ImageDraw.Draw(canvas)
@@ -25,17 +25,19 @@ def review_card(target, mask, component, number):
     for col, (image, label) in enumerate(zip(items, labels)):
         canvas.paste(image.resize((size, size), Image.Resampling.NEAREST), (col * size, 32))
         draw.text((col * size + 6, 9), label, fill='black')
-    draw.text((8, size + 41), f'View {number}/3. MACHINE PROPOSAL: not reviewed. Inspect omissions and extra regions before accepting.', fill='black')
+    draw.text((8, size + 41), f'View {number}/{total}. MACHINE PROPOSAL: not reviewed. Inspect omissions and extra regions before accepting.', fill='black')
     draw.text((8, size + 58), 'Building: visible buildings only. Validity: assessable static pixels; exclude uncertain and dynamic regions.', fill='black')
     return canvas
 
 
-def prepare(manifest, data_root, output):
+def prepare(manifest, data_root, output, count=3):
     rows = read_jsonl(manifest)
     require_development(rows, {'validation'})
-    rows = rows[:3]
-    if len(rows) != 3:
-        raise ResearchError('At least three preselected validation views are required.')
+    if count < 1:
+        raise ResearchError('Review count must be positive.')
+    rows = rows[:count]
+    if len(rows) != count:
+        raise ResearchError('Not enough preselected validation views.')
     out = Path(output)
     if out.exists():
         raise ResearchError('Mask packet exists; preserve it and use a fresh output directory.')
@@ -57,14 +59,14 @@ def prepare(manifest, data_root, output):
             paths[component + '_mask'] = f'proposals/{sid}-{component}.png'
             paths[component + '_card'] = f'cards/view-{number:02d}-{component}.jpg'
             Image.fromarray(mask.astype(np.uint8) * 255).save(out / paths[component + '_mask'])
-            review_card(target, mask, component, number).save(out / paths[component + '_card'], quality=96)
+            review_card(target, mask, component, number, count).save(out / paths[component + '_card'], quality=96)
         sample = dict(sample_id=sid, number=number, reviewed=False, **paths,
             **{key + '_sha256': sha256(out / path) for key, path in paths.items()})
         samples.append(sample)
     write_jsonl(out / 'manifest.jsonl', rows)
     record = dict(created_utc=utc_now(), samples=samples,
         source_manifest_sha256=sha256(manifest), manifest_sha256=sha256(out / 'manifest.jsonl'),
-        selection='First three views in existing learning100 validation order; no new content/metric selection.',
+        selection=f'First {count} views in the supplied manifest order; no model-content/metric selection in this preparation step.',
         purpose='Guided annotation feasibility only; not a replacement benchmark or main study.',
         proposal_model=segmenter.model_id, proposal_revision=segmenter.revision,
         proposal_input_size=segmenter.input_size,
@@ -79,7 +81,7 @@ def prepare(manifest, data_root, output):
             **{component: dict(decision='pending', raw_human_answer='',
                 card_sha256=sample[component + '_card_sha256']) for component in ('building', 'valid')})
         save_json(out / 'decisions' / f"{sample['sample_id']}.pending.json", decision)
-    print(f'Prepared {len(samples)} unreviewed mask proposals and six separate cards at {out}')
+    print(f'Prepared {len(samples)} unreviewed mask proposals and {2 * len(samples)} separate cards at {out}')
 
 
 if __name__ == '__main__':
@@ -87,5 +89,6 @@ if __name__ == '__main__':
     parser.add_argument('--manifest', default='data/manifests/learning100/validation.jsonl')
     parser.add_argument('--data-root', default='data/vigor')
     parser.add_argument('--output', default='data/review/mask-first3')
+    parser.add_argument('--count', type=int, default=3)
     args = parser.parse_args()
-    prepare(args.manifest, args.data_root, args.output)
+    prepare(args.manifest, args.data_root, args.output, args.count)

@@ -1,5 +1,32 @@
 # Implementation status — updated 17 September 2026 (India)
 
+## Completed checkpoint diagnosis and active matched revision
+
+- Evaluated saved A1/A3 steps 100, 200, 300 and 400 using the same 24 views,
+  current three reviewed masks, renderer and B1 segmenter. Verified eleven
+  model states including preserved final checkpoints and A0; no retraining or
+  replacement primary-checkpoint selection was used for this diagnosis.
+- A1 LPIPS worsens 5.51% between steps 100 and 200, before the discontinuous
+  all-view boundary jump. The fixed-view gallery shows progressive blur. A3
+  remains closer to A0 but does not repair the reviewed structural failures.
+- Added target-defined diagnostics for 22 nonempty and two empty scored masks.
+  A3's final empty-target false-positive area is higher than A1's even though its
+  boundary penalty is lower. The original metrics and all views remain retained.
+- Prepared 18 additional proposals across ten geographic groups without model
+  score selection. All image/mask hashes and binary mask dimensions passed.
+  They remain pending human review; the running experiment's label index is fixed.
+- Started fresh 500-step A1/A2/A3 training with a common learning rate of 0.00003.
+  This is the one diagnosed revision to test update strength, with A2 separating
+  region supervision from the boundary term. No new research question or dataset.
+- Local checks: **86 tests passed, two optional CUDA tests skipped**. The new
+  reporting code also rejects the older experiment's different learning rate.
+
+See [diagnosis and plots](checkpoint-diagnosis/interpretation.md),
+[revision specification](../docs/CONSERVATIVE_ADAPTATION.md),
+[run snapshot](CONSERVATIVE_RUN_STATUS.json), and
+[additional review status](ADDITIONAL_REVIEW_STATUS.json). Larger GPUs,
+three-seed confirmation and expanded-label evaluation remain conditional.
+
 ## Completed 500-step exploratory experiment
 
 The user explicitly requested continuing beyond the 100-step cap. An opt-in
