@@ -2,13 +2,82 @@
   "a1_all_logged_values_finite": true,
   "a1_initial_gradient_norm_absolute_difference": 4.6566128730773926e-09,
   "a1_initial_rgb_lpips_total_equal_previous_run": true,
-  "a1_last_logged_step": 38,
+  "a1_last_logged_step": 500,
   "a1_peak_allocated_vram_mib": 597.45458984375,
-  "additional_proposals_pending_human_review": 18,
+  "additional_proposals_pending_human_review": 13,
+  "additional_reviewed_masks": 5,
   "budget_steps_per_model": 500,
-  "completed_stages": [],
-  "current_stage": "A1-train",
+  "completed_model_results": {
+    "A1": {
+      "checkpoint_sha256": "61723bc06a19e71bfc6b0a031fae2e5e59863513bde322709e353119b5d0062c",
+      "checkpoint_step": 500,
+      "evaluation_sha256": "33ad52b1446178f2861b3d7f0d7a75906a0a0426fdb5e951a346588fbc0f4b2c",
+      "finite_checkpoint_tensor_values": {
+        "adapter": 4448,
+        "optimizer": 8902
+      },
+      "fixed_reviewed_masks": 3,
+      "metrics": {
+        "boundary_error": 0.195720794795555,
+        "building_iou": 0.4528193810849711,
+        "lpips": 0.5822876018782457,
+        "ssim": 0.19268365714277186
+      },
+      "strata": {
+        "reviewed": {
+          "groups": 3,
+          "maximum_boundary_penalty_views": 0,
+          "metrics": {
+            "boundary_error": 0.07201768468089731,
+            "building_iou": 0.46634669320558686,
+            "lpips": 0.6005760828653971,
+            "ssim": 0.17623987686435372
+          },
+          "views": 3
+        },
+        "target_building": {
+          "groups": 9,
+          "maximum_boundary_penalty_views": 2,
+          "metrics": {
+            "boundary_error": 0.2174675497728389,
+            "building_iou": 0.39202153453885674,
+            "lpips": 0.5804307905060274,
+            "ssim": 0.2046023346585676
+          },
+          "views": 22,
+          "zero_building_predictions": 1
+        },
+        "target_empty": {
+          "group_weighted_false_positive_fraction": 0.010752688172043012,
+          "groups": 2,
+          "maximum_boundary_penalty_views": 1,
+          "metrics": {
+            "boundary_error": 0.5,
+            "building_iou": 0.5,
+            "lpips": 0.5915521383285522,
+            "ssim": 0.15128569130167588
+          },
+          "nonempty_predictions": 1,
+          "predicted_building_pixels": 1094,
+          "valid_pixels": 91198,
+          "views": 2
+        }
+      },
+      "validation_views": 24,
+      "versus_frozen_A0": {
+        "building_iou_change": -0.08049459973116002,
+        "relative_lpips_change": 0.0289415335086316
+      }
+    }
+  },
+  "completed_stages": [
+    "A1-train",
+    "A1-validation",
+    "A1-validation-eval"
+  ],
+  "current_stage": "A2-train",
   "expected_report": "reports/conservative500/report.md",
+  "interim_interpretation": "A1 validation complete; A2/A3 pending. The lower-rate A1 has better LPIPS/IoU than the prior higher-rate A1 but remains worse than frozen A0 on those metrics. The primary structural comparison is unavailable.",
   "learning_rate": 3e-05,
   "main_study_eligible": false,
   "models": [
@@ -16,19 +85,41 @@
     "A2",
     "A3"
   ],
+  "partial_results_available": true,
   "pending_data_qa": true,
+  "pinned_inputs_verified_unchanged": true,
   "pipeline_source_hash": "dd2e153c320f7896e377fbe9f6a0dd4de40a9ac8909d66e8a71893524d9ee141",
   "results_available": false,
   "reviewed_validation_masks": 3,
-  "runner_identity_sha256": "1fe05b8c89e93fe3a3485709fe1fc73793112abfd29c3d1ef99e67a26e68a862",
+  "runner_identity_sha256": "90e25f5276e58b4b3518131d32bf8dea4712945ab4f31565c14ed3ea9895e7ff",
   "seed": 17,
   "server_gate": "not_eligible",
-  "snapshot_utc": "2026-09-17T04:09:40.006527+00:00",
+  "snapshot_utc": "2026-09-17T04:59:22.708007+00:00",
   "status": "running",
   "tests": {
     "optional_cuda_skipped": 2,
     "python_passed": 86
   },
   "train_views": 100,
+  "training_progress": {
+    "A1": {
+      "all_logged_values_finite": true,
+      "elapsed_seconds": 2257.5101595000015,
+      "last_logged_step": 500,
+      "peak_allocated_vram_mib": 597.45458984375,
+      "status": "complete"
+    },
+    "A2": {
+      "all_logged_values_finite": true,
+      "elapsed_seconds": 843.3721541000014,
+      "last_logged_step": 191,
+      "peak_allocated_vram_mib": 668.07861328125,
+      "status": "running"
+    },
+    "A3": {
+      "last_logged_step": 0,
+      "status": "queued"
+    }
+  },
   "validation_views": 24
 }
