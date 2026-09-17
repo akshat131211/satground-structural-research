@@ -1,0 +1,36 @@
+{
+  "accepted_views_at_migration": 7,
+  "automated_drawings_used_only_synthetic_targets": true,
+  "batch_views": 18,
+  "completion_markers_are_approvals": false,
+  "duplicate_view6_submission_identical_to_accepted": true,
+  "existing_drafts_and_approved_indices_unchanged": true,
+  "existing_experiment_labels_changed": false,
+  "features": [
+    "all_packet_images",
+    "image_selector",
+    "previous_next",
+    "save_and_next",
+    "save_and_finish",
+    "persistent_drafts",
+    "accepted_masks_read_only",
+    "per_image_writer_locks",
+    "sample_bound_save_and_backup",
+    "pending_completion_markers"
+  ],
+  "initial_view": 8,
+  "local_migration_audit_sha256": "f55d82c4b3716481604baf26eef645cefd620f3daa3dfbad344a0fde2adcbd8b",
+  "remaining_views_at_migration": 11,
+  "tests": {
+    "browser_draft_navigation_passed": true,
+    "browser_final_message_passed": true,
+    "browser_previous_restoration_passed": true,
+    "browser_save_next_passed": true,
+    "javascript_editor_passed": true,
+    "optional_cuda_skipped": 2,
+    "python_passed": 94
+  },
+  "training_launched": false,
+  "verified_utc": "2026-09-17T09:48:59.677899+00:00",
+  "view8_saved_draft_restored": true
+}

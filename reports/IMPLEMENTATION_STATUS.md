@@ -1,5 +1,32 @@
 # Implementation status — updated 17 September 2026 (India)
 
+## Batch editor with Save & Next
+
+- All 18 additional targets are available in one local editor with an image
+  selector, Previous/Next, Save & Next, and Save & Finish. Existing accepted
+  masks appear read-only; the first unfinished image restores its saved draft.
+- Seven approved mask pairs and every existing draft/version pointer passed
+  before/after migration hash checks. A repeated view 6 save matches the accepted
+  masks exactly. View 8's saved edits are restored for batch completion; no
+  new acceptance or evaluation index was fabricated.
+- Save & Next writes an exact, immutable mask version and a pending completion
+  marker. Later edits invalidate that marker. Ordinary navigation saves drafts
+  without marking completion, and wrong-image or stale requests are rejected.
+- The actual browser workflow was exercised on two synthetic images under
+  ignored test output: drawing, Save & Next, mask-type switching, final-batch
+  message, Previous restoration, and draft-only Next navigation passed. No test
+  drawings touched research targets. The real page displays all 18 entries,
+  seven accepted and eleven remaining, with saved view 8 restored.
+- **94 Python tests passed, two optional CUDA tests skipped**; JavaScript syntax
+  and drawing/scoring tests passed. These changes affect annotation tooling,
+  not model weights or completed run artifacts. The conservative monitor stays
+  paused. Historical source hashes remain recorded at the experiment revision;
+  strict historical audits should use that revision, not the newer editor source.
+
+See [batch instructions](../docs/DRAWING_TOOL.md) and
+[implementation checks](BATCH_EDITOR_STATUS.json). The final user completion
+message and exact-mask checks remain required before exporting new approvals.
+
 ## Completed matched revision and decision
 
 - All A1/A2/A3 runs finished 500 steps, with learning rate 0.00003 and seed 17.

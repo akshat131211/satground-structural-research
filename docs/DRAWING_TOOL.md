@@ -1,5 +1,41 @@
 # Draw your own building and validity masks
 
+## Review the full additional batch in one page
+
+Double-click **Open Additional Review.cmd**. It now opens all 18 images together,
+starting at the first unfinished image. The image selector shows every view and
+its status. Existing drafts are restored; accepted images display their exact
+approved masks read-only, including separately accepted corrections.
+
+1. Review **Building mask** and **Validity mask** for the current image.
+2. Click **Save & Next** to save an immutable version of both masks, mark the
+   image finished for this batch, and open the next unfinished image.
+3. Use **Previous image**, **Next image**, or the **Image** selector to move
+   around. These save any changed draft before switching, but do not mark that
+   image finished. **Save version** also saves without marking it finished.
+4. On the last image, **Save & Finish** saves both masks. If earlier images are
+   unfinished, the editor returns to one of them. When every image is done,
+   the page shows **All images are finished**. Tell Codex once: **all my masks
+   are ready**. No chat message is needed between images.
+
+An edit after finishing an image changes its status back to a draft; use
+**Save & Next** again when satisfied. An unfinished polygon must be filled or
+cancelled before switching. An entirely empty building mask is allowed; validity
+must retain some confidently assessable pixels. New building additions keep the
+previously requested scoring rule, and validity can still be edited afterward.
+
+Batch completion markers identify the exact saved masks and remain pending final
+human acceptance/verification. They do not change an approved evaluation index,
+complete dataset QA, or alter past experiment labels. Previously accepted images
+count toward the progress total and need not be redone. Other saved versions,
+including submissions made before this update, remain preserved.
+
+One server holds the writer locks for this batch's editable drafts. Reopening
+the launcher reuses it. Saved progress survives server restarts. A backup now
+also identifies its image, preventing cross-image restoration inside a packet.
+
+## Single-image editor
+
 Double-click **Open Mask Editor.cmd** in the project folder. Keep its terminal
 open while editing; closing it stops the local save service. Reopening the tool
 restores the latest draft. If the editor is already running, the launcher reuses

@@ -14,6 +14,17 @@
 <main id="editor">
   <header><div><h1 id="page-title">Draw your masks</h1><p>Edit visible building surfaces and the pixels to score.</p></div><span id="save-status" role="status" aria-live="polite">Loading image…</span></header>
   <p id="scoring-policy">Building and validity masks are independent.</p>
+  <section id="batch-navigation" hidden aria-label="Review batch navigation">
+    <div class="batch-bar">
+      <button id="previous-image" type="button" disabled>Previous image</button>
+      <label>Image<select id="image-select" disabled></select></label>
+      <button id="next-image" type="button" disabled>Next image</button>
+      <button id="save-next" class="primary" type="button" disabled>Save &amp; Next</button>
+      <strong id="batch-progress" role="status" aria-live="polite"></strong>
+    </div>
+    <p id="batch-help">Review Building and Validity, then Save &amp; Next. Tell Codex once all images are finished.</p>
+    <p id="batch-finished" hidden role="status">All images are finished. You can now tell Codex “all my masks are ready”. Your saved masks are ready for the final batch check.</p>
+  </section>
   <fieldset id="controls" disabled>
     <legend class="sr-only">Drawing and viewing controls</legend>
     <div class="toolbar">
@@ -39,7 +50,7 @@
   <div class="details"><output id="position">Exact mask: 256 × 256 pixels</output><div id="polygon-actions" hidden><button id="close-polygon" type="button">Fill polygon</button><button id="cancel-polygon" type="button">Cancel polygon</button></div><span id="edit-count">No edits yet</span></div>
   <p id="scoring-coverage">Building and validity masks are independent.</p>
   <footer><span><kbd>B</kbd> paint · <kbd>E</kbd> erase · <kbd>H</kbd> pan · hold <kbd>O</kbd> original · <kbd>Ctrl Z</kbd> undo · <kbd>Ctrl S</kbd> save version</span><span>Drafts save automatically on this laptop. Saving does not approve a mask for evaluation.</span></footer>
-  <section id="saved-result" hidden><strong>Version saved</strong><p id="saved-path"></p><p>Tell Codex “my masks are ready” when you have finished.</p></section>
+  <section id="saved-result" hidden><strong>Version saved</strong><p id="saved-path"></p><p id="saved-help">Tell Codex “my masks are ready” when you have finished.</p></section>
   <details class="backup"><summary>Backup and recovery</summary><div class="buttons"><button id="backup" type="button" disabled>Download editable backup</button><label class="file-button">Restore backup<input id="restore" type="file" accept="application/json,.json" disabled></label></div><p>A backup restores both masks for this exact source image.</p></details>
 </main>
 </body>

@@ -16,7 +16,7 @@ import uuid
 import zipfile
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urlsplit
 
 import numpy as np
 from PIL import Image, ImageDraw
@@ -197,6 +197,15 @@ def create_server(store, port=0):
     ui = Path(__file__).with_name('editor_ui')
 
     class Handler(BaseHTTPRequestHandler):
+        def selected_view(self):
+            values = parse_qs(urlsplit(self.path).query).get('view', [])
+            if len(values) > 1:
+                raise ResearchError('Specify one image number.')
+            try:
+                return int(values[0]) if values else None
+            except ValueError as error:
+                raise ResearchError('Invalid image number.') from error
+
         def log_message(self, *_args):
             pass
 
@@ -235,10 +244,11 @@ def create_server(store, port=0):
                 return
             try:
                 if path == '/api/state':
-                    self.reply(200, store.state())
+                    self.reply(200, store.state(self.selected_view()) if hasattr(store, 'batch_state') else store.state())
                 elif path.startswith('/api/export/'):
                     version = path.removeprefix('/api/export/')
-                    self.reply(200, store.export_zip(version), 'application/zip', 'satground-' + version + '.zip')
+                    selected = store.for_view(self.selected_view()) if hasattr(store, 'batch_state') else store
+                    self.reply(200, selected.export_zip(version), 'application/zip', 'satground-' + version + '.zip')
                 elif path in ('/', '/editor.js', '/editor-core.js', '/editor.css'):
                     file = ui / ('index.html' if path == '/' else path[1:])
                     content = file.read_bytes()
@@ -265,7 +275,8 @@ def create_server(store, port=0):
                 payload = json.loads(self.rfile.read(length))
                 if not isinstance(payload, dict):
                     raise ResearchError('Expected a JSON object.')
-                self.reply(200, store.save(payload, snapshot=path == '/api/version'))
+                result = store.save(self.selected_view(), payload, snapshot=path == '/api/version') if hasattr(store, 'batch_state') else store.save(payload, snapshot=path == '/api/version')
+                self.reply(200, result)
             except DraftConflict as error:
                 self.reply(409, {'error': str(error)})
             except (ResearchError, ValueError, KeyError, TypeError) as error:
