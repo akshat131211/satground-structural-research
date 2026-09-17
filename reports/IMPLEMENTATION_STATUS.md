@@ -14,7 +14,7 @@
   boundary penalty is lower. The original metrics and all views remain retained.
 - Prepared 18 additional proposals across ten geographic groups without model
   score selection. All image/mask hashes and binary mask dimensions passed.
-  They remain pending human review; the running experiment's label index is fixed.
+  Human review progress is recorded separately; the running experiment's label index is fixed.
 - Started fresh 500-step A1/A2/A3 training with a common learning rate of 0.00003.
   This is the one diagnosed revision to test update strength, with A2 separating
   region supervision from the boundary term. No new research question or dataset.
