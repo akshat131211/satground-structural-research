@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-09-17T15:06:28.557382+00:00",
+  "exact_match_with_gradient_probe": true,
+  "interpretation": "Most labelled nonempty training targets supply no positive boundary after current filtering; not a claim that pseudo boundaries are ground truth.",
+  "label_provenance_sha256": "db53bc90d0925984ef5e99029c4854c3c9151635b6892bde4b600c2b3fd334ae",
+  "labelled_nonempty_views": 92,
+  "labelled_nonempty_views_without_positive_boundary": 88,
+  "labels_unchanged": true,
+  "local_records_sha256": "ce0db11fa32d531f540052e4306723eaaedea961563a879d97bdb61c44dde480",
+  "loss_code_unchanged": true,
+  "manual_masks_used": false,
+  "totals": {
+    "after_interior_validity_pixels": 48,
+    "after_pixel_validity_pixels": 13873,
+    "interior_valid_pixels": 5069946,
+    "raw_target_boundary_pixels": 163814,
+    "valid_pixels": 5314390
+  },
+  "training_manifest_sha256": "c87dc5fee1ecb964041c92124a99b07ed9490f6efdbec7399b25eda32461b36c",
+  "training_views": 100,
+  "views_with_positive_boundary": 4,
+  "views_without_positive_boundary": 96
+}

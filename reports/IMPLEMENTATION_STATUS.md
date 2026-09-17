@@ -1,4 +1,49 @@
-# Implementation status — updated 17 September 2026 (India)
+# Implementation status — updated 18 September 2026 (India)
+
+## Training-boundary diagnosis completed
+
+- Audited all 100 training views: 92 have scored building pseudo-labels, but
+  **88 of those 92 have no positive boundary target after filtering**. Across
+  all views, 163,814 raw hard-label boundary pixels become 13,873 after pixel
+  validity and **48 after the boundary loss's eroded validity mask**. Only four
+  views retain positive boundary targets. Raw pseudo-label edges are unverified;
+  restoring them all would not be a justified fix.
+- In views with zero retained target boundary, the implemented term equals the
+  mean predicted morphological gradient over scored regions. A synthetic test
+  verifies this smoothness-like behavior. The problem is the available target
+  support, not a detached gradient. It affects training pseudo-labels, not the
+  user's accepted development masks.
+- Completed 300 finite gradient checks: all 100 training views and 48 geographic
+  groups at the zero-output adapter and saved A3 steps 300 and 500. Zero optimizer
+  steps; adapters unchanged and reference models frozen. Runtime 650 seconds,
+  peak allocated VRAM 682.6 MiB. Weighted boundary gradients have a median norm
+  about 4.85–4.98% of the A2 objective at the same A3 parameters. This does not
+  reconstruct AdamW updates or prove the cause of validation performance.
+- Diagnostic FP32 arithmetic passed strict component-summation checks; the
+  failed default-TF32 smoke output is preserved. Historical training math and
+  all completed checkpoints, configurations and primary results are unchanged.
+- All 100 training and 24 development source records match released metadata.
+  All 21 reviewed crops/rotations match the reference implementation exactly.
+  Final context diagrams preserve the actual target yaw, including +180 degrees;
+  their first crops exactly match accepted targets. No independent building
+  correspondence, heading, scale or acquisition date was certified.
+- Reproduced gradient, boundary-support and source-record aggregates; verified
+  308 pinned files, the pipeline source hash, raw-record hashes and all 21
+  accepted target/building/validity triples. No masks or exclusions changed.
+- **121 Python tests passed, two optional CUDA tests skipped.** The new tests
+  cover decomposition errors, undefined gradients, incomplete cohorts, erased
+  target edges and nonzero-yaw context preservation.
+- Next correction: separate contour confidence from conservative region
+  interiors, verify training-side target support, then specify a bounded matched
+  A2/revised-boundary comparison. This correction is proposed, not implemented
+  or trained. No longer run, new seed or sweep was launched.
+- Structural improvement remains unproven. Seattle, audit and calibration are
+  sealed; data QA is incomplete and the monitor remains paused. No server-gate,
+  novelty or audited-generalization claim is supported.
+
+See [diagnosis and reproduction](structural-diagnosis/interpretation.md),
+[gradient distributions](structural-diagnosis/gradients/gradients.png), and
+[completion evidence](STRUCTURAL_DIAGNOSIS_STATUS.json).
 
 ## Longer-training assessment completed
 
@@ -15,9 +60,9 @@
 - A1's step-300 boundary dip includes an empty-mask penalty transition. No
   checkpoint was selected after inspecting this trajectory, and no view was
   removed. Nonempty-target errors and empty-target area are reported separately.
-- Next priorities are pairing/coverage and annotation QA, followed by a
-  training-only objective-gradient diagnosis before specifying another experiment.
-  Those follow-up diagnoses are recommendations, not completed results.
+- At this assessment's completion, the next priorities were pairing/coverage
+  and annotation QA, followed by a training-only objective-gradient diagnosis.
+  The subsequent diagnosis is recorded above; independent data QA is still open.
 - **110 Python tests passed, two optional CUDA tests skipped.** Original
   experiments and masks remain unchanged; held-out sets are sealed and the
   training monitor stays paused.

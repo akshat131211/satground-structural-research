@@ -1,0 +1,110 @@
+{
+  "accepted_mask_pairs_verified": 21,
+  "adapter_states": [
+    0,
+    300,
+    500
+  ],
+  "aggregates_reproduced_ignoring_timestamp": [
+    "gradients/summary.json",
+    "boundary-support.json",
+    "source-records.json"
+  ],
+  "all_measured_losses_and_gradients_finite": true,
+  "approved_exclusions": 0,
+  "artifact_sha256": {
+    "docs/STRUCTURAL_DIAGNOSIS.md": "7c8f81f1cdd6eaabfd033dd82cacddf48f1b2023793bfcd80e52dde92f81c957",
+    "reports/structural-diagnosis/boundary-support.json": "184546385a34beb2d5672346723133056dcd3ccf3ac5736f0b57d3a52701fda2",
+    "reports/structural-diagnosis/camera-audit.json": "657cc797ed7cbabd31db6e2f888b50fdb43a93ac13f4ad604c299dfd385bccb6",
+    "reports/structural-diagnosis/coverage-audit.json": "82dbd77a63aec0de2110a3d39dc54520f8472bdf5f24682f4ae705b6757bd269",
+    "reports/structural-diagnosis/gradients/gradients.png": "5fbe073b204bd024964186e35fd9fa5b02e6daeaa96667aa0e8974430900b4bd",
+    "reports/structural-diagnosis/gradients/report.md": "8efd128630c9ae4b3a1315df0d161ea2d7b213a85fdac1c261366f1576301fba",
+    "reports/structural-diagnosis/gradients/summary.json": "74398479209a421e04b8109a19b28488fc2aeb62cf4dcc327364529891034369",
+    "reports/structural-diagnosis/interpretation.md": "35034c415e5b9bbaed7512ec0a4d11d7739777c08deea0af4311d32239c4fcdc",
+    "reports/structural-diagnosis/source-records.json": "c243c329569fc104ffa3be1d4f42554216916efd3fb3c33f00be0a0996692cfa",
+    "scripts/audit_boundary_support.py": "d9490d4720f7df0196160116c2277854999e6d50b1f47a0a6beb42a54480da80",
+    "scripts/audit_development_sources.py": "3951cadf7c4c7f849925538fa5f5deed80d4fb078a1bdba87d4e06b696d87ce2",
+    "scripts/diagnose_objective_gradients.py": "87cabd76ea9d19d0f3e8b355335eed5f603995950151560e2c4d567302566df9",
+    "scripts/prepare_pairing_context.py": "4d116a825ab1783e2d94229acc0aaf4647c5699d68f6005627ae0359ad26f5fd",
+    "scripts/report_structural_gradients.py": "82d896617408711ae29fc335237c1347ce9b8e75a991773da71630b74334364f",
+    "tests/test_structural_diagnosis.py": "1f49b777502d61754d22a7a3a5451442164686bd984e596be7c8decc0253e6a9"
+  },
+  "base_model": "Sat3DGen",
+  "boundary_support": {
+    "labelled_nonempty_views": 92,
+    "labelled_nonempty_views_without_positive_boundary": 88,
+    "totals": {
+      "after_interior_validity_pixels": 48,
+      "after_pixel_validity_pixels": 13873,
+      "interior_valid_pixels": 5069946,
+      "raw_target_boundary_pixels": 163814,
+      "valid_pixels": 5314390
+    },
+    "training_views": 100,
+    "views_with_positive_boundary": 4,
+    "views_without_positive_boundary": 96
+  },
+  "combined_reviewed_mask_index_sha256": "2f6175871bfaf572f8b608c812adc77d9aca2ea68f9232a369e0525ea8b86f10",
+  "completed_gradient_checks": 300,
+  "context_targets_exactly_reproduced": 21,
+  "core_loss_changed": false,
+  "data_qa_complete": false,
+  "dataset": "VIGOR",
+  "decision": "correct_and_verify_contour_target_support_before_further_training",
+  "diagnostic_tf32_disabled": true,
+  "elapsed_seconds": 650.3843108999936,
+  "expected_gradient_checks": 300,
+  "frozen_models_verified": true,
+  "held_out_imagery_opened": false,
+  "independent_pairing_verified": false,
+  "limitations": [
+    "Unverified training pseudo-labels; raw edges are not ground truth.",
+    "Raw gradient decomposition is not the effective AdamW update.",
+    "FP32 diagnostic math differs from historical default TF32 math.",
+    "Exploratory development evidence; no audited generalization.",
+    "A corrected contour objective has not yet been implemented or evaluated."
+  ],
+  "local_boundary_records_sha256": "ce0db11fa32d531f540052e4306723eaaedea961563a879d97bdb61c44dde480",
+  "local_context_sha256": "71d7eeead6c1d0380eb7ce61cda9a8f68ec37eab66272a67dc651e758dfb32e0",
+  "local_probe_records_sha256": "f158f4891af7ef365cc92c825955a249ae89772e1362d41e5dfa99bdf7742be1",
+  "local_probe_status_sha256": "da4de7b439cd114202580ab101db0d60c1c638e018d518ccad2794fa4f0b5e43",
+  "manual_masks_changed": false,
+  "manual_masks_used_for_gradients": false,
+  "max_adapter_gradient_sum_relative_error": 5.925290839707579e-06,
+  "max_image_gradient_sum_relative_error": 9.904120137191152e-07,
+  "maximum_crop_difference": 0.0,
+  "maximum_rotation_difference": 0.0,
+  "monitor_status": "PAUSED",
+  "new_training_started": false,
+  "novelty_claim": false,
+  "optimizer_steps": 0,
+  "original_experiments_preserved": true,
+  "original_three_mask_index_sha256": "b43d37b58c6c2c30a037f5cf5ee2ee1785aa4cfc80e9fc7f3639975c6e54799e",
+  "parameters_unchanged": true,
+  "peak_allocated_vram_mib": 682.58984375,
+  "pinned_files_verified": 308,
+  "pipeline_source_hash": "ea784759b4f6dae9d40e657059d235f88b6afc90eaaf7ea47b0449dac3c8f589",
+  "replacement_loss_implemented": false,
+  "research_question": "single_overhead_image_building_structural_supervision",
+  "reviewed_camera_checks": 21,
+  "sealed_sets": [
+    "Seattle",
+    "audit",
+    "calibration"
+  ],
+  "server_gate_passed": false,
+  "source_records_matched": {
+    "train": 100,
+    "validation": 24
+  },
+  "status": "complete",
+  "structural_improvement_established": false,
+  "study": "training_only_structural_objective_diagnosis",
+  "tests": {
+    "optional_cuda_skipped": 2,
+    "python_passed": 121
+  },
+  "training_geographic_groups": 48,
+  "training_views": 100,
+  "updated_utc": "2026-09-17T20:26:01.204862+00:00"
+}

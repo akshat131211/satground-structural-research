@@ -1,0 +1,32 @@
+{
+  "all_first_panels_exact_target_pixels": true,
+  "annotation_status": "assistant_context_diagrams_not_human_correspondence_labels",
+  "approved_exclusions": 0,
+  "assistant_visual_diagnosis_views": 21,
+  "coverage_note": "Crop-edge distances are image coordinates; no metric distances or per-pixel visibility certification.",
+  "created_utc": "2026-09-17T14:50:39.787691+00:00",
+  "independent_building_correspondences_verified": 0,
+  "local_context_sha256": "71d7eeead6c1d0380eb7ce61cda9a8f68ec37eab66272a67dc651e758dfb32e0",
+  "local_observations_sha256": "9f1e141daa5bbdeec9d8b8f1fea26921872db301f2dea928cd146d806e942f11",
+  "manifest_sha256": "c462091a2707ef1f102d2182a4059cd2944b6ca185ae4f26bd751fe11e96ede1",
+  "manual_index_sha256": "2f6175871bfaf572f8b608c812adc77d9aca2ea68f9232a369e0525ea8b86f10",
+  "metric_scale_verified": false,
+  "model_padding_per_side_fraction": 0.125,
+  "north_alignment_assumed": true,
+  "padding_note": "Pinned checkpoint pad=0.125 gives learned peripheral context; it adds no observed RGB.",
+  "real_world_pairing_verified": false,
+  "reviewed_views": 21,
+  "script_sha256": "4d116a825ab1783e2d94229acc0aaf4647c5699d68f6005627ae0359ad26f5fd",
+  "target_yaw_counts": {
+    "-90": 5,
+    "0": 7,
+    "180": 8,
+    "90": 1
+  },
+  "unresolved": [
+    "Independent heading and scale",
+    "Distant structure outside the input crop",
+    "Occlusion and transport-structure taxonomy",
+    "Unverified capture dates"
+  ]
+}

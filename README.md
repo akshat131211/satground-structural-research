@@ -7,6 +7,18 @@ bringing the total to 21 reviewed development views. Double-click **Open Additio
 Review.cmd** to inspect the accepted masks read-only. The editor supports all-image
 navigation and Save & Next for future review packets. See [drawing instructions](docs/DRAWING_TOOL.md).
 
+**Training diagnosis (18 September 2026, India):** confidence filtering removes
+all positive boundary targets in **88 of 92 training views with building labels**.
+Only **48 positive boundary pixels** survive across the full 100-view training
+set. In views with no surviving target edge, the boundary term becomes a
+smoothness-like penalty. This concerns machine-generated training labels;
+your 21 approved development mask pairs are unchanged. All 300 gradient checks
+completed with finite values and zero optimizer updates. Source/camera checks
+passed, but independent data QA remains incomplete. Correct and verify contour
+supervision before considering longer training; no replacement loss or model
+improvement has been demonstrated. See the [diagnosis and next correction](reports/structural-diagnosis/interpretation.md)
+and [completion status](reports/STRUCTURAL_DIAGNOSIS_STATUS.json).
+
 **Longer-training assessment (17 September 2026):** all 15 saved conservative
 checkpoints were evaluated using the completed masks. A3's reviewed boundary
 error is 1.37% worse at step 500 than at 300; the late-change intervals include
@@ -82,6 +94,7 @@ undo/redo, resumable drafts and PNG export. Saved versions remain pending review
 - Validation checkpoint selection, an audit freeze, geographic paired bootstrap, a conservative server gate, and calibration utilities for A4.
 - CPU protocol tests, an opt-in CUDA comparison against the official renderer, and GitHub Actions tests.
 - Shared-sampling density/appearance interventions, raw geometric-change exports, and separate geometry-only adaptation controls with CUDA gradient/isolation checks.
+- Training-only objective-gradient decomposition, boundary-target support audits, and source-context diagrams that preserve each reviewed target's exact camera yaw.
 
 The 100-view learning check and one diagnosed 500-step revision are complete;
 the latter does not justify automatically starting more seeds or larger runs.

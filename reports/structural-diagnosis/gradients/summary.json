@@ -1,0 +1,4067 @@
+{
+  "created_utc": "2026-09-17T15:03:06.360400+00:00",
+  "diagnostic_seed_policy": "fixed_per_training_sample_shared_across_states",
+  "elapsed_seconds": 650.3843108999936,
+  "limitations": [
+    "Raw gradients before AdamW, accumulation, clipping and weight decay.",
+    "All 100 existing training views; labels remain unverified machine pseudo-labels.",
+    "Gradient magnitude and alignment do not prove causal generalization.",
+    "Diagnostic FP32 arithmetic differs from default TF32 training math.",
+    "Pairing, absolute heading, metric scale and acquisition dates remain unverified."
+  ],
+  "max_adapter_gradient_sum_relative_error": 5.925290839707579e-06,
+  "max_image_gradient_sum_relative_error": 9.904120137191152e-07,
+  "model_states": [
+    0,
+    300,
+    500
+  ],
+  "optimizer_steps": 0,
+  "parameters_unchanged": true,
+  "peak_vram_mib": 682.58984375,
+  "pipeline_source_hash": "ea784759b4f6dae9d40e657059d235f88b6afc90eaaf7ea47b0449dac3c8f589",
+  "records_sha256": "f158f4891af7ef365cc92c825955a249ae89772e1362d41e5dfa99bdf7742be1",
+  "source_identity_sha256": "da4de7b439cd114202580ab101db0d60c1c638e018d518ccad2794fa4f0b5e43",
+  "states": {
+    "0": {
+      "all": {
+        "adapter_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 100,
+              "equal_group_mean": 0.3659375710376415,
+              "maximum": 1.935736953552146,
+              "median": 0.25953428133333756,
+              "minimum": 0.030933078361273982,
+              "q25": 0.18326324627800505,
+              "q75": 0.4545011982085903,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 100,
+              "equal_group_mean": 0.062406178973240294,
+              "maximum": 0.213912073474018,
+              "median": 0.04846139294293083,
+              "minimum": 0.0027434429080045192,
+              "q25": 0.02890130884090382,
+              "q75": 0.09183715126799408,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 100,
+              "equal_group_mean": 0.07283261253483837,
+              "maximum": 0.42752993239359355,
+              "median": 0.049168562798773324,
+              "minimum": 0.0026629765749451133,
+              "q25": 0.02965614970059295,
+              "q75": 0.10307095997202022,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 100,
+              "equal_group_mean": 0.9981684421994327,
+              "maximum": 0.999998262491543,
+              "median": 0.999300207524468,
+              "minimum": 0.9865218781648322,
+              "q25": 0.9983531521219162,
+              "q75": 0.9997286410554127,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 100,
+              "equal_group_mean": 0.062141325877953756,
+              "maximum": 0.6246110920987586,
+              "median": 0.05549459073822184,
+              "minimum": -0.5211923155209104,
+              "q25": -0.06333186919191312,
+              "q75": 0.1610657181633241,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 100,
+              "equal_group_mean": 0.028875022635464775,
+              "maximum": 0.9247836838026606,
+              "median": 0.08177857374377726,
+              "minimum": -0.9758054467891246,
+              "q25": -0.42998656928741036,
+              "q75": 0.5227589608769312,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 100,
+              "equal_group_mean": -0.02252495147445753,
+              "maximum": 0.6187351462209082,
+              "median": -0.006862048952413668,
+              "minimum": -0.6132889310203267,
+              "q25": -0.24422000065282812,
+              "q75": 0.25543858625870264,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 100,
+              "equal_group_mean": 0.036273575279685964,
+              "maximum": 0.9910029264148952,
+              "median": 0.02187848494664538,
+              "minimum": -0.9759239287433626,
+              "q25": -0.46179314053314624,
+              "q75": 0.5732440926585142,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 100,
+              "equal_group_mean": 0.07200946015720966,
+              "maximum": 0.6358424599231465,
+              "median": 0.03884488487517468,
+              "minimum": -0.5108651246893204,
+              "q25": -0.08061480578840977,
+              "q75": 0.1829347875447574,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 100,
+              "equal_group_mean": 0.03371920110671743,
+              "maximum": 0.06662511873152638,
+              "median": 0.03366649218122693,
+              "minimum": 0.013619050368535458,
+              "q25": 0.026098450352120918,
+              "q75": 0.039404171687950525,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 100,
+              "equal_group_mean": 0.31993482726828876,
+              "maximum": 4.215638061660111,
+              "median": 0.1842196044588672,
+              "minimum": 0.019273549042239296,
+              "q25": 0.09443716534198537,
+              "q75": 0.36115130534838513,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 100,
+              "equal_group_mean": 0.3217586890950232,
+              "maximum": 4.165973830545069,
+              "median": 0.1873932739275641,
+              "minimum": 0.019902693584639943,
+              "q25": 0.09485223280869005,
+              "q75": 0.3658678443878057,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 100,
+              "equal_group_mean": 0.011824412609650977,
+              "maximum": 0.06499606882514111,
+              "median": 0.008370156303815974,
+              "minimum": 0.0011588270143853363,
+              "q25": 0.005643963164071721,
+              "q75": 0.015317512528641808,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 100,
+              "equal_group_mean": 0.007653164094595238,
+              "maximum": 0.015458041110258834,
+              "median": 0.007194802597818004,
+              "minimum": 0.004236967695427086,
+              "q25": 0.006238941904186952,
+              "q75": 0.009056244800974639,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 100,
+              "equal_group_mean": 0.31612656575524123,
+              "maximum": 4.209541755458557,
+              "median": 0.17412885499197325,
+              "minimum": 0.010682211479787521,
+              "q25": 0.09051739786231945,
+              "q75": 0.35623141102277933,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 100,
+              "equal_group_mean": 0.031993535549715194,
+              "maximum": 0.06494695245984955,
+              "median": 0.03233408739654492,
+              "minimum": 0.01105265216760023,
+              "q25": 0.024818895767041493,
+              "q75": 0.03841284080801757,
+              "unavailable": 0
+            }
+          }
+        },
+        "geographic_groups": 48,
+        "image_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 100,
+              "equal_group_mean": 2.435973198097132,
+              "maximum": 16.291181836959133,
+              "median": 1.9364244108056312,
+              "minimum": 0.08136474526449249,
+              "q25": 1.2914350731576918,
+              "q75": 2.98976395756556,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 100,
+              "equal_group_mean": 0.0749222228778711,
+              "maximum": 0.39942631105012966,
+              "median": 0.06064368954289245,
+              "minimum": 0.0024767518679040187,
+              "q25": 0.03480036891577759,
+              "q75": 0.10301929636722501,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 100,
+              "equal_group_mean": 0.07563694199559641,
+              "maximum": 0.41115193310920956,
+              "median": 0.060695108313643296,
+              "minimum": 0.0024783860084747105,
+              "q25": 0.034848266473800134,
+              "q75": 0.10330012504246677,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 100,
+              "equal_group_mean": 0.9975244317383892,
+              "maximum": 0.9999978620667547,
+              "median": 0.9985315214660049,
+              "minimum": 0.9810922273613426,
+              "q25": 0.9970738531983424,
+              "q75": 0.9996736891030752,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 100,
+              "equal_group_mean": 0.002237676666478957,
+              "maximum": 0.016500997481430073,
+              "median": 0.001953937289144226,
+              "minimum": -0.01171317189519924,
+              "q25": -0.001122437228259259,
+              "q75": 0.005491891450818479,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 100,
+              "equal_group_mean": 0.01618503563116395,
+              "maximum": 0.958450993006433,
+              "median": 0.04520419315521883,
+              "minimum": -0.9471310489678063,
+              "q25": -0.46336347709916637,
+              "q75": 0.4554637583191334,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 100,
+              "equal_group_mean": 0.0020071014107044074,
+              "maximum": 0.016155155184655358,
+              "median": 0.0015218483563058207,
+              "minimum": -0.013871376895268335,
+              "q25": -0.0016130055570741939,
+              "q75": 0.005208336954403021,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 100,
+              "equal_group_mean": 0.017857112556780283,
+              "maximum": 0.9768229786014315,
+              "median": 0.045164889893074524,
+              "minimum": -0.9471758618935151,
+              "q25": -0.4635774400508218,
+              "q75": 0.4561736505249873,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 100,
+              "equal_group_mean": 0.0012237441330374044,
+              "maximum": 0.009968084169904214,
+              "median": 0.0009713737244625013,
+              "minimum": -0.003923689193821001,
+              "q25": -4.214552828016336e-05,
+              "q75": 0.0025860000388087906,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 100,
+              "equal_group_mean": 0.00942961471955008,
+              "maximum": 0.014470225107727896,
+              "median": 0.009176470748815908,
+              "minimum": 0.005836484150116614,
+              "q25": 0.007856123981726524,
+              "q75": 0.010323034873418322,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 100,
+              "equal_group_mean": 0.6101072801317028,
+              "maximum": 8.703128068661567,
+              "median": 0.31523547684667036,
+              "minimum": 0.020253017803258725,
+              "q25": 0.15981378214448574,
+              "q75": 0.5460787125436458,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 100,
+              "equal_group_mean": 0.612807209806765,
+              "maximum": 8.591305010610498,
+              "median": 0.3238425195713702,
+              "minimum": 0.026467020595883836,
+              "q25": 0.17380725692320698,
+              "q75": 0.5461981269344394,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 100,
+              "equal_group_mean": 0.0235038059713923,
+              "maximum": 0.21595174738548206,
+              "median": 0.017058583379566138,
+              "minimum": 0.0011177404926629047,
+              "q25": 0.011976998781465239,
+              "q75": 0.024280899856001507,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 100,
+              "equal_group_mean": 0.009121901661170296,
+              "maximum": 0.014280986013172245,
+              "median": 0.00887774063142259,
+              "minimum": 0.005363004377031961,
+              "q25": 0.007499545341852836,
+              "q75": 0.010059166326095322,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 100,
+              "equal_group_mean": 0.6098335302878621,
+              "maximum": 8.703077778210302,
+              "median": 0.31492767573052594,
+              "minimum": 0.017697010180602876,
+              "q25": 0.15950626645693586,
+              "q75": 0.5459708720015364,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 100,
+              "equal_group_mean": 0.002254075952126029,
+              "maximum": 0.0022552745562350865,
+              "median": 0.00225515410835584,
+              "minimum": 0.0022286540348170616,
+              "q25": 0.0022543021861749467,
+              "q75": 0.0022552415770988057,
+              "unavailable": 0
+            }
+          }
+        },
+        "negative_boundary_A2_cosines": 48,
+        "negative_boundary_region_cosines": 49,
+        "raw_losses": {
+          "boundary": {
+            "available": 100,
+            "equal_group_mean": 0.020413590299227107,
+            "maximum": 0.05681107938289642,
+            "median": 0.020966239273548126,
+            "minimum": 0.0002268334210384637,
+            "q25": 0.014232888352125883,
+            "q75": 0.02769882744178176,
+            "unavailable": 0
+          },
+          "lpips": {
+            "available": 100,
+            "equal_group_mean": 0.565869606896821,
+            "maximum": 1.0507466793060303,
+            "median": 0.5576035976409912,
+            "minimum": 0.3915541470050812,
+            "q25": 0.5137602239847183,
+            "q75": 0.6131743788719177,
+            "unavailable": 0
+          },
+          "region": {
+            "available": 100,
+            "equal_group_mean": 0.5115158945984958,
+            "maximum": 8.550848007202148,
+            "median": 0.3585451692342758,
+            "minimum": 0.0040811412036418915,
+            "q25": 0.1667439080774784,
+            "q75": 0.5949310213327408,
+            "unavailable": 0
+          },
+          "rgb": {
+            "available": 100,
+            "equal_group_mean": 0.20885403040382597,
+            "maximum": 0.3518997132778168,
+            "median": 0.2123795971274376,
+            "minimum": 0.1310211569070816,
+            "q25": 0.1790490783751011,
+            "q75": 0.23079141601920128,
+            "unavailable": 0
+          },
+          "total": {
+            "available": 100,
+            "equal_group_mean": 0.5314057333964026,
+            "maximum": 4.586625099182129,
+            "median": 0.4569568783044815,
+            "minimum": 0.20199736952781677,
+            "q25": 0.3525010570883751,
+            "q75": 0.5654008686542511,
+            "unavailable": 0
+          }
+        },
+        "support": {
+          "interior_valid_pixels": {
+            "available": 100,
+            "equal_group_mean": 51363.37777777778,
+            "maximum": 65536,
+            "median": 50501.0,
+            "minimum": 26007,
+            "q25": 47492.75,
+            "q75": 54798.75,
+            "unavailable": 0
+          },
+          "scored_building_pixels": {
+            "available": 100,
+            "equal_group_mean": 15943.03888888889,
+            "maximum": 65536,
+            "median": 11539.0,
+            "minimum": 0,
+            "q25": 4366.0,
+            "q75": 24867.75,
+            "unavailable": 0
+          },
+          "target_boundary_pixels": {
+            "available": 100,
+            "equal_group_mean": 0.40625,
+            "maximum": 22,
+            "median": 0.0,
+            "minimum": 0,
+            "q25": 0.0,
+            "q75": 0.0,
+            "unavailable": 0
+          },
+          "valid_pixels": {
+            "available": 100,
+            "equal_group_mean": 53786.72638888888,
+            "maximum": 65536,
+            "median": 53629.0,
+            "minimum": 27807,
+            "q25": 50190.75,
+            "q75": 57294.75,
+            "unavailable": 0
+          }
+        },
+        "target_boundary_fraction": {
+          "available": 100,
+          "equal_group_mean": 7.744040017178243e-06,
+          "maximum": 0.00043708898734428703,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q25": 0.0,
+          "q75": 0.0,
+          "unavailable": 0
+        },
+        "views": 100,
+        "zero_boundary_gradients": 0
+      },
+      "empty": {
+        "adapter_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 8,
+              "equal_group_mean": 0.2737494094958139,
+              "maximum": 0.5888223847292915,
+              "median": 0.22825514076065873,
+              "minimum": 0.14545928218058252,
+              "q25": 0.18554384089440248,
+              "q75": 0.31803214920638045,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "equal_group_mean": 0.12287818862592474,
+              "maximum": 0.1791539461056857,
+              "median": 0.11915281602169986,
+              "minimum": 0.03934658061726844,
+              "q25": 0.11003736640382092,
+              "q75": 0.14331594419779173,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "equal_group_mean": 0.21291394875971972,
+              "maximum": 0.42752993239359355,
+              "median": 0.17002865747821183,
+              "minimum": 0.039572463248957836,
+              "q25": 0.11609653244730891,
+              "q75": 0.2966140354163992,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 8,
+              "equal_group_mean": 0.9958817834163081,
+              "maximum": 0.9998060517250998,
+              "median": 0.9967339431239148,
+              "minimum": 0.9907954025549182,
+              "q25": 0.9930430748077794,
+              "q75": 0.99831455704267,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 8,
+              "equal_group_mean": 0.02098551260199863,
+              "maximum": 0.14787614839730168,
+              "median": 0.012554236845772445,
+              "minimum": -0.1152145610021834,
+              "q25": -0.033256058163930347,
+              "q75": 0.08220528875420462,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 8,
+              "equal_group_mean": 0.679191402342752,
+              "maximum": 0.9247836838026606,
+              "median": 0.6542983528921842,
+              "minimum": 0.38755621484511776,
+              "q25": 0.6018286905195627,
+              "q75": 0.8242333321350861,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 8,
+              "equal_group_mean": 0.010652629085453003,
+              "maximum": 0.5347566864303801,
+              "median": -0.020459035452550418,
+              "minimum": -0.30664495409120157,
+              "q25": -0.19980317133428563,
+              "q75": 0.118920736232163,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 8,
+              "equal_group_mean": 0.9082707547647939,
+              "maximum": 0.9910029264148952,
+              "median": 0.958952799756452,
+              "minimum": 0.7058986885439276,
+              "q25": 0.8523619063568642,
+              "q75": 0.9736272833437244,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 8,
+              "equal_group_mean": 0.006092549565424059,
+              "maximum": 0.16813191694114238,
+              "median": 0.02343804653056871,
+              "minimum": -0.21295896781094514,
+              "q25": -0.09989902722887617,
+              "q75": 0.1274045342897133,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 8,
+              "equal_group_mean": 0.03230880185760711,
+              "maximum": 0.04440140756444863,
+              "median": 0.02969521458841909,
+              "minimum": 0.02600663209204508,
+              "q25": 0.02764422972868853,
+              "q75": 0.03383892483041885,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "equal_group_mean": 0.08566836208795595,
+              "maximum": 0.21812018604691896,
+              "median": 0.06137387062124912,
+              "minimum": 0.03253381220576428,
+              "q25": 0.03832313910046595,
+              "q75": 0.10634486987634259,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 8,
+              "equal_group_mean": 0.09271248742942173,
+              "maximum": 0.2398770088027479,
+              "median": 0.06661965858477872,
+              "minimum": 0.03444922551489705,
+              "q25": 0.04262542297848902,
+              "q75": 0.11480812230996543,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 8,
+              "equal_group_mean": 0.009303974985404697,
+              "maximum": 0.026144542687435844,
+              "median": 0.007486246189037934,
+              "minimum": 0.004340626877182725,
+              "q25": 0.005273757405384574,
+              "q75": 0.009007164422764752,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 8,
+              "equal_group_mean": 0.007751882903809727,
+              "maximum": 0.010945103502746382,
+              "median": 0.007576072678978623,
+              "minimum": 0.005050609327900841,
+              "q25": 0.005798030974211615,
+              "q75": 0.00949584304923828,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "equal_group_mean": 0.07468972991987055,
+              "maximum": 0.21872874797219766,
+              "median": 0.04770303479655109,
+              "minimum": 0.010682211479787521,
+              "q25": 0.02028204613830419,
+              "q75": 0.10434045343875477,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 8,
+              "equal_group_mean": 0.03051348789110457,
+              "maximum": 0.04213929101131684,
+              "median": 0.028280889105251013,
+              "minimum": 0.024282371723605103,
+              "q25": 0.025640028821345463,
+              "q75": 0.032202234261553525,
+              "unavailable": 0
+            }
+          }
+        },
+        "geographic_groups": 8,
+        "image_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 8,
+              "equal_group_mean": 1.5465764688743546,
+              "maximum": 3.79990340276862,
+              "median": 0.9585408591806219,
+              "minimum": 0.6369916554063412,
+              "q25": 0.8021533835679779,
+              "q75": 1.9640493570204698,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "equal_group_mean": 0.21052580205530524,
+              "maximum": 0.39942631105012966,
+              "median": 0.1834816193756451,
+              "minimum": 0.0694197991561426,
+              "q25": 0.133857782372223,
+              "q75": 0.2825123778710331,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "equal_group_mean": 0.22118209762950752,
+              "maximum": 0.41115193310920956,
+              "median": 0.1898162525210691,
+              "minimum": 0.06971279434746988,
+              "q25": 0.13405423343527265,
+              "q75": 0.302808510216358,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 8,
+              "equal_group_mean": 0.9958408343162676,
+              "maximum": 0.9983735018633388,
+              "median": 0.996661898137073,
+              "minimum": 0.9905445168370334,
+              "q25": 0.9942667724498693,
+              "q75": 0.9981737518190277,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 8,
+              "equal_group_mean": 0.0037030818200108617,
+              "maximum": 0.012466215104073686,
+              "median": 0.0015152213731612434,
+              "minimum": -0.007855497966974611,
+              "q25": 0.0006823224993486341,
+              "q75": 0.00951571606936916,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 8,
+              "equal_group_mean": 0.7980508630525252,
+              "maximum": 0.9427863078112162,
+              "median": 0.8513679847039843,
+              "minimum": 0.4531519854612739,
+              "q25": 0.7516270282591963,
+              "q75": 0.8943596901619143,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 8,
+              "equal_group_mean": 0.003558663106454605,
+              "maximum": 0.013036824039767837,
+              "median": 0.0011998495774587711,
+              "minimum": -0.00760999452418833,
+              "q25": 0.001010826268051092,
+              "q75": 0.008570741680737973,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 8,
+              "equal_group_mean": 0.8286847928120946,
+              "maximum": 0.9768229786014315,
+              "median": 0.8839497832128631,
+              "minimum": 0.4540673584612232,
+              "q25": 0.7542381761320577,
+              "q75": 0.9710246200264698,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 8,
+              "equal_group_mean": 0.0011009860036019815,
+              "maximum": 0.005477296044181678,
+              "median": 0.00032376280119257345,
+              "minimum": -0.0022259703668852937,
+              "q25": -0.0003505250135930893,
+              "q75": 0.002943559116496325,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 8,
+              "equal_group_mean": 0.00943216595736129,
+              "maximum": 0.014470225107727896,
+              "median": 0.00890660090634414,
+              "minimum": 0.007573638152833553,
+              "q25": 0.00788206592470743,
+              "q75": 0.009881029191968975,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "equal_group_mean": 0.09312004192344356,
+              "maximum": 0.30259463253316954,
+              "median": 0.05222088930578686,
+              "minimum": 0.020253017803258725,
+              "q25": 0.03431982640154246,
+              "q75": 0.10958736371020669,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 8,
+              "equal_group_mean": 0.10425463678749818,
+              "maximum": 0.32513771167867467,
+              "median": 0.060195927124083365,
+              "minimum": 0.026467020595883836,
+              "q25": 0.045271948823096486,
+              "q75": 0.11706410589039969,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 8,
+              "equal_group_mean": 0.013311304007670898,
+              "maximum": 0.02877909338829046,
+              "median": 0.00949267385910172,
+              "minimum": 0.006549449569265523,
+              "q25": 0.008544958108661668,
+              "q75": 0.0156983837083853,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 8,
+              "equal_group_mean": 0.009120758183407978,
+              "maximum": 0.014280986013172245,
+              "median": 0.00858327281037314,
+              "minimum": 0.0072015443580208775,
+              "q25": 0.007516728858732896,
+              "q75": 0.009601817330282088,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "equal_group_mean": 0.09201640638658064,
+              "maximum": 0.3023844297800981,
+              "median": 0.05065602192436877,
+              "minimum": 0.017697010180602876,
+              "q25": 0.033083413298855946,
+              "q75": 0.10922661123481468,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 8,
+              "equal_group_mean": 0.0022520160232750623,
+              "maximum": 0.002255257349790083,
+              "median": 0.0022533810068033895,
+              "minimum": 0.0022428863516977225,
+              "q25": 0.002251314687868752,
+              "q75": 0.002254954777838997,
+              "unavailable": 0
+            }
+          }
+        },
+        "negative_boundary_A2_cosines": 0,
+        "negative_boundary_region_cosines": 0,
+        "raw_losses": {
+          "boundary": {
+            "available": 8,
+            "equal_group_mean": 0.009480964159592986,
+            "maximum": 0.031370434910058975,
+            "median": 0.005912178894504905,
+            "minimum": 0.001920762937515974,
+            "q25": 0.0034089291002601385,
+            "q75": 0.011608517961576581,
+            "unavailable": 0
+          },
+          "lpips": {
+            "available": 8,
+            "equal_group_mean": 0.5640383958816528,
+            "maximum": 0.690049946308136,
+            "median": 0.562377005815506,
+            "minimum": 0.4877547025680542,
+            "q25": 0.5379808694124222,
+            "q75": 0.5769913047552109,
+            "unavailable": 0
+          },
+          "region": {
+            "available": 8,
+            "equal_group_mean": 0.041359513939823955,
+            "maximum": 0.14397113025188446,
+            "median": 0.019751883577555418,
+            "minimum": 0.0040811412036418915,
+            "q25": 0.009849688154645264,
+            "q75": 0.06177585665136576,
+            "unavailable": 0
+          },
+          "rgb": {
+            "available": 8,
+            "equal_group_mean": 0.21489942073822021,
+            "maximum": 0.280524879693985,
+            "median": 0.21736187487840652,
+            "minimum": 0.16363008320331573,
+            "q25": 0.1973423808813095,
+            "q75": 0.22376058995723724,
+            "unavailable": 0
+          },
+          "total": {
+            "available": 8,
+            "equal_group_mean": 0.2967235017567873,
+            "maximum": 0.4253332316875458,
+            "median": 0.2932775914669037,
+            "minimum": 0.21724331378936768,
+            "q25": 0.26079608872532845,
+            "q75": 0.31425490230321884,
+            "unavailable": 0
+          }
+        },
+        "support": {
+          "interior_valid_pixels": {
+            "available": 8,
+            "equal_group_mean": 50017.375,
+            "maximum": 56199,
+            "median": 49543.5,
+            "minimum": 42189,
+            "q25": 48376.25,
+            "q75": 52609.25,
+            "unavailable": 0
+          },
+          "scored_building_pixels": {
+            "available": 8,
+            "equal_group_mean": 0.0,
+            "maximum": 0,
+            "median": 0.0,
+            "minimum": 0,
+            "q25": 0.0,
+            "q75": 0.0,
+            "unavailable": 0
+          },
+          "target_boundary_pixels": {
+            "available": 8,
+            "equal_group_mean": 0.0,
+            "maximum": 0,
+            "median": 0.0,
+            "minimum": 0,
+            "q25": 0.0,
+            "q75": 0.0,
+            "unavailable": 0
+          },
+          "valid_pixels": {
+            "available": 8,
+            "equal_group_mean": 52843.875,
+            "maximum": 58355,
+            "median": 52331.0,
+            "minimum": 45876,
+            "q25": 51023.75,
+            "q75": 55382.25,
+            "unavailable": 0
+          }
+        },
+        "target_boundary_fraction": {
+          "available": 8,
+          "equal_group_mean": 0.0,
+          "maximum": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q25": 0.0,
+          "q75": 0.0,
+          "unavailable": 0
+        },
+        "views": 8,
+        "zero_boundary_gradients": 0
+      },
+      "nonempty": {
+        "adapter_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 92,
+              "equal_group_mean": 0.3788937556397274,
+              "maximum": 1.935736953552146,
+              "median": 0.2608094103831414,
+              "minimum": 0.030933078361273982,
+              "q25": 0.18326324627800505,
+              "q75": 0.45985403624261445,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 92,
+              "equal_group_mean": 0.05967056134924106,
+              "maximum": 0.213912073474018,
+              "median": 0.0453994040146201,
+              "minimum": 0.0027434429080045192,
+              "q25": 0.0269648332728824,
+              "q75": 0.0767302969925825,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 92,
+              "equal_group_mean": 0.06468045360167728,
+              "maximum": 0.26568469232235964,
+              "median": 0.046933985398003294,
+              "minimum": 0.0026629765749451133,
+              "q25": 0.027127479670402185,
+              "q75": 0.08697559683152462,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 92,
+              "equal_group_mean": 0.9983045658633021,
+              "maximum": 0.999998262491543,
+              "median": 0.9993467227909156,
+              "minimum": 0.9865218781648322,
+              "q25": 0.9985482505338448,
+              "q75": 0.9997646224937888,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 92,
+              "equal_group_mean": 0.0591850531041536,
+              "maximum": 0.6246110920987586,
+              "median": 0.061621969140404464,
+              "minimum": -0.5211923155209104,
+              "q25": -0.07056931224659836,
+              "q75": 0.1651530735432108,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 92,
+              "equal_group_mean": -0.004691729506096735,
+              "maximum": 0.913144759998512,
+              "median": -0.03390364543891377,
+              "minimum": -0.9758054467891246,
+              "q25": -0.4645199538537859,
+              "q75": 0.4650595408521829,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 92,
+              "equal_group_mean": -0.01674789822636165,
+              "maximum": 0.6187351462209082,
+              "median": -0.006862048952413668,
+              "minimum": -0.6132889310203267,
+              "q25": -0.24838234832280687,
+              "q75": 0.2576603119832609,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 92,
+              "equal_group_mean": -0.011019824088073024,
+              "maximum": 0.9141791261287802,
+              "median": -0.04512897726861206,
+              "minimum": -0.9759239287433626,
+              "q25": -0.48261075044626456,
+              "q75": 0.461263219956783,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 92,
+              "equal_group_mean": 0.06789748042472922,
+              "maximum": 0.6358424599231465,
+              "median": 0.03884488487517468,
+              "minimum": -0.5108651246893204,
+              "q25": -0.07097546885346948,
+              "q75": 0.19034562484871775,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 92,
+              "equal_group_mean": 0.0337170417936016,
+              "maximum": 0.06662511873152638,
+              "median": 0.034093998624736825,
+              "minimum": 0.013619050368535458,
+              "q25": 0.025821046843809314,
+              "q75": 0.039404171687950525,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 92,
+              "equal_group_mean": 0.3325480191105663,
+              "maximum": 4.215638061660111,
+              "median": 0.1940488894710437,
+              "minimum": 0.019273549042239296,
+              "q25": 0.1018921192096126,
+              "q75": 0.36566255427584476,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 92,
+              "equal_group_mean": 0.3344910919204132,
+              "maximum": 4.165973830545069,
+              "median": 0.2007204074452887,
+              "minimum": 0.019902693584639943,
+              "q25": 0.104001442092318,
+              "q75": 0.37099005354065573,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 92,
+              "equal_group_mean": 0.012314128092685348,
+              "maximum": 0.06499606882514111,
+              "median": 0.00856939067361516,
+              "minimum": 0.0011588270143853363,
+              "q25": 0.005738348780746369,
+              "q75": 0.015537227582288166,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 92,
+              "equal_group_mean": 0.007623299504794891,
+              "maximum": 0.015458041110258834,
+              "median": 0.007194802597818004,
+              "minimum": 0.004236967695427086,
+              "q25": 0.006244703465117264,
+              "q75": 0.009036146886752696,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 92,
+              "equal_group_mean": 0.3292355787406658,
+              "maximum": 4.209541755458557,
+              "median": 0.1918936047033542,
+              "minimum": 0.01569842322284647,
+              "q25": 0.100369787869436,
+              "q75": 0.36359755347586936,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 92,
+              "equal_group_mean": 0.03202277430991755,
+              "maximum": 0.06494695245984955,
+              "median": 0.033023774602964656,
+              "minimum": 0.01105265216760023,
+              "q25": 0.02480237661587366,
+              "q75": 0.03841284080801757,
+              "unavailable": 0
+            }
+          }
+        },
+        "geographic_groups": 48,
+        "image_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 92,
+              "equal_group_mean": 2.5028954247655335,
+              "maximum": 16.291181836959133,
+              "median": 1.9570521676774342,
+              "minimum": 0.08136474526449249,
+              "q25": 1.311842312998615,
+              "q75": 3.064815378669964,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 92,
+              "equal_group_mean": 0.06742554220238466,
+              "maximum": 0.2363128439890986,
+              "median": 0.0558874686364456,
+              "minimum": 0.0024767518679040187,
+              "q25": 0.03198936001204339,
+              "q75": 0.08803897577936529,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 92,
+              "equal_group_mean": 0.06758591263830684,
+              "maximum": 0.2370513159921326,
+              "median": 0.05591202509167974,
+              "minimum": 0.0024783860084747105,
+              "q25": 0.03199453938045743,
+              "q75": 0.08814734910727971,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 92,
+              "equal_group_mean": 0.9975418427187543,
+              "maximum": 0.9999978620667547,
+              "median": 0.9986293690949597,
+              "minimum": 0.9810922273613426,
+              "q25": 0.9972867552312016,
+              "q75": 0.9997573171656895,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 92,
+              "equal_group_mean": 0.002234258353596153,
+              "maximum": 0.016500997481430073,
+              "median": 0.0021220106271788155,
+              "minimum": -0.01171317189519924,
+              "q25": -0.0014609033611362988,
+              "q75": 0.0054102374676071536,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 92,
+              "equal_group_mean": -0.025273513591580962,
+              "maximum": 0.958450993006433,
+              "median": 0.007166997458959766,
+              "minimum": -0.9471310489678063,
+              "q25": -0.4820551141918028,
+              "q75": 0.36972214211838866,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 92,
+              "equal_group_mean": 0.0019893477930368214,
+              "maximum": 0.016155155184655358,
+              "median": 0.0016779217273001,
+              "minimum": -0.013871376895268335,
+              "q25": -0.0017139921378487397,
+              "q75": 0.00509133272273282,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 92,
+              "equal_group_mean": -0.025301398657420218,
+              "maximum": 0.9587397671017842,
+              "median": 0.007168727435731813,
+              "minimum": -0.9471758618935151,
+              "q25": -0.48231653622903986,
+              "q75": 0.3708426488082177,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 92,
+              "equal_group_mean": 0.0012794484553673633,
+              "maximum": 0.009968084169904214,
+              "median": 0.0010566204237873844,
+              "minimum": -0.003923689193821001,
+              "q25": -4.214552828016336e-05,
+              "q75": 0.0025860000388087906,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 92,
+              "equal_group_mean": 0.009370711239899491,
+              "maximum": 0.013827290425306964,
+              "median": 0.009176470748815908,
+              "minimum": 0.005836484150116614,
+              "q25": 0.00782835239055062,
+              "q75": 0.010519399958625867,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 92,
+              "equal_group_mean": 0.627723260995031,
+              "maximum": 8.703128068661567,
+              "median": 0.34526826597463856,
+              "minimum": 0.05300393060757709,
+              "q25": 0.19829199003218406,
+              "q75": 0.5784666565650688,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 92,
+              "equal_group_mean": 0.6301032238648682,
+              "maximum": 8.591305010610498,
+              "median": 0.34766184523436383,
+              "minimum": 0.05135041861500464,
+              "q25": 0.20160288608974863,
+              "q75": 0.5686332054263736,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 92,
+              "equal_group_mean": 0.023996739490500036,
+              "maximum": 0.21595174738548206,
+              "median": 0.017692387637844177,
+              "minimum": 0.0011177404926629047,
+              "q25": 0.012516790273697457,
+              "q75": 0.024541341747735257,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 92,
+              "equal_group_mean": 0.009061351390592162,
+              "maximum": 0.01363734349127772,
+              "median": 0.00887774063142259,
+              "minimum": 0.005363004377031961,
+              "q25": 0.007475129427476806,
+              "q75": 0.01026159990101506,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 92,
+              "equal_group_mean": 0.6275050239920518,
+              "maximum": 8.703077778210302,
+              "median": 0.34513935568723864,
+              "minimum": 0.05165645329510128,
+              "q25": 0.19795965834647278,
+              "q75": 0.5784207362811441,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 92,
+              "equal_group_mean": 0.0022541269454514293,
+              "maximum": 0.0022552745562350865,
+              "median": 0.002255165579866197,
+              "minimum": 0.0022286540348170616,
+              "q25": 0.002254799895990167,
+              "q75": 0.0022552458787538157,
+              "unavailable": 0
+            }
+          }
+        },
+        "negative_boundary_A2_cosines": 48,
+        "negative_boundary_region_cosines": 49,
+        "raw_losses": {
+          "boundary": {
+            "available": 92,
+            "equal_group_mean": 0.02137653799707348,
+            "maximum": 0.05681107938289642,
+            "median": 0.022169729694724083,
+            "minimum": 0.0002268334210384637,
+            "q25": 0.015225629787892103,
+            "q75": 0.028131529688835144,
+            "unavailable": 0
+          },
+          "lpips": {
+            "available": 92,
+            "equal_group_mean": 0.5658575261943043,
+            "maximum": 1.0507466793060303,
+            "median": 0.5576035976409912,
+            "minimum": 0.3915541470050812,
+            "q25": 0.5137602239847183,
+            "q75": 0.6136440485715866,
+            "unavailable": 0
+          },
+          "region": {
+            "available": 92,
+            "equal_group_mean": 0.5357042517176726,
+            "maximum": 8.550848007202148,
+            "median": 0.3746608942747116,
+            "minimum": 0.019801437854766846,
+            "q25": 0.2388879507780075,
+            "q75": 0.6037431955337524,
+            "unavailable": 0
+          },
+          "rgb": {
+            "available": 92,
+            "equal_group_mean": 0.20961976687734327,
+            "maximum": 0.3518997132778168,
+            "median": 0.2106095403432846,
+            "minimum": 0.1310211569070816,
+            "q25": 0.17772512137889862,
+            "q75": 0.23110400512814522,
+            "unavailable": 0
+          },
+          "total": {
+            "available": 92,
+            "equal_group_mean": 0.5447459140068127,
+            "maximum": 4.586625099182129,
+            "median": 0.47583696246147156,
+            "minimum": 0.20199736952781677,
+            "q25": 0.3757265582680702,
+            "q75": 0.5749965012073517,
+            "unavailable": 0
+          }
+        },
+        "support": {
+          "interior_valid_pixels": {
+            "available": 92,
+            "equal_group_mean": 51223.37951388888,
+            "maximum": 65536,
+            "median": 50954.5,
+            "minimum": 26007,
+            "q25": 47335.25,
+            "q75": 54921.25,
+            "unavailable": 0
+          },
+          "scored_building_pixels": {
+            "available": 92,
+            "equal_group_mean": 16709.56840277778,
+            "maximum": 65536,
+            "median": 12246.0,
+            "minimum": 6,
+            "q25": 6811.0,
+            "q75": 24982.75,
+            "unavailable": 0
+          },
+          "target_boundary_pixels": {
+            "available": 92,
+            "equal_group_mean": 0.4131944444444444,
+            "maximum": 22,
+            "median": 0.0,
+            "minimum": 0,
+            "q25": 0.0,
+            "q75": 0.0,
+            "unavailable": 0
+          },
+          "valid_pixels": {
+            "available": 92,
+            "equal_group_mean": 53636.74895833334,
+            "maximum": 65536,
+            "median": 53790.5,
+            "minimum": 27807,
+            "q25": 49998.0,
+            "q75": 57297.25,
+            "unavailable": 0
+          }
+        },
+        "target_boundary_fraction": {
+          "available": 92,
+          "equal_group_mean": 7.870162761851324e-06,
+          "maximum": 0.00043708898734428703,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q25": 0.0,
+          "q75": 0.0,
+          "unavailable": 0
+        },
+        "views": 92,
+        "zero_boundary_gradients": 0
+      }
+    },
+    "300": {
+      "all": {
+        "adapter_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 100,
+              "equal_group_mean": 0.3652485318021564,
+              "maximum": 2.6553871071280093,
+              "median": 0.2664657846843638,
+              "minimum": 0.0717397623126319,
+              "q25": 0.16651079646655803,
+              "q75": 0.3937743774190255,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 100,
+              "equal_group_mean": 0.0630259288975163,
+              "maximum": 0.221303148932051,
+              "median": 0.04984094215925263,
+              "minimum": 0.004878832618906863,
+              "q25": 0.030019699961668554,
+              "q75": 0.08022478361938176,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 100,
+              "equal_group_mean": 0.07453394158492647,
+              "maximum": 0.38364133103426545,
+              "median": 0.05033508350592664,
+              "minimum": 0.004862977997224769,
+              "q25": 0.031241582543408072,
+              "q75": 0.09245641015590245,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 100,
+              "equal_group_mean": 0.9980497337605261,
+              "maximum": 0.999996397036919,
+              "median": 0.9992919742890031,
+              "minimum": 0.9767133238778191,
+              "q25": 0.9980726762889115,
+              "q75": 0.9997482356205409,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 100,
+              "equal_group_mean": 0.04074629491650678,
+              "maximum": 0.49809503662624843,
+              "median": 0.03995147465299519,
+              "minimum": -0.5008796730171846,
+              "q25": -0.08551984047925146,
+              "q75": 0.15323704666505478,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 100,
+              "equal_group_mean": 0.05823109385907319,
+              "maximum": 0.9516534898322592,
+              "median": 0.09500261126180697,
+              "minimum": -0.9510835429667213,
+              "q25": -0.5412803909183286,
+              "q75": 0.5755725480896746,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 100,
+              "equal_group_mean": -0.027041744255443343,
+              "maximum": 0.6567468575732661,
+              "median": -0.04288393732497429,
+              "minimum": -0.5814932694216243,
+              "q25": -0.23088748078759466,
+              "q75": 0.19249540691198946,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 100,
+              "equal_group_mean": 0.07102860692326325,
+              "maximum": 0.9949745055938511,
+              "median": 0.09269791746202449,
+              "minimum": -0.9516383742615049,
+              "q25": -0.5463758117070985,
+              "q75": 0.6318524558261793,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 100,
+              "equal_group_mean": 0.04555245836746145,
+              "maximum": 0.537677573536913,
+              "median": 0.025720917653616775,
+              "minimum": -0.4808025794191484,
+              "q25": -0.05563427026558655,
+              "q75": 0.14412447050961374,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 100,
+              "equal_group_mean": 0.07642826060421624,
+              "maximum": 0.168061551386113,
+              "median": 0.07398690152142268,
+              "minimum": 0.030461530562207732,
+              "q25": 0.05853889483623556,
+              "q75": 0.09196620499711716,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 100,
+              "equal_group_mean": 0.6714597797058826,
+              "maximum": 7.9198272514580985,
+              "median": 0.36747153374826813,
+              "minimum": 0.04806047851703336,
+              "q25": 0.19738659746529805,
+              "q75": 0.7291112137466925,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 100,
+              "equal_group_mean": 0.675674698953321,
+              "maximum": 7.88753371116728,
+              "median": 0.3801298825797904,
+              "minimum": 0.05122514092696073,
+              "q25": 0.19933315789123313,
+              "q75": 0.7695418564660136,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 100,
+              "equal_group_mean": 0.02671310052507131,
+              "maximum": 0.19373617444391292,
+              "median": 0.017965670834255473,
+              "minimum": 0.005402647310514057,
+              "q25": 0.012053442786799389,
+              "q75": 0.03068660499380433,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 100,
+              "equal_group_mean": 0.015539150557311789,
+              "maximum": 0.058195374821771985,
+              "median": 0.014573557967804174,
+              "minimum": 0.0069715249217697384,
+              "q25": 0.012656578038432164,
+              "q75": 0.017696524277614162,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 100,
+              "equal_group_mean": 0.6604994763805426,
+              "maximum": 7.945648027314181,
+              "median": 0.3791710270041867,
+              "minimum": 0.01931246264442433,
+              "q25": 0.17807096149220233,
+              "q75": 0.7169707663056053,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 100,
+              "equal_group_mean": 0.07223215161620306,
+              "maximum": 0.16409460092286693,
+              "median": 0.07020390351779314,
+              "minimum": 0.027074112155697157,
+              "q25": 0.054333111495532424,
+              "q75": 0.08608089807039812,
+              "unavailable": 0
+            }
+          }
+        },
+        "geographic_groups": 48,
+        "image_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 100,
+              "equal_group_mean": 2.6726603501674533,
+              "maximum": 18.856859408022554,
+              "median": 1.9551328932716263,
+              "minimum": 0.19105848007262363,
+              "q25": 1.3363544575142041,
+              "q75": 3.032632055569302,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 100,
+              "equal_group_mean": 0.07658675324451451,
+              "maximum": 0.3758707713373684,
+              "median": 0.060514810157045615,
+              "minimum": 0.004702465713408495,
+              "q25": 0.03531948532991899,
+              "q75": 0.10298477202121833,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 100,
+              "equal_group_mean": 0.07728952227597309,
+              "maximum": 0.3849399371367484,
+              "median": 0.06054821109076568,
+              "minimum": 0.004704572348999829,
+              "q25": 0.035322438330193356,
+              "q75": 0.10311330126571827,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 100,
+              "equal_group_mean": 0.997459409856854,
+              "maximum": 0.9999965566245165,
+              "median": 0.9985509257052327,
+              "minimum": 0.9790845808588092,
+              "q25": 0.9971153113695981,
+              "q75": 0.9997364260032001,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 100,
+              "equal_group_mean": 0.002321405652538491,
+              "maximum": 0.01583228734031677,
+              "median": 0.002282641576252394,
+              "minimum": -0.01323150707361576,
+              "q25": -0.0009114190192194923,
+              "q75": 0.005257866599904136,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 100,
+              "equal_group_mean": 0.04960180307646126,
+              "maximum": 0.9649635292836884,
+              "median": 0.08662674756496103,
+              "minimum": -0.9258997466093958,
+              "q25": -0.3788853085656537,
+              "q75": 0.48121526729846553,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 100,
+              "equal_group_mean": 0.002132392445180929,
+              "maximum": 0.015346368152384111,
+              "median": 0.002325908451069396,
+              "minimum": -0.014825224933333747,
+              "q25": -0.0012706354502563858,
+              "q75": 0.0053170719036437835,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 100,
+              "equal_group_mean": 0.051374126412166266,
+              "maximum": 0.9863677192928244,
+              "median": 0.08651415641066296,
+              "minimum": -0.9259522920426887,
+              "q25": -0.38067788648315953,
+              "q75": 0.4818756458211756,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 100,
+              "equal_group_mean": 0.0011012499799205127,
+              "maximum": 0.0094482373601798,
+              "median": 0.0007585040097044576,
+              "minimum": -0.002894409069136758,
+              "q25": -0.0003238263756962662,
+              "q75": 0.002602296679857975,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 100,
+              "equal_group_mean": 0.0094123361578627,
+              "maximum": 0.014249827875808618,
+              "median": 0.009152706980351798,
+              "minimum": 0.0059864945007104525,
+              "q25": 0.007805587480257068,
+              "q75": 0.01071377455020773,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 100,
+              "equal_group_mean": 0.6258755963177823,
+              "maximum": 7.78147166215156,
+              "median": 0.324211890968221,
+              "minimum": 0.021536582196303743,
+              "q25": 0.16771181234427288,
+              "q75": 0.5604879879790623,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 100,
+              "equal_group_mean": 0.6299843319962056,
+              "maximum": 7.68556742463114,
+              "median": 0.32865322501117616,
+              "minimum": 0.027848858884232077,
+              "q25": 0.17832300603824192,
+              "q75": 0.5611879917873264,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 100,
+              "equal_group_mean": 0.025541217415787156,
+              "maximum": 0.2485024752680431,
+              "median": 0.017728580822597727,
+              "minimum": 0.002599392533636831,
+              "q25": 0.012481564382958823,
+              "q75": 0.02550574926472404,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 100,
+              "equal_group_mean": 0.009103261092750496,
+              "maximum": 0.014055085872625273,
+              "median": 0.008847325012991422,
+              "minimum": 0.005524800737311893,
+              "q25": 0.007457837247177663,
+              "q75": 0.010449685348397974,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 100,
+              "equal_group_mean": 0.6255957499820309,
+              "maximum": 7.781431382406273,
+              "median": 0.3240101625620163,
+              "minimum": 0.01876766165983324,
+              "q25": 0.16751331852376417,
+              "q75": 0.5604185176025397,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 100,
+              "equal_group_mean": 0.002254070876426911,
+              "maximum": 0.0022552745562350865,
+              "median": 0.002255151240461839,
+              "minimum": 0.0022286598387774273,
+              "q25": 0.0022543036202676875,
+              "q75": 0.0022552458787538157,
+              "unavailable": 0
+            }
+          }
+        },
+        "negative_boundary_A2_cosines": 43,
+        "negative_boundary_region_cosines": 46,
+        "raw_losses": {
+          "boundary": {
+            "available": 100,
+            "equal_group_mean": 0.02071400182947198,
+            "maximum": 0.05386001989245415,
+            "median": 0.021585208363831043,
+            "minimum": 0.0004609617462847382,
+            "q25": 0.014279237715527415,
+            "q75": 0.027226984035223722,
+            "unavailable": 0
+          },
+          "lpips": {
+            "available": 100,
+            "equal_group_mean": 0.5661780578187771,
+            "maximum": 1.0509068965911865,
+            "median": 0.5625806748867035,
+            "minimum": 0.39448902010917664,
+            "q25": 0.5138743221759796,
+            "q75": 0.6131174117326736,
+            "unavailable": 0
+          },
+          "region": {
+            "available": 100,
+            "equal_group_mean": 0.5040065156947499,
+            "maximum": 8.349203109741211,
+            "median": 0.35434795916080475,
+            "minimum": 0.004478139337152243,
+            "q25": 0.1638898365199566,
+            "q75": 0.5369193702936172,
+            "unavailable": 0
+          },
+          "rgb": {
+            "available": 100,
+            "equal_group_mean": 0.20867674218283758,
+            "maximum": 0.3512219786643982,
+            "median": 0.21192189306020737,
+            "minimum": 0.13077601790428162,
+            "q25": 0.1788003370165825,
+            "q75": 0.23036598786711693,
+            "unavailable": 0
+          },
+          "total": {
+            "available": 100,
+            "equal_group_mean": 0.5276548022611274,
+            "maximum": 4.486393451690674,
+            "median": 0.46263712644577026,
+            "minimum": 0.2014184594154358,
+            "q25": 0.35052673518657684,
+            "q75": 0.5581457614898682,
+            "unavailable": 0
+          }
+        },
+        "support": {
+          "interior_valid_pixels": {
+            "available": 100,
+            "equal_group_mean": 51363.37777777778,
+            "maximum": 65536,
+            "median": 50501.0,
+            "minimum": 26007,
+            "q25": 47492.75,
+            "q75": 54798.75,
+            "unavailable": 0
+          },
+          "scored_building_pixels": {
+            "available": 100,
+            "equal_group_mean": 15943.03888888889,
+            "maximum": 65536,
+            "median": 11539.0,
+            "minimum": 0,
+            "q25": 4366.0,
+            "q75": 24867.75,
+            "unavailable": 0
+          },
+          "target_boundary_pixels": {
+            "available": 100,
+            "equal_group_mean": 0.40625,
+            "maximum": 22,
+            "median": 0.0,
+            "minimum": 0,
+            "q25": 0.0,
+            "q75": 0.0,
+            "unavailable": 0
+          },
+          "valid_pixels": {
+            "available": 100,
+            "equal_group_mean": 53786.72638888888,
+            "maximum": 65536,
+            "median": 53629.0,
+            "minimum": 27807,
+            "q25": 50190.75,
+            "q75": 57294.75,
+            "unavailable": 0
+          }
+        },
+        "target_boundary_fraction": {
+          "available": 100,
+          "equal_group_mean": 7.744040017178243e-06,
+          "maximum": 0.00043708898734428703,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q25": 0.0,
+          "q75": 0.0,
+          "unavailable": 0
+        },
+        "views": 100,
+        "zero_boundary_gradients": 0
+      },
+      "empty": {
+        "adapter_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 8,
+              "equal_group_mean": 0.22751651762426423,
+              "maximum": 0.5531790694037082,
+              "median": 0.17865884390345907,
+              "minimum": 0.10876463431182852,
+              "q25": 0.15771912623379256,
+              "q75": 0.23399057052923994,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "equal_group_mean": 0.10261320528404264,
+              "maximum": 0.14769131696281623,
+              "median": 0.10333025653361391,
+              "minimum": 0.05701486356060396,
+              "q25": 0.09032490899037161,
+              "q75": 0.11981006875437022,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "equal_group_mean": 0.19750084894516123,
+              "maximum": 0.38364133103426545,
+              "median": 0.17205680742863322,
+              "minimum": 0.0590906449633857,
+              "q25": 0.09600389420623132,
+              "q75": 0.28031343851817114,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 8,
+              "equal_group_mean": 0.9970260453491255,
+              "maximum": 0.999598296944245,
+              "median": 0.9968616882066762,
+              "minimum": 0.9929576721753258,
+              "q25": 0.996191601284651,
+              "q75": 0.9985886828965106,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 8,
+              "equal_group_mean": 0.06713334283725107,
+              "maximum": 0.4917503232115253,
+              "median": 0.12066465635450979,
+              "minimum": -0.3808625017112234,
+              "q25": -0.08887989849452793,
+              "q75": 0.17738451387751986,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 8,
+              "equal_group_mean": 0.6626675309128803,
+              "maximum": 0.9049877302803995,
+              "median": 0.6611426232092912,
+              "minimum": 0.4326902288627744,
+              "q25": 0.5490836631686189,
+              "q75": 0.7738648209407547,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 8,
+              "equal_group_mean": -0.04324904049525466,
+              "maximum": 0.2873447304220259,
+              "median": -0.11737527162349444,
+              "minimum": -0.22503006043056187,
+              "q25": -0.16506771127711986,
+              "q75": 0.029326237718340545,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 8,
+              "equal_group_mean": 0.8900709158498814,
+              "maximum": 0.9949745055938511,
+              "median": 0.9242129696807124,
+              "minimum": 0.629225024593046,
+              "q25": 0.8577325213538349,
+              "q75": 0.9805864881579934,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 8,
+              "equal_group_mean": 0.07871707802751331,
+              "maximum": 0.537677573536913,
+              "median": 0.10335226802006924,
+              "minimum": -0.46232913820092075,
+              "q25": -0.048137546125099066,
+              "q75": 0.21923909898962218,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 8,
+              "equal_group_mean": 0.07120857487684819,
+              "maximum": 0.09869368601855243,
+              "median": 0.06780116681272033,
+              "minimum": 0.05696395765873462,
+              "q25": 0.06315208682081701,
+              "q75": 0.07291086950097458,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "equal_group_mean": 0.2022140270453657,
+              "maximum": 0.7697969646669097,
+              "median": 0.11954188266526578,
+              "minimum": 0.07438031916369697,
+              "q25": 0.08436803347612203,
+              "q75": 0.1645431918008533,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 8,
+              "equal_group_mean": 0.2154737081144409,
+              "maximum": 0.8195342338600803,
+              "median": 0.1294500687903934,
+              "minimum": 0.07787314658931999,
+              "q25": 0.0906036098161131,
+              "q75": 0.17456617691891987,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 8,
+              "equal_group_mean": 0.017279688340010823,
+              "maximum": 0.054595281387764594,
+              "median": 0.012673182191146255,
+              "minimum": 0.007409058874456479,
+              "q25": 0.011346079289672864,
+              "q75": 0.013974859565692346,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 8,
+              "equal_group_mean": 0.0162561107660706,
+              "maximum": 0.02322509356681579,
+              "median": 0.01392683931806275,
+              "minimum": 0.011851874848799881,
+              "q25": 0.0131667813547823,
+              "q75": 0.01917364564686222,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "equal_group_mean": 0.17576463775344087,
+              "maximum": 0.7983320826710693,
+              "median": 0.08308865238807076,
+              "minimum": 0.01931246264442433,
+              "q25": 0.044189458045356726,
+              "q75": 0.14596628105161863,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 8,
+              "equal_group_mean": 0.06779037560329625,
+              "maximum": 0.09305936706246533,
+              "median": 0.06356604462785458,
+              "minimum": 0.05159409184045429,
+              "q25": 0.06173821340395551,
+              "q75": 0.07051519889157956,
+              "unavailable": 0
+            }
+          }
+        },
+        "geographic_groups": 8,
+        "image_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 8,
+              "equal_group_mean": 1.5931809108899344,
+              "maximum": 4.182097998911212,
+              "median": 0.9930033949935368,
+              "minimum": 0.619807008663282,
+              "q25": 0.7913124358661761,
+              "q75": 1.987201102627584,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "equal_group_mean": 0.20617126705259703,
+              "maximum": 0.3758707713373684,
+              "median": 0.19271686630848472,
+              "minimum": 0.07406461451642789,
+              "q25": 0.12719154355650106,
+              "q75": 0.2745105280785222,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "equal_group_mean": 0.21643633322103664,
+              "maximum": 0.3849399371367484,
+              "median": 0.19946540898099552,
+              "minimum": 0.07442439906686314,
+              "q25": 0.12736936986571912,
+              "q75": 0.29446317335464545,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 8,
+              "equal_group_mean": 0.9961347313002935,
+              "maximum": 0.9985239840066262,
+              "median": 0.997290576258719,
+              "minimum": 0.9914625132083723,
+              "q25": 0.9943611194164077,
+              "q75": 0.9980037676269482,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 8,
+              "equal_group_mean": 0.002896679505680777,
+              "maximum": 0.014126071163086585,
+              "median": 0.0019819044622560425,
+              "minimum": -0.006961742032929152,
+              "q25": -0.00014011686817989508,
+              "q75": 0.005790879749007026,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 8,
+              "equal_group_mean": 0.792422665476871,
+              "maximum": 0.9575687080352644,
+              "median": 0.8627172268484353,
+              "minimum": 0.35818758078728613,
+              "q25": 0.7518656162897639,
+              "q75": 0.894629721826732,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 8,
+              "equal_group_mean": 0.0029531347503851057,
+              "maximum": 0.014267764961889784,
+              "median": 0.0019580198695343287,
+              "minimum": -0.006739177187526705,
+              "q25": -0.00015593475999462034,
+              "q75": 0.005125169880425787,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 8,
+              "equal_group_mean": 0.8236862559343211,
+              "maximum": 0.9863677192928244,
+              "median": 0.8947773489784763,
+              "minimum": 0.35866508051613555,
+              "q25": 0.754953219167724,
+              "q75": 0.9731718011263191,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 8,
+              "equal_group_mean": 0.0004208709050094961,
+              "maximum": 0.006497632053783432,
+              "median": -0.0006159366390421264,
+              "minimum": -0.0024564306783359338,
+              "q25": -0.0014947438655354291,
+              "q75": 0.0017723799559726716,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 8,
+              "equal_group_mean": 0.009498357765650528,
+              "maximum": 0.014249827875808618,
+              "median": 0.008947292625164449,
+              "minimum": 0.00701651261207411,
+              "q25": 0.008191198758168858,
+              "q75": 0.010269667369466488,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "equal_group_mean": 0.09743873035308763,
+              "maximum": 0.3297520059135834,
+              "median": 0.05115004935044818,
+              "minimum": 0.021536582196303743,
+              "q25": 0.03537165280080312,
+              "q75": 0.11105741658859736,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 8,
+              "equal_group_mean": 0.10864158564142204,
+              "maximum": 0.35250961677947373,
+              "median": 0.059455255480748884,
+              "minimum": 0.027848858884232077,
+              "q25": 0.047102042210596926,
+              "q75": 0.11818821658080979,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 8,
+              "equal_group_mean": 0.013490001118396645,
+              "maximum": 0.02934374335429042,
+              "median": 0.009835731557362252,
+              "minimum": 0.006970083840055025,
+              "q25": 0.008332227817593286,
+              "q75": 0.015752844151392748,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 8,
+              "equal_group_mean": 0.009187381928355678,
+              "maximum": 0.014055085872625273,
+              "median": 0.008629166280175845,
+              "minimum": 0.006611782304183579,
+              "q25": 0.007839408644217985,
+              "q75": 0.010001884943636854,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "equal_group_mean": 0.09630914864615252,
+              "maximum": 0.3295715602526123,
+              "median": 0.04955046334321507,
+              "minimum": 0.01876766165983324,
+              "q25": 0.034405548173971845,
+              "q75": 0.11065242383285948,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 8,
+              "equal_group_mean": 0.002252011023375766,
+              "maximum": 0.002255257349790083,
+              "median": 0.0022533322272258547,
+              "minimum": 0.002242949789325559,
+              "q25": 0.002251290262083563,
+              "q75": 0.0022549949324659996,
+              "unavailable": 0
+            }
+          }
+        },
+        "negative_boundary_A2_cosines": 0,
+        "negative_boundary_region_cosines": 0,
+        "raw_losses": {
+          "boundary": {
+            "available": 8,
+            "equal_group_mean": 0.009577228367561474,
+            "maximum": 0.03031797893345356,
+            "median": 0.0062116633635014296,
+            "minimum": 0.002079056343063712,
+            "q25": 0.0035313805565238,
+            "q75": 0.011954329907894135,
+            "unavailable": 0
+          },
+          "lpips": {
+            "available": 8,
+            "equal_group_mean": 0.5646604150533676,
+            "maximum": 0.6931153535842896,
+            "median": 0.5657175183296204,
+            "minimum": 0.4887188673019409,
+            "q25": 0.5377835184335709,
+            "q75": 0.5747034698724747,
+            "unavailable": 0
+          },
+          "region": {
+            "available": 8,
+            "equal_group_mean": 0.04541069810511544,
+            "maximum": 0.1663559228181839,
+            "median": 0.020742501132190228,
+            "minimum": 0.004478139337152243,
+            "q25": 0.010157891782000661,
+            "q75": 0.06588349491357803,
+            "unavailable": 0
+          },
+          "rgb": {
+            "available": 8,
+            "equal_group_mean": 0.2146487981081009,
+            "maximum": 0.27944451570510864,
+            "median": 0.21739090979099274,
+            "minimum": 0.16377636790275574,
+            "q25": 0.19780445098876953,
+            "q75": 0.2229800969362259,
+            "unavailable": 0
+          },
+          "total": {
+            "available": 8,
+            "equal_group_mean": 0.29860880225896835,
+            "maximum": 0.4347320795059204,
+            "median": 0.294102743268013,
+            "minimum": 0.21806776523590088,
+            "q25": 0.26096078008413315,
+            "q75": 0.3160914331674576,
+            "unavailable": 0
+          }
+        },
+        "support": {
+          "interior_valid_pixels": {
+            "available": 8,
+            "equal_group_mean": 50017.375,
+            "maximum": 56199,
+            "median": 49543.5,
+            "minimum": 42189,
+            "q25": 48376.25,
+            "q75": 52609.25,
+            "unavailable": 0
+          },
+          "scored_building_pixels": {
+            "available": 8,
+            "equal_group_mean": 0.0,
+            "maximum": 0,
+            "median": 0.0,
+            "minimum": 0,
+            "q25": 0.0,
+            "q75": 0.0,
+            "unavailable": 0
+          },
+          "target_boundary_pixels": {
+            "available": 8,
+            "equal_group_mean": 0.0,
+            "maximum": 0,
+            "median": 0.0,
+            "minimum": 0,
+            "q25": 0.0,
+            "q75": 0.0,
+            "unavailable": 0
+          },
+          "valid_pixels": {
+            "available": 8,
+            "equal_group_mean": 52843.875,
+            "maximum": 58355,
+            "median": 52331.0,
+            "minimum": 45876,
+            "q25": 51023.75,
+            "q75": 55382.25,
+            "unavailable": 0
+          }
+        },
+        "target_boundary_fraction": {
+          "available": 8,
+          "equal_group_mean": 0.0,
+          "maximum": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q25": 0.0,
+          "q75": 0.0,
+          "unavailable": 0
+        },
+        "views": 8,
+        "zero_boundary_gradients": 0
+      },
+      "nonempty": {
+        "adapter_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 92,
+              "equal_group_mean": 0.3715592812121531,
+              "maximum": 2.6553871071280093,
+              "median": 0.2740864832104356,
+              "minimum": 0.0717397623126319,
+              "q25": 0.17130440583996018,
+              "q75": 0.4047961625388657,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 92,
+              "equal_group_mean": 0.059979521248514724,
+              "maximum": 0.221303148932051,
+              "median": 0.04576811310431312,
+              "minimum": 0.004878832618906863,
+              "q25": 0.029730747218233277,
+              "q75": 0.07444283983858643,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 92,
+              "equal_group_mean": 0.06589274904582722,
+              "maximum": 0.23560647716273309,
+              "median": 0.04515699276633409,
+              "minimum": 0.004862977997224769,
+              "q25": 0.0299051888046827,
+              "q75": 0.07700727589926545,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 92,
+              "equal_group_mean": 0.9981783038810746,
+              "maximum": 0.999996397036919,
+              "median": 0.9993697476960899,
+              "minimum": 0.9767133238778191,
+              "q25": 0.9982300388857033,
+              "q75": 0.9997705464800933,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 92,
+              "equal_group_mean": 0.036464633081631774,
+              "maximum": 0.49809503662624843,
+              "median": 0.03762425269263067,
+              "minimum": -0.5008796730171846,
+              "q25": -0.08207306488181833,
+              "q75": 0.13136472739254382,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 92,
+              "equal_group_mean": 0.023311811918213392,
+              "maximum": 0.9516534898322592,
+              "median": 0.024026188176607996,
+              "minimum": -0.9510835429667213,
+              "q25": -0.5745938054877938,
+              "q75": 0.5109874520511053,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 92,
+              "equal_group_mean": -0.01287232027899024,
+              "maximum": 0.6567468575732661,
+              "median": -0.03444425244719158,
+              "minimum": -0.5814932694216243,
+              "q25": -0.23645558846482528,
+              "q75": 0.19249540691198946,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 92,
+              "equal_group_mean": 0.021919258967187234,
+              "maximum": 0.9523500476661674,
+              "median": 0.005701121177112618,
+              "minimum": -0.9516383742615049,
+              "q25": -0.5833703023464557,
+              "q75": 0.5016649150223413,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 92,
+              "equal_group_mean": 0.03746393042621389,
+              "maximum": 0.504099055122671,
+              "median": 0.025720917653616775,
+              "minimum": -0.4808025794191484,
+              "q25": -0.057062219777882284,
+              "q75": 0.13270877226609895,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 92,
+              "equal_group_mean": 0.07662349102832282,
+              "maximum": 0.168061551386113,
+              "median": 0.07532179809576497,
+              "minimum": 0.030461530562207732,
+              "q25": 0.058318976897036655,
+              "q75": 0.09464487157353847,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 92,
+              "equal_group_mean": 0.6952799858253602,
+              "maximum": 7.9198272514580985,
+              "median": 0.3966117604649795,
+              "minimum": 0.04806047851703336,
+              "q25": 0.24374433718092514,
+              "q75": 0.7504935980819817,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 92,
+              "equal_group_mean": 0.6991705009926482,
+              "maximum": 7.88753371116728,
+              "median": 0.4009101450537206,
+              "minimum": 0.05122514092696073,
+              "q25": 0.24974913774885082,
+              "q75": 0.7809979127903932,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 92,
+              "equal_group_mean": 0.02724540715238516,
+              "maximum": 0.19373617444391292,
+              "median": 0.018904397942254687,
+              "minimum": 0.005402647310514057,
+              "q25": 0.01221816025734908,
+              "q75": 0.03095151895395861,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 92,
+              "equal_group_mean": 0.01562809720815381,
+              "maximum": 0.058195374821771985,
+              "median": 0.014748116676222285,
+              "minimum": 0.0069715249217697384,
+              "q25": 0.01262137543277366,
+              "q75": 0.01739589626297566,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 92,
+              "equal_group_mean": 0.6852147366840423,
+              "maximum": 7.945648027314181,
+              "median": 0.40596177894116475,
+              "minimum": 0.02467866152430335,
+              "q25": 0.2292854672009031,
+              "q75": 0.7304023715488818,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 92,
+              "equal_group_mean": 0.07231944719485324,
+              "maximum": 0.16409460092286693,
+              "median": 0.07404663835962212,
+              "minimum": 0.027074112155697157,
+              "q25": 0.05388798836466512,
+              "q75": 0.08712496180773942,
+              "unavailable": 0
+            }
+          }
+        },
+        "geographic_groups": 48,
+        "image_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 92,
+              "equal_group_mean": 2.7445237136945324,
+              "maximum": 18.856859408022554,
+              "median": 1.9997236901984428,
+              "minimum": 0.19105848007262363,
+              "q25": 1.3685703506373386,
+              "q75": 3.1505604442255732,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 92,
+              "equal_group_mean": 0.06878665986356478,
+              "maximum": 0.2424605159944481,
+              "median": 0.05607617327965006,
+              "minimum": 0.004702465713408495,
+              "q25": 0.03174693485707679,
+              "q75": 0.09532284528128018,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 92,
+              "equal_group_mean": 0.06895921853568975,
+              "maximum": 0.24334900568557621,
+              "median": 0.056132555669350055,
+              "minimum": 0.004704572348999829,
+              "q25": 0.031759609257480545,
+              "q75": 0.09541686251561701,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 92,
+              "equal_group_mean": 0.9975199752306861,
+              "maximum": 0.9999965566245165,
+              "median": 0.9986389322416647,
+              "minimum": 0.9790845808588092,
+              "q25": 0.997426474214892,
+              "q75": 0.9997836678307168,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 92,
+              "equal_group_mean": 0.0023679558374812256,
+              "maximum": 0.01583228734031677,
+              "median": 0.002282641576252394,
+              "minimum": -0.01323150707361576,
+              "q25": -0.0009114190192194923,
+              "q75": 0.005257866599904136,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 92,
+              "equal_group_mean": 0.008853285006489192,
+              "maximum": 0.9649635292836884,
+              "median": 0.07071317064600648,
+              "minimum": -0.9258997466093958,
+              "q25": -0.45551943092471076,
+              "q75": 0.37572551680526944,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 92,
+              "equal_group_mean": 0.002155618319586194,
+              "maximum": 0.015346368152384111,
+              "median": 0.002325908451069396,
+              "minimum": -0.014825224933333747,
+              "q25": -0.0012706354502563858,
+              "q75": 0.0053170719036437835,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 92,
+              "equal_group_mean": 0.008914911712809967,
+              "maximum": 0.9652250422849125,
+              "median": 0.07067380700713213,
+              "minimum": -0.9259522920426887,
+              "q25": -0.45566399789587453,
+              "q75": 0.3762572842450759,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 92,
+              "equal_group_mean": 0.0011912051770922715,
+              "maximum": 0.0094482373601798,
+              "median": 0.0008159027523395588,
+              "minimum": -0.002894409069136758,
+              "q25": -0.0002520304685679478,
+              "q75": 0.002638071156487745,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 92,
+              "equal_group_mean": 0.009343695816806231,
+              "maximum": 0.013652651190063465,
+              "median": 0.009152706980351798,
+              "minimum": 0.0059864945007104525,
+              "q25": 0.007805587480257068,
+              "q75": 0.010870007219001982,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 92,
+              "equal_group_mean": 0.643811118525015,
+              "maximum": 7.78147166215156,
+              "median": 0.3433197662068259,
+              "minimum": 0.052612180587741926,
+              "q25": 0.19775442002592591,
+              "q75": 0.6469001779418609,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 92,
+              "equal_group_mean": 0.6476172396637415,
+              "maximum": 7.68556742463114,
+              "median": 0.35372695209928223,
+              "minimum": 0.052054144790273066,
+              "q25": 0.20188333800912955,
+              "q75": 0.6421495785777098,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 92,
+              "equal_group_mean": 0.026060555434629446,
+              "maximum": 0.2485024752680431,
+              "median": 0.018482452821493897,
+              "minimum": 0.002599392533636831,
+              "q25": 0.012878156037046935,
+              "q75": 0.025731106881430876,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 92,
+              "equal_group_mean": 0.009032667885590226,
+              "maximum": 0.013460338529196663,
+              "median": 0.008847325012991422,
+              "minimum": 0.005524800737311893,
+              "q25": 0.007457837247177663,
+              "q75": 0.010604702774248395,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 92,
+              "equal_group_mean": 0.6435887364082141,
+              "maximum": 7.781431382406273,
+              "median": 0.3431655661135876,
+              "minimum": 0.05119711240990016,
+              "q25": 0.1973830271467821,
+              "q75": 0.6468631937852328,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 92,
+              "equal_group_mean": 0.002254120997785558,
+              "maximum": 0.0022552745562350865,
+              "median": 0.0022551684477164335,
+              "minimum": 0.0022286598387774273,
+              "q25": 0.00225473966106705,
+              "q75": 0.0022552458787538157,
+              "unavailable": 0
+            }
+          }
+        },
+        "negative_boundary_A2_cosines": 43,
+        "negative_boundary_region_cosines": 46,
+        "raw_losses": {
+          "boundary": {
+            "available": 92,
+            "equal_group_mean": 0.02166658182674534,
+            "maximum": 0.05386001989245415,
+            "median": 0.02199664991348982,
+            "minimum": 0.0004609617462847382,
+            "q25": 0.015543631976470351,
+            "q75": 0.02752699702978134,
+            "unavailable": 0
+          },
+          "lpips": {
+            "available": 92,
+            "equal_group_mean": 0.5660075608537428,
+            "maximum": 1.0509068965911865,
+            "median": 0.5591568350791931,
+            "minimum": 0.39448902010917664,
+            "q25": 0.5138743221759796,
+            "q75": 0.614005371928215,
+            "unavailable": 0
+          },
+          "region": {
+            "available": 92,
+            "equal_group_mean": 0.5280527554361875,
+            "maximum": 8.349203109741211,
+            "median": 0.37361691892147064,
+            "minimum": 0.01978827454149723,
+            "q25": 0.23121849447488785,
+            "q75": 0.5611470192670822,
+            "unavailable": 0
+          },
+          "rgb": {
+            "available": 92,
+            "equal_group_mean": 0.2094297300144616,
+            "maximum": 0.3512219786643982,
+            "median": 0.20987708121538162,
+            "minimum": 0.13077601790428162,
+            "q25": 0.17708837613463402,
+            "q75": 0.23067153990268707,
+            "unavailable": 0
+          },
+          "total": {
+            "available": 92,
+            "equal_group_mean": 0.5408901499687798,
+            "maximum": 4.486393451690674,
+            "median": 0.473937064409256,
+            "minimum": 0.2014184594154358,
+            "q25": 0.37238064408302307,
+            "q75": 0.5608267337083817,
+            "unavailable": 0
+          }
+        },
+        "support": {
+          "interior_valid_pixels": {
+            "available": 92,
+            "equal_group_mean": 51223.37951388888,
+            "maximum": 65536,
+            "median": 50954.5,
+            "minimum": 26007,
+            "q25": 47335.25,
+            "q75": 54921.25,
+            "unavailable": 0
+          },
+          "scored_building_pixels": {
+            "available": 92,
+            "equal_group_mean": 16709.56840277778,
+            "maximum": 65536,
+            "median": 12246.0,
+            "minimum": 6,
+            "q25": 6811.0,
+            "q75": 24982.75,
+            "unavailable": 0
+          },
+          "target_boundary_pixels": {
+            "available": 92,
+            "equal_group_mean": 0.4131944444444444,
+            "maximum": 22,
+            "median": 0.0,
+            "minimum": 0,
+            "q25": 0.0,
+            "q75": 0.0,
+            "unavailable": 0
+          },
+          "valid_pixels": {
+            "available": 92,
+            "equal_group_mean": 53636.74895833334,
+            "maximum": 65536,
+            "median": 53790.5,
+            "minimum": 27807,
+            "q25": 49998.0,
+            "q75": 57297.25,
+            "unavailable": 0
+          }
+        },
+        "target_boundary_fraction": {
+          "available": 92,
+          "equal_group_mean": 7.870162761851324e-06,
+          "maximum": 0.00043708898734428703,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q25": 0.0,
+          "q75": 0.0,
+          "unavailable": 0
+        },
+        "views": 92,
+        "zero_boundary_gradients": 0
+      }
+    },
+    "500": {
+      "all": {
+        "adapter_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 100,
+              "equal_group_mean": 0.3808701052774266,
+              "maximum": 3.018535931322751,
+              "median": 0.25398293294485086,
+              "minimum": 0.07319029880900454,
+              "q25": 0.18360830677872794,
+              "q75": 0.4407950465453928,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 100,
+              "equal_group_mean": 0.06499329487862568,
+              "maximum": 0.19537556493553787,
+              "median": 0.04867433929737679,
+              "minimum": 0.00689397275452731,
+              "q25": 0.030288546388721523,
+              "q75": 0.08564798121709472,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 100,
+              "equal_group_mean": 0.07982362782385076,
+              "maximum": 0.5491515425873094,
+              "median": 0.04980044849447732,
+              "minimum": 0.006879368763754518,
+              "q25": 0.0321791144266753,
+              "q75": 0.09393041304585187,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 100,
+              "equal_group_mean": 0.9981853071889942,
+              "maximum": 0.9999963979184282,
+              "median": 0.9992909152081351,
+              "minimum": 0.9859000906013031,
+              "q25": 0.9978449984334212,
+              "q75": 0.9997803234475262,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 100,
+              "equal_group_mean": 0.06367227504918908,
+              "maximum": 0.7920455191360283,
+              "median": 0.06566241642611295,
+              "minimum": -0.5874282148431168,
+              "q25": -0.11106519682996091,
+              "q75": 0.17101424730078757,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 100,
+              "equal_group_mean": 0.041689100999184714,
+              "maximum": 0.9437602860669054,
+              "median": 0.07734386366714648,
+              "minimum": -0.9703679937934112,
+              "q25": -0.5165802427982777,
+              "q75": 0.5125969278158298,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 100,
+              "equal_group_mean": 0.06564364435809522,
+              "maximum": 0.7661534175260669,
+              "median": 0.024330438685951594,
+              "minimum": -0.7700772945769504,
+              "q25": -0.1837691872212287,
+              "q75": 0.3033832045216004,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 100,
+              "equal_group_mean": 0.05155541890427263,
+              "maximum": 0.9955273695400096,
+              "median": 0.02712065369256118,
+              "minimum": -0.9658383460298994,
+              "q25": -0.5481289285025656,
+              "q75": 0.6337741445112091,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 100,
+              "equal_group_mean": 0.05376945500342697,
+              "maximum": 0.740394724009619,
+              "median": 0.04063492743328498,
+              "minimum": -0.508087400457049,
+              "q25": -0.09419447824344243,
+              "q75": 0.17426535138789667,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 100,
+              "equal_group_mean": 0.12169515641749847,
+              "maximum": 0.26349139652539316,
+              "median": 0.118848050616474,
+              "minimum": 0.04516229466726213,
+              "q25": 0.08963703475889873,
+              "q75": 0.1456781558911467,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 100,
+              "equal_group_mean": 1.1083243032413634,
+              "maximum": 12.582329456845278,
+              "median": 0.590549348352632,
+              "minimum": 0.117332729083579,
+              "q25": 0.34684202296275035,
+              "q75": 1.2893723262884673,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 100,
+              "equal_group_mean": 1.1171683736340698,
+              "maximum": 12.502386133993218,
+              "median": 0.625750894928965,
+              "minimum": 0.11869057354508859,
+              "q25": 0.3594076541834407,
+              "q75": 1.24623584406065,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 100,
+              "equal_group_mean": 0.045028048837311006,
+              "maximum": 0.4034179878572595,
+              "median": 0.027602902649756848,
+              "minimum": 0.008422913026771287,
+              "q25": 0.019929632052186896,
+              "q75": 0.045597967124607695,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 100,
+              "equal_group_mean": 0.024830549609875286,
+              "maximum": 0.07189541584941227,
+              "median": 0.023200953653871932,
+              "minimum": 0.011031755572151275,
+              "q25": 0.018667669482031128,
+              "q75": 0.028764959851889274,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 100,
+              "equal_group_mean": 1.0851325568989043,
+              "maximum": 12.609040079519866,
+              "median": 0.5768158308438627,
+              "minimum": 0.036434858104551875,
+              "q25": 0.3051208045726609,
+              "q75": 1.227158383558849,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 100,
+              "equal_group_mean": 0.11409882633288233,
+              "maximum": 0.263850227824586,
+              "median": 0.11177940123975466,
+              "minimum": 0.04413138380443409,
+              "q25": 0.0833671170729949,
+              "q75": 0.13981974199520855,
+              "unavailable": 0
+            }
+          }
+        },
+        "geographic_groups": 48,
+        "image_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 100,
+              "equal_group_mean": 2.638802659643055,
+              "maximum": 18.480290377474972,
+              "median": 1.8899967129177806,
+              "minimum": 0.3898560181364561,
+              "q25": 1.317397347186204,
+              "q75": 3.047197319027944,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 100,
+              "equal_group_mean": 0.07857460636945053,
+              "maximum": 0.3770551365956787,
+              "median": 0.05988742850888713,
+              "minimum": 0.007464777309006763,
+              "q25": 0.035350998777215606,
+              "q75": 0.09789994834208579,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 100,
+              "equal_group_mean": 0.07938921351246382,
+              "maximum": 0.3902004187193606,
+              "median": 0.059944827151724014,
+              "minimum": 0.007464758002559437,
+              "q25": 0.035387625555403715,
+              "q75": 0.09801910571665133,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 100,
+              "equal_group_mean": 0.9975789409025845,
+              "maximum": 0.9999949892999213,
+              "median": 0.9986975760281479,
+              "minimum": 0.9792537750049007,
+              "q25": 0.9969333998085113,
+              "q75": 0.9996843825290809,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 100,
+              "equal_group_mean": 0.0023219090804177636,
+              "maximum": 0.021756572649918978,
+              "median": 0.002446435565519757,
+              "minimum": -0.012527287275072465,
+              "q25": -0.0007010362405299167,
+              "q75": 0.006052879463853474,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 100,
+              "equal_group_mean": 0.04469155624887142,
+              "maximum": 0.9636795347986317,
+              "median": 0.003872144467440287,
+              "minimum": -0.9536454048398654,
+              "q25": -0.3919657553505728,
+              "q75": 0.47654665007022073,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 100,
+              "equal_group_mean": 0.0022183824249338764,
+              "maximum": 0.021264424066962093,
+              "median": 0.0019105352166996449,
+              "minimum": -0.012448866764673841,
+              "q25": -0.000729495534192997,
+              "q75": 0.006140731298494267,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 100,
+              "equal_group_mean": 0.046538118896874515,
+              "maximum": 0.9879138276128773,
+              "median": 0.0036036195268523454,
+              "minimum": -0.9536588591038859,
+              "q25": -0.39246389568601847,
+              "q75": 0.47814837075610384,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 100,
+              "equal_group_mean": 0.0007631681819280047,
+              "maximum": 0.009066727183430082,
+              "median": 0.000954805564857815,
+              "minimum": -0.0056107612757997005,
+              "q25": -0.0005478237683873917,
+              "q75": 0.002141999838330911,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 100,
+              "equal_group_mean": 0.009402842980867564,
+              "maximum": 0.014388049845633894,
+              "median": 0.009137549920350884,
+              "minimum": 0.005916839785420957,
+              "q25": 0.007910927432940834,
+              "q75": 0.010854608689245558,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 100,
+              "equal_group_mean": 0.607774318251389,
+              "maximum": 7.107203717694572,
+              "median": 0.30639776915537753,
+              "minimum": 0.022887439286910376,
+              "q25": 0.1697974743985028,
+              "q75": 0.5255460426217101,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 100,
+              "equal_group_mean": 0.6104031256614743,
+              "maximum": 7.059121345124923,
+              "median": 0.31706622845052734,
+              "minimum": 0.03009696430849028,
+              "q25": 0.18856217052743932,
+              "q75": 0.5283924533772999,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 100,
+              "equal_group_mean": 0.025240171094624415,
+              "maximum": 0.24676180186993757,
+              "median": 0.01715191704452542,
+              "minimum": 0.005154175158439401,
+              "q25": 0.011840175973110089,
+              "q75": 0.024275972283916085,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 100,
+              "equal_group_mean": 0.009093782946465954,
+              "maximum": 0.014194011679489643,
+              "median": 0.00882729847954251,
+              "minimum": 0.0054558584127789075,
+              "q25": 0.007553459704605169,
+              "q75": 0.010585922560776576,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 100,
+              "equal_group_mean": 0.6074878037489922,
+              "maximum": 7.1072220993827875,
+              "median": 0.30618251293210996,
+              "minimum": 0.020474762412957467,
+              "q25": 0.16956901735193056,
+              "q75": 0.5253990733062445,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 100,
+              "equal_group_mean": 0.0022540614955901695,
+              "maximum": 0.0022552745562350865,
+              "median": 0.00225514837258972,
+              "minimum": 0.0022288571644372905,
+              "q25": 0.00225428066695169,
+              "q75": 0.0022552458787538157,
+              "unavailable": 0
+            }
+          }
+        },
+        "negative_boundary_A2_cosines": 47,
+        "negative_boundary_region_cosines": 50,
+        "raw_losses": {
+          "boundary": {
+            "available": 100,
+            "equal_group_mean": 0.0205779278068399,
+            "maximum": 0.05208016186952591,
+            "median": 0.020977139472961426,
+            "minimum": 0.0008673059055581689,
+            "q25": 0.01469952566549182,
+            "q75": 0.027871202677488327,
+            "unavailable": 0
+          },
+          "lpips": {
+            "available": 100,
+            "equal_group_mean": 0.5657725829838051,
+            "maximum": 1.0508811473846436,
+            "median": 0.5597024261951447,
+            "minimum": 0.3921965956687927,
+            "q25": 0.5134347528219223,
+            "q75": 0.6108585447072983,
+            "unavailable": 0
+          },
+          "region": {
+            "available": 100,
+            "equal_group_mean": 0.4979087784174933,
+            "maximum": 7.937380790710449,
+            "median": 0.35259556770324707,
+            "minimum": 0.0051227351650595665,
+            "q25": 0.1682848148047924,
+            "q75": 0.5514532178640366,
+            "unavailable": 0
+          },
+          "rgb": {
+            "available": 100,
+            "equal_group_mean": 0.2083465850756814,
+            "maximum": 0.3493201732635498,
+            "median": 0.21077293902635574,
+            "minimum": 0.1306050717830658,
+            "q25": 0.1784225031733513,
+            "q75": 0.2302120104432106,
+            "unavailable": 0
+          },
+          "total": {
+            "available": 100,
+            "equal_group_mean": 0.5241671959455642,
+            "maximum": 4.281219005584717,
+            "median": 0.45658306777477264,
+            "minimum": 0.19947689771652222,
+            "q25": 0.35115790367126465,
+            "q75": 0.5547637045383453,
+            "unavailable": 0
+          }
+        },
+        "support": {
+          "interior_valid_pixels": {
+            "available": 100,
+            "equal_group_mean": 51363.37777777778,
+            "maximum": 65536,
+            "median": 50501.0,
+            "minimum": 26007,
+            "q25": 47492.75,
+            "q75": 54798.75,
+            "unavailable": 0
+          },
+          "scored_building_pixels": {
+            "available": 100,
+            "equal_group_mean": 15943.03888888889,
+            "maximum": 65536,
+            "median": 11539.0,
+            "minimum": 0,
+            "q25": 4366.0,
+            "q75": 24867.75,
+            "unavailable": 0
+          },
+          "target_boundary_pixels": {
+            "available": 100,
+            "equal_group_mean": 0.40625,
+            "maximum": 22,
+            "median": 0.0,
+            "minimum": 0,
+            "q25": 0.0,
+            "q75": 0.0,
+            "unavailable": 0
+          },
+          "valid_pixels": {
+            "available": 100,
+            "equal_group_mean": 53786.72638888888,
+            "maximum": 65536,
+            "median": 53629.0,
+            "minimum": 27807,
+            "q25": 50190.75,
+            "q75": 57294.75,
+            "unavailable": 0
+          }
+        },
+        "target_boundary_fraction": {
+          "available": 100,
+          "equal_group_mean": 7.744040017178243e-06,
+          "maximum": 0.00043708898734428703,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q25": 0.0,
+          "q75": 0.0,
+          "unavailable": 0
+        },
+        "views": 100,
+        "zero_boundary_gradients": 0
+      },
+      "empty": {
+        "adapter_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 8,
+              "equal_group_mean": 0.24817173723467922,
+              "maximum": 0.42007035078108024,
+              "median": 0.2160962333770946,
+              "minimum": 0.13982743909467515,
+              "q25": 0.18069138837922347,
+              "q75": 0.2863708542630184,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "equal_group_mean": 0.12799390184629603,
+              "maximum": 0.19537556493553787,
+              "median": 0.13161175471550987,
+              "minimum": 0.046779973233544124,
+              "q25": 0.10758228753554022,
+              "q75": 0.15201695353364786,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "equal_group_mean": 0.2131978292100884,
+              "maximum": 0.4214927739317063,
+              "median": 0.20004056268264825,
+              "minimum": 0.04967573730279218,
+              "q25": 0.11808083935108507,
+              "q75": 0.2734639135060483,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 8,
+              "equal_group_mean": 0.9957249918565472,
+              "maximum": 0.999336704218831,
+              "median": 0.9953198946060449,
+              "minimum": 0.9910015150542837,
+              "q25": 0.9941193518835889,
+              "q75": 0.9984973597530218,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 8,
+              "equal_group_mean": 0.03418763384911661,
+              "maximum": 0.4121254410806059,
+              "median": 0.06218108271886222,
+              "minimum": -0.2997591259276832,
+              "q25": -0.14994476863148967,
+              "q75": 0.1635348860914996,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 8,
+              "equal_group_mean": 0.6517053023612497,
+              "maximum": 0.873512780751185,
+              "median": 0.6370535351622886,
+              "minimum": 0.46008955373333954,
+              "q25": 0.501420935428651,
+              "q75": 0.7935731216050717,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 8,
+              "equal_group_mean": 0.08715706355083949,
+              "maximum": 0.3874951075026331,
+              "median": 0.17347229304680867,
+              "minimum": -0.433946698443282,
+              "q25": -0.05570179446801019,
+              "q75": 0.32189016827305295,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 8,
+              "equal_group_mean": 0.8938343836796364,
+              "maximum": 0.9955273695400096,
+              "median": 0.9337624014263219,
+              "minimum": 0.5548549489124952,
+              "q25": 0.8917584763505313,
+              "q75": 0.9821779980937566,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 8,
+              "equal_group_mean": 0.01567270148889157,
+              "maximum": 0.3672769847018231,
+              "median": -0.025265752328670406,
+              "minimum": -0.32984685809755454,
+              "q25": -0.11070348604421755,
+              "q75": 0.16186504262597942,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 8,
+              "equal_group_mean": 0.10923844672420994,
+              "maximum": 0.15059907595530136,
+              "median": 0.10311070593386933,
+              "minimum": 0.08222846932459442,
+              "q25": 0.09888822144465403,
+              "q75": 0.1129039680084605,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "equal_group_mean": 0.2556386369170585,
+              "maximum": 0.6653010007347689,
+              "median": 0.17524779350819308,
+              "minimum": 0.117332729083579,
+              "q25": 0.13503575877819168,
+              "q75": 0.26696868516354205,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 8,
+              "equal_group_mean": 0.2760999591302767,
+              "maximum": 0.7212191452250806,
+              "median": 0.19524268133717865,
+              "minimum": 0.12730849423965998,
+              "q25": 0.14816132875254434,
+              "q75": 0.285931607337681,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 8,
+              "equal_group_mean": 0.0276629552156545,
+              "maximum": 0.06326220666384999,
+              "median": 0.020386505766951307,
+              "minimum": 0.01785369128831042,
+              "q25": 0.018981703755399797,
+              "q75": 0.027097504387732528,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 8,
+              "equal_group_mean": 0.025586904585873226,
+              "maximum": 0.03380243044034548,
+              "median": 0.025778218897101975,
+              "minimum": 0.018133552645210528,
+              "q25": 0.019745389187464185,
+              "q75": 0.030019493461175144,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "equal_group_mean": 0.2176615306109546,
+              "maximum": 0.6651324705887425,
+              "median": 0.13418198990861008,
+              "minimum": 0.04553413894079673,
+              "q25": 0.07318207417560571,
+              "q75": 0.26513035026899107,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 8,
+              "equal_group_mean": 0.1028432798651388,
+              "maximum": 0.13909153960250586,
+              "median": 0.09836979567553746,
+              "minimum": 0.07618119318644019,
+              "q25": 0.09348131889436312,
+              "q75": 0.10713540176092606,
+              "unavailable": 0
+            }
+          }
+        },
+        "geographic_groups": 8,
+        "image_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 8,
+              "equal_group_mean": 1.6261108836045826,
+              "maximum": 3.849561607570513,
+              "median": 1.1885551297949015,
+              "minimum": 0.6395433904546756,
+              "q25": 0.9956711417988111,
+              "q75": 1.804846931136952,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "equal_group_mean": 0.22525962090194648,
+              "maximum": 0.3770551365956787,
+              "median": 0.22149204014488963,
+              "minimum": 0.08279478486564057,
+              "q25": 0.1271125058955324,
+              "q75": 0.3303072611452009,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "equal_group_mean": 0.23602054362852032,
+              "maximum": 0.3902004187193606,
+              "median": 0.2293010638732536,
+              "minimum": 0.08284976369925452,
+              "q25": 0.12735771080074218,
+              "q75": 0.35249521847290355,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 8,
+              "equal_group_mean": 0.9953807625252254,
+              "maximum": 0.9991514040461532,
+              "median": 0.9962319881110288,
+              "minimum": 0.9889674390125451,
+              "q25": 0.9934404054517296,
+              "q75": 0.9979574892078017,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 8,
+              "equal_group_mean": 0.0060333563687689695,
+              "maximum": 0.021756572649918978,
+              "median": 0.002236969875082202,
+              "minimum": -0.007741250167695305,
+              "q25": -0.0004885242243495935,
+              "q75": 0.014729681347247194,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 8,
+              "equal_group_mean": 0.794033748410905,
+              "maximum": 0.9452035684819305,
+              "median": 0.8895721637152039,
+              "minimum": 0.278477464565793,
+              "q25": 0.805916436855155,
+              "q75": 0.9031551878192834,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 8,
+              "equal_group_mean": 0.006152353953848581,
+              "maximum": 0.021264424066962093,
+              "median": 0.002475901459826077,
+              "minimum": -0.007354064410286766,
+              "q25": -0.0005474279114045991,
+              "q75": 0.01569204708026528,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 8,
+              "equal_group_mean": 0.8244608522339294,
+              "maximum": 0.9879138276128773,
+              "median": 0.918881457525722,
+              "minimum": 0.27818723748162705,
+              "q25": 0.8085718633700337,
+              "q75": 0.9737927235528174,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 8,
+              "equal_group_mean": 0.00043849258491200887,
+              "maximum": 0.005594375064520539,
+              "median": -0.0006039446027306341,
+              "minimum": -0.0031198688574679127,
+              "q25": -0.0018818011413743814,
+              "q75": 0.002386642864049109,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 8,
+              "equal_group_mean": 0.009460294854929415,
+              "maximum": 0.014388049845633894,
+              "median": 0.008939270322198468,
+              "minimum": 0.007266593606772033,
+              "q25": 0.007968013818800856,
+              "q75": 0.010080014275825836,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "equal_group_mean": 0.09881245653808096,
+              "maximum": 0.33786185702205623,
+              "median": 0.049687663062011805,
+              "minimum": 0.022887439286910376,
+              "q25": 0.030951084606673198,
+              "q75": 0.11599394449477554,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 8,
+              "equal_group_mean": 0.1105945143856126,
+              "maximum": 0.3618413099012301,
+              "median": 0.05877877610419546,
+              "minimum": 0.03009696430849028,
+              "q25": 0.04125299143420347,
+              "q75": 0.12350616249057422,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 8,
+              "equal_group_mean": 0.014034205498254073,
+              "maximum": 0.02797319976644696,
+              "median": 0.010808220176485524,
+              "minimum": 0.007902145073934915,
+              "q25": 0.009067147212146628,
+              "q75": 0.01571404607503841,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 8,
+              "equal_group_mean": 0.009148501689228237,
+              "maximum": 0.014194011679489643,
+              "median": 0.008618097887521345,
+              "minimum": 0.0068794789730831415,
+              "q25": 0.0076081644226923045,
+              "q75": 0.009807831874106901,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "equal_group_mean": 0.09767355287580819,
+              "maximum": 0.3376376529930726,
+              "median": 0.04801521851464441,
+              "minimum": 0.020474762412957467,
+              "q25": 0.029599279805093335,
+              "q75": 0.11564016636727895,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 8,
+              "equal_group_mean": 0.0022519571510505616,
+              "maximum": 0.002255263085286337,
+              "median": 0.0022532834399428873,
+              "minimum": 0.002242984390911788,
+              "q25": 0.002251096323528574,
+              "q75": 0.0022550207453285427,
+              "unavailable": 0
+            }
+          }
+        },
+        "negative_boundary_A2_cosines": 0,
+        "negative_boundary_region_cosines": 0,
+        "raw_losses": {
+          "boundary": {
+            "available": 8,
+            "equal_group_mean": 0.009933143825037405,
+            "maximum": 0.032222747802734375,
+            "median": 0.005812232382595539,
+            "minimum": 0.0022072901483625174,
+            "q25": 0.0032563969725742936,
+            "q75": 0.013160251080989838,
+            "unavailable": 0
+          },
+          "lpips": {
+            "available": 8,
+            "equal_group_mean": 0.5645336136221886,
+            "maximum": 0.6822776198387146,
+            "median": 0.5636323094367981,
+            "minimum": 0.4919731020927429,
+            "q25": 0.5393462628126144,
+            "q75": 0.5756632685661316,
+            "unavailable": 0
+          },
+          "region": {
+            "available": 8,
+            "equal_group_mean": 0.048387492017354816,
+            "maximum": 0.16937202215194702,
+            "median": 0.022430896293371916,
+            "minimum": 0.0051227351650595665,
+            "q25": 0.008254833868704736,
+            "q75": 0.07117931358516216,
+            "unavailable": 0
+          },
+          "rgb": {
+            "available": 8,
+            "equal_group_mean": 0.21448767185211182,
+            "maximum": 0.2784523665904999,
+            "median": 0.2168746441602707,
+            "minimum": 0.1639743447303772,
+            "q25": 0.19863883778452873,
+            "q75": 0.22294409200549126,
+            "unavailable": 0
+          },
+          "total": {
+            "available": 8,
+            "equal_group_mean": 0.3001013435423374,
+            "maximum": 0.4361148774623871,
+            "median": 0.2931744158267975,
+            "minimum": 0.21815341711044312,
+            "q25": 0.26143601536750793,
+            "q75": 0.3210057467222214,
+            "unavailable": 0
+          }
+        },
+        "support": {
+          "interior_valid_pixels": {
+            "available": 8,
+            "equal_group_mean": 50017.375,
+            "maximum": 56199,
+            "median": 49543.5,
+            "minimum": 42189,
+            "q25": 48376.25,
+            "q75": 52609.25,
+            "unavailable": 0
+          },
+          "scored_building_pixels": {
+            "available": 8,
+            "equal_group_mean": 0.0,
+            "maximum": 0,
+            "median": 0.0,
+            "minimum": 0,
+            "q25": 0.0,
+            "q75": 0.0,
+            "unavailable": 0
+          },
+          "target_boundary_pixels": {
+            "available": 8,
+            "equal_group_mean": 0.0,
+            "maximum": 0,
+            "median": 0.0,
+            "minimum": 0,
+            "q25": 0.0,
+            "q75": 0.0,
+            "unavailable": 0
+          },
+          "valid_pixels": {
+            "available": 8,
+            "equal_group_mean": 52843.875,
+            "maximum": 58355,
+            "median": 52331.0,
+            "minimum": 45876,
+            "q25": 51023.75,
+            "q75": 55382.25,
+            "unavailable": 0
+          }
+        },
+        "target_boundary_fraction": {
+          "available": 8,
+          "equal_group_mean": 0.0,
+          "maximum": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q25": 0.0,
+          "q75": 0.0,
+          "unavailable": 0
+        },
+        "views": 8,
+        "zero_boundary_gradients": 0
+      },
+      "nonempty": {
+        "adapter_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 92,
+              "equal_group_mean": 0.3911596217310314,
+              "maximum": 3.018535931322751,
+              "median": 0.26969643187326964,
+              "minimum": 0.07319029880900454,
+              "q25": 0.18360830677872794,
+              "q75": 0.45052192057888235,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 92,
+              "equal_group_mean": 0.06173248553668467,
+              "maximum": 0.19482983110211824,
+              "median": 0.04526760567226476,
+              "minimum": 0.00689397275452731,
+              "q25": 0.028791575569275495,
+              "q75": 0.07652098733753146,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 92,
+              "equal_group_mean": 0.07170512271929279,
+              "maximum": 0.5491515425873094,
+              "median": 0.04771907442140019,
+              "minimum": 0.006879368763754518,
+              "q25": 0.029919481370286227,
+              "q75": 0.08176056480777791,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 92,
+              "equal_group_mean": 0.9983618939631835,
+              "maximum": 0.9999963979184282,
+              "median": 0.9993734581252919,
+              "minimum": 0.9859000906013031,
+              "q25": 0.998296089997725,
+              "q75": 0.9998303706644845,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 92,
+              "equal_group_mean": 0.056688886760114604,
+              "maximum": 0.7920455191360283,
+              "median": 0.06566241642611295,
+              "minimum": -0.5874282148431168,
+              "q25": -0.10960025053859204,
+              "q75": 0.17101424730078757,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 92,
+              "equal_group_mean": 0.0008473571727456372,
+              "maximum": 0.9437602860669054,
+              "median": -0.0178637343007982,
+              "minimum": -0.9703679937934112,
+              "q25": -0.554471295352828,
+              "q75": 0.4904307710795267,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 92,
+              "equal_group_mean": 0.0657751033497675,
+              "maximum": 0.7661534175260669,
+              "median": 0.005754204158789803,
+              "minimum": -0.7700772945769504,
+              "q25": -0.1837691872212287,
+              "q75": 0.2995123699031803,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 92,
+              "equal_group_mean": -0.004637137367725405,
+              "maximum": 0.9588598057472065,
+              "median": -0.08015760431502543,
+              "minimum": -0.9658383460298994,
+              "q25": -0.5831566063682295,
+              "q75": 0.4830806038659761,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 92,
+              "equal_group_mean": 0.04623679199804164,
+              "maximum": 0.740394724009619,
+              "median": 0.04840038394082552,
+              "minimum": -0.508087400457049,
+              "q25": -0.09419447824344243,
+              "q75": 0.17426535138789667,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 92,
+              "equal_group_mean": 0.12210345618347838,
+              "maximum": 0.26349139652539316,
+              "median": 0.12305855856101935,
+              "minimum": 0.04516229466726213,
+              "q25": 0.08928433783287804,
+              "q75": 0.1467813156348717,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 92,
+              "equal_group_mean": 1.1549288617135283,
+              "maximum": 12.582329456845278,
+              "median": 0.6368365388568733,
+              "minimum": 0.12448715638292464,
+              "q25": 0.39305911417072215,
+              "q75": 1.3111662187992281,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 92,
+              "equal_group_mean": 1.1636376346923727,
+              "maximum": 12.502386133993218,
+              "median": 0.6646298429000412,
+              "minimum": 0.11869057354508859,
+              "q25": 0.38937235480221843,
+              "q75": 1.3204907121967322,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 92,
+              "equal_group_mean": 0.04654091286996076,
+              "maximum": 0.4034179878572595,
+              "median": 0.029000888728941455,
+              "minimum": 0.008422913026771287,
+              "q25": 0.02078168508870044,
+              "q75": 0.04700164505590505,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 92,
+              "equal_group_mean": 0.024949168243144883,
+              "maximum": 0.07189541584941227,
+              "median": 0.023150137713267762,
+              "minimum": 0.011031755572151275,
+              "q25": 0.018623774607881963,
+              "q75": 0.028686089367434324,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 92,
+              "equal_group_mean": 1.1331553304905604,
+              "maximum": 12.609040079519866,
+              "median": 0.5985219153281542,
+              "minimum": 0.036434858104551875,
+              "q25": 0.3715499794349907,
+              "q75": 1.2879078932248682,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 92,
+              "equal_group_mean": 0.11434456549712511,
+              "maximum": 0.263850227824586,
+              "median": 0.11718365392976682,
+              "minimum": 0.04413138380443409,
+              "q25": 0.0827332057608885,
+              "q75": 0.14257941203913102,
+              "unavailable": 0
+            }
+          }
+        },
+        "geographic_groups": 48,
+        "image_gradients": {
+          "boundary_norm_ratios": {
+            "A1": {
+              "available": 92,
+              "equal_group_mean": 2.712060033385383,
+              "maximum": 18.480290377474972,
+              "median": 1.9435638392544612,
+              "minimum": 0.3898560181364561,
+              "q25": 1.346158025089965,
+              "q75": 3.1155538695657543,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 92,
+              "equal_group_mean": 0.07028367760136132,
+              "maximum": 0.22826910407124332,
+              "median": 0.05532550166297828,
+              "minimum": 0.007464777309006763,
+              "q25": 0.0345397465281449,
+              "q75": 0.08879497369657816,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 92,
+              "equal_group_mean": 0.0705260572084584,
+              "maximum": 0.2284713023529178,
+              "median": 0.05545560450442563,
+              "minimum": 0.007464758002559437,
+              "q25": 0.0345481699441386,
+              "q75": 0.08892671906542118,
+              "unavailable": 0
+            }
+          },
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 92,
+              "equal_group_mean": 0.9976706897872948,
+              "maximum": 0.9999949892999213,
+              "median": 0.9987745318482947,
+              "minimum": 0.9792537750049007,
+              "q25": 0.9972194248666885,
+              "q75": 0.9997227281277612,
+              "unavailable": 0
+            },
+            "boundary_vs_A1": {
+              "available": 92,
+              "equal_group_mean": 0.0022283648943453092,
+              "maximum": 0.01607382989448421,
+              "median": 0.002446435565519757,
+              "minimum": -0.012527287275072465,
+              "q25": -0.0007010362405299167,
+              "q75": 0.005794556114055815,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 92,
+              "equal_group_mean": 0.007133693044554246,
+              "maximum": 0.9636795347986317,
+              "median": -0.01213937215755651,
+              "minimum": -0.9536454048398654,
+              "q25": -0.40094141986064774,
+              "q75": 0.42193054354094894,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 92,
+              "equal_group_mean": 0.002102580965660222,
+              "maximum": 0.015022203769663378,
+              "median": 0.0019105352166996449,
+              "minimum": -0.012448866764673841,
+              "q25": -0.000729495534192997,
+              "q75": 0.0056292909139019865,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 92,
+              "equal_group_mean": 0.007249743217535909,
+              "maximum": 0.9640694476263192,
+              "median": -0.012181346664601307,
+              "minimum": -0.9536588591038859,
+              "q25": -0.40096019838157604,
+              "q75": 0.42205770580950286,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 92,
+              "equal_group_mean": 0.0008416552430033818,
+              "maximum": 0.009066727183430082,
+              "median": 0.001004238555251111,
+              "minimum": -0.0056107612757997005,
+              "q25": -0.0003732015839567721,
+              "q75": 0.002141999838330911,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 92,
+              "equal_group_mean": 0.009339256695577756,
+              "maximum": 0.014057606510834429,
+              "median": 0.009137549920350884,
+              "minimum": 0.005916839785420957,
+              "q25": 0.007871073150408253,
+              "q75": 0.010964208157932552,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 92,
+              "equal_group_mean": 0.6250865407421532,
+              "maximum": 7.107203717694572,
+              "median": 0.3334845831871325,
+              "minimum": 0.041269553354944866,
+              "q25": 0.18860658450204879,
+              "q75": 0.5560041923071757,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 92,
+              "equal_group_mean": 0.6275020823177432,
+              "maximum": 7.059121345124923,
+              "median": 0.3420606112580687,
+              "minimum": 0.04136598366879274,
+              "q25": 0.2000224508048296,
+              "q75": 0.5573540051384233,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 92,
+              "equal_group_mean": 0.025766104851794355,
+              "maximum": 0.24676180186993757,
+              "median": 0.017987005061862862,
+              "minimum": 0.005154175158439401,
+              "q25": 0.012780602533352246,
+              "q75": 0.025330219744992034,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 92,
+              "equal_group_mean": 0.009028577931441227,
+              "maximum": 0.013863921202370863,
+              "median": 0.00882729847954251,
+              "minimum": 0.0054558584127789075,
+              "q25": 0.007516526929924476,
+              "q75": 0.010707242318457074,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 92,
+              "equal_group_mean": 0.6248575168950716,
+              "maximum": 7.1072220993827875,
+              "median": 0.3333119399174702,
+              "minimum": 0.03952799882936395,
+              "q25": 0.18825266785975545,
+              "q75": 0.5558837662596525,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 92,
+              "equal_group_mean": 0.002254113052309798,
+              "maximum": 0.0022552745562350865,
+              "median": 0.0022551569762425472,
+              "minimum": 0.0022288571644372905,
+              "q25": 0.002254705239991266,
+              "q75": 0.0022552458787538157,
+              "unavailable": 0
+            }
+          }
+        },
+        "negative_boundary_A2_cosines": 47,
+        "negative_boundary_region_cosines": 50,
+        "raw_losses": {
+          "boundary": {
+            "available": 92,
+            "equal_group_mean": 0.0214990279182934,
+            "maximum": 0.05208016186952591,
+            "median": 0.02221055794507265,
+            "minimum": 0.0008673059055581689,
+            "q25": 0.01575859682634473,
+            "q75": 0.027987264096736908,
+            "unavailable": 0
+          },
+          "lpips": {
+            "available": 92,
+            "equal_group_mean": 0.5656258549230794,
+            "maximum": 1.0508811473846436,
+            "median": 0.5590455234050751,
+            "minimum": 0.3921965956687927,
+            "q25": 0.5134347528219223,
+            "q75": 0.6130874007940292,
+            "unavailable": 0
+          },
+          "region": {
+            "available": 92,
+            "equal_group_mean": 0.5217934657961855,
+            "maximum": 7.937380790710449,
+            "median": 0.3651646226644516,
+            "minimum": 0.01662532426416874,
+            "q25": 0.23977966606616974,
+            "q75": 0.5783341079950333,
+            "unavailable": 0
+          },
+          "rgb": {
+            "available": 92,
+            "equal_group_mean": 0.209058600017387,
+            "maximum": 0.3493201732635498,
+            "median": 0.20938176661729813,
+            "minimum": 0.1306050717830658,
+            "q25": 0.176337830722332,
+            "q75": 0.23035183548927307,
+            "unavailable": 0
+          },
+          "total": {
+            "available": 92,
+            "equal_group_mean": 0.5372674318754839,
+            "maximum": 4.281219005584717,
+            "median": 0.4683002829551697,
+            "minimum": 0.19947689771652222,
+            "q25": 0.37110644578933716,
+            "q75": 0.5690615475177765,
+            "unavailable": 0
+          }
+        },
+        "support": {
+          "interior_valid_pixels": {
+            "available": 92,
+            "equal_group_mean": 51223.37951388888,
+            "maximum": 65536,
+            "median": 50954.5,
+            "minimum": 26007,
+            "q25": 47335.25,
+            "q75": 54921.25,
+            "unavailable": 0
+          },
+          "scored_building_pixels": {
+            "available": 92,
+            "equal_group_mean": 16709.56840277778,
+            "maximum": 65536,
+            "median": 12246.0,
+            "minimum": 6,
+            "q25": 6811.0,
+            "q75": 24982.75,
+            "unavailable": 0
+          },
+          "target_boundary_pixels": {
+            "available": 92,
+            "equal_group_mean": 0.4131944444444444,
+            "maximum": 22,
+            "median": 0.0,
+            "minimum": 0,
+            "q25": 0.0,
+            "q75": 0.0,
+            "unavailable": 0
+          },
+          "valid_pixels": {
+            "available": 92,
+            "equal_group_mean": 53636.74895833334,
+            "maximum": 65536,
+            "median": 53790.5,
+            "minimum": 27807,
+            "q25": 49998.0,
+            "q75": 57297.25,
+            "unavailable": 0
+          }
+        },
+        "target_boundary_fraction": {
+          "available": 92,
+          "equal_group_mean": 7.870162761851324e-06,
+          "maximum": 0.00043708898734428703,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q25": 0.0,
+          "q75": 0.0,
+          "unavailable": 0
+        },
+        "views": 92,
+        "zero_boundary_gradients": 0
+      }
+    }
+  },
+  "study": "training_only_gradient_and_pairing_diagnosis",
+  "tf32_disabled_for_gradient_decomposition": true,
+  "total_checks": 300,
+  "validation_targets_used_for_gradients": false,
+  "views_per_state": 100,
+  "weights": {
+    "boundary": 0.5,
+    "lpips": 0.1,
+    "region": 0.5,
+    "rgb": 1.0
+  }
+}
