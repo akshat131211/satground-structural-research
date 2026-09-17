@@ -1,5 +1,41 @@
 # Implementation status — updated 18 September 2026 (India)
 
+## Contour correction implemented; fixed comparison running
+
+- Added the explicit `anchored_contour_v1` mode. Historical configurations keep
+  their original loss behavior. The new mode uses a separately cached boundary
+  mask; original building, validity, class and confidence arrays are identical.
+- Fixed four-pixel anchor radius, 0.7 confidence and a one-pixel vegetation/dynamic
+  exclusion neighborhood for newly included contours. No sweep, new segmentation
+  inference, target-mask edits, positive-class reweighting or learning-rate change.
+- Training support increased from 48 to 43,127 positive boundary pixels. Ninety
+  of 92 nonempty training views now retain positive targets. The fixed feasibility
+  thresholds passed. These remain machine proposals, not verified contours.
+- Inspected eight deterministically selected training examples locally. Most new
+  contours follow visible roof/sky transitions; some teacher errors and omissions
+  remain. This assistant inspection adds no human approval or label revision.
+- A separate three-step A3 startup/resume check passed, with all loss/gradient
+  values finite and 668.3 MiB peak allocated VRAM. It is not either comparison model.
+- Launched fresh A2 then corrected A3, serially: 500 optimizer steps each, seed 17,
+  learning rate 0.00003, accumulation 8, 256-pixel output. Final step 500 is fixed
+  for evaluation; no post-hoc checkpoint selection or training extension.
+- A2's first-step RGB, LPIPS, region and total losses exactly match the historical
+  control. Its gradient norm differs by approximately 0.00001176, and later values
+  drift slightly. Bitwise retraining reproducibility is not assumed; the final
+  report checks the fresh control and retains this numerical issue for diagnosis.
+- **130 tests passed, two optional CUDA tests skipped.** Tests check contour
+  restoration, exclusion of vegetation/dynamic neighbors, unsupported wide gaps,
+  empty targets, malformed labels, unchanged region gradients and matched budgets.
+- The monitor is active every 15 minutes and stops after final verification.
+  Source, labels, configurations, protocol and runner/report scripts are pinned
+  during the comparison. Only one GPU training subprocess is active.
+- No model-improvement conclusion is available yet. Reviewed development masks,
+  earlier results and sealed sets remain unchanged; data QA is incomplete.
+
+See [frozen protocol](../docs/CONTOUR_CORRECTION.md),
+[support audit](contour500/target-support.json), [startup checks](contour500/preflight.json),
+and [timestamped process snapshot](CONTOUR_RUN_STATUS.json).
+
 ## Training-boundary diagnosis completed
 
 - Audited all 100 training views: 92 have scored building pseudo-labels, but

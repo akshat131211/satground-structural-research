@@ -1,0 +1,58 @@
+{
+  "approved_masks_unchanged": true,
+  "artifact_sha256": {
+    "configs/contour500/A2.yaml": "a183be6e6380892f4d8ff1e6ab04e74f63809f3343e8db1258135d52737e062e",
+    "configs/contour500/A3.yaml": "397853ff11bec32885075c767be6bbdbd0c6a62eca8238f700980f6108f4068f",
+    "docs/CONTOUR_CORRECTION.md": "25afbbdb86bfa47a1761175297a4ce1170d7f145e020fe42c71128230b6124b3",
+    "reports/contour500/preflight.json": "7f718bfae73b9f65c3b34a76255b334707dbe2dcade35cb47217e2f1d3097db7",
+    "reports/contour500/target-support.json": "fc5cf58215f822f963d6faf4b7e58169e80e9dc6fd6bd4d9cceacb44debcfb72"
+  },
+  "comparison_complete": false,
+  "current_stage": "A2-train",
+  "data_qa_complete": false,
+  "learning_rate": 3e-05,
+  "model_improvement_established": false,
+  "monitor_interval_minutes": 15,
+  "monitor_status": "ACTIVE",
+  "nonempty_training_views": 92,
+  "nonempty_training_views_with_positive_support": 90,
+  "optional_cuda_skipped": 2,
+  "original_experiments_preserved": true,
+  "original_region_arrays_unchanged": true,
+  "pinned_input_files": 177,
+  "pipeline_source_hash": "2504a27e3b3d7632ad3839dd567e60c17ef6b71623381e35f72eb9489bb28d48",
+  "primary_comparison": "corrected_A3_vs_fresh_A2",
+  "progress": {
+    "A2": {
+      "all_logged_values_finite": true,
+      "budget_steps": 500,
+      "elapsed_seconds": 244.1096155000123,
+      "peak_allocated_vram_mib": 668.32861328125,
+      "steps_completed": 50
+    },
+    "A3": {
+      "all_logged_values_finite": null,
+      "budget_steps": 500,
+      "elapsed_seconds": 0,
+      "peak_allocated_vram_mib": null,
+      "steps_completed": 0
+    }
+  },
+  "protocol": "docs/CONTOUR_CORRECTION.md",
+  "reviewed_development_views": 21,
+  "sealed_sets": [
+    "Seattle",
+    "audit",
+    "calibration"
+  ],
+  "seed": 17,
+  "server_gate_passed": false,
+  "source_and_input_identity_verified": true,
+  "source_control_bitwise_retraining_not_assumed": true,
+  "status": "running",
+  "support_positive_pixels": 43127,
+  "tests_passed": 130,
+  "training_views": 100,
+  "updated_utc": "2026-09-17T20:59:27.564455+00:00",
+  "validation_views": 24
+}

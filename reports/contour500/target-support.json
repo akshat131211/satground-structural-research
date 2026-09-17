@@ -1,0 +1,44 @@
+{
+  "corrected_provenance_sha256": "4543fb1197f3d907db5f66f2ab81a2c240262b3cdf5ebb6b419ad33a0cad7e83",
+  "created_utc": "2026-09-17T20:49:35.655241+00:00",
+  "definition": {
+    "confidence_threshold": 0.7,
+    "excluded_bridge_classes": [
+      8,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "mode": "anchored_contour_v1",
+    "normalization": "mean_over_union_support",
+    "radius_pixels": 4,
+    "target": "unchanged_hard_building_morphological_gradient_3x3",
+    "unsafe_halo_pixels": 1
+  },
+  "human_verified": false,
+  "limitation": "Anchored contours remain machine pseudo-labels, not certified building outlines.",
+  "local_records_sha256": "d5b13b2c9ca6df356f625abec3ff1f7fd4a9a6962467eeb847f0f257481639c0",
+  "manifest_sha256": "c87dc5fee1ecb964041c92124a99b07ed9490f6efdbec7399b25eda32461b36c",
+  "minimum_nonempty_coverage_fraction": 0.5,
+  "minimum_positive_pixels": 1000,
+  "nonempty_views": 92,
+  "nonempty_views_with_corrected_positive": 90,
+  "original_region_arrays_unchanged": true,
+  "reviewed_validation_masks_used": false,
+  "source_provenance_sha256": "db53bc90d0925984ef5e99029c4854c3c9151635b6892bde4b600c2b3fd334ae",
+  "support_feasibility_passed": true,
+  "totals": {
+    "added_positive": 43079,
+    "corrected_positive": 43127,
+    "corrected_valid_positions": 5113025,
+    "legacy_positive": 48,
+    "original_valid_positions": 5069946
+  },
+  "training_groups": 48,
+  "training_views": 100
+}

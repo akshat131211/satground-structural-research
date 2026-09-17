@@ -31,6 +31,10 @@ def read_config(path):
         raise ResearchError('A0/A1 must not use structural losses.')
     if cfg['experiment'] == 'A2' and cfg['boundary_weight']:
         raise ResearchError('A2 must not use boundary supervision.')
+    if cfg.get('boundary_mode', 'legacy') not in ('legacy', 'anchored_contour_v1'):
+        raise ResearchError('Unknown boundary target mode.')
+    if cfg.get('boundary_mode') == 'anchored_contour_v1' and cfg['experiment'] not in ('A2', 'A3'):
+        raise ResearchError('The contour pilot supports only matched A2/A3 adaptation.')
     if cfg['steps'] < 1 or cfg['accumulation'] < 1 or cfg['save_every'] < 1 or cfg['learning_rate'] <= 0:
         raise ResearchError('Training budget, accumulation, checkpoint interval, and learning rate must be positive.')
     return cfg
@@ -94,6 +98,9 @@ def train(config_path, data_root, output, seed=None, resume=False, stop_after=No
         raise ResearchError('Manifest crop size differs from experiment resolution.')
     style = load_style(cfg['style'], sha256(cfg['train_manifest']))
     label_record = validate_labels(cfg['labels'], cfg['train_manifest'], data_root) if cfg['region_weight'] or cfg['boundary_weight'] else None
+    if cfg.get('boundary_mode') == 'anchored_contour_v1':
+        from .contours import validate_contour_labels
+        validate_contour_labels(label_record, cfg['labels'], rows)
     image_paths = sorted({r[k] for r in rows for k in ('satellite', 'panorama')})
     image_hashes = {p: sha256(safe_data_path(data_root, p)) for p in image_paths}
     verified = {r['path']: r['sha256'] for r in load_json(cfg.get('data_validation', 'reports/data-readiness.json'))['files']}
@@ -114,7 +121,7 @@ def train(config_path, data_root, output, seed=None, resume=False, stop_after=No
     backend.set_style(style)
     from .losses import Objective
     objective = Objective(cfg['region_weight'], cfg['boundary_weight'], cfg['perceptual_weight'],
-                          label_record['revision'] if label_record else None)
+                          label_record['revision'] if label_record else None, cfg.get('boundary_mode', 'legacy'))
     optimizer = torch.optim.AdamW(backend.adapter.parameters(), lr=cfg['learning_rate'], weight_decay=cfg['weight_decay'])
     scaler = torch.amp.GradScaler('cuda', enabled=cfg['amp'])
     start, prior_elapsed = 0, 0.0
@@ -159,7 +166,8 @@ def train(config_path, data_root, output, seed=None, resume=False, stop_after=No
             labels = None
             if label_record:
                 with np.load(Path(cfg['labels']) / f"{row['sample_id']}.npz") as data:
-                    labels = {k: torch.from_numpy(data[k].astype(np.float32)).cuda()[None, None] for k in ('building', 'valid')}
+                    keys = ('building', 'valid', 'boundary_valid') if cfg.get('boundary_mode') == 'anchored_contour_v1' else ('building', 'valid')
+                    labels = {k: torch.from_numpy(data[k].astype(np.float32)).cuda()[None, None] for k in keys}
             prediction = backend.render(raw, row, adapted=True)
             # Loss/semantic operations remain float32 for stable probability and boundary gradients.
             loss, values = objective(prediction, rgb_tensor(target, 'cuda'), labels)

@@ -11,19 +11,26 @@ def soft_boundary(probability):
     return maximum - minimum
 
 
-def structural_losses(building_probability, building_target, valid):
+def structural_losses(building_probability, building_target, valid, boundary_valid=None):
     probability = building_probability.clamp(1e-6, 1 - 1e-6)
     denominator = valid.sum().clamp_min(1)
     region = (F.binary_cross_entropy(probability, building_target, reduction='none') * valid).sum() / denominator
     # Do not supervise boundaries adjacent to ignored pixels.
-    interior_valid = -F.max_pool2d(-valid, 3, stride=1, padding=1)
+    interior_valid = (-F.max_pool2d(-valid, 3, stride=1, padding=1)
+                      if boundary_valid is None else boundary_valid)
+    if interior_valid.shape != valid.shape:
+        raise ValueError('Boundary support must match the region mask shape.')
     boundary = ((soft_boundary(probability) - soft_boundary(building_target)).abs() * interior_valid).sum()
     boundary = boundary / interior_valid.sum().clamp_min(1)
     return region, boundary
 
 
 class Objective:
-    def __init__(self, region_weight=0, boundary_weight=0, perceptual_weight=.1, segmenter_revision=None):
+    def __init__(self, region_weight=0, boundary_weight=0, perceptual_weight=.1, segmenter_revision=None,
+                 boundary_mode='legacy'):
+        if boundary_mode not in ('legacy', 'anchored_contour_v1'):
+            raise ValueError('Unknown boundary supervision mode.')
+        self.boundary_mode = boundary_mode
         import lpips
         self.perceptual = lpips.LPIPS(net='alex').cuda().eval().requires_grad_(False)
         self.region_weight, self.boundary_weight, self.perceptual_weight = region_weight, boundary_weight, perceptual_weight
@@ -41,7 +48,8 @@ class Objective:
             if labels is None:
                 raise ValueError('Structural objectives require cached pseudo-labels.')
             probability = self.segmenter.probabilities(prediction)[:, 2:3]
-            region, boundary = structural_losses(probability, labels['building'], labels['valid'])
+            support = labels['boundary_valid'] if self.boundary_mode == 'anchored_contour_v1' else None
+            region, boundary = structural_losses(probability, labels['building'], labels['valid'], support)
             total = total + self.region_weight * region + self.boundary_weight * boundary
             parts.update(region=region, boundary=boundary)
         parts['total'] = total

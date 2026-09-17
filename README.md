@@ -2,12 +2,23 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
+**Contour correction running (18 September 2026, India):** the training code now
+supports a separate contour-validity mask. A fixed local rule restores boundary
+targets where confident building and static-background labels support a transition,
+while keeping every original region label unchanged. Positive contour support
+increases from 48 to **43,127 pixels**, covering **90 of 92 nonempty training views**.
+Fresh A2 and corrected A3 are training serially for **500 steps each, seed 17**.
+The startup/resume check and 130 tests passed. Model improvement is still pending;
+target coverage is a preparation result. See the [fixed experiment](docs/CONTOUR_CORRECTION.md),
+[target audit](reports/contour500/target-support.json), and
+[timestamped run snapshot](reports/CONTOUR_RUN_STATUS.json).
+
 **Mask batch completed:** all 18 additional building/validity pairs are accepted,
 bringing the total to 21 reviewed development views. Double-click **Open Additional
 Review.cmd** to inspect the accepted masks read-only. The editor supports all-image
 navigation and Save & Next for future review packets. See [drawing instructions](docs/DRAWING_TOOL.md).
 
-**Training diagnosis (18 September 2026, India):** confidence filtering removes
+**Completed diagnosis before the correction:** confidence filtering removes
 all positive boundary targets in **88 of 92 training views with building labels**.
 Only **48 positive boundary pixels** survive across the full 100-view training
 set. In views with no surviving target edge, the boundary term becomes a
@@ -15,8 +26,8 @@ smoothness-like penalty. This concerns machine-generated training labels;
 your 21 approved development mask pairs are unchanged. All 300 gradient checks
 completed with finite values and zero optimizer updates. Source/camera checks
 passed, but independent data QA remains incomplete. Correct and verify contour
-supervision before considering longer training; no replacement loss or model
-improvement has been demonstrated. See the [diagnosis and next correction](reports/structural-diagnosis/interpretation.md)
+supervision before considering longer training. The correction above is now
+implemented; model improvement has not been demonstrated. See the [original diagnosis](reports/structural-diagnosis/interpretation.md)
 and [completion status](reports/STRUCTURAL_DIAGNOSIS_STATUS.json).
 
 **Longer-training assessment (17 September 2026):** all 15 saved conservative

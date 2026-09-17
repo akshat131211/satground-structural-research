@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-09-17T20:55:02.296889+00:00",
+  "finite_loss_and_gradient_steps": 3,
+  "local_inspection_selection_sha256": "8fbf98330eb110360156f313fb348b8fc200ccc88e711ec7b4acf0a14dd6b762",
+  "local_training_log_sha256": "acff586f9785a9fb3cc2aae900d3c4cf475bf0b1a6bedb57b1f5478142d3b51d",
+  "observations": "Added contours mostly follow visible roof/sky transitions. Some teacher contour placement errors and omissions remain; no labels were edited.",
+  "optional_cuda_tests_skipped": 2,
+  "peak_allocated_vram_mib": 668.328125,
+  "preflight_optimizer_steps": 3,
+  "resume_exercised": true,
+  "separate_from_fresh_comparison": true,
+  "target_proposals_assistant_inspected": 8,
+  "target_proposals_human_verified": false,
+  "tests_passed": 130
+}
