@@ -5,11 +5,12 @@
     3,
     4,
     5,
-    6
+    6,
+    7
   ],
   "accepted_index_sha256": "b43d37b58c6c2c30a037f5cf5ee2ee1785aa4cfc80e9fc7f3639975c6e54799e",
   "all_hashes_and_binary_masks_verified": true,
-  "approved_batch_index_sha256": "4214e5b25a7aa2943c25295c43d22430e7bcb9d094a278566c16c727a6f6c346",
+  "approved_batch_index_sha256": "17c8919d8fab04b8d1fec3d226039cad43b72e975d429c449c62dc1c824b1738",
   "audit_or_seattle_opened": false,
   "city_counts": {
     "Chicago": 4,
@@ -20,24 +21,24 @@
   "current_experiment_manual_index_unchanged": true,
   "geographic_groups": 10,
   "launcher": "Open Additional Review.cmd",
-  "next_batch_view_number": 7,
+  "next_batch_view_number": 8,
   "packet_sha256": "de3c5edb4ef5f1cb832c3c5c672f1cc5013d499cca5a32d5869503a1e40e4278",
   "proposal_model": "nvidia/segformer-b1-finetuned-cityscapes-1024-1024",
   "proposal_revision": "ec86afeba68e656629ccf47e0c8d2902f964917b",
   "review_blinded_to_model_predictions": false,
-  "reviewed_count": 6,
+  "reviewed_count": 7,
   "selected_manifest_sha256": "f4777092ebac7a766a34569508d21253c7b5d9f0c9c296ce06074beae16ecfcf",
   "selection": "City/geographic round-robin; sample-ID order within group; no predictions or scores consulted; distinct tiles and panoramas; accepted views excluded.",
   "source_images_shown_in_editor": "real_targets_and_mask_proposals_only",
   "source_manifest_sha256": "c462091a2707ef1f102d2182a4059cd2944b6ca185ae4f26bd751fe11e96ede1",
-  "status": "views1to6_accepted_remaining12_pending_human_review",
-  "submitted_views": 6,
+  "status": "views1to7_accepted_remaining11_pending_human_review",
+  "submitted_views": 7,
   "target_scored_building_pseudo_label_counts": {
     "empty": 2,
     "nonempty": 16
   },
-  "total_reviewed_views_including_original_three": 9,
-  "updated_utc": "2026-09-17T05:06:56.496563+00:00",
+  "total_reviewed_views_including_original_three": 10,
+  "updated_utc": "2026-09-17T05:14:44.673045+00:00",
   "view1": {
     "accepted_bridge_exclusion_pixels": 26197,
     "accepted_building_pixels": 2525,
@@ -136,6 +137,22 @@
     "source_draft_revision": 1,
     "user_submitted_version_preserved": true,
     "validity_pixels_added_by_user": 0,
+    "validity_pixels_removed_by_user": 0
+  },
+  "view7": {
+    "accepted_building_pixels": 18354,
+    "accepted_scored_building_pixels": 16298,
+    "accepted_valid_pixels": 56206,
+    "added_building_pixels_excluded": 0,
+    "added_building_pixels_scored": 280,
+    "assistant_mask_changes": false,
+    "building_pixels_added_by_user": 280,
+    "building_pixels_removed_by_user": 226,
+    "human_accepted": true,
+    "saved_masks_verified": true,
+    "source_draft_revision": 6,
+    "user_submitted_version_preserved": true,
+    "validity_pixels_added_by_user": 746,
     "validity_pixels_removed_by_user": 0
   },
   "views": 18
