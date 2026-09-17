@@ -1,6 +1,42 @@
 # Implementation status — updated 17 September 2026 (India)
 
-## Batch editor with Save & Next
+## Completed batch and expanded-label diagnosis
+
+- All 18 additional mask pairs are accepted after the final user completion
+  message and exact saved-version checks. Combined with the original three,
+  21 of 24 development targets now have reviewed labels. Accepted indices are
+  versioned; the original comparison's labels and outputs remain unchanged.
+- Re-scored the same A0/A1/A2/A3 predictions with the same new label index.
+  All 96 image hashes, predicted segmentations and image-quality records match
+  the previous evaluations. No training or image generation was performed.
+- A3/A1 boundary reduction is **0.334% over all 24 views**, absolute-improvement
+  CI **[-0.007147, 0.009717]**, and **0.0546% on 21 reviewed views**, CI
+  **[-0.007871, 0.009576]**. Both include zero. A2 explains almost all of the
+  IoU/perceptual recovery; the A3/A2 and A3/A0 boundary intervals also include zero.
+- Current labels define 21 nonempty and three empty scored targets. Empty-target
+  boundary penalties tie across models, while A3 has 99 false-positive building
+  pixels versus A1's 55. Label changes explain the lower absolute scores; model
+  predictions did not improve as a consequence of review.
+- All 21 local target/model comparisons were inspected. Remaining facade,
+  building-mass and omission errors prevent a visual improvement claim.
+  Possible transport-structure taxonomy ambiguity in additional view 9 is
+  recorded without rewriting the submitted mask. Later validity exclusions in
+  view 16, including 19 added building pixels, remain exactly as submitted.
+- These are human-reviewed machine proposals, not independently certified
+  ground truth. Pairing/footprint/duplicate QA is incomplete, and three targets
+  retain pseudo-labels. Seattle, audit and calibration remain sealed.
+- **The structural question remains unsupported by this pilot; no server gate,
+  reliability or novelty claim is supported.** No new training budget was
+  started. The completed experiment's monitor remains paused.
+- Verification: **104 Python tests passed, two optional CUDA tests skipped**.
+  The saved report reproduces exactly apart from its timestamp. The editor
+  now loads all 18 accepted mask pairs read-only, with no remaining images.
+
+See [interpretation and reproduction](conservative500-reviewed21/interpretation.md),
+[aggregate evidence](conservative500-reviewed21/summary.json), and
+[completed annotation status](ADDITIONAL_REVIEW_STATUS.json).
+
+## Earlier batch-editor implementation with Save & Next
 
 - All 18 additional targets are available in one local editor with an image
   selector, Previous/Next, Save & Next, and Save & Finish. Existing accepted
@@ -25,9 +61,10 @@
 
 See [batch instructions](../docs/DRAWING_TOOL.md) and
 [implementation checks](BATCH_EDITOR_STATUS.json). The final user completion
-message and exact-mask checks remain required before exporting new approvals.
+message and exact-mask checks were required before exporting new approvals;
+both have now completed, as recorded above.
 
-## Completed matched revision and decision
+## Preserved matched revision with original labels and decision
 
 - All A1/A2/A3 runs finished 500 steps, with learning rate 0.00003 and seed 17.
   All nine stages completed; 1,500 log rows and final checkpoint tensors are
@@ -45,12 +82,12 @@ message and exact-mask checks remain required before exporting new approvals.
 - Empty-target boundary penalties are identical across models in this revision;
   labelled false-positive area is higher for A3 than A1. The fixed strata are
   label-defined, and later review found errors in those pseudo-labels.
-- Seven of 18 additional mask pairs are accepted and verified separately, with
-  eleven still pending. They were not inserted into this comparison. Seattle,
+- At this run's completion, seven of 18 additional mask pairs were accepted,
+  with eleven pending. They were not inserted into this comparison. Seattle,
   audit and calibration imagery remain sealed; data QA is incomplete.
 - **The diagnosed pilot does not support the structural hypothesis or server
-  scaling.** No further sweep, seed or extended budget was launched. Finish
-  label review and version any re-scoring of saved predictions separately.
+  scaling.** No further sweep, seed or extended budget was launched. The later
+  completed label review and separate re-scoring are recorded above.
 - Validation: **89 Python tests passed, two optional CUDA tests skipped**;
   JavaScript syntax and editor behavior checks passed. The full GPU runs are
   completed evidence, distinct from optional synthetic integration tests.

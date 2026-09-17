@@ -1,0 +1,174 @@
+{
+  "additional_mask_pairs_accepted": 18,
+  "artifact_sha256": {
+    "reports/ADDITIONAL_REVIEW_STATUS.json": "8d98ec44823b991a5903a77f600910d5b5229ef17c25966f6410b7826e552720",
+    "reports/conservative500-reviewed21/interpretation.md": "e61bcf7e4260767d19fc020f2e7ea732eff4fecd6b6538eb2e23e30b15b9109f",
+    "reports/conservative500-reviewed21/report.md": "2459f30b8a9e804c46a0aa7410f0715d11b1101a7877ce98c59f2b0608866082",
+    "reports/conservative500-reviewed21/summary.json": "d865086ff86a3ade7608d22217cb4cc75c600a143e2f01fea1cdda9cf73dcd26",
+    "scripts/evaluate_reviewed21.py": "ed6adec0bc7fee6eb06fe6c2b0462754b3db04b71b3b6b6f6cb0d819c50a6fa4",
+    "scripts/report_reviewed21.py": "6a248682180104f286d395f948306c44f510d5c5c7700f6d0af4860bfbaa8045"
+  },
+  "combined_reviewed_views": 21,
+  "comparisons": {
+    "A2_vs_A1": {
+      "all24": {
+        "boundary_bootstrap": {
+          "ci95": [
+            -0.00787067799323448,
+            0.004929931220218935
+          ],
+          "geographic_groups": 10,
+          "mean_improvement": -0.0016158988424599986,
+          "samples": 24,
+          "weighting": "equal_geographic_group"
+        },
+        "building_iou_change": 0.03600590893108413,
+        "relative_boundary_reduction": -0.018353469788594416,
+        "relative_lpips_change": -0.02581498000778667
+      },
+      "reviewed21": {
+        "boundary_bootstrap": {
+          "ci95": [
+            -0.008940540670686494,
+            0.0049246830010098875
+          ],
+          "geographic_groups": 10,
+          "mean_improvement": -0.0018832350668309627,
+          "samples": 21,
+          "weighting": "equal_geographic_group"
+        },
+        "building_iou_change": 0.036336723369136625,
+        "relative_boundary_reduction": -0.01984336499831205,
+        "relative_lpips_change": -0.02644330922350627
+      }
+    },
+    "A3_vs_A0": {
+      "all24": {
+        "boundary_bootstrap": {
+          "ci95": [
+            -0.002370871350895515,
+            0.006649774181526907
+          ],
+          "geographic_groups": 10,
+          "mean_improvement": 0.0018880550070113605,
+          "samples": 24,
+          "weighting": "equal_geographic_group"
+        },
+        "building_iou_change": 0.008528816748453183,
+        "relative_boundary_reduction": 0.021063211290810936,
+        "relative_lpips_change": 0.003534890098344617
+      },
+      "reviewed21": {
+        "boundary_bootstrap": {
+          "ci95": [
+            -0.0019299329947297785,
+            0.007976744122743235
+          ],
+          "geographic_groups": 10,
+          "mean_improvement": 0.0028032498292043092,
+          "samples": 21,
+          "weighting": "equal_geographic_group"
+        },
+        "building_iou_change": 0.009185038239291732,
+        "relative_boundary_reduction": 0.02870522164436976,
+        "relative_lpips_change": 0.0032625638651833824
+      }
+    },
+    "A3_vs_A1": {
+      "all24": {
+        "boundary_bootstrap": {
+          "ci95": [
+            -0.007147189560268613,
+            0.009716549813949166
+          ],
+          "geographic_groups": 10,
+          "mean_improvement": 0.0002937226959131067,
+          "samples": 24,
+          "weighting": "equal_geographic_group"
+        },
+        "building_iou_change": 0.03627679796124361,
+        "relative_boundary_reduction": 0.003336118873294708,
+        "relative_lpips_change": -0.024692018528644385
+      },
+      "reviewed21": {
+        "boundary_bootstrap": {
+          "ci95": [
+            -0.007871348630532815,
+            0.009576024930848283
+          ],
+          "geographic_groups": 10,
+          "mean_improvement": 5.1833036379260454e-05,
+          "samples": 21,
+          "weighting": "equal_geographic_group"
+        },
+        "building_iou_change": 0.036293945537749894,
+        "relative_boundary_reduction": 0.0005461569179335422,
+        "relative_lpips_change": -0.02538937783131309
+      }
+    },
+    "A3_vs_A2": {
+      "all24": {
+        "boundary_bootstrap": {
+          "ci95": [
+            -3.0673250717835865e-05,
+            0.005243767769285832
+          ],
+          "geographic_groups": 10,
+          "mean_improvement": 0.0019096215383731046,
+          "samples": 24,
+          "weighting": "equal_geographic_group"
+        },
+        "building_iou_change": 0.0002708890301594824,
+        "relative_boundary_reduction": 0.021298683910206333,
+        "relative_lpips_change": 0.0011527188943546447
+      },
+      "reviewed21": {
+        "boundary_bootstrap": {
+          "ci95": [
+            -7.986350347459378e-05,
+            0.005299498841319765
+          ],
+          "geographic_groups": 10,
+          "mean_improvement": 0.0019350681032102226,
+          "samples": 21,
+          "weighting": "equal_geographic_group"
+        },
+        "building_iou_change": -4.277783138673108e-05,
+        "relative_boundary_reduction": 0.019992797537374124,
+        "relative_lpips_change": 0.0010825578029283354
+      }
+    }
+  },
+  "data_qa_complete": false,
+  "development_views": 24,
+  "editor_accepted_masks_read_only": true,
+  "editor_accepted_views": 18,
+  "editor_remaining_views": 0,
+  "exact_saved_user_masks_retained": true,
+  "limitations": [
+    "One seed and previously inspected development views.",
+    "Human-reviewed machine proposals, without independent certification.",
+    "Pairing, footprint and duplicate QA incomplete; three pseudo-labelled targets.",
+    "Two annotation qualifications retained in the interpretation; no silent mask changes."
+  ],
+  "manual_index_sha256": "2f6175871bfaf572f8b608c812adc77d9aca2ea68f9232a369e0525ea8b86f10",
+  "monitor_status": "PAUSED",
+  "new_images_generated": false,
+  "new_training_performed": false,
+  "original_experiment_outputs_preserved": true,
+  "remaining_pseudo_label_views": 3,
+  "report_reproduced_exactly_except_timestamp": true,
+  "seattle_audit_calibration_opened": false,
+  "server_gate": "not_eligible",
+  "status": "complete_exploratory_label_diagnostic",
+  "structural_boundary_improvement_established": false,
+  "tests": {
+    "optional_cuda_skipped": 2,
+    "python_passed": 104,
+    "targeted_report_tests_passed": 10
+  },
+  "unchanged_image_quality_records": 96,
+  "unchanged_predicted_segmentations": 96,
+  "unchanged_prediction_images": 96,
+  "updated_utc": "2026-09-17T10:23:31.840180+00:00"
+}

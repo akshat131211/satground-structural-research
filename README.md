@@ -2,12 +2,30 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
-**Batch mask review:** double-click **Open Additional Review.cmd** to review all
-18 images in one page. Review Building and Validity, then use **Save & Next**.
-Existing drafts resume and accepted masks are preserved read-only. Tell Codex
-once the whole batch is finished. See [drawing instructions](docs/DRAWING_TOOL.md).
+**Mask batch completed:** all 18 additional building/validity pairs are accepted,
+bringing the total to 21 reviewed development views. Double-click **Open Additional
+Review.cmd** to inspect the accepted masks read-only. The editor supports all-image
+navigation and Save & Next for future review packets. See [drawing instructions](docs/DRAWING_TOOL.md).
 
-**Latest result (17 September 2026):** the matched 500-step A1/A2/A3 revision completed and passed integrity checks. A3 reduces boundary error by **2.06% versus A1**, but the 95% interval spans zero and boundary scores worsen on all three human-reviewed views. A2 explains almost all of the aggregate IoU/perceptual recovery. **Structural improvement is not established; server scaling is not justified.** Read the [completed interpretation](reports/conservative500/interpretation.md), [verified audit](reports/conservative500/completion-audit.json), and [final run snapshot](reports/CONSERVATIVE_RUN_STATUS.json). Seven of 18 additional mask pairs are accepted; eleven remain pending. Double-click **Open Additional Review.cmd** to continue. Additional masks remain separate from the completed comparison's fixed labels; see [review progress](reports/ADDITIONAL_REVIEW_STATUS.json) and [label-review findings](reports/checkpoint-diagnosis/label-review-notes.md). No further training budget was launched.
+**Latest result (17 September 2026):** all four models were re-scored using the
+completed mask batch, retaining the same 24 development views. A3's boundary
+reduction versus A1 is **0.33% across all views** and **0.055% on the 21 reviewed
+views**; both 95% geographic bootstrap intervals include zero. A2 explains almost
+all of the IoU/perceptual recovery. **Structural improvement is not established;
+server scaling is not justified.** All 96 model images, predicted segmentations
+and image-quality records are unchanged. Read the [expanded-label interpretation](reports/conservative500-reviewed21/interpretation.md),
+[aggregate results](reports/conservative500-reviewed21/report.md), and
+[completed review status](reports/ADDITIONAL_REVIEW_STATUS.json). New labels alter
+evaluation, not predictions. Three targets still use pseudo-labels, data QA is
+incomplete, and no further training was launched.
+
+**Preserved comparison with the original three reviewed masks:** the matched
+500-step A1/A2/A3 revision gave 2.06% A3/A1 boundary reduction, with an interval
+spanning zero and worse boundaries on the original three reviewed views. Its
+[interpretation](reports/conservative500/interpretation.md),
+[audit](reports/conservative500/completion-audit.json), and
+[run snapshot](reports/CONSERVATIVE_RUN_STATUS.json) remain unchanged. The expanded
+label evaluation above is a separate diagnostic, not a replacement primary run.
 
 **Earlier experiment (17 September 2026, India):** the user-authorized **500-step A1/A3 exploratory comparison completed on the RTX 4050**. A3 has 40.6% lower aggregate boundary error than A1, but **79.2% of that gain comes from a 13-pixel segmentation event in one building-free target**. Boundary error worsens on all three manually reviewed views. Against the frozen A0 reference, A3 improves aggregate boundary error by 5.8%, with slightly worse LPIPS. These mixed development results do not establish structural improvement or justify server scaling. Read the [result interpretation](reports/exploratory500/interpretation.md), [unchanged primary comparison](reports/exploratory500/report.md), [completion evidence](reports/exploratory500/completion-audit.json), and [implementation status](reports/IMPLEMENTATION_STATUS.md). Data review remains incomplete. All 8,622 pilot RGB files decode; [ingest evidence](reports/DATA_INGEST_STATUS.json) is preserved.
 
@@ -28,7 +46,8 @@ saved GJ/GD predictions with identical reviewed labels and reports each view
 separately. View 3 has only about 7.5% building IoU for either variant and a
 visible mismatch with the real buildings; this needs pairing/camera and model
 error analysis. No model was retrained, and no model-improvement claim is
-supported. The remaining 21 views retain pseudo-labels. Earlier
+supported. That historical diagnostic retained pseudo-labels on the other 21
+views; the later expanded-label result above applies to A0-A3. Earlier
 [one-view](reports/reviewed-label-probe/report.md) and
 [two-view](reports/reviewed-labels-2/report.md) reports are preserved. The [source/camera audit](reports/reviewed-labels-3/failure-audit.md) matches the
 released preprocessing for all three views. Full data QA and building-identity
@@ -56,7 +75,13 @@ undo/redo, resumable drafts and PNG export. Saved versions remain pending review
 - CPU protocol tests, an opt-in CUDA comparison against the official renderer, and GitHub Actions tests.
 - Shared-sampling density/appearance interventions, raw geometric-change exports, and separate geometry-only adaptation controls with CUDA gradient/isolation checks.
 
-The 100-view learning check is complete; the controlled three-seed experiments and human annotation review remain. A local 200-view development review packet is prepared with exact target crops and unfilled review records; follow [the review guide](docs/REVIEW_GUIDE.md). Two approximate-hash duplicate candidates still need review; all but the three accepted guided mask pairs remain unverified proposals or pseudo-labels. External geometry and 3D expansion are conditional later phases, not completed features.
+The 100-view learning check and one diagnosed 500-step revision are complete;
+the latter does not justify automatically starting more seeds or larger runs.
+Twenty-one development targets have reviewed masks, with broader data QA still
+incomplete. A local 200-view packet is prepared with exact crops and unfilled
+records; follow [the review guide](docs/REVIEW_GUIDE.md). Two approximate-hash
+duplicate candidates still need review. External geometry and 3D expansion are
+conditional later phases, not completed features.
 
 ## Quick start on this laptop
 
