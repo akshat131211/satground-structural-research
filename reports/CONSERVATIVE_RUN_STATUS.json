@@ -312,7 +312,7 @@
     "A3-validation-eval"
   ],
   "completed_utc": "2026-09-17T06:00:45.408799+00:00",
-  "completion_audit_sha256": "f00af228a03e498de87d1886edb2acca5ba81aa508794adbcb93fa47aad050ee",
+  "completion_audit_sha256": "f35395f3eb1619f28ffaeeeb9890a23a67d795754e3cabff6d93c433bd61cabe",
   "conclusion": "A3/A1 boundary reduction is 2.06%, with a confidence interval spanning zero; all three reviewed boundary scores worsen. This pilot does not establish structural improvement or justify server scaling.",
   "current_stage": null,
   "interpretation_complete": true,
