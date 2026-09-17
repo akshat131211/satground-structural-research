@@ -1,6 +1,39 @@
 # Implementation status — updated 17 September 2026 (India)
 
-## Completed checkpoint diagnosis and active matched revision
+## Completed matched revision and decision
+
+- All A1/A2/A3 runs finished 500 steps, with learning rate 0.00003 and seed 17.
+  All nine stages completed; 1,500 log rows and final checkpoint tensors are
+  finite. Reports independently reproduce, all 96 A0/A1/A2/A3 images pass hashes,
+  and pinned source, inputs and the original three reviewed mask pairs are unchanged.
+- A3/A1 boundary reduction is **2.06%**, absolute-improvement 95% geographic
+  bootstrap CI **[-0.004615, 0.015448]**. IoU rises 8.741 percentage points and
+  LPIPS improves 2.47%. The primary boundary result is inconclusive.
+- A2 supplies nearly all of the IoU/perceptual recovery. A3/A2 adds a 1.33%
+  boundary reduction with a narrowly positive secondary interval; A3/A0 gives
+  2.14% lower boundary error and 0.35% worse LPIPS.
+- A3 boundary scores worsen on all three reviewed views versus A1 and A0.
+  Visual inspection confirms remaining facade/building-mass errors and missing
+  distant buildings. Sharp textures do not establish correct structure.
+- Empty-target boundary penalties are identical across models in this revision;
+  labelled false-positive area is higher for A3 than A1. The fixed strata are
+  label-defined, and later review found errors in those pseudo-labels.
+- Seven of 18 additional mask pairs are accepted and verified separately, with
+  eleven still pending. They were not inserted into this comparison. Seattle,
+  audit and calibration imagery remain sealed; data QA is incomplete.
+- **The diagnosed pilot does not support the structural hypothesis or server
+  scaling.** No further sweep, seed or extended budget was launched. Finish
+  label review and version any re-scoring of saved predictions separately.
+- Validation: **89 Python tests passed, two optional CUDA tests skipped**;
+  JavaScript syntax and editor behavior checks passed. The full GPU runs are
+  completed evidence, distinct from optional synthetic integration tests.
+
+See [interpretation](conservative500/interpretation.md),
+[completion audit](conservative500/completion-audit.json),
+[primary results](conservative500/primary/report.md), and
+[final run snapshot](CONSERVATIVE_RUN_STATUS.json).
+
+## Earlier checkpoint diagnosis and revision specification
 
 - Evaluated saved A1/A3 steps 100, 200, 300 and 400 using the same 24 views,
   current three reviewed masks, renderer and B1 segmenter. Verified eleven
@@ -14,7 +47,7 @@
   boundary penalty is lower. The original metrics and all views remain retained.
 - Prepared 18 additional proposals across ten geographic groups without model
   score selection. All image/mask hashes and binary mask dimensions passed.
-  Human review progress is recorded separately; the running experiment's label index is fixed.
+  Human review progress is recorded separately; the completed experiment's label index is fixed.
 - Started fresh 500-step A1/A2/A3 training with a common learning rate of 0.00003.
   This is the one diagnosed revision to test update strength, with A2 separating
   region supervision from the boundary term. No new research question or dataset.
@@ -170,11 +203,11 @@ The controlled native-renderer equality check disables importance resampling to 
 ## What remains
 
 1. Review the prepared development packet, real image scale/footprints, the two near-duplicate candidates, camera alignment, and any available date evidence; annotate development building boundaries.
-2. Run matched main A1/A2/A3 experiments with seeds 17/29/43 and validation-only selection after the required review. The 100-step result alone neither validates nor conclusively rejects the hypothesis.
-3. Freeze the audit, complete independent/manual evaluation, and assess structural and reliability gates.
-4. Start server, external-geometry, and 3D phases only if the preceding gates pass.
+2. Finish the remaining eleven additional mask reviews, then re-score saved predictions with one separately versioned label set shared by every compared model. Preserve this completed comparison.
+3. Assess the corrected-label evidence before proposing another experiment. The one diagnosed revision has completed without support for the primary structural hypothesis; no additional seed, sweep or longer budget is authorized automatically.
+4. Keep audit, reliability, server, external-geometry and 3D phases conditional on adequate development evidence and completed QA.
 
-Current server decision: **insufficient evidence**. The 13 September GPU profiles are synthetic diagnostics. The new 100-step comparison uses real images, but the main controlled adaptation study and human review remain incomplete. Optional KID has not been run on a real dataset. Human annotations have not been fabricated.
+Current server decision: **insufficient evidence**. Both the earlier exploratory run and the completed matched 500-step revision use real images, but the primary structural claim is unsupported. Human review and data QA remain incomplete. Optional KID has not been run on a real dataset. Human annotations have not been fabricated.
 
 ## Implementation corrections during verification
 

@@ -1,70 +1,59 @@
 {
-  "additional_labels_applied_to_this_comparison": false,
-  "additional_proposals_pending_human_review": 11,
-  "additional_reviewed_masks": 7,
-  "budget_steps_per_model": 500,
-  "comparisons": {
-    "A2_vs_A1": {
-      "bootstrap": {
-        "ci95": [
-          -0.005655502703190397,
-          0.008794138358153
-        ],
-        "geographic_groups": 10,
-        "mean_improvement": 0.0014602862920677193,
-        "samples": 24,
-        "weighting": "equal_geographic_group"
-      },
-      "boundary_ci95": [
-        -0.005655502703190397,
-        0.008794138358153
-      ],
-      "iou_change": 0.087047310135132,
-      "relative_boundary_reduction": 0.007461068679968762,
-      "relative_lpips_change": -0.02581498000778667,
-      "seed": 17
+  "a0_reference": {
+    "evaluation_sha256": "ad1e8cc7630de7fe581dc53455e8063460383f1b728a161a8bb20be49f39c9d6",
+    "metrics": {
+      "boundary_error": 0.19586264194218533,
+      "building_iou": 0.5333139808161311,
+      "lpips": 0.5659093183775743,
+      "ssim": 0.1565592054776716
     },
-    "A3_vs_A1": {
-      "bootstrap": {
-        "ci95": [
-          -0.004615092889572373,
-          0.015448400558922448
-        ],
-        "geographic_groups": 10,
-        "mean_improvement": 0.004039890655604953,
-        "samples": 24,
-        "weighting": "equal_geographic_group"
+    "strata": {
+      "reviewed": {
+        "groups": 3,
+        "maximum_boundary_penalty_views": 0,
+        "metrics": {
+          "boundary_error": 0.11889978335056879,
+          "building_iou": 0.49013359332342166,
+          "lpips": 0.5849498311678568,
+          "ssim": 0.1421285432935718
+        },
+        "views": 3
       },
-      "boundary_ci95": [
-        -0.004615092889572373,
-        0.015448400558922448
-      ],
-      "iou_change": 0.08741293745006584,
-      "relative_boundary_reduction": 0.020641090589402715,
-      "relative_lpips_change": -0.024692018528644385,
-      "seed": 17
+      "target_building": {
+        "groups": 9,
+        "maximum_boundary_penalty_views": 2,
+        "metrics": {
+          "boundary_error": 0.21762515771353927,
+          "building_iou": 0.4814599786845901,
+          "lpips": 0.5672473722585926,
+          "ssim": 0.16516565001013042
+        },
+        "views": 22,
+        "zero_building_predictions": 1
+      },
+      "target_empty": {
+        "group_weighted_false_positive_fraction": 0.0160700595624226,
+        "groups": 2,
+        "maximum_boundary_penalty_views": 1,
+        "metrics": {
+          "boundary_error": 0.5,
+          "building_iou": 0.5,
+          "lpips": 0.5594562590122223,
+          "ssim": 0.1308420816418834
+        },
+        "nonempty_predictions": 1,
+        "predicted_building_pixels": 1635,
+        "valid_pixels": 91198,
+        "views": 2
+      }
     },
-    "A3_vs_A2": {
-      "bootstrap": {
-        "ci95": [
-          2.6262253475490777e-05,
-          0.006890212605223605
-        ],
-        "geographic_groups": 10,
-        "mean_improvement": 0.0025796043635372347,
-        "samples": 24,
-        "weighting": "equal_geographic_group"
-      },
-      "boundary_ci95": [
-        2.6262253475490777e-05,
-        0.006890212605223605
-      ],
-      "iou_change": 0.00036562731493383627,
-      "relative_boundary_reduction": 0.013279098172910082,
-      "relative_lpips_change": 0.0011527188943546447,
-      "seed": 17
-    }
+    "unchanged_original_predictions": 24
   },
+  "ablation_report_sha256": "a87739864d3e3a63900a0d5988c0282dcf338d080b9039b55a870f5b7800b98e",
+  "additional_masks_used_in_this_comparison": false,
+  "additional_reviewed_masks": 7,
+  "all_training_logs_and_checkpoint_tensors_finite": true,
+  "all_views_retained": true,
   "comparisons_against_A0": {
     "A1_vs_A0": {
       "bootstrap": {
@@ -127,7 +116,21 @@
       "seed": 17
     }
   },
-  "completed_model_results": {
+  "completed_stages": [
+    "A1-train",
+    "A1-validation",
+    "A1-validation-eval",
+    "A2-train",
+    "A2-validation",
+    "A2-validation-eval",
+    "A3-train",
+    "A3-validation",
+    "A3-validation-eval"
+  ],
+  "fixed_reviewed_masks": 3,
+  "gallery_sha256": "c41ed149f3e4349ee3ce1b6ebeecd400f156bbd9efb0de8b2ac7b75a75cd750c",
+  "initial_rgb_and_lpips_equal": true,
+  "methods": {
     "A1": {
       "checkpoint_sha256": "61723bc06a19e71bfc6b0a031fae2e5e59863513bde322709e353119b5d0062c",
       "elapsed_seconds": 2257.6421033000006,
@@ -300,70 +303,112 @@
       "trainable_parameters": 4448
     }
   },
-  "completed_stages": [
-    "A1-train",
-    "A1-validation",
-    "A1-validation-eval",
-    "A2-train",
-    "A2-validation",
-    "A2-validation-eval",
-    "A3-train",
-    "A3-validation",
-    "A3-validation-eval"
-  ],
-  "completed_utc": "2026-09-17T06:00:45.408799+00:00",
-  "completion_audit_sha256": "f00af228a03e498de87d1886edb2acca5ba81aa508794adbcb93fa47aad050ee",
-  "conclusion": "A3/A1 boundary reduction is 2.06%, with a confidence interval spanning zero; all three reviewed boundary scores worsen. This pilot does not establish structural improvement or justify server scaling.",
-  "current_stage": null,
-  "interpretation_complete": true,
-  "learning_rate": 3e-05,
-  "main_study_eligible": false,
-  "models": [
-    "A1",
-    "A2",
-    "A3"
-  ],
-  "pending_data_qa": true,
-  "pinned_inputs_verified_unchanged": true,
-  "pipeline_source_hash": "dd2e153c320f7896e377fbe9f6a0dd4de40a9ac8909d66e8a71893524d9ee141",
-  "report": "reports/conservative500/interpretation.md",
-  "results_available": true,
-  "reviewed_validation_masks": 3,
-  "runner_identity_sha256": "e1c44de09523be7f95da205e444b020aa925afab6199722be41032bfa62eeb85",
-  "seed": 17,
-  "server_gate": "not_eligible",
-  "snapshot_utc": "2026-09-17T07:49:49.837682+00:00",
-  "status": "complete_verified",
-  "structural_hypothesis_supported": false,
-  "study": "exploratory_pending_data_review",
-  "tests": {
-    "javascript_editor_passed": true,
-    "optional_cuda_skipped": 2,
-    "python_passed": 89
-  },
-  "train_views": 100,
-  "training_progress": {
-    "A1": {
-      "all_logged_values_finite": true,
-      "elapsed_seconds": 2257.6421033000006,
-      "last_logged_step": 500,
-      "peak_allocated_vram_mib": 597.45458984375,
-      "status": "complete"
+  "pinned_inputs_and_pipeline_unchanged": true,
+  "primary_report_sha256": "770e75be8a92d884ead590f1571009925924cf0468648a5ea8434eeffb053cb1",
+  "reports_recomputed_equal": true,
+  "reviewed_views": [
+    {
+      "metrics": {
+        "A0": {
+          "boundary_error": 0.08093091707529294,
+          "building_iou": 0.810689170182841,
+          "lpips": 0.5565270185470581,
+          "ssim": 0.06251055864427892
+        },
+        "A1": {
+          "boundary_error": 0.07031613013596709,
+          "building_iou": 0.7312405731523378,
+          "lpips": 0.5736757516860962,
+          "ssim": 0.09709409456989247
+        },
+        "A2": {
+          "boundary_error": 0.09571102000247377,
+          "building_iou": 0.8004225352112676,
+          "lpips": 0.5648817420005798,
+          "ssim": 0.06133086442317758
+        },
+        "A3": {
+          "boundary_error": 0.09773791919806486,
+          "building_iou": 0.8066666666666666,
+          "lpips": 0.5646018385887146,
+          "ssim": 0.061057499608556255
+        }
+      },
+      "review_view_number": 1
     },
-    "A2": {
-      "all_logged_values_finite": true,
-      "elapsed_seconds": 2270.7106902000014,
-      "last_logged_step": 500,
-      "peak_allocated_vram_mib": 668.07861328125,
-      "status": "complete"
+    {
+      "metrics": {
+        "A0": {
+          "boundary_error": 0.061055452443305874,
+          "building_iou": 0.5839868513735619,
+          "lpips": 0.5674464702606201,
+          "ssim": 0.20333929317797375
+        },
+        "A1": {
+          "boundary_error": 0.05429556997612855,
+          "building_iou": 0.6039278331140763,
+          "lpips": 0.561654269695282,
+          "ssim": 0.2388853039903278
+        },
+        "A2": {
+          "boundary_error": 0.06222608174471331,
+          "building_iou": 0.5958971940580052,
+          "lpips": 0.5651168823242188,
+          "ssim": 0.20240581807845578
+        },
+        "A3": {
+          "boundary_error": 0.06225296496537718,
+          "building_iou": 0.5953874451728529,
+          "lpips": 0.5652226209640503,
+          "ssim": 0.20254280396472968
+        }
+      },
+      "review_view_number": 2
     },
-    "A3": {
-      "all_logged_values_finite": true,
-      "elapsed_seconds": 2179.384717699999,
-      "last_logged_step": 500,
-      "peak_allocated_vram_mib": 668.07861328125,
-      "status": "complete"
+    {
+      "metrics": {
+        "A0": {
+          "boundary_error": 0.21471298053310756,
+          "building_iou": 0.07572475841386204,
+          "lpips": 0.6308760046958923,
+          "ssim": 0.16053577805846272
+        },
+        "A1": {
+          "boundary_error": 0.09144135393059631,
+          "building_iou": 0.06387167335034634,
+          "lpips": 0.6663982272148132,
+          "ssim": 0.19274023203284088
+        },
+        "A2": {
+          "boundary_error": 0.21577297870161008,
+          "building_iou": 0.07833347680123956,
+          "lpips": 0.627708911895752,
+          "ssim": 0.1588929228078152
+        },
+        "A3": {
+          "boundary_error": 0.21540614439979705,
+          "building_iou": 0.07825413223140495,
+          "lpips": 0.6277033090591431,
+          "ssim": 0.15884947322655982
+        }
+      },
+      "review_view_number": 3
     }
+  ],
+  "server_gate": "not_eligible",
+  "source_identity_sha256": "e1c44de09523be7f95da205e444b020aa925afab6199722be41032bfa62eeb85",
+  "stage_log_sha256": {
+    "A1-train": "23f65e3e90b7b0902e8f3ed6800cbff7c779d1a23bcd48593eabf044d9e5237b",
+    "A1-validation": "e8e244abe714246516819ef24de2313870ee6906708b091a23a67cd43c73aabd",
+    "A1-validation-eval": "519f5dc9a98eebbaebe3cd228ab61390a5e2bce82ccd27bfc3d7e0fb0b7d261c",
+    "A2-train": "1fd844b667a13aebc03f3f0b9f627ec8a8d0b2d1251f76f98defdda9eb9d7178",
+    "A2-validation": "db8861ea5bb0f18d384bb1138a0b89497a33fd0c772d470b753e598906264cd2",
+    "A2-validation-eval": "af3434dfe126134e00abfc6d5d306a29f7c6a1c41624f2368824a77c0178bd82",
+    "A3-train": "7840be22c70916e54cbc2b42326c1e8c956b84ecc0c339c2e197e0f7bf3b1f5b",
+    "A3-validation": "b6dadc874a28d911e0cba97d30d74f4bd36433bf31b88a659346a9ba17f9f5de",
+    "A3-validation-eval": "8c540aed9e628fb8949883f6b23d4a61e21bf4bcc290cf04d123ab32bfc08226"
   },
-  "validation_views": 24
+  "study": "exploratory_pending_data_review",
+  "verified_predictions_per_model": 24,
+  "verified_utc": "2026-09-17T07:47:41.561929+00:00"
 }

@@ -1,0 +1,83 @@
+{
+  "comparison": {
+    "bootstrap": {
+      "ci95": [
+        -0.004615092889572373,
+        0.015448400558922448
+      ],
+      "geographic_groups": 10,
+      "mean_improvement": 0.004039890655604953,
+      "samples": 24,
+      "weighting": "equal_geographic_group"
+    },
+    "boundary_ci95": [
+      -0.004615092889572373,
+      0.015448400558922448
+    ],
+    "iou_change": 0.08741293745006584,
+    "relative_boundary_reduction": 0.020641090589402715,
+    "relative_lpips_change": -0.024692018528644385,
+    "seed": 17
+  },
+  "created_utc": "2026-09-17T06:00:45.402798+00:00",
+  "geographic_groups": 10,
+  "limitations": [
+    "Single seed, previously inspected development images, mostly pseudo-labels.",
+    "Geographic alignment, footprint scale and near-duplicate review remain incomplete.",
+    "Validation bootstrap does not establish audited generalization or publication novelty."
+  ],
+  "manifest_sha256": "c462091a2707ef1f102d2182a4059cd2944b6ca185ae4f26bd751fe11e96ede1",
+  "manual_index_sha256": "b43d37b58c6c2c30a037f5cf5ee2ee1785aa4cfc80e9fc7f3639975c6e54799e",
+  "methods": {
+    "A1": {
+      "checkpoint_sha256": "61723bc06a19e71bfc6b0a031fae2e5e59863513bde322709e353119b5d0062c",
+      "elapsed_seconds": 2257.6421033000006,
+      "evaluation_sha256": "33ad52b1446178f2861b3d7f0d7a75906a0a0426fdb5e951a346588fbc0f4b2c",
+      "manually_reviewed_views": 3,
+      "metrics": {
+        "boundary_error": 0.195720794795555,
+        "building_iou": 0.4528193810849711,
+        "lpips": 0.5822876018782457,
+        "ssim": 0.19268365714277186
+      },
+      "peak_vram_mib": 597.45458984375,
+      "trainable_parameters": 4448,
+      "training_log_sha256": "d84d9f8143df95fe7459915249b4b1926b5bf2a642ae8e56ae51ce8ad1756cc6"
+    },
+    "A3": {
+      "checkpoint_sha256": "ac37631a3b91ef54e739d3f12b14efe906cb8f29e9e648c0a12ffc8306368209",
+      "elapsed_seconds": 2179.384717699999,
+      "evaluation_sha256": "fc600b4e0ba6c02dbcabe786219e7599c947f6f28305f60da49ed797287eb08f",
+      "manually_reviewed_views": 3,
+      "metrics": {
+        "boundary_error": 0.19168090413995004,
+        "building_iou": 0.540232318535037,
+        "lpips": 0.5679097456236681,
+        "ssim": 0.15613639516595806
+      },
+      "peak_vram_mib": 668.07861328125,
+      "trainable_parameters": 4448,
+      "training_log_sha256": "faec30d1a70d91f0e745ccca562fc4b8681f2e4479f10294cc2867b836a185f2"
+    }
+  },
+  "readiness": {
+    "data_qa_sha256": null,
+    "data_validation_sha256": "920196977e73ea6c08c0d74fac75fc229bc7894a960f7890a40fc0a941eb4838",
+    "human_qa_may_be_pending": true,
+    "main_study_eligible": false,
+    "pending_checks": [
+      "footprint_bound_verified",
+      "pairing_review_complete",
+      "near_duplicate_review_complete",
+      "documented_reviewer_and_date",
+      "review_matches_current_data_validation"
+    ],
+    "reason": "Authorized diagnosed learning-rate revision; correspondence QA and expanded human masks remain pending.",
+    "stage": "exploratory_pending_data_review"
+  },
+  "seed": 17,
+  "server_gate": "not_eligible",
+  "steps_per_model": 500,
+  "study": "exploratory_pending_data_review",
+  "validation_views": 24
+}

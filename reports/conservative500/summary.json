@@ -1,8 +1,4 @@
 {
-  "additional_labels_applied_to_this_comparison": false,
-  "additional_proposals_pending_human_review": 11,
-  "additional_reviewed_masks": 7,
-  "budget_steps_per_model": 500,
   "comparisons": {
     "A2_vs_A1": {
       "bootstrap": {
@@ -65,69 +61,10 @@
       "seed": 17
     }
   },
-  "comparisons_against_A0": {
-    "A1_vs_A0": {
-      "bootstrap": {
-        "ci95": [
-          -0.007899158963486148,
-          0.008927238561067535
-        ],
-        "geographic_groups": 10,
-        "mean_improvement": 0.00014184714663034655,
-        "samples": 24,
-        "weighting": "equal_geographic_group"
-      },
-      "boundary_ci95": [
-        -0.007899158963486148,
-        0.008927238561067535
-      ],
-      "iou_change": -0.08049459973116002,
-      "relative_boundary_reduction": 0.0007242174680366951,
-      "relative_lpips_change": 0.028941533508631514,
-      "seed": 17
-    },
-    "A2_vs_A0": {
-      "bootstrap": {
-        "ci95": [
-          -0.0004503301217555736,
-          0.004040582563309851
-        ],
-        "geographic_groups": 10,
-        "mean_improvement": 0.001602133438698066,
-        "samples": 24,
-        "weighting": "equal_geographic_group"
-      },
-      "boundary_ci95": [
-        -0.0004503301217555736,
-        0.004040582563309851
-      ],
-      "iou_change": 0.006552710403971984,
-      "relative_boundary_reduction": 0.008179882711737202,
-      "relative_lpips_change": 0.0023794283919248366,
-      "seed": 17
-    },
-    "A3_vs_A0": {
-      "bootstrap": {
-        "ci95": [
-          0.0006971052558649898,
-          0.008673810096682309
-        ],
-        "geographic_groups": 10,
-        "mean_improvement": 0.0041817378022353,
-        "samples": 24,
-        "weighting": "equal_geographic_group"
-      },
-      "boundary_ci95": [
-        0.0006971052558649898,
-        0.008673810096682309
-      ],
-      "iou_change": 0.00691833771890582,
-      "relative_boundary_reduction": 0.021350359419075236,
-      "relative_lpips_change": 0.003534890098344617,
-      "seed": 17
-    }
-  },
-  "completed_model_results": {
+  "created_utc": "2026-09-17T06:00:45.407805+00:00",
+  "human_review_expansion_pending": true,
+  "interpretation_pending": true,
+  "methods": {
     "A1": {
       "checkpoint_sha256": "61723bc06a19e71bfc6b0a031fae2e5e59863513bde322709e353119b5d0062c",
       "elapsed_seconds": 2257.6421033000006,
@@ -300,70 +237,7 @@
       "trainable_parameters": 4448
     }
   },
-  "completed_stages": [
-    "A1-train",
-    "A1-validation",
-    "A1-validation-eval",
-    "A2-train",
-    "A2-validation",
-    "A2-validation-eval",
-    "A3-train",
-    "A3-validation",
-    "A3-validation-eval"
-  ],
-  "completed_utc": "2026-09-17T06:00:45.408799+00:00",
-  "completion_audit_sha256": "f00af228a03e498de87d1886edb2acca5ba81aa508794adbcb93fa47aad050ee",
-  "conclusion": "A3/A1 boundary reduction is 2.06%, with a confidence interval spanning zero; all three reviewed boundary scores worsen. This pilot does not establish structural improvement or justify server scaling.",
-  "current_stage": null,
-  "interpretation_complete": true,
-  "learning_rate": 3e-05,
-  "main_study_eligible": false,
-  "models": [
-    "A1",
-    "A2",
-    "A3"
-  ],
-  "pending_data_qa": true,
-  "pinned_inputs_verified_unchanged": true,
-  "pipeline_source_hash": "dd2e153c320f7896e377fbe9f6a0dd4de40a9ac8909d66e8a71893524d9ee141",
-  "report": "reports/conservative500/interpretation.md",
-  "results_available": true,
-  "reviewed_validation_masks": 3,
-  "runner_identity_sha256": "e1c44de09523be7f95da205e444b020aa925afab6199722be41032bfa62eeb85",
-  "seed": 17,
+  "primary_comparison": "A3_vs_A1",
   "server_gate": "not_eligible",
-  "snapshot_utc": "2026-09-17T07:49:49.837682+00:00",
-  "status": "complete_verified",
-  "structural_hypothesis_supported": false,
-  "study": "exploratory_pending_data_review",
-  "tests": {
-    "javascript_editor_passed": true,
-    "optional_cuda_skipped": 2,
-    "python_passed": 89
-  },
-  "train_views": 100,
-  "training_progress": {
-    "A1": {
-      "all_logged_values_finite": true,
-      "elapsed_seconds": 2257.6421033000006,
-      "last_logged_step": 500,
-      "peak_allocated_vram_mib": 597.45458984375,
-      "status": "complete"
-    },
-    "A2": {
-      "all_logged_values_finite": true,
-      "elapsed_seconds": 2270.7106902000014,
-      "last_logged_step": 500,
-      "peak_allocated_vram_mib": 668.07861328125,
-      "status": "complete"
-    },
-    "A3": {
-      "all_logged_values_finite": true,
-      "elapsed_seconds": 2179.384717699999,
-      "last_logged_step": 500,
-      "peak_allocated_vram_mib": 668.07861328125,
-      "status": "complete"
-    }
-  },
-  "validation_views": 24
+  "study": "exploratory_pending_data_review"
 }
