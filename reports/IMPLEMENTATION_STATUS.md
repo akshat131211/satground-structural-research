@@ -1,5 +1,31 @@
 # Implementation status — updated 17 September 2026 (India)
 
+## Longer-training assessment completed
+
+- Evaluated all saved A1/A2/A3 checkpoints at 100, 200, 300, 400 and 500 steps
+  with the completed 21-target manual index and all 24 development views.
+  All 30 serial stages finished. No training was performed.
+- Verified 15 finite adapter/optimizer states, 1,500 finite original log rows,
+  and 360 prediction files. All 72 regenerated final-step images and expanded-label
+  evaluation rows match the preserved results exactly.
+- A3 reviewed boundary error worsens 1.37% from 300 to 500, with an absolute
+  improvement interval spanning zero. Its small 400-to-500 gain also has an
+  interval spanning zero. A1 LPIPS worsens 3.45% from 300 to 500. Declining
+  training losses therefore do not justify an unrestricted extension.
+- A1's step-300 boundary dip includes an empty-mask penalty transition. No
+  checkpoint was selected after inspecting this trajectory, and no view was
+  removed. Nonempty-target errors and empty-target area are reported separately.
+- Next priorities are pairing/coverage and annotation QA, followed by a
+  training-only objective-gradient diagnosis before specifying another experiment.
+  Those follow-up diagnoses are recommendations, not completed results.
+- **110 Python tests passed, two optional CUDA tests skipped.** Original
+  experiments and masks remain unchanged; held-out sets are sealed and the
+  training monitor stays paused.
+
+See [assessment](conservative-trajectory-reviewed21/interpretation.md),
+[aggregate curves](conservative-trajectory-reviewed21/trajectory.png),
+and [status](LONG_TRAINING_STATUS.json).
+
 ## Completed batch and expanded-label diagnosis
 
 - All 18 additional mask pairs are accepted after the final user completion

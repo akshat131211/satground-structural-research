@@ -1,0 +1,250 @@
+{
+  "all_checkpoint_adapter_optimizer_tensors_finite": true,
+  "all_stages_complete": 30,
+  "all_views_retained": 24,
+  "artifact_sha256": {
+    "docs/LONG_TRAINING_ASSESSMENT.md": "8f050c1e0db4bc4b6c9b2689024556a7f4b99bf7d5a7ad749c61be284368bfd0",
+    "reports/conservative-trajectory-reviewed21/interpretation.md": "5961e4fcf8335e8d18cd51aa5d5c738355ca93e4d22fd28401f894e431740794",
+    "reports/conservative-trajectory-reviewed21/report.md": "4de457fe88e8f83fa7755d119324d31d26a3ad04750848c39f14f9ff90776320",
+    "reports/conservative-trajectory-reviewed21/summary.json": "966fa103cfe07396f0e3113e734ded30eaa0bcabb8a0bb58c65c11066c99ca83",
+    "reports/conservative-trajectory-reviewed21/trajectory.png": "6de289ca57539860c1b04c05a4b360329f1b3aec5f6a0a943d8c6b83ba36a21c",
+    "scripts/report_conservative_trajectory.py": "eb193ff85c4ca4a5235cd407e1237f4200e62f677d8ba7b0432eb4aa25831f02",
+    "scripts/run_conservative_trajectory.py": "0b36b89be25246b7970b2f38edc4286d904ba5612c8e3c0bc7f956608f443da4"
+  },
+  "checkpoint_steps": [
+    100,
+    200,
+    300,
+    400,
+    500
+  ],
+  "checkpoints_verified": 15,
+  "data_qa_complete": false,
+  "decision": "do_not_extend_current_training_schedule",
+  "final_predictions_reproduced_exactly": 72,
+  "finite_original_training_log_rows": 1500,
+  "human_reviewed_views": 21,
+  "late_changes": {
+    "A1": {
+      "300_to_500": {
+        "all24": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.06880219107262228,
+              0.002579273770304555
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": -0.023382660426757223,
+            "samples": 24,
+            "weighting": "equal_geographic_group"
+          },
+          "building_iou_change": -0.056731899286625365,
+          "relative_boundary_reduction": -0.36162160330014254,
+          "relative_lpips_change": 0.03449085903064096
+        },
+        "reviewed21": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.09072759298747109,
+              0.004157464585183254
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": -0.029742052455092687,
+            "samples": 21,
+            "weighting": "equal_geographic_group"
+          },
+          "building_iou_change": -0.05933554606375946,
+          "relative_boundary_reduction": -0.45642564995308393,
+          "relative_lpips_change": 0.03513278383776362
+        }
+      },
+      "400_to_500": {
+        "all24": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.0004794278249105999,
+              0.007952549889470363
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": 0.0032885116934440704,
+            "samples": 24,
+            "weighting": "equal_geographic_group"
+          },
+          "building_iou_change": -0.0034399342851054726,
+          "relative_boundary_reduction": 0.036006228222695974,
+          "relative_lpips_change": 0.01947412741572186
+        },
+        "reviewed21": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.000384025979580687,
+              0.010636520060991325
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": 0.004620897643761771,
+            "samples": 21,
+            "weighting": "equal_geographic_group"
+          },
+          "building_iou_change": -0.0061834106120146615,
+          "relative_boundary_reduction": 0.046429085855783744,
+          "relative_lpips_change": 0.018475236829106696
+        }
+      }
+    },
+    "A2": {
+      "300_to_500": {
+        "all24": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.008051968029560413,
+              0.000410267162654668
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": -0.0035604124170447544,
+            "samples": 24,
+            "weighting": "equal_geographic_group"
+          },
+          "building_iou_change": 0.004491931138416949,
+          "relative_boundary_reduction": -0.0413526749682335,
+          "relative_lpips_change": 0.0005761274931260162
+        },
+        "reviewed21": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.007864854700725373,
+              0.0010909111081324734
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": -0.003111413995016194,
+            "samples": 21,
+            "weighting": "equal_geographic_group"
+          },
+          "building_iou_change": 0.005906157828546588,
+          "relative_boundary_reduction": -0.033214333097309236,
+          "relative_lpips_change": 0.0003553927627493811
+        }
+      },
+      "400_to_500": {
+        "all24": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.0039605877248579495,
+              0.00013588715737241573
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": -0.0017954401247621255,
+            "samples": 24,
+            "weighting": "equal_geographic_group"
+          },
+          "building_iou_change": 0.0030784929693240537,
+          "relative_boundary_reduction": -0.02043438035969195,
+          "relative_lpips_change": -0.0035901450535686394
+        },
+        "reviewed21": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.004045546183982783,
+              0.00016918961441915247
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": -0.001801000089658279,
+            "samples": 21,
+            "weighting": "equal_geographic_group"
+          },
+          "building_iou_change": 0.0057372497357588426,
+          "relative_boundary_reduction": -0.018960438223003823,
+          "relative_lpips_change": -0.003419426035094707
+        }
+      }
+    },
+    "A3": {
+      "300_to_500": {
+        "all24": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.004730442426451712,
+              0.0010010298898480885
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": -0.0016568903255426985,
+            "samples": 24,
+            "weighting": "equal_geographic_group"
+          },
+          "building_iou_change": 0.005311251806857986,
+          "relative_boundary_reduction": -0.01924543937926184,
+          "relative_lpips_change": 0.002564287325891355
+        },
+        "reviewed21": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.0045709351400540586,
+              0.0017292991053774606
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": -0.0012788342275867881,
+            "samples": 21,
+            "weighting": "equal_geographic_group"
+          },
+          "building_iou_change": 0.006052030777873307,
+          "relative_boundary_reduction": -0.013666502744936335,
+          "relative_lpips_change": 0.0022988331896612443
+        }
+      },
+      "400_to_500": {
+        "all24": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.002966567830380928,
+              0.004543239925449285
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": 0.0004097216710427136,
+            "samples": 24,
+            "weighting": "equal_geographic_group"
+          },
+          "building_iou_change": 0.0035943040715512575,
+          "relative_boundary_reduction": 0.00464751853441757,
+          "relative_lpips_change": -0.002288867530613345
+        },
+        "reviewed21": {
+          "boundary_bootstrap": {
+            "ci95": [
+              -0.0031833663399674114,
+              0.004538026680838923
+            ],
+            "geographic_groups": 10,
+            "mean_improvement": 0.00034115876686645515,
+            "samples": 21,
+            "weighting": "equal_geographic_group"
+          },
+          "building_iou_change": 0.005878080428750154,
+          "relative_boundary_reduction": 0.0035838131300265927,
+          "relative_lpips_change": -0.002236856370706445
+        }
+      }
+    }
+  },
+  "manual_index_sha256": "2f6175871bfaf572f8b608c812adc77d9aca2ea68f9232a369e0525ea8b86f10",
+  "monitor_status": "PAUSED",
+  "new_training_performed": false,
+  "next_priorities": [
+    "Development pairing, heading and input-coverage QA.",
+    "Versioned resolution of annotation uncertainty and independent boundary checks.",
+    "Training-only comparison of objective gradients before another matched experiment."
+  ],
+  "original_results_preserved": true,
+  "pipeline_source_hash": "ea784759b4f6dae9d40e657059d235f88b6afc90eaaf7ea47b0449dac3c8f589",
+  "prediction_images_verified": 360,
+  "primary_checkpoint_selection_changed": false,
+  "report_reproduced_exactly_except_timestamp": true,
+  "requested_long_training_started": false,
+  "seattle_audit_calibration_opened": false,
+  "server_gate": "not_eligible",
+  "status": "assessment_complete",
+  "tests": {
+    "optional_cuda_skipped": 2,
+    "python_passed": 110
+  },
+  "training_seed": 17,
+  "updated_utc": "2026-09-17T14:33:29.635118+00:00"
+}

@@ -7,7 +7,15 @@ bringing the total to 21 reviewed development views. Double-click **Open Additio
 Review.cmd** to inspect the accepted masks read-only. The editor supports all-image
 navigation and Save & Next for future review packets. See [drawing instructions](docs/DRAWING_TOOL.md).
 
-**Latest result (17 September 2026):** all four models were re-scored using the
+**Longer-training assessment (17 September 2026):** all 15 saved conservative
+checkpoints were evaluated using the completed masks. A3's reviewed boundary
+error is 1.37% worse at step 500 than at 300; the late-change intervals include
+zero. A1's LPIPS worsens 3.45% over those steps. **A very long run of the current
+setup is not justified.** No training extension was launched. See the
+[trajectory, interpretation and next diagnostic priorities](reports/conservative-trajectory-reviewed21/interpretation.md).
+All 72 regenerated final-step images exactly reproduce the earlier predictions.
+
+**Expanded-label result (17 September 2026):** all four models were re-scored using the
 completed mask batch, retaining the same 24 development views. A3's boundary
 reduction versus A1 is **0.33% across all views** and **0.055% on the 21 reviewed
 views**; both 95% geographic bootstrap intervals include zero. A2 explains almost
