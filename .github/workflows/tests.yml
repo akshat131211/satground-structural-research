@@ -22,4 +22,5 @@ jobs:
         with:
           node-version: '22'
       - run: node --check src/satground/editor_ui/editor.js
+      - run: node --check scripts/training_review_ui/training-review.js
       - run: node tests/editor_core_test.cjs

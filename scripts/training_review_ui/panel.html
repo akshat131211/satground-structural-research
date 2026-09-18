@@ -1,0 +1,22 @@
+<section id="training-panel" aria-label="Training image review">
+  <h2>1. Check the scene and camera direction</h2>
+  <p>This is a new training-only packet. Your 21 evaluation masks are separate. Nothing here starts training.</p>
+  <details open><summary>Satellite and four real ground directions</summary>
+    <p><a id="context-link" target="_blank" rel="noopener">Open context at full size</a> · <a id="satellite-link" target="_blank" rel="noopener">Open original satellite image</a></p>
+    <a id="context-preview-link" target="_blank" rel="noopener"><img id="training-context-image" alt="Satellite camera position and field of view beside four real ground directions"></a>
+    <p>Arrow 1 and the yellow wedge correspond to the mask target. The wedge shows direction, not confirmed visibility. Camera heading, scale and building identity still need review.</p>
+  </details>
+  <fieldset id="scene-fields" disabled><legend>Record what you can actually verify</legend>
+    <div class="scene-grid">
+      <label>Satellite / ground pairing<select id="scene-pairing"><option value="pending">Choose an answer</option><option value="supported">Recognizable layout supports the pairing</option><option value="uncertain">Uncertain / cannot verify</option><option value="mismatch">Suspected mismatch</option></select></label>
+      <label>Buildings visible in target versus satellite crop<select id="scene-support"><option value="pending">Choose an answer</option><option value="mostly_inside">Mostly supported inside the crop</option><option value="partly_outside">Some appear outside the crop</option><option value="outside">Main visible buildings appear outside</option><option value="uncertain">Cannot determine / no identifiable building</option></select></label>
+      <label>Mask review<select id="scene-mask_review"><option value="pending">Not finished checking masks</option><option value="checked">I checked both masks below</option><option value="uncertain">Masks still uncertain / needs follow-up</option></select></label>
+      <label>Your reviewer name<input id="scene-reviewer" maxlength="120" autocomplete="name" placeholder="Enter your name"></label>
+    </div>
+    <label>Evidence or uncertainty — mention a corner, street layout, roof position, obstruction, or what you cannot verify<textarea id="scene-evidence" rows="2" maxlength="3000" placeholder="Example: street bend and building corner agree; the far building may be outside the tile."></textarea></label>
+    <div class="scene-save"><button id="save-scene" type="button">Save scene notes</button><span id="scene-status" role="status" aria-live="polite">Loading scene notes…</span></div>
+  </fieldset>
+  <h2>2. Check or draw the two masks below</h2>
+  <p>Starting masks are machine proposals. Building = visible building only. Validity = pixels you can confidently assess. Exclude hidden walls and uncertain leaves. Bridges and their supports are not buildings. Empty building masks are allowed.</p>
+  <p>Use <strong>Save &amp; Next</strong> after the scene choices and both masks. You can finish an uncertain or mismatched case without pretending it is valid. Saved reviews still need a final check before any training eligibility is assigned.</p>
+</section>

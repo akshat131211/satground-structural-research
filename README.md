@@ -2,6 +2,14 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
+**Next step: 12-view training review prepared.** Double-click **Open Training Review.cmd**
+to inspect satellite/camera context and edit the cached training building/validity
+proposals. Four distinct geographic groups per city were selected using metadata
+only. Use **Save & Next** through all images; uncertain and mismatched answers
+are allowed. Your 21 evaluation masks stay separate. No new training has started.
+See the [review guide](docs/TRAINING_REVIEW_GUIDE.md) and
+[preparation status](reports/TRAINING_REVIEW_STATUS.json).
+
 **Contour comparison completed (18 September 2026, India):** fresh A2 and corrected
 A3 finished **500 steps each, seed 17**. Corrected A3's boundary error is **1.795%
 lower than fresh A2** overall and **1.688% lower on the 21 reviewed views**; both

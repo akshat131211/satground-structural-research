@@ -1,5 +1,32 @@
 # Implementation status — updated 18 September 2026 (India)
 
+## Training-only review prepared; human review pending
+
+- Prepared 12 views from the existing 100 training views: four distinct geographic
+  groups per city, with 12 distinct tiles and panoramas, selected by fixed metadata
+  ordering. No prediction, score or image-quality selection.
+- Each view includes a satellite diagram with released camera position/direction,
+  four real panorama directions and exact cached building/validity proposals.
+  No model inference or additional training was run.
+- Added a local context form beside the established batch drawing tool. Users can
+  record supported, uncertain or mismatched pairing and crop support, review both
+  masks, and Save & Next through all views. Exact mask and scene-note revisions
+  are bound at completion; later edits invalidate the completion marker.
+- All scene decisions start pending. No review is fabricated and no training
+  eligibility or acceptance index is generated automatically. Human review and
+  independent QA remain required before any proposed learning check.
+- Core model source, completed runner inputs and the 21 evaluation-mask pairs
+  are unchanged. Images, coordinates, sample identifiers, masks and raw responses
+  remain under ignored local directories.
+- Verified all 12 source crops, 24 binary proposals and 84 packet artifacts;
+  all 177 completed-comparison pins remain intact. The full suite passes:
+  **134 tests passed, two optional CUDA tests skipped**. A separate synthetic
+  browser test verified completion guards, drawing, Save & Next, Save & Finish
+  and restored notes. No assistant test edits entered the actual review packet.
+
+See [review instructions](../docs/TRAINING_REVIEW_GUIDE.md) and
+[preparation status](TRAINING_REVIEW_STATUS.json).
+
 ## Contour comparison completed; improvement not established
 
 - Fresh A2 and corrected A3 completed exactly 500 optimizer steps each. All 1,000
