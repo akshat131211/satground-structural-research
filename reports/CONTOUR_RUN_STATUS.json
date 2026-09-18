@@ -238,7 +238,15 @@
     }
   },
   "protocol": "docs/CONTOUR_CORRECTION.md",
-  "publication_status": "pending_commit_push_and_CI",
+  "publication": {
+    "evidence_ci_conclusion": "success",
+    "evidence_ci_run": 35308613619,
+    "evidence_ci_url": "https://github.com/akshat131211/satground-structural-research/actions/runs/35308613619",
+    "evidence_commit": "5f64e15ed21ac15997dd19ff38abf88ab6794384",
+    "repository_visibility": "PRIVATE",
+    "restricted_artifacts_published": false
+  },
+  "publication_status": "published_completion_evidence_CI_passed",
   "report_reproduced": true,
   "reviewed_development_views": 21,
   "same_checkpoint_A2_inference_exact_matches": 24,
@@ -256,6 +264,6 @@
   "support_positive_pixels": 43127,
   "tests_passed": 130,
   "training_views": 100,
-  "updated_utc": "2026-09-18T04:51:22.409717+00:00",
+  "updated_utc": "2026-09-18T10:16:02.402150+00:00",
   "validation_views": 24
 }
