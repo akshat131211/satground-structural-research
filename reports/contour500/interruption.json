@@ -1,0 +1,24 @@
+{
+  "A2_retrained": false,
+  "action": "restart_A3_from_unchanged_initial_weights_and_seed",
+  "cause": "Windows Update planned OS restart",
+  "created_utc": "2026-09-18T03:30:13.640314+00:00",
+  "evidence_system_event_id": 1074,
+  "final_A3_budget_steps": 500,
+  "first_restarted_step_forward_losses_match_archived_attempt": true,
+  "first_restarted_step_gradient_norm_difference": 1.0222196578979492e-05,
+  "interrupted_attempt_completed_steps": 43,
+  "interrupted_attempt_has_checkpoint": false,
+  "interrupted_training_log_sha256": "70dd7dca0c9417f3e8617dc6d34637aae5138b2cfc45fa706b4c056b7ffcecfe",
+  "limitations": [
+    "The first 43 A3 updates are discarded from the selected model; their compute is retained in the record."
+  ],
+  "original_attempt_preserved": true,
+  "preserved_A2_artifact_files": 110,
+  "recorded_runtime_fingerprint_unchanged": true,
+  "recovery_runner_stderr": "runs/contour500-recovery-20260918.stderr.log",
+  "recovery_runner_stdout": "runs/contour500-recovery-20260918.stdout.log",
+  "restart_utc": "2026-09-17T21:59:10+00:00",
+  "secondary_restart_utc": "2026-09-17T22:00:58+00:00",
+  "source_and_input_identity_verified": true
+}

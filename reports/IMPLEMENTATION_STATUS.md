@@ -2,6 +2,19 @@
 
 ## Contour correction implemented; fixed comparison running
 
+- **Interruption recovered (18 September):** Windows System event 1074 records
+  planned update restarts at 21:59:10 and 22:00:58 UTC on 17 September. A3's last
+  log entry was step 43 at 21:59:06 UTC; the runner and GPU child were absent on
+  inspection. There was no saved A3 checkpoint yet. The entire interrupted
+  attempt, runner state, stage log and stale lock were archived without overwriting.
+- A2 completed all 500 finite steps and 24-view generation/evaluation before the
+  interruption. Its five checkpoints and prediction hashes passed verification;
+  hashes of all 110 A2 artifact files were recorded before recovery. It was not
+  restarted. Recorded source, package, Python and platform fingerprints match.
+- Restarted A3 from the unchanged initial model, configuration and seed, with
+  the original 500-step final budget. The discarded 43 updates remain recorded
+  as extra interruption cost, not part of the retained model or a new experiment.
+  No model source, pinned protocol or accepted mask changed during recovery.
 - Added the explicit `anchored_contour_v1` mode. Historical configurations keep
   their original loss behavior. The new mode uses a separately cached boundary
   mask; original building, validity, class and confidence arrays are identical.

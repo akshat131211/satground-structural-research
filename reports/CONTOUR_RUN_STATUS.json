@@ -1,16 +1,64 @@
 {
+  "active_runner_logs": {
+    "stderr": "runs/contour500-recovery-20260918.stderr.log",
+    "stdout": "runs/contour500-recovery-20260918.stdout.log"
+  },
   "approved_masks_unchanged": true,
   "artifact_sha256": {
     "configs/contour500/A2.yaml": "a183be6e6380892f4d8ff1e6ab04e74f63809f3343e8db1258135d52737e062e",
     "configs/contour500/A3.yaml": "397853ff11bec32885075c767be6bbdbd0c6a62eca8238f700980f6108f4068f",
     "docs/CONTOUR_CORRECTION.md": "25afbbdb86bfa47a1761175297a4ce1170d7f145e020fe42c71128230b6124b3",
+    "reports/contour500/interruption.json": "677771595e03e2b1fa9f3cbe608a7375d9e7d138fdcfe43c347f033cdfecdd0c",
     "reports/contour500/preflight.json": "7f718bfae73b9f65c3b34a76255b334707dbe2dcade35cb47217e2f1d3097db7",
     "reports/contour500/target-support.json": "fc5cf58215f822f963d6faf4b7e58169e80e9dc6fd6bd4d9cceacb44debcfb72"
   },
   "comparison_complete": false,
-  "current_stage": "A2-train",
+  "completed_checkpoints_verified": {
+    "A2": [
+      {
+        "adapter_and_optimizer_tensors_finite": true,
+        "step": 100
+      },
+      {
+        "adapter_and_optimizer_tensors_finite": true,
+        "step": 200
+      },
+      {
+        "adapter_and_optimizer_tensors_finite": true,
+        "step": 300
+      },
+      {
+        "adapter_and_optimizer_tensors_finite": true,
+        "step": 400
+      },
+      {
+        "adapter_and_optimizer_tensors_finite": true,
+        "step": 500
+      }
+    ],
+    "A3": []
+  },
+  "completed_stages": [
+    "A2-train",
+    "A2-validation",
+    "A2-validation-eval"
+  ],
+  "current_stage": "A3-train",
   "data_qa_complete": false,
+  "interruption": {
+    "A2_retrained": false,
+    "cause": "Windows Update planned OS restart",
+    "checkpoint_available": false,
+    "discarded_A3_steps": 43,
+    "preserved_attempt": "runs/contour500-seed17/interrupted-20260917T215910Z",
+    "recovery_record": "reports/contour500/interruption.json"
+  },
   "learning_rate": 3e-05,
+  "live_process_snapshot": {
+    "observed_utc": "2026-09-18T03:31:53.508819+00:00",
+    "runner_running": true,
+    "training_subprocesses": 1
+  },
   "model_improvement_established": false,
   "monitor_interval_minutes": 15,
   "monitor_status": "ACTIVE",
@@ -26,16 +74,16 @@
     "A2": {
       "all_logged_values_finite": true,
       "budget_steps": 500,
-      "elapsed_seconds": 244.1096155000123,
+      "elapsed_seconds": 3441.4001647000114,
       "peak_allocated_vram_mib": 668.32861328125,
-      "steps_completed": 50
+      "steps_completed": 500
     },
     "A3": {
-      "all_logged_values_finite": null,
+      "all_logged_values_finite": true,
       "budget_steps": 500,
-      "elapsed_seconds": 0,
-      "peak_allocated_vram_mib": null,
-      "steps_completed": 0
+      "elapsed_seconds": 58.4870477000004,
+      "peak_allocated_vram_mib": 668.32861328125,
+      "steps_completed": 8
     }
   },
   "protocol": "docs/CONTOUR_CORRECTION.md",
@@ -53,6 +101,6 @@
   "support_positive_pixels": 43127,
   "tests_passed": 130,
   "training_views": 100,
-  "updated_utc": "2026-09-17T20:59:27.564455+00:00",
+  "updated_utc": "2026-09-18T03:31:53.508819+00:00",
   "validation_views": 24
 }

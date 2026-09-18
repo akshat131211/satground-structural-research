@@ -8,6 +8,11 @@ targets where confident building and static-background labels support a transiti
 while keeping every original region label unchanged. Positive contour support
 increases from 48 to **43,127 pixels**, covering **90 of 92 nonempty training views**.
 Fresh A2 and corrected A3 are training serially for **500 steps each, seed 17**.
+**Recovery update:** A2 completed training and evaluation. A planned Windows Update
+restart interrupted A3 after 43 steps, before its first checkpoint. That attempt
+is preserved locally; A3 has restarted from the same initial weights and seed
+with the same 500-step final budget. A2 is not being retrained. See the
+[interruption record](reports/contour500/interruption.json).
 The startup/resume check and 130 tests passed. Model improvement is still pending;
 target coverage is a preparation result. See the [fixed experiment](docs/CONTOUR_CORRECTION.md),
 [target audit](reports/contour500/target-support.json), and
