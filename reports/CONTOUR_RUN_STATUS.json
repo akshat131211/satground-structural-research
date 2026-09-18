@@ -3,48 +3,149 @@
     "stderr": "runs/contour500-recovery-20260918.stderr.log",
     "stdout": "runs/contour500-recovery-20260918.stdout.log"
   },
+  "additional_optimizer_steps_in_postrun_diagnosis": 0,
   "approved_masks_unchanged": true,
   "artifact_sha256": {
     "configs/contour500/A2.yaml": "a183be6e6380892f4d8ff1e6ab04e74f63809f3343e8db1258135d52737e062e",
     "configs/contour500/A3.yaml": "397853ff11bec32885075c767be6bbdbd0c6a62eca8238f700980f6108f4068f",
     "docs/CONTOUR_CORRECTION.md": "25afbbdb86bfa47a1761175297a4ce1170d7f145e020fe42c71128230b6124b3",
+    "reports/contour500/comparison/report.md": "751ee55806ec21273019a904826387412fec3d8a36fa3e9a5b6a8d44612a0541",
+    "reports/contour500/comparison/summary.json": "9af8a79ae49e13a6623fe871e69864463868900c7a2d9e73369d0b184ef4e41a",
+    "reports/contour500/completion-audit.json": "3d89a94a4538921cbab041077231ed6e72f8e69c76f701be863f7cebdf35a0cb",
+    "reports/contour500/interpretation.md": "4d32c151e75db81114f12580d4e175625b0b1a8260303c98fa0cec9f610d9208",
     "reports/contour500/interruption.json": "677771595e03e2b1fa9f3cbe608a7375d9e7d138fdcfe43c347f033cdfecdd0c",
     "reports/contour500/preflight.json": "7f718bfae73b9f65c3b34a76255b334707dbe2dcade35cb47217e2f1d3097db7",
-    "reports/contour500/target-support.json": "fc5cf58215f822f963d6faf4b7e58169e80e9dc6fd6bd4d9cceacb44debcfb72"
+    "reports/contour500/target-support.json": "fc5cf58215f822f963d6faf4b7e58169e80e9dc6fd6bd4d9cceacb44debcfb72",
+    "scripts/audit_contour_completion.py": "220b209af9bb2d41171ee8806eb72f3d3e32859a69e7993ac2249c1d970df8d1",
+    "scripts/diagnose_contour_numerics.py": "925415261a6da97ee7bd6c1863e6857153a677fea701d9bdd226335aef23fe00"
   },
-  "comparison_complete": false,
+  "comparison_complete": true,
   "completed_checkpoints_verified": {
     "A2": [
       {
-        "adapter_and_optimizer_tensors_finite": true,
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "e9e3c2ba2b2f92f86ed0d136297b05f42ec03716662734f4acbceb591f2b2537",
         "step": 100
       },
       {
-        "adapter_and_optimizer_tensors_finite": true,
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "43ac450bc1ba047a1aebbc1ef1b680d0a5764f73afb6d2aa15b6fa575f50f0b5",
         "step": 200
       },
       {
-        "adapter_and_optimizer_tensors_finite": true,
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "001b3eb5a484cbe144a9fa09d44e5ed7899123fbc52c261694e27639c6ab270d",
         "step": 300
       },
       {
-        "adapter_and_optimizer_tensors_finite": true,
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "dc424cb17bacca4d31ada6259ca8665ffba169a077e240e52474e797e0efc00e",
         "step": 400
       },
       {
-        "adapter_and_optimizer_tensors_finite": true,
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "0c5b6674d7baefba62b8a63055505d4cd5fea74fb30f423c6f4f6a7929982eaa",
         "step": 500
       }
     ],
-    "A3": []
+    "A3": [
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "1fe409a1877b183b0b31e5808ddbbcda8c8f34cd0b11ea3bf70406ad7f3f5862",
+        "step": 100
+      },
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "fa736afccccfe8af31437b941b8581810d556bcd742f1a2667c2e4bf213b7a98",
+        "step": 200
+      },
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "691383ecdc7c7507bc3403b0c1a7b77bddad22bf72a9ea7f57a092269f62c8ed",
+        "step": 300
+      },
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "31dbe89b88921fbdf26efde75cea26eb10b5fe7ddd518ce7e2550f69c873c57f",
+        "step": 400
+      },
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "39db8352a75205dd548bd536428e1c952f3ed7be0881dea46407a4cd7ee049ea",
+        "step": 500
+      }
+    ]
   },
   "completed_stages": [
     "A2-train",
     "A2-validation",
-    "A2-validation-eval"
+    "A2-validation-eval",
+    "A3-train",
+    "A3-validation",
+    "A3-validation-eval"
   ],
-  "current_stage": "A3-train",
+  "completion_audit": "reports/contour500/completion-audit.json",
+  "conclusion": "Inconclusive: primary boundary intervals include zero; no server scaling or longer training justified.",
+  "current_stage": null,
   "data_qa_complete": false,
+  "historical_A2_exact_retraining_reproduced": false,
+  "historical_control_drift": {
+    "adapter_relative_l2": 0.0018683358366962015,
+    "exact_prediction_matches": 0,
+    "exact_retraining_reproduced": false,
+    "first_step_forward_losses_exact": true,
+    "first_step_gradient_norm_difference": -1.1764466762542725e-05,
+    "input_and_environment_checks_passed": true,
+    "mathematically_equivalent_A2_objective": true,
+    "max_per_image_mean_difference_0_1": 0.007865796058006535,
+    "mean_image_absolute_difference_0_1": 0.001934827750544662,
+    "metrics_change": {
+      "boundary_bootstrap": {
+        "ci95": [
+          3.49882916909525e-05,
+          0.0006954400688944523
+        ],
+        "geographic_groups": 10,
+        "mean_improvement": 0.0003319413242840554,
+        "samples": 24,
+        "weighting": "equal_geographic_group"
+      },
+      "building_iou_change": -0.0010131809607369924,
+      "relative_boundary_reduction": 0.0037022589034498756,
+      "relative_lpips_change": 0.0005424964867313401
+    }
+  },
+  "interpretation": "reports/contour500/interpretation.md",
   "interruption": {
     "A2_retrained": false,
     "cause": "Windows Update planned OS restart",
@@ -55,13 +156,16 @@
   },
   "learning_rate": 3e-05,
   "live_process_snapshot": {
-    "observed_utc": "2026-09-18T03:31:53.508819+00:00",
-    "runner_running": true,
-    "training_subprocesses": 1
+    "observed_utc": "2026-09-18T04:51:22.409717+00:00",
+    "runner_running": false,
+    "training_subprocesses": 0
   },
+  "local_gallery_pages_inspected": 6,
+  "local_reviewed_views_inspected": 21,
   "model_improvement_established": false,
   "monitor_interval_minutes": 15,
-  "monitor_status": "ACTIVE",
+  "monitor_reason": "Bounded experiment and local completion report verified; no further training queued.",
+  "monitor_status": "DELETED",
   "nonempty_training_views": 92,
   "nonempty_training_views_with_positive_support": 90,
   "optional_cuda_skipped": 2,
@@ -70,24 +174,74 @@
   "pinned_input_files": 177,
   "pipeline_source_hash": "2504a27e3b3d7632ad3839dd567e60c17ef6b71623381e35f72eb9489bb28d48",
   "primary_comparison": "corrected_A3_vs_fresh_A2",
+  "primary_result": {
+    "all24": {
+      "boundary_bootstrap": {
+        "ci95": [
+          -0.0002281267577039513,
+          0.004741083769317766
+        ],
+        "geographic_groups": 10,
+        "mean_improvement": 0.0016032825271067562,
+        "samples": 24,
+        "weighting": "equal_geographic_group"
+      },
+      "building_iou_change": 0.001088527716018084,
+      "relative_boundary_reduction": 0.01794842637348012,
+      "relative_lpips_change": 0.0006880313911325712
+    },
+    "reviewed21": {
+      "boundary_bootstrap": {
+        "ci95": [
+          -0.00031503666798424006,
+          0.004782456900551324
+        ],
+        "geographic_groups": 10,
+        "mean_improvement": 0.0016272188888223887,
+        "samples": 21,
+        "weighting": "equal_geographic_group"
+      },
+      "building_iou_change": 0.0008732665964141795,
+      "relative_boundary_reduction": 0.016875345276960073,
+      "relative_lpips_change": 0.0006363287932899706
+    },
+    "target_building": {
+      "boundary_bootstrap": {
+        "ci95": [
+          -0.00027654759414122887,
+          0.005440878678880611
+        ],
+        "geographic_groups": 9,
+        "mean_improvement": 0.0018323248024127055,
+        "samples": 21,
+        "weighting": "equal_geographic_group"
+      },
+      "building_iou_change": 0.0014889302755010658,
+      "relative_boundary_reduction": 0.02324153566292954,
+      "relative_lpips_change": 0.00015293169325984428
+    }
+  },
   "progress": {
     "A2": {
       "all_logged_values_finite": true,
       "budget_steps": 500,
-      "elapsed_seconds": 3441.4001647000114,
+      "elapsed_seconds": 3441.522925600002,
       "peak_allocated_vram_mib": 668.32861328125,
       "steps_completed": 500
     },
     "A3": {
       "all_logged_values_finite": true,
       "budget_steps": 500,
-      "elapsed_seconds": 58.4870477000004,
+      "elapsed_seconds": 3923.447050499999,
       "peak_allocated_vram_mib": 668.32861328125,
-      "steps_completed": 8
+      "steps_completed": 500
     }
   },
   "protocol": "docs/CONTOUR_CORRECTION.md",
+  "publication_status": "pending_commit_push_and_CI",
+  "report_reproduced": true,
   "reviewed_development_views": 21,
+  "same_checkpoint_A2_inference_exact_matches": 24,
   "sealed_sets": [
     "Seattle",
     "audit",
@@ -97,10 +251,11 @@
   "server_gate_passed": false,
   "source_and_input_identity_verified": true,
   "source_control_bitwise_retraining_not_assumed": true,
-  "status": "running",
+  "status": "complete",
+  "structural_question_supported": false,
   "support_positive_pixels": 43127,
   "tests_passed": 130,
   "training_views": 100,
-  "updated_utc": "2026-09-18T03:31:53.508819+00:00",
+  "updated_utc": "2026-09-18T04:51:22.409717+00:00",
   "validation_views": 24
 }

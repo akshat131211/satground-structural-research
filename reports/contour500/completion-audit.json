@@ -1,0 +1,246 @@
+{
+  "checkpoints": {
+    "A2": [
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "e9e3c2ba2b2f92f86ed0d136297b05f42ec03716662734f4acbceb591f2b2537",
+        "step": 100
+      },
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "43ac450bc1ba047a1aebbc1ef1b680d0a5764f73afb6d2aa15b6fa575f50f0b5",
+        "step": 200
+      },
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "001b3eb5a484cbe144a9fa09d44e5ed7899123fbc52c261694e27639c6ab270d",
+        "step": 300
+      },
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "dc424cb17bacca4d31ada6259ca8665ffba169a077e240e52474e797e0efc00e",
+        "step": 400
+      },
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "0c5b6674d7baefba62b8a63055505d4cd5fea74fb30f423c6f4f6a7929982eaa",
+        "step": 500
+      }
+    ],
+    "A3": [
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "1fe409a1877b183b0b31e5808ddbbcda8c8f34cd0b11ea3bf70406ad7f3f5862",
+        "step": 100
+      },
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "fa736afccccfe8af31437b941b8581810d556bcd742f1a2667c2e4bf213b7a98",
+        "step": 200
+      },
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "691383ecdc7c7507bc3403b0c1a7b77bddad22bf72a9ea7f57a092269f62c8ed",
+        "step": 300
+      },
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "31dbe89b88921fbdf26efde75cea26eb10b5fe7ddd518ce7e2550f69c873c57f",
+        "step": 400
+      },
+      {
+        "finite_tensor_values": {
+          "adapter": 4448,
+          "optimizer": 8902
+        },
+        "sha256": "39db8352a75205dd548bd536428e1c952f3ed7be0881dea46407a4cd7ee049ea",
+        "step": 500
+      }
+    ]
+  },
+  "created_utc": "2026-09-18T04:47:49.442262+00:00",
+  "data_qa_complete": false,
+  "gallery_pages_reproduced": 6,
+  "historical_control": {
+    "adapter_relative_l2": 0.0018683358366962015,
+    "exact_prediction_matches": 0,
+    "exact_retraining_reproduced": false,
+    "first_step_forward_losses_exact": true,
+    "first_step_gradient_norm_difference": -1.1764466762542725e-05,
+    "input_and_environment_checks_passed": true,
+    "mathematically_equivalent_A2_objective": true,
+    "max_per_image_mean_difference_0_1": 0.007865796058006535,
+    "mean_image_absolute_difference_0_1": 0.001934827750544662,
+    "metrics_change": {
+      "boundary_bootstrap": {
+        "ci95": [
+          3.49882916909525e-05,
+          0.0006954400688944523
+        ],
+        "geographic_groups": 10,
+        "mean_improvement": 0.0003319413242840554,
+        "samples": 24,
+        "weighting": "equal_geographic_group"
+      },
+      "building_iou_change": -0.0010131809607369924,
+      "relative_boundary_reduction": 0.0037022589034498756,
+      "relative_lpips_change": 0.0005424964867313401
+    }
+  },
+  "interrupted_discarded_steps": 43,
+  "manual_index_sha256": "2f6175871bfaf572f8b608c812adc77d9aca2ea68f9232a369e0525ea8b86f10",
+  "new_predictions": 48,
+  "no_additional_training": true,
+  "numerical_probe": {
+    "backward_repeats": 5,
+    "created_utc": "2026-09-18T04:45:19.137601+00:00",
+    "cuda_version": "12.4",
+    "deterministic_warnings": [
+      "Deterministic behavior was enabled with either `torch.use_deterministic_algorithms(True)` or `at::Context::setDeterministicAlgorithms(true)`, but this operation is not deterministic because it uses CuBLAS and you have CUDA >= 10.2. To enable deterministic behavior in this case, you must set an environment variable before running your PyTorch application: CUBLAS_WORKSPACE_CONFIG=:4096:8 or CUBLAS_WORKSPACE_CONFIG=:16:8. For more information, go to https://docs.nvidia.com/cuda/cublas/index.html#results-reproducibility (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\Context.cpp:217.)",
+      "grid_sampler_2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\Context.cpp:96.)",
+      "reflection_pad2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\Context.cpp:96.)",
+      "upsample_bilinear2d_aa_backward_out_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\pytorch\\aten\\src\\ATen\\Context.cpp:96.)"
+    ],
+    "frozen_models_verified": true,
+    "image_gradient_comparison": {
+      "exact": false,
+      "max_absolute": 5.009351298213005e-06,
+      "norm": 1.5786211512720278,
+      "relative_l2": 3.371469057989613e-05
+    },
+    "limitations": [
+      "One fixed training view at the initial adapter; not a training replicate.",
+      "Observed nondeterminism does not prove every historical difference has one cause."
+    ],
+    "losses": {
+      "anchored_contour_v1": {
+        "boundary": 0.028533833101391792,
+        "lpips": 0.5584936141967773,
+        "region": 0.9954130053520203,
+        "rgb": 0.16381841897964478,
+        "total": 0.7173742651939392
+      },
+      "legacy": {
+        "boundary": 0.012705713510513306,
+        "lpips": 0.5584936141967773,
+        "region": 0.9954130053520203,
+        "rgb": 0.16381841897964478,
+        "total": 0.7173742651939392
+      }
+    },
+    "optimizer_steps": 0,
+    "parameters_unchanged": true,
+    "same_graph_fixed_upstream_repeats": [
+      {
+        "exact": false,
+        "max_absolute": 5.97536563873291e-06,
+        "norm": 0.9019156868986339,
+        "relative_l2": 1.8231906958285243e-05
+      },
+      {
+        "exact": false,
+        "max_absolute": 1.2630131095647812e-05,
+        "norm": 0.901921782961015,
+        "relative_l2": 3.763241279605121e-05
+      },
+      {
+        "exact": false,
+        "max_absolute": 5.97536563873291e-06,
+        "norm": 0.9019152413637389,
+        "relative_l2": 1.8579587984514816e-05
+      },
+      {
+        "exact": false,
+        "max_absolute": 5.97536563873291e-06,
+        "norm": 0.9019156251359352,
+        "relative_l2": 1.9186139065114278e-05
+      }
+    ],
+    "script_sha256": "925415261a6da97ee7bd6c1863e6857153a677fea701d9bdd226335aef23fe00",
+    "source_hash": "2504a27e3b3d7632ad3839dd567e60c17ef6b71623381e35f72eb9489bb28d48",
+    "stored_gradients_absent": true,
+    "tf32": {
+      "cudnn": true,
+      "matmul": false
+    },
+    "torch_version": "2.6.0+cu124",
+    "training_views": 1
+  },
+  "original_three_reviewed": {
+    "grouped_boundary": {
+      "A2_fresh": 0.12517988864154683,
+      "A3_corrected": 0.12512190040600393
+    },
+    "primary_delta": {
+      "boundary_bootstrap": {
+        "ci95": [
+          -0.0008114121222029536,
+          0.0010054646281840163
+        ],
+        "geographic_groups": 3,
+        "mean_improvement": 5.7988235542911125e-05,
+        "samples": 3,
+        "weighting": "equal_geographic_group"
+      },
+      "building_iou_change": 0.0004243014304651238,
+      "relative_boundary_reduction": 0.00046323923253318374,
+      "relative_lpips_change": -0.00010876989591158483
+    }
+  },
+  "original_training_labels_identical": 100,
+  "pinned_files_verified": 177,
+  "preflight_steps": 3,
+  "preserved_A2_artifacts_verified": 110,
+  "report_reproduced": true,
+  "report_timestamp_excluded": true,
+  "reviewed_masks": 21,
+  "same_checkpoint_A2_repeat_exact_matches": 24,
+  "script_sha256": "220b209af9bb2d41171ee8806eb72f3d3e32859a69e7993ac2249c1d970df8d1",
+  "server_gate_passed": false,
+  "source_hash": "2504a27e3b3d7632ad3839dd567e60c17ef6b71623381e35f72eb9489bb28d48",
+  "status": "verified",
+  "total_retained_steps": 1000,
+  "training": {
+    "A2": {
+      "all_values_finite": true,
+      "checkpoint_sha256": "eb1af0a0b56359d9efa5952129e2652e55374c150447c9d9ebcff7c46bce9025",
+      "elapsed_seconds": 3441.522925600002,
+      "peak_vram_mib": 668.32861328125,
+      "steps": 500
+    },
+    "A3": {
+      "all_values_finite": true,
+      "checkpoint_sha256": "0460f16c7ed5929e7916a6b808e68757efc315cbb5f4fe9fc0e9bdf4344b8d1e",
+      "elapsed_seconds": 3923.447050499999,
+      "peak_vram_mib": 668.32861328125,
+      "steps": 500
+    }
+  }
+}

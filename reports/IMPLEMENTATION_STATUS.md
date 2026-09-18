@@ -1,6 +1,46 @@
 # Implementation status — updated 18 September 2026 (India)
 
-## Contour correction implemented; fixed comparison running
+## Contour comparison completed; improvement not established
+
+- Fresh A2 and corrected A3 completed exactly 500 optimizer steps each. All 1,000
+  logged steps are sequential and finite. Ten periodic adapter/optimizer states
+  and both final checkpoints passed identity, step and finiteness checks.
+- Corrected A3 versus fresh A2: boundary error decreases 1.795% overall and 1.688%
+  on 21 reviewed views, with both 95% geographic bootstrap intervals spanning zero.
+  All-view IoU increases 0.109 percentage points and LPIPS worsens 0.069%.
+- Corrected versus legacy A3 changes boundary error by only 0.029%, with an interval
+  spanning zero. The three empty targets have the same one false-building prediction
+  and penalty event for all models; corrected/legacy A3 both label 99 false pixels.
+- Verified 48 new predictions and the unchanged 21 approved mask pairs. All 177
+  runner inputs/source files and all 110 A2 artifacts preserved across recovery
+  are intact. Aggregate JSON reproduces excluding its timestamp; report Markdown
+  and six local gallery pages reproduce byte-for-byte.
+- Inspected all 21 reviewed gallery rows locally, including the original three.
+  Large placement/layout discrepancies remain. No clear visual correction of the
+  worst failures was apparent. This was assistant inspection, not human certification.
+- Historical A2 control drift is small but material to tiny method effects: boundary
+  error changes 0.370%, larger than corrected-versus-legacy A3's change. Original
+  training labels, data/style identities, budgets and recorded environments match.
+  First-step scalar losses match; retraining is not bitwise reproducible.
+- Five backward-only passes through one unchanged graph with fixed upstream gradient
+  demonstrate numerical variation, relative L2 0.0000182–0.0000376. PyTorch warns
+  about nondeterministic CUDA operations. This establishes a numerical limitation,
+  not an exclusive explanation of every historical difference. No optimizer updates
+  or extra training seeds were used. Same-checkpoint inference repeats exactly
+  for all 24 A2 views.
+- A2 recorded 3,441.5 seconds; A3 recorded 3,923.4 seconds. Both peaked at 668.3 MiB
+  of PyTorch-allocated VRAM. The interrupted 43 A3 steps and three preflight steps
+  are separate costs, excluded from either selected 500-step model.
+- **130 tests passed, two optional CUDA tests skipped.** No main-study/server gate
+  is eligible, no longer run is queued, and the completed experiment's monitor stops.
+  Independent data QA and training-contour verification remain incomplete. Seattle,
+  calibration and audit images remain sealed. All earlier experiments are retained.
+
+See [interpretation](contour500/interpretation.md), [comparison](contour500/comparison/report.md),
+[verification and numerical evidence](contour500/completion-audit.json), and
+[run status](CONTOUR_RUN_STATUS.json).
+
+## Preserved implementation and recovery record
 
 - **Interruption recovered (18 September):** Windows System event 1074 records
   planned update restarts at 21:59:10 and 22:00:58 UTC on 17 September. A3's last
@@ -29,7 +69,7 @@
   remain. This assistant inspection adds no human approval or label revision.
 - A separate three-step A3 startup/resume check passed, with all loss/gradient
   values finite and 668.3 MiB peak allocated VRAM. It is not either comparison model.
-- Launched fresh A2 then corrected A3, serially: 500 optimizer steps each, seed 17,
+- Ran fresh A2 then corrected A3, serially: 500 optimizer steps each, seed 17,
   learning rate 0.00003, accumulation 8, 256-pixel output. Final step 500 is fixed
   for evaluation; no post-hoc checkpoint selection or training extension.
 - A2's first-step RGB, LPIPS, region and total losses exactly match the historical
@@ -39,11 +79,10 @@
 - **130 tests passed, two optional CUDA tests skipped.** Tests check contour
   restoration, exclusion of vegetation/dynamic neighbors, unsupported wide gaps,
   empty targets, malformed labels, unchanged region gradients and matched budgets.
-- The monitor is active every 15 minutes and stops after final verification.
-  Source, labels, configurations, protocol and runner/report scripts are pinned
-  during the comparison. Only one GPU training subprocess is active.
-- No model-improvement conclusion is available yet. Reviewed development masks,
-  earlier results and sealed sets remain unchanged; data QA is incomplete.
+- Source, labels, configurations, protocol and runner/report scripts stayed pinned
+  during the comparison. GPU training subprocesses ran serially; none remains active.
+- The final conclusion above supersedes the pending launch assessment. Reviewed
+  development masks, earlier results and sealed sets remain unchanged.
 
 See [frozen protocol](../docs/CONTOUR_CORRECTION.md),
 [support audit](contour500/target-support.json), [startup checks](contour500/preflight.json),

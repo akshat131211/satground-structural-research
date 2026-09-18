@@ -2,21 +2,29 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
-**Contour correction running (18 September 2026, India):** the training code now
-supports a separate contour-validity mask. A fixed local rule restores boundary
-targets where confident building and static-background labels support a transition,
-while keeping every original region label unchanged. Positive contour support
-increases from 48 to **43,127 pixels**, covering **90 of 92 nonempty training views**.
-Fresh A2 and corrected A3 are training serially for **500 steps each, seed 17**.
-**Recovery update:** A2 completed training and evaluation. A planned Windows Update
-restart interrupted A3 after 43 steps, before its first checkpoint. That attempt
-is preserved locally; A3 has restarted from the same initial weights and seed
-with the same 500-step final budget. A2 is not being retrained. See the
-[interruption record](reports/contour500/interruption.json).
-The startup/resume check and 130 tests passed. Model improvement is still pending;
-target coverage is a preparation result. See the [fixed experiment](docs/CONTOUR_CORRECTION.md),
-[target audit](reports/contour500/target-support.json), and
-[timestamped run snapshot](reports/CONTOUR_RUN_STATUS.json).
+**Contour comparison completed (18 September 2026, India):** fresh A2 and corrected
+A3 finished **500 steps each, seed 17**. Corrected A3's boundary error is **1.795%
+lower than fresh A2** overall and **1.688% lower on the 21 reviewed views**; both
+95% geographic intervals include zero. Against legacy A3 the reduction is only
+**0.029%**. Structural improvement is not established, and longer training or
+server scaling is not justified by this result.
+
+The correction restored **43,127 positive contour pixels in 90 of 92 nonempty
+training views**, without changing original region labels or approved masks.
+These remain pseudo-labels. All 1,000 finite training rows, ten periodic checkpoints,
+48 new predictions and 177 input/source pins passed verification. Reports and
+local galleries reproduce. Historical A2 retraining is not bitwise reproducible;
+backward-only checks demonstrate small numerical variation, while repeat inference
+from the same checkpoint reproduces 24/24 images exactly. The planned Windows
+restart's discarded 43 A3 updates remain preserved and separately accounted for.
+The test suite passes: **130 passed, two optional CUDA tests skipped**.
+
+Read the [completed interpretation](reports/contour500/interpretation.md),
+[aggregate comparison](reports/contour500/comparison/report.md),
+[completion audit](reports/contour500/completion-audit.json), and
+[run status](reports/CONTOUR_RUN_STATUS.json). The [frozen protocol](docs/CONTOUR_CORRECTION.md)
+and [target audit](reports/contour500/target-support.json) remain unchanged.
+No further training is queued. Data QA is incomplete and sealed sets remain sealed.
 
 **Mask batch completed:** all 18 additional building/validity pairs are accepted,
 bringing the total to 21 reviewed development views. Double-click **Open Additional
