@@ -1,4 +1,31 @@
-# Implementation status — updated 18 September 2026 (India)
+# Implementation status — updated 19 September 2026 (India)
+
+## Autoresearch workflow integrated; training review remains the prerequisite
+
+- Imported Karpathy's repository at commit `228791fb499afffb54b46200aca536f79142f117`
+  into ignored `external/autoresearch`. Verified six Git-blob hashes. Read the
+  supplied guide; adopted preserved per-trial branches and fixed evaluation.
+- Added project-specific `program.md`, an integration guide and a CPU-only
+  evidence helper with `status`, `import-contour` and `verify-ledger` commands.
+  The helper checks actual review progress and does not invent human decisions.
+- Re-audited all 1,000 retained training rows, ten periodic checkpoints, 48
+  predictions and 177 pins. The fresh audit agrees with the completed evidence.
+  Imported an immutable local JSON/TSV ledger; its hashes and derived decision
+  reproduce. The historical result remains inconclusive; no model is promoted.
+- Added 19 tests covering malformed/non-finite evidence, mismatched identities,
+  empty-target regressions, source/result tampering and review/claim boundaries.
+  **153 tests passed, two optional CUDA tests skipped** in the full local suite.
+- No upstream dependencies, new inference or optimizer updates. No training
+  launcher is implemented by this integration. After the 12-view review is
+  verified, the bounded 200-step A2/A3 fitting test still needs its exact eligible
+  subset, criterion, configurations and runner. It would measure training-set
+  learnability, not held-out improvement or conference readiness.
+- Earlier source/configs, accepted masks and results remain intact. Seattle,
+  audit and calibration images remain sealed. Only code, docs and aggregate
+  evidence are eligible for publication.
+
+See [integration guide](../docs/AUTORESEARCH.md), [agent program](../program.md)
+and [aggregate verification](AUTORESEARCH_STATUS.json).
 
 ## Training-only review prepared; human review pending
 

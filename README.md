@@ -2,6 +2,13 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
+**Autoresearch workflow imported (19 September 2026):** Karpathy's repository is
+pinned locally as a reference. The project-specific [agent program](program.md)
+uses bounded experiments, preserved trial branches and fixed evaluation. The
+[integration guide](docs/AUTORESEARCH.md) explains the executable review-status
+and historical-ledger commands. This does not start another GPU experiment;
+the training review below is still the next prerequisite.
+
 **Next step: 12-view training review prepared.** Double-click **Open Training Review.cmd**
 to inspect satellite/camera context and edit the cached training building/validity
 proposals. Four distinct geographic groups per city were selected using metadata
