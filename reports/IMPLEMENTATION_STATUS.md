@@ -1,4 +1,25 @@
-# Implementation status — updated 19 September 2026 (India)
+# Implementation status — updated 20 September 2026 (India)
+
+## Twelve training submissions verified; fitting subset pending
+
+- Verified all 12 completed versions: exact mask/target/card hashes, packed
+  completion pixels, scene-review revisions and immutable response histories.
+  Preserved a separate version-1 submission snapshot without changing any mask.
+- Ten views have human-supported pairing, mostly-inside crop support and checked
+  masks. Preserve the mismatch decision on view 2 and uncertain coverage on view 8.
+- Assistant inspection identified a potential ground/bin labelling issue on
+  view 1. View 10 has zero positive boundary pixels after the actual 3-by-3
+  validity check. A targeted correction/exclusion choice is pending.
+- The ten candidate views provide 1,985 positive boundary pixels after that
+  check; this measures supervision availability, not label accuracy.
+- Added a snapshot verifier and six tests for exact pixels, stale submissions,
+  tampering, private output boundaries and agreement with the training operator. No source-model
+  changes, GPU training or inference. All 21 development masks remain unchanged.
+- The subset, fitting configurations and runner will be finalized after the
+  targeted follow-up. No training eligibility is assigned by the verifier.
+
+See [follow-up](../docs/TRAINING_REVIEW_FOLLOWUP.md) and
+[aggregate verification](TRAINING_REVIEW_VERIFICATION.json).
 
 ## Autoresearch workflow integrated; training review remains the prerequisite
 

@@ -9,13 +9,14 @@ uses bounded experiments, preserved trial branches and fixed evaluation. The
 and historical-ledger commands. This does not start another GPU experiment;
 the training review below is still the next prerequisite.
 
-**Next step: 12-view training review prepared.** Double-click **Open Training Review.cmd**
-to inspect satellite/camera context and edit the cached training building/validity
-proposals. Four distinct geographic groups per city were selected using metadata
-only. Use **Save & Next** through all images; uncertain and mismatched answers
-are allowed. Your 21 evaluation masks stay separate. No new training has started.
-See the [review guide](docs/TRAINING_REVIEW_GUIDE.md) and
-[preparation status](reports/TRAINING_REVIEW_STATUS.json).
+**All 12 training reviews submitted (20 September):** exact mask versions and
+scene-review histories are verified and preserved. View 2 is marked mismatched;
+view 8 has uncertain coverage. Two targeted issues remain in views 1 and 10
+before selecting the fitting subset. No masks were silently corrected, and no
+new training has started. See the [follow-up](docs/TRAINING_REVIEW_FOLLOWUP.md)
+and [verification](reports/TRAINING_REVIEW_VERIFICATION.json). Double-click
+**Open Training Review.cmd** to revisit the batch; Save & Next after any edits.
+Your 21 evaluation masks remain separate.
 
 **Contour comparison completed (18 September 2026, India):** fresh A2 and corrected
 A3 finished **500 steps each, seed 17**. Corrected A3's boundary error is **1.795%

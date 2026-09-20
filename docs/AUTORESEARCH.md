@@ -88,7 +88,9 @@ git -C external/autoresearch checkout --detach 228791fb499afffb54b46200aca536f79
 
 ## Current stopping point and next trial
 
-The separate 12-view training review is pending. The existing 21 human-reviewed
+All 12 training views were submitted on 20 September; exact versions are verified.
+The [targeted follow-up](TRAINING_REVIEW_FOLLOWUP.md) records two remaining
+content/scoring issues before subset selection. The existing 21 human-reviewed
 development masks remain evaluation-only. Review all new views through
 `Open Training Review.cmd`, then verify the exact saved masks, scene choices,
 target hashes and accepted subset. Uncertain cases remain recorded and ineligible

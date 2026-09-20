@@ -1,0 +1,35 @@
+{
+  "assistant_content_followup_views": [
+    1,
+    10
+  ],
+  "coverage_counts": {
+    "mostly_inside": 11,
+    "uncertain": 1
+  },
+  "created_utc": "2026-09-20T06:51:31.931876+00:00",
+  "exact_mask_pairs_verified": 12,
+  "existing_evaluation_masks_preserved": 21,
+  "full_suite_tests_passed": 159,
+  "human_mismatch_view": 2,
+  "human_supported_inside_checked": 10,
+  "human_uncertain_coverage_view": 8,
+  "new_training_updates": 0,
+  "new_verification_tests_passed": 6,
+  "optional_cuda_tests_skipped": 2,
+  "pairing_counts": {
+    "mismatch": 1,
+    "supported": 11
+  },
+  "positive_boundary_pixels_with_valid_neighborhood": 1985,
+  "sealed_images_opened": false,
+  "snapshot_sha256": "000a290e5a804aba644324539ef24eeee6e6a5136c40ac34b05d6019438b2d35",
+  "source_manifest_sha256": "1c150fcdb20facec389c4a5c423f09f53bf104d68abab0f8e4c4ade2aa7489f7",
+  "source_packet_sha256": "5abfbc3c1078c359e88d28a987b70073446ca3e60842b333feb5d294a058437a",
+  "status": "submitted_versions_verified_content_followup_pending",
+  "submitted_masks_modified": false,
+  "submitted_reviews": 12,
+  "supported_views_with_zero_valid_neighborhood_boundary": 1,
+  "training_eligible_views": 0,
+  "user_correction_or_exclusion_choice": "pending"
+}

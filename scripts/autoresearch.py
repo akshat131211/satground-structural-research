@@ -64,7 +64,8 @@ def status(root=ROOT):
     return {'created_utc': utc_now(), 'upstream': inspect_upstream(root), 'review': progress,
             'state': 'awaiting_training_review' if progress['remaining'] else 'requires_review_verification',
             'new_training_started': False, 'training_launcher_implemented': False,
-            'next_step': 'Complete the 12-view review, then verify exact masks and pairing evidence before specifying the bounded fitting test.',
+            'next_step': ('Complete the 12-view review, then verify exact masks and pairing evidence.' if progress['remaining'] else
+                          'Resolve content follow-ups and freeze the eligible subset before specifying the bounded fitting test.'),
             'historical_experiment': 'contour500_complete_inconclusive', 'server_gate_eligible': False}
 
 
