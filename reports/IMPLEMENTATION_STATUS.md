@@ -7,7 +7,7 @@
   Preserved a separate version-1 submission snapshot without changing any mask.
 - Ten views have human-supported pairing, mostly-inside crop support and checked
   masks. Preserve the mismatch decision on view 2 and uncertain coverage on view 8.
-- Assistant inspection identified a potential ground/bin labelling issue on
+- Assistant inspection identified apparent ground labelled as building on
   view 1. View 10 has zero positive boundary pixels after the actual 3-by-3
   validity check. A targeted correction/exclusion choice is pending.
 - The ten candidate views provide 1,985 positive boundary pixels after that

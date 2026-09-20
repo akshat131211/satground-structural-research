@@ -15,8 +15,9 @@ human judgments, not independent proof of exact geographic alignment.
 - View 2: preserve the human mismatch decision; exclude from fitting.
 - View 8: preserve uncertain crop support; exclude from fitting.
 - View 1: assistant inspection flags apparent non-building ground beneath the
-  parked car in the building mask, plus scored bin pixels in the validity mask.
-  Request a targeted correction or exclude it. This is an assistant finding;
+  parked car in the building mask. Clearly visible bins may remain valid as
+  non-building; exclude their pixels only where they are uncertain. Request a
+  targeted ground-label correction or exclude this view. This is an assistant finding;
   it does not alter or replace the human submission.
 - View 10: the submitted building mask appears reasonable, but zero positive
   target contour pixels survive the objective's 3-by-3 validity-neighborhood
