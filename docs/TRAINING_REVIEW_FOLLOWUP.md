@@ -1,5 +1,11 @@
 # Completed training submissions: two targeted checks before fitting
 
+**Disposition resolved on 28 September:** the user selected the eight-view
+fitting cohort, excluding views 1 and 10 alongside the mismatch/uncertain views
+2 and 8. The findings below and all original submissions are retained; no mask
+was corrected by the assistant. The exact eight-view bundle provides 1,043
+usable positive contour pixels. See the [bounded fitting protocol](REVIEWED_FITTING.md).
+
 All 12 views were submitted and verified on 20 September 2026. Exact versioned
 PNG masks, target identities, completion pixels, context revisions and their
 immutable histories agree. The original submissions are preserved locally under

@@ -99,10 +99,11 @@ unless their uncertainties are resolved. No replacement scenes are selected.
 The separate [reviewed fitting implementation](REVIEWED_FITTING.md), prepared on
 28 September, fixes the previously proposed fresh 200-step A2/A3 pair, seed 17
 and learning rate 0.00003. Its converter, trainer, serial runner and aggregate
-verifier have synthetic CPU tests. The actual subset must still be resolved and
-frozen before launch; no fitting bundle or GPU run exists yet. The criterion is
+verifier have synthetic CPU tests. On 28 September the user selected eight
+reviewed views and their exact bundle passed CPU verification. The criterion is
 predeclared, and scores measure training-example learnability, not held-out
-accuracy. No autonomous GPU search is running.
+accuracy. The one fixed comparison is ready for launch; no open-ended search is
+authorized.
 
 No new seed, learning-rate sweep, longer budget, dataset, height track or server
 allocation follows from importing this reference. Repeatedly optimizing the

@@ -31,11 +31,13 @@ A2/A3 pair, 200 optimizer steps each, seed 17, learning rate 0.00003. Preserve
 uncertain/rejected cases in the review record and report the usable fraction.
 If no adequately supported building examples remain, stop at that finding.
 Do not silently pick replacements or train with pending/pseudo-human labels.
-The separate fitting scripts and fixed protocol are now implemented and tested
-on synthetic CPU fixtures; see `docs/REVIEWED_FITTING.md`. The actual bundle and
-generated configurations remain absent pending the correction/exclusion choice
-for views 1 and 10. Verify the final subset and actual GPU startup/recovery before
-calling this path operational. No new training or inference has started.
+The separate fitting scripts and fixed protocol are implemented and tested on
+synthetic CPU fixtures; see `docs/REVIEWED_FITTING.md`. On 28 September the user
+selected eight views, excluding 1 and 10 alongside the already unsuitable 2 and
+8. Freeze exactly views 3, 4, 5, 6, 7, 9, 11 and 12 with the actual local
+disposition; no further approval of this selection is needed. Verify actual GPU
+startup and preserve compatible checkpoints for recovery. The fixed budget and
+training-only interpretation remain unchanged.
 
 This fitting test asks whether known training outlines are learnable. Scores
 on the fitting examples cannot support generalization or the server gate.

@@ -2,13 +2,14 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
-**Reviewed-mask fitting implementation prepared (28 September 2026):** a separate
+**Eight-view fitting cohort frozen (28 September 2026):** a separate
 CPU-tested label converter, fixed-budget trainer, serial GPU runner and report
 verifier now support the proposed 200-step A2/A3 diagnosis. They preserve exact
 submitted masks and distinguish the fitting subset from the illumination-code
-training source. No new GPU training or inference has started. The choice to
-correct or exclude views 1 and 10 is still pending; excluding them would leave
-eight candidates. The actual fitting subset remains unfrozen. Read the
+training source. The user selected eight views, excluding views 1 and 10 along
+with the already unsuitable views 2 and 8. Exact target crops, label values and
+input identities passed CPU verification; the cohort supplies 1,043 usable
+positive contour pixels. The fixed serial comparison is ready for launch. Read the
 [predeclared protocol](docs/REVIEWED_FITTING.md) and
 [implementation evidence](reports/REVIEWED_FITTING_STATUS.json). CPU tests do not
 establish GPU startup/resume behavior or a model improvement.
@@ -22,9 +23,9 @@ the training review below is still the next prerequisite.
 
 **All 12 training reviews submitted (20 September):** exact mask versions and
 scene-review histories are verified and preserved. View 2 is marked mismatched;
-view 8 has uncertain coverage. Two targeted issues remain in views 1 and 10
-before selecting the fitting subset. No masks were silently corrected, and no
-new training has started. See the [follow-up](docs/TRAINING_REVIEW_FOLLOWUP.md)
+view 8 has uncertain coverage. The issues in views 1 and 10 remain recorded;
+the user selected their exclusion from the eight-view fitting diagnosis. See
+the [follow-up](docs/TRAINING_REVIEW_FOLLOWUP.md)
 and [verification](reports/TRAINING_REVIEW_VERIFICATION.json). Double-click
 **Open Training Review.cmd** to revisit the batch; Save & Next after any edits.
 Your 21 evaluation masks remain separate.

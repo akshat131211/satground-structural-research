@@ -1,6 +1,6 @@
 # Implementation status — updated 28 September 2026 (India)
 
-## Reviewed-mask fitting implementation prepared; subset decision pending
+## Eight-view fitting cohort frozen; fixed comparison ready for launch
 
 - Added a separate exact-mask converter and fitting path without changing the
   historical model source, contour inputs, old runs or accepted evaluation masks.
@@ -19,10 +19,14 @@
 - Added 29 synthetic CPU tests, including full report reproduction and rejection
   of changed masks/images, missing updates, mismatched schedules and altered
   aggregates. Real GPU startup/resume behavior remains untested for this path.
-- No actual fitting bundle or training eligibility has been created. All 12
-  submissions remain intact. The correction/exclusion decision for views 1 and
-  10 is pending; views 2 and 8 remain excluded from consideration. No new model
-  training or inference has run, and sealed images remain unopened.
+- The user selected the eight-view option. Froze views 3, 4, 5, 6, 7, 9, 11 and
+  12 with actual private disposition evidence; all 12 original submissions remain
+  intact. The exact reviewed training bundle has eight mask pairs and 1,043
+  usable positive contour pixels, with two Chicago, three New York and three
+  San Francisco views. Both training identities and RGB-readiness checks pass.
+  This eligibility is limited to the exploratory fitting diagnosis.
+- The fixed serial comparison is ready for launch. Actual GPU startup remains
+  unverified for the new path. Sealed images remain unopened.
 
 See [fitting protocol](../docs/REVIEWED_FITTING.md) and
 [current implementation evidence](REVIEWED_FITTING_STATUS.json).

@@ -8,11 +8,13 @@ training outlines, and whether adding the boundary term helps beyond A2.
 ## Cohort and annotation boundary
 
 All 12 completed submissions remain immutable. View 2 is marked mismatched and
-view 8 has uncertain coverage; both are excluded. A correction-or-exclusion
-decision is still pending for views 1 and 10. Excluding both leaves eight
-candidates with 1,043 positive target contour pixels after the existing 3-by-3
-validity erosion. No subset is eligible until that decision and its exact
-versions are recorded locally. No replacement scenes are selected.
+view 8 has uncertain coverage; both are excluded. On 28 September the user
+explicitly selected the eight-view option, excluding views 1 and 10 as well.
+The fitting cohort is views 3, 4, 5, 6, 7, 9, 11 and 12, with 1,043 positive
+target contour pixels after the existing 3-by-3 validity erosion. Record the
+actual disposition locally and verify the exact mask versions before launch.
+This resolves the subset choice, not independent data QA. No replacements are
+selected and the excluded masks remain preserved.
 
 A separate fitting bundle records actual inclusion/exclusion decisions, checks
 completed submission hashes and exact target crops, and copies the binary PNG
