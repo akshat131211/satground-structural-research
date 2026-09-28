@@ -30,6 +30,15 @@ adapter-gradient checks after the historical 24-check diagnosis. Its local
 distance band saturates; it does not replace region supervision for distant
 false positives or invent labels in ignored regions.
 
+That candidate passes the fixed near-shift checks, but its combined structural
+loss falls from 0.469028 to 0.459674 when displacement grows from 40 to 44 pixels.
+The geometric error grows in the same comparison. The false-positive building
+leaves its local distance band and loses the extra penalty. This is an objective
+ordering failure, not harmless saturation. The predeclared harmful-behavior rule
+therefore blocks training. No radius, coefficient or screening gate was changed
+to rescue the candidate. Zero-update gradient feasibility measurements may
+characterize it, but cannot override this controlled failure.
+
 No new optimizer updates or generator improvement are reported here. The eight
 views are reviewed training examples with incomplete independent QA. Sealed
 sets and the reviewed development views remain outside this phase. No server
