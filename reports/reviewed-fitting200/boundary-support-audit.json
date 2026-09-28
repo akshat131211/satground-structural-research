@@ -1,0 +1,166 @@
+{
+  "bundle_sha256": "f66fe9d1df845b0b3fe5892ee36359c234809dae89e56d9479c8f3356b32e6a7",
+  "diagnostic_timing": "Defined after frozen A0 evaluation while the predeclared fitting pair was active; not a selection metric.",
+  "fitting_views": 8,
+  "held_out_generalization_evidence": false,
+  "model_names": [
+    "A0"
+  ],
+  "models": {
+    "A0": {
+      "nonperimeter_boundary_error": 0.11638195769315093,
+      "nonperimeter_empty_counts": {
+        "both_empty": 0,
+        "neither_empty": 8,
+        "one_empty": 0
+      },
+      "predicted_perimeter_edge_pixels": 1496,
+      "primary_boundary_error": 0.06351404048500424
+    }
+  },
+  "per_view": [
+    {
+      "fitting_view": 1,
+      "models": {
+        "A0": {
+          "boundary_error": 0.025474370218858643,
+          "building_iou": 0.2330264672036824,
+          "lpips": 0.527782678604126,
+          "nonperimeter_boundary_error": 0.030326479052595282,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 442,
+      "primary_target_edge_pixels": 324,
+      "target_perimeter_edge_pixels": 68,
+      "training_boundary_valid_pixels": 48167
+    },
+    {
+      "fitting_view": 2,
+      "models": {
+        "A0": {
+          "boundary_error": 0.009038528341126171,
+          "building_iou": 0.9623996344408904,
+          "lpips": 0.5842762589454651,
+          "nonperimeter_boundary_error": 0.10811936839908622,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 42,
+      "primary_target_edge_pixels": 433,
+      "target_perimeter_edge_pixels": 408,
+      "training_boundary_valid_pixels": 54958
+    },
+    {
+      "fitting_view": 3,
+      "models": {
+        "A0": {
+          "boundary_error": 0.04918119914664649,
+          "building_iou": 0.8262621474283005,
+          "lpips": 0.5525038838386536,
+          "nonperimeter_boundary_error": 0.11119585536977458,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 123,
+      "primary_target_edge_pixels": 415,
+      "target_perimeter_edge_pixels": 349,
+      "training_boundary_valid_pixels": 51332
+    },
+    {
+      "fitting_view": 4,
+      "models": {
+        "A0": {
+          "boundary_error": 0.13149388362505296,
+          "building_iou": 0.3860444041685546,
+          "lpips": 0.5679869651794434,
+          "nonperimeter_boundary_error": 0.13903727474284308,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 45,
+      "primary_target_edge_pixels": 62,
+      "target_perimeter_edge_pixels": 41,
+      "training_boundary_valid_pixels": 46471
+    },
+    {
+      "fitting_view": 5,
+      "models": {
+        "A0": {
+          "boundary_error": 0.07479585436336764,
+          "building_iou": 0.46126252038201726,
+          "lpips": 0.4973449110984802,
+          "nonperimeter_boundary_error": 0.12474400505389924,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 99,
+      "primary_target_edge_pixels": 359,
+      "target_perimeter_edge_pixels": 309,
+      "training_boundary_valid_pixels": 58034
+    },
+    {
+      "fitting_view": 6,
+      "models": {
+        "A0": {
+          "boundary_error": 0.0498298098860832,
+          "building_iou": 0.6227594831179658,
+          "lpips": 0.47960764169692993,
+          "nonperimeter_boundary_error": 0.12545780509095938,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 56,
+      "primary_target_edge_pixels": 187,
+      "target_perimeter_edge_pixels": 161,
+      "training_boundary_valid_pixels": 54932
+    },
+    {
+      "fitting_view": 7,
+      "models": {
+        "A0": {
+          "boundary_error": 0.12210651730805365,
+          "building_iou": 0.2144014401440144,
+          "lpips": 0.6179130673408508,
+          "nonperimeter_boundary_error": 0.14055814186296658,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 3,
+      "primary_target_edge_pixels": 18,
+      "target_perimeter_edge_pixels": 15,
+      "training_boundary_valid_pixels": 51598
+    },
+    {
+      "fitting_view": 8,
+      "models": {
+        "A0": {
+          "boundary_error": 0.04619216099084515,
+          "building_iou": 0.7466132153718551,
+          "lpips": 0.4740180969238281,
+          "nonperimeter_boundary_error": 0.1516167319730831,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 233,
+      "primary_target_edge_pixels": 465,
+      "target_perimeter_edge_pixels": 325,
+      "training_boundary_valid_pixels": 53483
+    }
+  ],
+  "positive_training_boundary_fraction": 0.0024894086759353184,
+  "positive_training_boundary_pixels": 1043,
+  "primary_metric_and_criterion_unchanged": true,
+  "primary_target_edge_pixels": 2263,
+  "scope": "posthoc_training_fitting_diagnostic_only",
+  "server_gate_eligible": false,
+  "sources_sha256": {
+    "A0": {
+      "metrics_sha256": "456d915dab0b646d4599635887ea0b70f1abf1046c2e32967c57daceb3cbc3b6",
+      "summary_sha256": "9098f3ef37112b7a4167afde1d0849094cbcd6835b6c7294e540bccf9a2006cf"
+    }
+  },
+  "target_perimeter_edge_fraction": 0.7406098099867433,
+  "target_perimeter_edge_pixels": 1676,
+  "training_boundary_valid_pixels": 418975
+}

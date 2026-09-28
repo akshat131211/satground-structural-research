@@ -9,10 +9,18 @@ submitted masks and distinguish the fitting subset from the illumination-code
 training source. The user selected eight views, excluding views 1 and 10 along
 with the already unsuitable views 2 and 8. Exact target crops, label values and
 input identities passed CPU verification; the cohort supplies 1,043 usable
-positive contour pixels. The fixed serial comparison is ready for launch. Read the
+positive contour pixels. The fixed serial comparison is running on the laptop:
+A0 generation/evaluation is complete and A2 has passed its first GPU updates
+with finite losses and gradients. A3 follows serially at the same 200-step
+budget. Read the
 [predeclared protocol](docs/REVIEWED_FITTING.md) and
-[implementation evidence](reports/REVIEWED_FITTING_STATUS.json). CPU tests do not
-establish GPU startup/resume behavior or a model improvement.
+[implementation evidence](reports/REVIEWED_FITTING_STATUS.json). Model improvement
+and actual GPU checkpoint recovery are not yet established.
+
+The [boundary-support audit](docs/REVIEWED_FITTING_LIMITATIONS.md) found sparse
+positive training contours and a large share of evaluated edges on the image
+perimeter. A separate CPU diagnostic documents these effects while the declared
+comparison and criterion stay fixed.
 
 **Autoresearch workflow imported (19 September 2026):** Karpathy's repository is
 pinned locally as a reference. The project-specific [agent program](program.md)

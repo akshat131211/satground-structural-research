@@ -1,4 +1,5 @@
 {
+  "active_stage": "A2-train",
   "actual_target_crops_and_mask_values_verified": true,
   "aggregate_report_verifier_implemented": true,
   "bundle_sha256": "f66fe9d1df845b0b3fe5892ee36359c234809dae89e56d9479c8f3356b32e6a7",
@@ -9,6 +10,10 @@
     "NewYork": 3,
     "SanFrancisco": 3
   },
+  "completed_stages": [
+    "A0-fitting",
+    "A0-eval"
+  ],
   "correction_or_exclusion_choice": "eight_view_option_selected",
   "eligibility_scope": "exploratory_training_fitting_only",
   "exact_reviewed_label_converter_implemented": true,
@@ -17,26 +22,43 @@
   "fitting_subset_frozen": true,
   "fixed_optimizer_steps_per_model": 200,
   "frozen_reference": "A0",
-  "full_local_suite_passed": 188,
+  "full_local_suite_passed": 193,
+  "generated_image_count": 8,
   "gpu_startup_and_resume_verified_for_new_path": false,
+  "gpu_training_startup_verified": true,
   "learning_rate": 3e-05,
   "models_to_fit": [
     "A2",
     "A3"
   ],
-  "new_model_inference_runs": 0,
-  "new_research_optimizer_updates": 0,
+  "new_model_inference_runs": 1,
+  "new_research_optimizer_updates": 112,
   "new_synthetic_cpu_tests_passed": 29,
+  "observed_losses_and_gradients_finite": {
+    "A2": true,
+    "A3": null
+  },
+  "observed_optimizer_steps": {
+    "A2": 112,
+    "A3": 0
+  },
   "optional_cuda_tests_skipped": 2,
+  "peak_pytorch_memory_mib": 668.07861328125,
+  "periodic_monitor": "follow-reviewed-laptop-fitting-experiment",
   "positive_contour_pixels": 1043,
+  "posthoc_boundary_diagnostic": "docs/REVIEWED_FITTING_LIMITATIONS.md",
+  "posthoc_diagnostic_tests_passed": 5,
+  "primary_criterion_unchanged": true,
   "prior_contour_inputs_and_source_unchanged": true,
   "protocol": "docs/REVIEWED_FITTING.md",
+  "run_status_snapshot_sha256": "7fb74cdca79205c2d200ce1e3ef150c8db23bb120a36a83191a31b02bbd70644",
+  "runner_launch_git_commit": "63231c609bdc28f77f11426ca14619bcf17e5c8b",
   "scope": "future_training_example_fitting_diagnosis_only",
   "sealed_images_opened": false,
   "seed": 17,
   "serial_fitting_runner_implemented": true,
   "server_gate_eligible": false,
-  "status": "cohort_frozen_ready_to_launch",
+  "status": "running",
   "structural_improvement_established": false,
   "submitted_masks_modified": false,
   "submitted_reviews_preserved": 12,
@@ -48,5 +70,5 @@
     "A3"
   ],
   "verified_date": "2026-09-28",
-  "verified_utc": "2026-09-28T12:37:15.784967+00:00"
+  "verified_utc": "2026-09-28T12:48:26.014352+00:00"
 }

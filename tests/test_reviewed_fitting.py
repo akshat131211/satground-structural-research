@@ -324,7 +324,8 @@ def completed_run_fixture(tmp_path):
                 **building_metrics(building, building, valid), lpips=.5, ssim=.4))
         write_jsonl(images / 'predictions.jsonl', predictions)
         write_jsonl(evaluation / 'metrics.jsonl', metrics)
-        save_json(evaluation / 'summary.json', dict(generation=generation, generation_sha256=sha256(images / 'generation.json'),
+        save_json(evaluation / 'summary.json', dict(manifest_sha256=bundle_record['fitting_manifest_sha256'],
+            generation=generation, generation_sha256=sha256(images / 'generation.json'),
             manual_index_sha256=sha256(bundle / 'manual-index.json'), segmenter_revision=bundle_record['protocol']['evaluation_segmenter_revision'],
             training_segmenter_different=True, manually_reviewed_count=2, evaluation_provenance=p,
             group_weighted={k: grouped_mean(metrics, k) for k in ('boundary_error', 'building_iou', 'lpips', 'ssim')}))

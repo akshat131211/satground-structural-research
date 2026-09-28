@@ -1,6 +1,6 @@
 # Implementation status — updated 28 September 2026 (India)
 
-## Eight-view fitting cohort frozen; fixed comparison ready for launch
+## Eight-view fitting cohort frozen; fixed serial comparison running
 
 - Added a separate exact-mask converter and fitting path without changing the
   historical model source, contour inputs, old runs or accepted evaluation masks.
@@ -25,8 +25,16 @@
   usable positive contour pixels, with two Chicago, three New York and three
   San Francisco views. Both training identities and RGB-readiness checks pass.
   This eligibility is limited to the exploratory fitting diagnosis.
-- The fixed serial comparison is ready for launch. Actual GPU startup remains
-  unverified for the new path. Sealed images remain unopened.
+- The fixed serial comparison is running. A0's eight reference images and
+  evaluations are complete. The new A2 trainer passed its first GPU updates with
+  finite losses and gradients. Actual GPU checkpoint recovery and the final
+  fitting result remain unverified. Sealed images remain unopened.
+- Added a separate CPU diagnostic after A0 evaluation: 1,043 positive training
+  contour pixels occupy 0.249% of boundary-valid support; 74.1% of primary target
+  edges are image-perimeter closing edges. Its five synthetic tests pass. The
+  primary criterion and frozen training/evaluation files are unchanged.
+- The full local suite passes: **193 tests passed, two optional CUDA tests skipped**.
+  Active runner source/input hashes still match after adding the separate audit.
 
 See [fitting protocol](../docs/REVIEWED_FITTING.md) and
 [current implementation evidence](REVIEWED_FITTING_STATUS.json).
