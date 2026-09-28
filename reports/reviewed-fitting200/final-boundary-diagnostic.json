@@ -1,0 +1,308 @@
+{
+  "bundle_sha256": "f66fe9d1df845b0b3fe5892ee36359c234809dae89e56d9479c8f3356b32e6a7",
+  "diagnostic_timing": "Defined after frozen A0 evaluation while the predeclared fitting pair was active; not a selection metric.",
+  "fitting_views": 8,
+  "held_out_generalization_evidence": false,
+  "model_names": [
+    "A0",
+    "A2",
+    "A3"
+  ],
+  "models": {
+    "A0": {
+      "nonperimeter_boundary_error": 0.11638195769315093,
+      "nonperimeter_empty_counts": {
+        "both_empty": 0,
+        "neither_empty": 8,
+        "one_empty": 0
+      },
+      "predicted_perimeter_edge_pixels": 1496,
+      "primary_boundary_error": 0.06351404048500424
+    },
+    "A2": {
+      "nonperimeter_boundary_error": 0.11639722246160272,
+      "nonperimeter_empty_counts": {
+        "both_empty": 0,
+        "neither_empty": 8,
+        "one_empty": 0
+      },
+      "predicted_perimeter_edge_pixels": 1555,
+      "primary_boundary_error": 0.06226763374624454
+    },
+    "A3": {
+      "nonperimeter_boundary_error": 0.11671915448291834,
+      "nonperimeter_empty_counts": {
+        "both_empty": 0,
+        "neither_empty": 8,
+        "one_empty": 0
+      },
+      "predicted_perimeter_edge_pixels": 1549,
+      "primary_boundary_error": 0.06030099261883306
+    }
+  },
+  "per_view": [
+    {
+      "fitting_view": 1,
+      "models": {
+        "A0": {
+          "boundary_error": 0.025474370218858643,
+          "building_iou": 0.2330264672036824,
+          "lpips": 0.527782678604126,
+          "nonperimeter_boundary_error": 0.030326479052595282,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A2": {
+          "boundary_error": 0.024975639730546353,
+          "building_iou": 0.2897587750975011,
+          "lpips": 0.5296261310577393,
+          "nonperimeter_boundary_error": 0.03028407073396233,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A3": {
+          "boundary_error": 0.025097064972412007,
+          "building_iou": 0.28709724028319605,
+          "lpips": 0.5296385288238525,
+          "nonperimeter_boundary_error": 0.030399216278449697,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 442,
+      "primary_target_edge_pixels": 324,
+      "target_perimeter_edge_pixels": 68,
+      "training_boundary_valid_pixels": 48167
+    },
+    {
+      "fitting_view": 2,
+      "models": {
+        "A0": {
+          "boundary_error": 0.009038528341126171,
+          "building_iou": 0.9623996344408904,
+          "lpips": 0.5842762589454651,
+          "nonperimeter_boundary_error": 0.10811936839908622,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A2": {
+          "boundary_error": 0.008539825117459416,
+          "building_iou": 0.9626668407140293,
+          "lpips": 0.5824212431907654,
+          "nonperimeter_boundary_error": 0.10016976534107559,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A3": {
+          "boundary_error": 0.008537871873428768,
+          "building_iou": 0.9627635271849097,
+          "lpips": 0.5826140642166138,
+          "nonperimeter_boundary_error": 0.11093327946937281,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 42,
+      "primary_target_edge_pixels": 433,
+      "target_perimeter_edge_pixels": 408,
+      "training_boundary_valid_pixels": 54958
+    },
+    {
+      "fitting_view": 3,
+      "models": {
+        "A0": {
+          "boundary_error": 0.04918119914664649,
+          "building_iou": 0.8262621474283005,
+          "lpips": 0.5525038838386536,
+          "nonperimeter_boundary_error": 0.11119585536977458,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A2": {
+          "boundary_error": 0.04403848759273458,
+          "building_iou": 0.8340059005052731,
+          "lpips": 0.5551461577415466,
+          "nonperimeter_boundary_error": 0.10650807145438299,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A3": {
+          "boundary_error": 0.042044012516310444,
+          "building_iou": 0.834188266467371,
+          "lpips": 0.5549684762954712,
+          "nonperimeter_boundary_error": 0.10516107947656264,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 123,
+      "primary_target_edge_pixels": 415,
+      "target_perimeter_edge_pixels": 349,
+      "training_boundary_valid_pixels": 51332
+    },
+    {
+      "fitting_view": 4,
+      "models": {
+        "A0": {
+          "boundary_error": 0.13149388362505296,
+          "building_iou": 0.3860444041685546,
+          "lpips": 0.5679869651794434,
+          "nonperimeter_boundary_error": 0.13903727474284308,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A2": {
+          "boundary_error": 0.13549574657462404,
+          "building_iou": 0.39402173913043476,
+          "lpips": 0.578536868095398,
+          "nonperimeter_boundary_error": 0.14789905000045991,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A3": {
+          "boundary_error": 0.12247691457569622,
+          "building_iou": 0.4031149793861658,
+          "lpips": 0.5780758857727051,
+          "nonperimeter_boundary_error": 0.13659110548067144,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 45,
+      "primary_target_edge_pixels": 62,
+      "target_perimeter_edge_pixels": 41,
+      "training_boundary_valid_pixels": 46471
+    },
+    {
+      "fitting_view": 5,
+      "models": {
+        "A0": {
+          "boundary_error": 0.07479585436336764,
+          "building_iou": 0.46126252038201726,
+          "lpips": 0.4973449110984802,
+          "nonperimeter_boundary_error": 0.12474400505389924,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A2": {
+          "boundary_error": 0.06892928101952756,
+          "building_iou": 0.5070079500022977,
+          "lpips": 0.4940721392631531,
+          "nonperimeter_boundary_error": 0.12695686602111075,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A3": {
+          "boundary_error": 0.06926632402650709,
+          "building_iou": 0.5118965437894059,
+          "lpips": 0.4949275255203247,
+          "nonperimeter_boundary_error": 0.1286075689919227,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 99,
+      "primary_target_edge_pixels": 359,
+      "target_perimeter_edge_pixels": 309,
+      "training_boundary_valid_pixels": 58034
+    },
+    {
+      "fitting_view": 6,
+      "models": {
+        "A0": {
+          "boundary_error": 0.0498298098860832,
+          "building_iou": 0.6227594831179658,
+          "lpips": 0.47960764169692993,
+          "nonperimeter_boundary_error": 0.12545780509095938,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A2": {
+          "boundary_error": 0.05040992364225507,
+          "building_iou": 0.6314588088815107,
+          "lpips": 0.47452405095100403,
+          "nonperimeter_boundary_error": 0.12812718876424237,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A3": {
+          "boundary_error": 0.04901379330580692,
+          "building_iou": 0.6326897792540309,
+          "lpips": 0.4750531017780304,
+          "nonperimeter_boundary_error": 0.1287425270456721,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 56,
+      "primary_target_edge_pixels": 187,
+      "target_perimeter_edge_pixels": 161,
+      "training_boundary_valid_pixels": 54932
+    },
+    {
+      "fitting_view": 7,
+      "models": {
+        "A0": {
+          "boundary_error": 0.12210651730805365,
+          "building_iou": 0.2144014401440144,
+          "lpips": 0.6179130673408508,
+          "nonperimeter_boundary_error": 0.14055814186296658,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A2": {
+          "boundary_error": 0.12247503907967253,
+          "building_iou": 0.2113420218386756,
+          "lpips": 0.6217786073684692,
+          "nonperimeter_boundary_error": 0.1421687616288555,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A3": {
+          "boundary_error": 0.12271982644383524,
+          "building_iou": 0.21241598868058012,
+          "lpips": 0.6219156980514526,
+          "nonperimeter_boundary_error": 0.14230719078625018,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 3,
+      "primary_target_edge_pixels": 18,
+      "target_perimeter_edge_pixels": 15,
+      "training_boundary_valid_pixels": 51598
+    },
+    {
+      "fitting_view": 8,
+      "models": {
+        "A0": {
+          "boundary_error": 0.04619216099084515,
+          "building_iou": 0.7466132153718551,
+          "lpips": 0.4740180969238281,
+          "nonperimeter_boundary_error": 0.1516167319730831,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A2": {
+          "boundary_error": 0.043277127213136785,
+          "building_iou": 0.7526574970283579,
+          "lpips": 0.4686126708984375,
+          "nonperimeter_boundary_error": 0.14906400574873233,
+          "nonperimeter_empty_case": "neither_empty"
+        },
+        "A3": {
+          "boundary_error": 0.04325213323666777,
+          "building_iou": 0.7517744948208525,
+          "lpips": 0.46837207674980164,
+          "nonperimeter_boundary_error": 0.15101126833444517,
+          "nonperimeter_empty_case": "neither_empty"
+        }
+      },
+      "positive_training_boundary_pixels": 233,
+      "primary_target_edge_pixels": 465,
+      "target_perimeter_edge_pixels": 325,
+      "training_boundary_valid_pixels": 53483
+    }
+  ],
+  "positive_training_boundary_fraction": 0.0024894086759353184,
+  "positive_training_boundary_pixels": 1043,
+  "primary_metric_and_criterion_unchanged": true,
+  "primary_target_edge_pixels": 2263,
+  "scope": "posthoc_training_fitting_diagnostic_only",
+  "server_gate_eligible": false,
+  "sources_sha256": {
+    "A0": {
+      "metrics_sha256": "456d915dab0b646d4599635887ea0b70f1abf1046c2e32967c57daceb3cbc3b6",
+      "summary_sha256": "9098f3ef37112b7a4167afde1d0849094cbcd6835b6c7294e540bccf9a2006cf"
+    },
+    "A2": {
+      "metrics_sha256": "a6dbafcc7a4d422f19fddb9666001a79bd84c9dbdd696f26e3c011617c7ffa71",
+      "summary_sha256": "6d46e1ec07db066399e742b843c4cc5ea5047c571475915860bfc9de153b218d"
+    },
+    "A3": {
+      "metrics_sha256": "2e402e53e389e2b31d40b20068a40a4e9df2b42c9e8640b872369dbc2e96e9b2",
+      "summary_sha256": "2a992d1fd78417a9e70c61e58d4ee3b48ae4cd106f1e468ffa026617724a90ee"
+    }
+  },
+  "target_perimeter_edge_fraction": 0.7406098099867433,
+  "target_perimeter_edge_pixels": 1676,
+  "training_boundary_valid_pixels": 418975
+}

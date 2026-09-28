@@ -1,6 +1,6 @@
 # Implementation status — updated 28 September 2026 (India)
 
-## Eight-view fitting cohort frozen; fixed serial comparison running
+## Eight-view fitting diagnosis complete; declared criterion not met
 
 - Added a separate exact-mask converter and fitting path without changing the
   historical model source, contour inputs, old runs or accepted evaluation masks.
@@ -18,28 +18,46 @@
   structural metric recomputation and aggregate consistency before a conclusion.
 - Added 29 synthetic CPU tests, including full report reproduction and rejection
   of changed masks/images, missing updates, mismatched schedules and altered
-  aggregates. Real GPU startup/resume behavior remains untested for this path.
+  aggregates. GPU startup has now been verified; actual GPU resume remains untested.
 - The user selected the eight-view option. Froze views 3, 4, 5, 6, 7, 9, 11 and
   12 with actual private disposition evidence; all 12 original submissions remain
   intact. The exact reviewed training bundle has eight mask pairs and 1,043
   usable positive contour pixels, with two Chicago, three New York and three
   San Francisco views. Both training identities and RGB-readiness checks pass.
   This eligibility is limited to the exploratory fitting diagnosis.
-- The fixed serial comparison is running. A0's eight reference images and
-  evaluations are complete. The new A2 trainer passed its first GPU updates with
-  finite losses and gradients. Actual GPU checkpoint recovery and the final
-  fitting result remain unverified. Sealed images remain unopened.
+- A0 and both fresh 200-step fits are complete. All 400 finite rows, eight periodic
+  checkpoints, matched sampling schedules, 24 images and their evaluated masks,
+  exact target copies and probability arrays passed verification. All 141 pins
+  remain unchanged; runner/child exit and lock release are verified. Aggregate
+  and local gallery reproduce byte-for-byte. Sealed images remain unopened.
+- A3's primary boundary reduction is 3.158% against A2 and 5.059% against A0;
+  both miss the fixed 10% threshold. IoU and LPIPS limits pass, as does improvement
+  on five of eight views against A2. The decision is `fitting_response_not_established`.
+  These are training-example fitting scores, with one seed and incomplete QA.
 - Added a separate CPU diagnostic after A0 evaluation: 1,043 positive training
   contour pixels occupy 0.249% of boundary-valid support; 74.1% of primary target
   edges are image-perimeter closing edges. Its five synthetic tests pass. The
-  primary criterion and frozen training/evaluation files are unchanged.
-- The full local suite passes: **193 tests passed, two optional CUDA tests skipped**.
-  Active runner source/input hashes still match after adding the separate audit.
+  primary criterion and frozen training/evaluation files are unchanged. Final
+  nonperimeter boundary error is 0.277% worse for A3 than A2; this is descriptive.
+- Assistant inspection of all eight paired RGB/mask views found no clear recovery
+  of major facade/layout errors. One view supplies 82.7% of the primary gain.
+  An uncertain pole/crossbar annotation remains preserved for independent QA.
+- Added a separate CPU completion auditor and 28 synthetic tests for exact output
+  sets, invalid probabilities, changed targets, checkpoint/optimizer/RNG payloads,
+  missing loss fields and live workers. Saved CUDA RNG bytes are checked structurally;
+  actual GPU restoration and resume are not claimed.
+- The full local suite passes: **221 tests passed, two optional CUDA tests skipped**.
+  No further optimizer updates, seeds, longer runs or server allocation are queued.
 
-See [fitting protocol](../docs/REVIEWED_FITTING.md) and
+See [completed interpretation](reviewed-fitting200/interpretation.md),
+[completion audit](reviewed-fitting200/completion-audit.json),
+[fitting protocol](../docs/REVIEWED_FITTING.md) and
 [current implementation evidence](REVIEWED_FITTING_STATUS.json).
 
-## Twelve training submissions verified; fitting subset pending
+## Historical submission verification: fitting subset was pending
+
+The explicit eight-view selection above now resolves that pending choice. The
+original verification and all submissions are preserved.
 
 - Verified all 12 completed versions: exact mask/target/card hashes, packed
   completion pixels, scene-review revisions and immutable response histories.

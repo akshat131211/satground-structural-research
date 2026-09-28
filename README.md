@@ -2,25 +2,31 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
-**Eight-view fitting cohort frozen (28 September 2026):** a separate
-CPU-tested label converter, fixed-budget trainer, serial GPU runner and report
-verifier now support the proposed 200-step A2/A3 diagnosis. They preserve exact
-submitted masks and distinguish the fitting subset from the illumination-code
-training source. The user selected eight views, excluding views 1 and 10 along
-with the already unsuitable views 2 and 8. Exact target crops, label values and
-input identities passed CPU verification; the cohort supplies 1,043 usable
-positive contour pixels. The fixed serial comparison is running on the laptop:
-A0 generation/evaluation is complete and A2 has passed its first GPU updates
-with finite losses and gradients. A3 follows serially at the same 200-step
-budget. Read the
+**Eight-view fitting diagnosis completed (28 September 2026):** fresh A2 and A3
+finished **200 steps each**, seed 17, using the exact reviewed training masks.
+A3's boundary error is **3.158% lower than A2** and **5.059% lower than frozen A0**;
+both fall short of the predeclared 10% fitting criterion. The separate diagnostic
+excluding image-perimeter edges is 0.277% worse than A2. Local inspection still
+shows major building-layout errors; 82.7% of the primary gain comes from one view.
+**Fitting response is not established.** These are eight training examples with
+one seed, not held-out generalization evidence. Longer training and server
+scaling are not justified by this result.
+
+All 400 finite updates, eight periodic checkpoints, 24 images, exact target and
+mask identities and 141 frozen pins passed verification. The aggregate report
+and local gallery reproduce exactly. User masks, excluded views and earlier
+experiments are preserved. Actual GPU checkpoint recovery remains untested.
+No further training is queued. Read the
+[completed interpretation](reports/reviewed-fitting200/interpretation.md),
+[aggregate](reports/reviewed-fitting200/aggregate.json),
+[completion audit](reports/reviewed-fitting200/completion-audit.json),
 [predeclared protocol](docs/REVIEWED_FITTING.md) and
-[implementation evidence](reports/REVIEWED_FITTING_STATUS.json). Model improvement
-and actual GPU checkpoint recovery are not yet established.
+[implementation evidence](reports/REVIEWED_FITTING_STATUS.json).
 
 The [boundary-support audit](docs/REVIEWED_FITTING_LIMITATIONS.md) found sparse
 positive training contours and a large share of evaluated edges on the image
-perimeter. A separate CPU diagnostic documents these effects while the declared
-comparison and criterion stay fixed.
+perimeter. Its [final post-hoc diagnostic](reports/reviewed-fitting200/final-boundary-diagnostic.json)
+keeps the declared primary comparison and criterion unchanged.
 
 **Autoresearch workflow imported (19 September 2026):** Karpathy's repository is
 pinned locally as a reference. The project-specific [agent program](program.md)
