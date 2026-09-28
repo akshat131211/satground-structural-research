@@ -96,12 +96,13 @@ development masks remain evaluation-only. Review all new views through
 target hashes and accepted subset. Uncertain cases remain recorded and ineligible
 unless their uncertainties are resolved. No replacement scenes are selected.
 
-After that verification, specify and implement the previously proposed fresh
-200-step A2/A3 fitting pair on eligible training examples, seed 17 and learning
-rate 0.00003. Fix its success criterion before launch; it tests learnability on
-those examples, not held-out accuracy. The fitting runner/configurations are
-not yet implemented. This integration is the agent protocol and evidence layer,
-not a claim that an autonomous GPU search is running.
+The separate [reviewed fitting implementation](REVIEWED_FITTING.md), prepared on
+28 September, fixes the previously proposed fresh 200-step A2/A3 pair, seed 17
+and learning rate 0.00003. Its converter, trainer, serial runner and aggregate
+verifier have synthetic CPU tests. The actual subset must still be resolved and
+frozen before launch; no fitting bundle or GPU run exists yet. The criterion is
+predeclared, and scores measure training-example learnability, not held-out
+accuracy. No autonomous GPU search is running.
 
 No new seed, learning-rate sweep, longer budget, dataset, height track or server
 allocation follows from importing this reference. Repeatedly optimizing the

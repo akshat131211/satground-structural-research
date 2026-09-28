@@ -1,4 +1,31 @@
-# Implementation status — updated 20 September 2026 (India)
+# Implementation status — updated 28 September 2026 (India)
+
+## Reviewed-mask fitting implementation prepared; subset decision pending
+
+- Added a separate exact-mask converter and fitting path without changing the
+  historical model source, contour inputs, old runs or accepted evaluation masks.
+- Fixed one fresh 200-step A2/A3 pair, seed 17, learning rate 0.00003, final-step
+  scoring only, frozen A0 reference and a criterion declared before training.
+  All scores concern the selected training examples; no held-out claim is possible.
+- Label conversion checks original submission pins, explicit dispositions,
+  target pixels, training membership, development disjointness and binary values.
+  It does not relabel reviewed masks as pseudo-labels or invent a human decision.
+- The existing 100-view training illumination remains fixed. A separate fitting
+  manifest controls every gradient update and fitting score.
+- The serial runner records commands and Git revision, holds a GPU lock, checks
+  other workers and preserves incompatible or partial outputs. The report checks
+  400 update rows, periodic checkpoints, matched sampling, image hashes, exact
+  structural metric recomputation and aggregate consistency before a conclusion.
+- Added 29 synthetic CPU tests, including full report reproduction and rejection
+  of changed masks/images, missing updates, mismatched schedules and altered
+  aggregates. Real GPU startup/resume behavior remains untested for this path.
+- No actual fitting bundle or training eligibility has been created. All 12
+  submissions remain intact. The correction/exclusion decision for views 1 and
+  10 is pending; views 2 and 8 remain excluded from consideration. No new model
+  training or inference has run, and sealed images remain unopened.
+
+See [fitting protocol](../docs/REVIEWED_FITTING.md) and
+[current implementation evidence](REVIEWED_FITTING_STATUS.json).
 
 ## Twelve training submissions verified; fitting subset pending
 

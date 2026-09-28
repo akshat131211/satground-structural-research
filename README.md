@@ -2,6 +2,17 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
+**Reviewed-mask fitting implementation prepared (28 September 2026):** a separate
+CPU-tested label converter, fixed-budget trainer, serial GPU runner and report
+verifier now support the proposed 200-step A2/A3 diagnosis. They preserve exact
+submitted masks and distinguish the fitting subset from the illumination-code
+training source. No new GPU training or inference has started. The choice to
+correct or exclude views 1 and 10 is still pending; excluding them would leave
+eight candidates. The actual fitting subset remains unfrozen. Read the
+[predeclared protocol](docs/REVIEWED_FITTING.md) and
+[implementation evidence](reports/REVIEWED_FITTING_STATUS.json). CPU tests do not
+establish GPU startup/resume behavior or a model improvement.
+
 **Autoresearch workflow imported (19 September 2026):** Karpathy's repository is
 pinned locally as a reference. The project-specific [agent program](program.md)
 uses bounded experiments, preserved trial branches and fixed evaluation. The

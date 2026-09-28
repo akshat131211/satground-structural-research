@@ -82,12 +82,23 @@ def test_existing_session_is_never_overwritten(tmp_path, monkeypatch):
         autoresearch.import_contour(folder)
 
 
-def test_complete_form_does_not_bypass_review_verification(monkeypatch):
+def test_complete_form_does_not_bypass_review_verification(monkeypatch, tmp_path):
     monkeypatch.setattr(autoresearch, 'inspect_upstream', lambda root: {'revision': 'fixture'})
     monkeypatch.setattr(autoresearch, 'review_progress', lambda root: {'remaining': 0})
-    result = autoresearch.status()
+    (tmp_path / 'scripts').mkdir()
+    for name in ('prepare_reviewed_fitting.py', 'train_reviewed_fitting.py', 'run_reviewed_fitting.py', 'report_reviewed_fitting.py'):
+        (tmp_path / 'scripts' / name).touch()
+    result = autoresearch.status(tmp_path)
     assert result['state'] == 'requires_review_verification'
-    assert not result['new_training_started'] and not result['training_launcher_implemented']
+    assert result['training_launcher_implemented']
+    assert not result['new_training_started'] and result['default_fitting_run_status'] is None
+    run = tmp_path / 'runs/reviewed-fitting200-seed17'
+    save_json(run / 'status.json', {'status': 'running'})
+    (run / 'A2-train').mkdir()
+    (run / 'A2-train/training.jsonl').touch()
+    result = autoresearch.status(tmp_path)
+    assert result['state'] == 'default_fitting_running' and result['new_training_started']
+    assert 'second job' in result['next_step']
 
 
 def test_ledger_reproduction_and_tamper_detection(tmp_path, evidence):

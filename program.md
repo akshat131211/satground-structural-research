@@ -31,8 +31,11 @@ A2/A3 pair, 200 optimizer steps each, seed 17, learning rate 0.00003. Preserve
 uncertain/rejected cases in the review record and report the usable fraction.
 If no adequately supported building examples remain, stop at that finding.
 Do not silently pick replacements or train with pending/pseudo-human labels.
-The runner and fitting configurations are not implemented by this integration;
-implement and test them against the final reviewed subset before any launch.
+The separate fitting scripts and fixed protocol are now implemented and tested
+on synthetic CPU fixtures; see `docs/REVIEWED_FITTING.md`. The actual bundle and
+generated configurations remain absent pending the correction/exclusion choice
+for views 1 and 10. Verify the final subset and actual GPU startup/recovery before
+calling this path operational. No new training or inference has started.
 
 This fitting test asks whether known training outlines are learnable. Scores
 on the fitting examples cannot support generalization or the server gate.

@@ -61,11 +61,19 @@ def review_progress(root=ROOT):
 
 def status(root=ROOT):
     progress = review_progress(root)
+    fitting_root = Path(root) / 'runs/reviewed-fitting200-seed17'
+    fitting_state = load_json(fitting_root / 'status.json') if (fitting_root / 'status.json').is_file() else None
+    launcher = all((Path(root) / 'scripts' / name).is_file() for name in (
+        'prepare_reviewed_fitting.py', 'train_reviewed_fitting.py', 'run_reviewed_fitting.py', 'report_reviewed_fitting.py'))
     return {'created_utc': utc_now(), 'upstream': inspect_upstream(root), 'review': progress,
-            'state': 'awaiting_training_review' if progress['remaining'] else 'requires_review_verification',
-            'new_training_started': False, 'training_launcher_implemented': False,
-            'next_step': ('Complete the 12-view review, then verify exact masks and pairing evidence.' if progress['remaining'] else
-                          'Resolve content follow-ups and freeze the eligible subset before specifying the bounded fitting test.'),
+            'state': ('default_fitting_' + fitting_state['status'] if fitting_state else
+                      'awaiting_training_review' if progress['remaining'] else 'requires_review_verification'),
+            'new_training_started': any((fitting_root / f'{name}-train/training.jsonl').is_file() for name in ('A2', 'A3')),
+            'training_launcher_implemented': launcher,
+            'default_fitting_run_status': fitting_state.get('status') if fitting_state else None,
+            'next_step': ('Inspect the recorded fitting runner and outputs; do not launch a second job.' if fitting_state else
+                          'Complete the 12-view review, then verify exact masks and pairing evidence.' if progress['remaining'] else
+                          'Resolve content follow-ups and freeze the eligible subset before launching the bounded fitting test.'),
             'historical_experiment': 'contour500_complete_inconclusive', 'server_gate_eligible': False}
 
 
