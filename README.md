@@ -2,6 +2,15 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
+**Contour-objective diagnosis started (28 September 2026):** the completed
+eight-view fitting result below is preserved. Fixed CPU cases test the current
+boundary penalty, followed by 24 zero-update gradient checks on the same eight
+training views at A0 and final A2/A3 states. One validity-aware surface candidate
+has fixed settings and must pass controlled tests, support checks and a separate
+eight-view gradient feasibility check before any new adaptation. No improvement
+has been demonstrated. Read the [diagnostic protocol](docs/CONTOUR_OBJECTIVE_DIAGNOSIS.md)
+and [candidate specification](docs/VALID_SURFACE_CANDIDATE.md).
+
 **Eight-view fitting diagnosis completed (28 September 2026):** fresh A2 and A3
 finished **200 steps each**, seed 17, using the exact reviewed training masks.
 A3's boundary error is **3.158% lower than A2** and **5.059% lower than frozen A0**;

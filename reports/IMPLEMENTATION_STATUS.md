@@ -1,5 +1,30 @@
 # Implementation status — updated 28 September 2026 (India)
 
+## Contour-objective diagnosis in progress
+
+- Preserved the completed eight-view experiment and opened a separate trial
+  branch. New diagnosis and candidate scripts do not change historical loss,
+  renderer, configs, masks or reports.
+- Measured 52 fixed CPU cases and 13 continuous derivative probes. Sufficiently
+  displaced outlines receive a flat current boundary penalty; a uniformly
+  missing map has zero boundary probability gradient while region gradients
+  remain corrective. These are properties of synthetic probability maps,
+  not observed generator collapse or model improvement.
+- The fixed candidate uses observed interfaces and validity-constrained distance
+  bands. Seven of eight reviewed views retain support, with 742 interface sources
+  versus 1,043 historical contour pixels. It discards 301 historical sources;
+  region supervision remains responsible outside its local band.
+- CPU controlled-case and surface implementation checks pass (52 tests).
+  The full suite passes 286 tests with two optional CUDA skips. Actual
+  shared-render gradient measurement remains pending: 24 historical checks
+  and a separate eight-check candidate diagnosis, both with zero optimizer
+  updates. No new training has started. A candidate controlled-case reversal
+  blocks training; finite gradients alone cannot clear that failure.
+- The candidate settings and feasibility/fitting rails are declared before
+  candidate measurement. This is one diagnosed correction, with no automatic
+  sweep, longer budget, extra seed or server allocation. Seattle, audit,
+  calibration and the 21 reviewed development views stay outside this phase.
+
 ## Eight-view fitting diagnosis complete; declared criterion not met
 
 - Added a separate exact-mask converter and fitting path without changing the

@@ -1,0 +1,19 @@
+{
+  "study": "reviewed_contour_objective_diagnosis",
+  "status": "cpu_diagnosis_complete_gpu_gradient_checks_pending",
+  "baseline_commit": "748d271ca4d6c353e15f2010156b509a976e4ad1",
+  "fixed_synthetic_cases": 52,
+  "continuous_derivative_probes": 13,
+  "cpu_report_exact_reproduction": true,
+  "historical_gradient_checks_completed": 0,
+  "historical_gradient_checks_expected": 24,
+  "candidate_gradient_checks_completed": 0,
+  "candidate_gradient_checks_expected": 8,
+  "new_optimizer_updates": 0,
+  "historical_experiments_preserved": true,
+  "human_masks_unchanged": true,
+  "main_study_data_qa_complete": false,
+  "server_gate_eligible": false,
+  "held_out_generalization_evidence": false,
+  "generator_improvement_established": false
+}

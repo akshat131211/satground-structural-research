@@ -1,0 +1,22 @@
+{
+  "study": "reviewed_contour_objective_diagnosis",
+  "baseline_commit": "748d271ca4d6c353e15f2010156b509a976e4ad1",
+  "bundle": "data/review/reviewed-fitting8-v1",
+  "completed_fitting_run": "runs/reviewed-fitting200-seed17",
+  "views": 8,
+  "states": ["A0", "A2", "A3"],
+  "expected_checks": 24,
+  "optimizer_updates": 0,
+  "initialization_seed": 17,
+  "view_seed_base": 101,
+  "view_seed_policy": "view_seed_base_plus_zero_based_frozen_manifest_index_shared_across_states",
+  "weights": {"rgb": 1.0, "lpips": 0.1, "region": 0.5, "boundary": 0.5},
+  "boundary_partition": "positive_vs_zero_binary_target_morphological_gradient_on_unchanged_eroded_valid_support_shared_full_denominator",
+  "precision": "float32_with_tf32_disabled_for_diagnostic_only",
+  "image_gradient_relative_tolerance": 0.00005,
+  "adapter_gradient_relative_tolerance": 0.0002,
+  "parameter_changes_allowed": false,
+  "target_label_changes_allowed": false,
+  "server_gate_eligible": false,
+  "held_out_generalization_evidence": false
+}
