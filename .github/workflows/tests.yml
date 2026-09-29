@@ -3,6 +3,22 @@ on: [push, pull_request]
 permissions:
   contents: read
 jobs:
+  synthetic-input-fingerprint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: pip
+      - run: pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -e . numpy==1.26.4
+      - name: Measure fixed synthetic inputs without changing experiment guards
+        run: python scripts/diagnose_controlled_platform.py --reference tests/fixtures/controlled-platform-reference.json --output controlled-platform.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: controlled-platform-fingerprint
+          path: controlled-platform.json
   protocol:
     runs-on: ubuntu-latest
     steps:
