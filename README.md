@@ -2,23 +2,37 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
-**Separate saturation revision (29 September 2026):** the fixed correction
-retains distant valid-region penalties rather than dropping them outside an
-eight-pixel band. It passes the same 52 synthetic cases and 51 focused CPU tests;
-the controlled report reproduces exactly. Far shifts still plateau, so these
-checks establish a prerequisite, not improved images. All eight zero-update A0
-checks are complete and audited: seven have finite nonzero adapter gradients,
-exceeding the fixed six-view feasibility requirement. Exact mask support,
-gradient payloads and 273 source/input pins verify; the aggregate reproduces
-exactly. One matched 200-step A2/revised-A3 fitting pair awaits its one-update
-startup and actual checkpoint-resume verification. No optimizer update has
-started for this revision. Read the
-[revision definition](docs/VALID_SURFACE_SATURATION_REVISION.md) and
-[controlled evidence](reports/saturated-surface-diagnosis/controlled-cases.json),
-[feasibility audit](reports/saturated-surface-diagnosis/completion-audit.json)
-and [trial status](reports/SATURATED_SURFACE_STATUS.json).
-The [bounded-run instructions](docs/SATURATED_FITTING_RUNBOOK.md) retain the
-original reviewed bundle and include the mandatory startup update in the budget.
+**Saturated-surface comparison completed (29 September 2026):** fresh A2 and
+revised A3 finished **200 steps each**, seed 17, on the unchanged eight reviewed
+training views. A3 reduces full boundary error by **0.80%** and nonperimeter
+boundary error by **3.66%** versus A2; versus frozen A0 the reductions are
+**3.21%** and **3.54%**. All fall below the predeclared 10% requirement.
+Only **3/8 views** jointly improve both distances versus A2, below the required
+four. IoU and LPIPS satisfy the quality limits, but **the declared fitting
+response is not established**. Both descriptive geographic intervals versus
+A2 include zero. Inspection of all eight paired RGB views and scored masks
+still shows substantial layout errors and small changes between adapters.
+
+All 400 ordered loss/gradient rows, eight periodic and two final checkpoints,
+24 predictions, evaluated masks, target copies and probability arrays verify.
+The 357 trial input/source pins and 361 runner identity pins are unchanged;
+the report and private gallery reproduce byte for byte. Actual GPU resume
+from the retained first-update checkpoint verified exact immediate state and
+RNG readback, with that update included in A2's budget. The later completion
+audit is CPU-only. Original masks and earlier negative experiments are preserved.
+
+The revision passed its 52-case controlled screen and eight zero-update checks;
+seven views had finite nonzero adapter gradients. These prerequisites did not
+translate into the required fitting improvement. No further training is queued.
+These are eight training examples with one seed and incomplete QA, with no
+empty-target examples or held-out evaluation. The result does not justify
+longer training, server scaling, novelty or generalization claims.
+Read the [completed interpretation](reports/saturated-fitting200/interpretation.md),
+[aggregate](reports/saturated-fitting200/aggregate.json),
+[completion audit](reports/saturated-fitting200/completion-audit.json),
+[trial status](reports/SATURATED_SURFACE_STATUS.json),
+[fixed definition](docs/VALID_SURFACE_SATURATION_REVISION.md) and
+[bounded-run instructions](docs/SATURATED_FITTING_RUNBOOK.md).
 
 **Contour-objective diagnosis completed (29 September 2026):** the completed
 eight-view fitting result below is preserved. Fixed CPU cases test the current
@@ -45,7 +59,8 @@ scaling are not justified by this result.
 All 400 finite updates, eight periodic checkpoints, 24 images, exact target and
 mask identities and 141 frozen pins passed verification. The aggregate report
 and local gallery reproduce exactly. User masks, excluded views and earlier
-experiments are preserved. Actual GPU checkpoint recovery remains untested.
+experiments are preserved. Actual GPU checkpoint recovery was untested in that earlier experiment;
+the separate saturation trial above later verified its own first-update resume.
 No further training is queued. Read the
 [completed interpretation](reports/reviewed-fitting200/interpretation.md),
 [aggregate](reports/reviewed-fitting200/aggregate.json),

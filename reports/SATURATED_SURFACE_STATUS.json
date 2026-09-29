@@ -1,6 +1,6 @@
 {
   "study": "reviewed_saturated_surface_revision",
-  "status": "feasibility_passed_training_prelaunch",
+  "status": "bounded_fitting_complete_criterion_not_met",
   "baseline_commit": "d85d27195734840183ced8e3de5215ac2ad060e0",
   "surface_policy": "valid_surface_saturated_v2",
   "fixed_synthetic_cases": 52,
@@ -10,9 +10,9 @@
   "focused_cpu_tests_passed": 51,
   "zero_update_checks_completed": 8,
   "zero_update_checks_expected": 8,
-  "optimizer_updates": 0,
+  "optimizer_updates": 400,
   "conditional_training_steps_per_model": 200,
-  "training_started": false,
+  "training_started": true,
   "human_masks_unchanged": true,
   "sealed_images_opened": false,
   "data_qa_complete": false,
@@ -22,9 +22,9 @@
   "supported_nonzero_finite_adapter_views": 7,
   "required_supported_views": 6,
   "feasibility_rail_passed": true,
-  "source_input_pins_verified": 273,
+  "source_input_pins_verified": 357,
   "feasibility_aggregate_reproduced_exactly": true,
-  "checkpoint_resume_verification_pending": true,
+  "checkpoint_resume_verification_pending": false,
   "full_local_prelaunch_tests_passed": 458,
   "optional_cuda_tests_skipped": 2,
   "startup_guard_targeted_tests_passed": 22,
@@ -36,5 +36,107 @@
     "conclusion": "success",
     "linux_exact_synthetic_inputs": true
   },
-  "earlier_ci_identity_failure_cause": "unresolved; fresh Linux run reproduces exact inputs and passes; no guard relaxed"
+  "earlier_ci_identity_failure_cause": "unresolved; fresh Linux run reproduces exact inputs and passes; no guard relaxed",
+  "A2_completed_steps": 200,
+  "A3_completed_steps": 200,
+  "actual_startup_gpu_resume_verified": true,
+  "training_source_commit": "a92e69c33fdfa9cb0d79d6ff2c00245800a7e5e3",
+  "training_source_ci": {
+    "run": 36514158057,
+    "conclusion": "success",
+    "tests_passed": 485,
+    "optional_cuda_skips": 2,
+    "linux_exact_synthetic_inputs": true
+  },
+  "monitor": "follow-reviewed-laptop-fitting-experiment",
+  "last_observed_utc": "2026-09-29T07:19:09.173794+00:00",
+  "active_stage": null,
+  "feasibility_optimizer_updates": 0,
+  "runner_identity_file_pins_verified": 361,
+  "ordered_finite_training_rows": 400,
+  "finite_gradient_rows": 400,
+  "training_complete": true,
+  "final_only_evaluation_complete": true,
+  "aggregate_reproduced_exactly": true,
+  "gallery_reproduced_exactly": true,
+  "assistant_visual_review_completed": true,
+  "assistant_inspected_paired_rgb_and_masks_for_views": 8,
+  "annotation_accuracy_independently_certified": false,
+  "fitting_decision": "fitting_response_not_established",
+  "A3_comparisons": {
+    "A0": {
+      "absolute_boundary_reduction": 0.002036882352356467,
+      "absolute_nonperimeter_reduction": 0.004121822829821542,
+      "compared_views": 8,
+      "fraction_views_boundary_improved": 1.0,
+      "fraction_views_jointly_improved": 0.5,
+      "geographic_intervals": {
+        "boundary_error": {
+          "ci95": [
+            0.0009411400866006688,
+            0.0030934002805140595
+          ],
+          "geographic_groups": 8,
+          "mean_improvement": 0.002036882352356463,
+          "samples": 8,
+          "weighting": "equal_geographic_group"
+        },
+        "nonperimeter_boundary_error": {
+          "ci95": [
+            -0.0023110828007915428,
+            0.014522449100944764
+          ],
+          "geographic_groups": 8,
+          "mean_improvement": 0.004121822829821526,
+          "samples": 8,
+          "weighting": "equal_geographic_group"
+        }
+      },
+      "interval_scope": "descriptive training-example fitting only; no held-out inference",
+      "iou_change": 0.020572102196403597,
+      "jointly_improved_views": 4,
+      "relative_boundary_reduction": 0.032069796485981364,
+      "relative_lpips_increase": 0.000609524593957779,
+      "relative_nonperimeter_reduction": 0.035416338679308115
+    },
+    "A2": {
+      "absolute_boundary_reduction": 0.0004956087749191651,
+      "absolute_nonperimeter_reduction": 0.00426102458113875,
+      "compared_views": 8,
+      "fraction_views_boundary_improved": 0.5,
+      "fraction_views_jointly_improved": 0.375,
+      "geographic_intervals": {
+        "boundary_error": {
+          "ci95": [
+            -0.0009689771305096406,
+            0.002230725209696753
+          ],
+          "geographic_groups": 8,
+          "mean_improvement": 0.0004956087749191614,
+          "samples": 8,
+          "weighting": "equal_geographic_group"
+        },
+        "nonperimeter_boundary_error": {
+          "ci95": [
+            -0.0011598029872347925,
+            0.012411320683100791
+          ],
+          "geographic_groups": 8,
+          "mean_improvement": 0.004261024581138731,
+          "samples": 8,
+          "weighting": "equal_geographic_group"
+        }
+      },
+      "interval_scope": "descriptive training-example fitting only; no held-out inference",
+      "iou_change": 0.00460523672755242,
+      "jointly_improved_views": 3,
+      "relative_boundary_reduction": 0.007997202636738344,
+      "relative_lpips_increase": -0.00014675854895548248,
+      "relative_nonperimeter_reduction": 0.03656867646574936
+    }
+  },
+  "additional_training_queued": false,
+  "completion_report": "reports/saturated-fitting200/interpretation.md",
+  "completion_audit": "reports/saturated-fitting200/completion-audit.json",
+  "monitor_completion_action": "Pause after completion publication and exact pushed-commit CI verification."
 }

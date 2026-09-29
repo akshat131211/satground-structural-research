@@ -18,13 +18,41 @@
   and completion audit reproduce exactly. There are 134,388 scored surface
   pixels versus 5,690 pixels in the near band; 90 unseeded components remain.
   These are feasibility measurements, not improved predictions.
-- A fresh 200-step A2/revised-A3 pair is conditional on startup/resume
-  verification. Its sole startup update will count within A2's 200 updates,
-  with retained checkpoint bytes and exact actual state/RNG readback before
-  resuming. No optimizer update is authorized for the failed v1 candidate.
-- Full and nonperimeter boundary errors are co-required for the conditional
-  trial, with quality limits fixed before training. This remains fitting evidence
-  on eight training views, with incomplete QA and no server/generalization gate.
+- The bounded pair is complete: exactly 200 A2 and 200 revised-A3 optimizer
+  updates, seed 17, learning rate 0.00003, matched sample schedules and unchanged
+  original eight-view labels/style. All 400 ordered loss and gradient rows are
+  finite. Eight periodic and two final adapter/optimizer/RNG checkpoints verify,
+  together with 24 predictions, masks, target copies and probability arrays.
+- The original 357 trial pins and all 361 runner pins verify. All eight A0
+  predictions match the earlier frozen reference byte for byte. The retained
+  A2 startup update counts within its budget; actual GPU resume verified exact
+  adapter, optimizer, scaler and RNG readback before the next training draw.
+  The final report audits retained payloads on CPU and does not repeat a GPU
+  restore. No additional optimizer update or checkpoint selection occurred.
+- Final A3 reduces full/nonperimeter boundary errors by 0.800%/3.657% versus
+  A2 and 3.207%/3.542% versus A0, failing the co-required 10% reductions.
+  Only three of eight views jointly improve both distances versus A2. Both
+  geographic intervals versus A2 include zero. IoU/LPIPS quality limits pass.
+  The predeclared fitting response is not established.
+- The report and gallery reproduce byte for byte. Assistant inspection of all
+  eight private RGB/mask comparisons finds substantial remaining layout errors
+  and small changes between adapters; this is not independent certification
+  of annotation accuracy. The raw reporter's pending visual-review flag is
+  preserved, with completed inspection recorded separately in the completion
+  audit. A0 reproduces exactly; historical A2 differs slightly, with no bitwise
+  retraining claim or established cause for the difference.
+- Peak training allocation is 663.095 MiB in each run (not total device memory).
+  Recorded training times are 863.978 seconds for A2 and 868.536 seconds for A3.
+  Both runner stderr files are empty; stage logs contain upstream deprecation
+  and configuration notices, without a recorded training failure. The runner
+  and children have exited and the GPU lock is absent.
+- No further training is queued. Eight building-containing training examples,
+  one seed, incomplete QA and no empty-target stratum cannot support a server
+  gate or a held-out generalization claim. Seattle, audit, calibration and all
+  21 reviewed development pairs remain outside this fitting phase.
+- Completion evidence: [interpretation](saturated-fitting200/interpretation.md),
+  [aggregate](saturated-fitting200/aggregate.json),
+  [audit](saturated-fitting200/completion-audit.json).
 - The full local prelaunch suite passes 458 tests with two optional CUDA skips;
   subsequent fresh-startup guard tests pass 22 cases and the synthetic-input
   fingerprint tests pass 26. The reporter's 32 tests include exact retained
@@ -32,6 +60,9 @@
   recovery. A fresh Linux CI run at `f379d229` passes 405 tests with two skips
   and reproduces all 52 raw synthetic input hashes exactly. An earlier CI
   identity failure remains unresolved; no raw guard or metric was relaxed.
+- Frozen training-source commit `a92e69c33` passes exact-head CI: 485 tests,
+  two optional CUDA skips and Node checks. Its full-dependency Linux fingerprint
+  reproduces all 52 raw synthetic inputs exactly.
 
 ## Contour-objective diagnosis completed (29 September)
 
