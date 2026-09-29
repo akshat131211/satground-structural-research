@@ -2,6 +2,15 @@
 
 A research pipeline for predicting a camera-specified ground view from one overhead RGB image. It adapts the released Sat3DGen scene features with a shared residual adapter and tests whether building-region and boundary supervision help beyond ordinary RGB/perceptual adaptation.
 
+**Separate saturation revision (29 September 2026):** the fixed correction
+retains distant valid-region penalties rather than dropping them outside an
+eight-pixel band. It passes the same 52 synthetic cases and 51 focused CPU tests;
+the controlled report reproduces exactly. Far shifts still plateau, so these
+checks establish a prerequisite, not improved images. Eight zero-update A0
+checks precede one conditional matched 200-step fitting pair. Read the
+[revision definition](docs/VALID_SURFACE_SATURATION_REVISION.md) and
+[controlled evidence](reports/saturated-surface-diagnosis/controlled-cases.json).
+
 **Contour-objective diagnosis completed (29 September 2026):** the completed
 eight-view fitting result below is preserved. Fixed CPU cases test the current
 boundary penalty, followed by 24 zero-update gradient checks on the same eight

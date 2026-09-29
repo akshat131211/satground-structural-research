@@ -1,0 +1,22 @@
+{
+  "study": "reviewed_saturated_surface_revision",
+  "status": "controlled_checks_passed_gpu_feasibility_pending",
+  "baseline_commit": "d85d27195734840183ced8e3de5215ac2ad060e0",
+  "surface_policy": "valid_surface_saturated_v2",
+  "fixed_synthetic_cases": 52,
+  "controlled_report_reproduced_exactly": true,
+  "controlled_prerequisite_passed": true,
+  "far_translation_loss_plateaus": true,
+  "focused_cpu_tests_passed": 51,
+  "zero_update_checks_completed": 0,
+  "zero_update_checks_expected": 8,
+  "optimizer_updates": 0,
+  "conditional_training_steps_per_model": 200,
+  "training_started": false,
+  "human_masks_unchanged": true,
+  "sealed_images_opened": false,
+  "data_qa_complete": false,
+  "server_gate_eligible": false,
+  "held_out_generalization_evidence": false,
+  "generator_improvement_established": false
+}

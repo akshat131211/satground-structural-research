@@ -1,5 +1,23 @@
 # Implementation status — updated 29 September 2026 (India)
 
+## Separate saturated-surface revision
+
+- Preserved the completed, blocked v1 candidate and opened a separate branch
+  from its verified completion commit. The revision changes disappearing
+  distance-band weights to capped positive weights within observed components.
+  Radius 8, class floor 32, coefficient 0.5 and exact accepted masks are unchanged.
+- The same 52 cases preserve their historical identities and losses. All
+  declared controlled checks pass, including the complete displacement family.
+  The old far-shift reversal becomes a plateau; no arbitrary-distance accuracy
+  claim follows. The new controlled report reproduces exactly.
+- The new helper and eight-view zero-update probe pass 51 focused CPU tests.
+  GPU feasibility remains pending. A fresh 200-step A2/revised-A3 pair is
+  conditional on the six-view nonzero finite-gradient rail and startup/resume
+  verification. No optimizer update is authorized for the failed v1 candidate.
+- Full and nonperimeter boundary errors are co-required for the conditional
+  trial, with quality limits fixed before training. This remains fitting evidence
+  on eight training views, with incomplete QA and no server/generalization gate.
+
 ## Contour-objective diagnosis completed (29 September)
 
 - Preserved the completed eight-view experiment and opened a separate trial
