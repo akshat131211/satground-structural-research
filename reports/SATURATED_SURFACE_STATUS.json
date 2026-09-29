@@ -1,6 +1,6 @@
 {
   "study": "reviewed_saturated_surface_revision",
-  "status": "controlled_checks_passed_gpu_feasibility_pending",
+  "status": "feasibility_passed_training_prelaunch",
   "baseline_commit": "d85d27195734840183ced8e3de5215ac2ad060e0",
   "surface_policy": "valid_surface_saturated_v2",
   "fixed_synthetic_cases": 52,
@@ -8,7 +8,7 @@
   "controlled_prerequisite_passed": true,
   "far_translation_loss_plateaus": true,
   "focused_cpu_tests_passed": 51,
-  "zero_update_checks_completed": 0,
+  "zero_update_checks_completed": 8,
   "zero_update_checks_expected": 8,
   "optimizer_updates": 0,
   "conditional_training_steps_per_model": 200,
@@ -18,5 +18,23 @@
   "data_qa_complete": false,
   "server_gate_eligible": false,
   "held_out_generalization_evidence": false,
-  "generator_improvement_established": false
+  "generator_improvement_established": false,
+  "supported_nonzero_finite_adapter_views": 7,
+  "required_supported_views": 6,
+  "feasibility_rail_passed": true,
+  "source_input_pins_verified": 273,
+  "feasibility_aggregate_reproduced_exactly": true,
+  "checkpoint_resume_verification_pending": true,
+  "full_local_prelaunch_tests_passed": 458,
+  "optional_cuda_tests_skipped": 2,
+  "startup_guard_targeted_tests_passed": 22,
+  "reporter_targeted_tests_passed": 32,
+  "input_fingerprint_targeted_tests_passed": 26,
+  "prelaunch_reference_ci": {
+    "commit": "f379d229bd74517d1a9485bfdff3335aaf488083",
+    "run": 36513698441,
+    "conclusion": "success",
+    "linux_exact_synthetic_inputs": true
+  },
+  "earlier_ci_identity_failure_cause": "unresolved; fresh Linux run reproduces exact inputs and passes; no guard relaxed"
 }

@@ -29,6 +29,12 @@ jobs:
           cache: pip
       - run: pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cpu
       - run: pip install -r requirements-model.txt -e .
+      - name: Fingerprint synthetic inputs with the full dependency environment
+        run: python scripts/diagnose_controlled_platform.py --reference tests/fixtures/controlled-platform-reference.json --output controlled-platform-full.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: controlled-platform-full-environment
+          path: controlled-platform-full.json
       - name: Checkout reference code for camera equivalence tests
         run: |
           git clone https://github.com/qianmingduowan/Sat3DGen.git external/Sat3DGen

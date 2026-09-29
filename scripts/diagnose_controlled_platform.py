@@ -108,7 +108,8 @@ def validate_fingerprint(value):
     require(all(value.get(key) == digest for key, digest in _identities(value['protocol'], cases).items()),
             'Stored synthetic fingerprint identities do not reproduce.')
     require(not value.get('real_data_read') and not value.get('gpu_used')
-            and value.get('optimizer_updates') == 0 and not value.get('raw_identity_guard_changed'),
+            and value.get('optimizer_updates') == 0 and not value.get('raw_identity_guard_changed')
+            and value.get('losses_evaluated') is False,
             'A portability fingerprint must be input-only with unchanged raw guards.')
 
 

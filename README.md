@@ -6,10 +6,19 @@ A research pipeline for predicting a camera-specified ground view from one overh
 retains distant valid-region penalties rather than dropping them outside an
 eight-pixel band. It passes the same 52 synthetic cases and 51 focused CPU tests;
 the controlled report reproduces exactly. Far shifts still plateau, so these
-checks establish a prerequisite, not improved images. Eight zero-update A0
-checks precede one conditional matched 200-step fitting pair. Read the
+checks establish a prerequisite, not improved images. All eight zero-update A0
+checks are complete and audited: seven have finite nonzero adapter gradients,
+exceeding the fixed six-view feasibility requirement. Exact mask support,
+gradient payloads and 273 source/input pins verify; the aggregate reproduces
+exactly. One matched 200-step A2/revised-A3 fitting pair awaits its one-update
+startup and actual checkpoint-resume verification. No optimizer update has
+started for this revision. Read the
 [revision definition](docs/VALID_SURFACE_SATURATION_REVISION.md) and
-[controlled evidence](reports/saturated-surface-diagnosis/controlled-cases.json).
+[controlled evidence](reports/saturated-surface-diagnosis/controlled-cases.json),
+[feasibility audit](reports/saturated-surface-diagnosis/completion-audit.json)
+and [trial status](reports/SATURATED_SURFACE_STATUS.json).
+The [bounded-run instructions](docs/SATURATED_FITTING_RUNBOOK.md) retain the
+original reviewed bundle and include the mandatory startup update in the budget.
 
 **Contour-objective diagnosis completed (29 September 2026):** the completed
 eight-view fitting result below is preserved. Fixed CPU cases test the current

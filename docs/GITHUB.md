@@ -1,6 +1,6 @@
 # GitHub project workflow
 
-The user authorized creating a new repository and committing/pushing this project on 13 September 2026. The selected repository is private so unpublished work remains private by default.
+The user authorized creating a new repository and committing/pushing this project on 13 September 2026, and subsequently selected a public repository with checked code, documentation and aggregate evidence only. Current visibility is public; private research artifacts remain local.
 
 Repository: [akshat131211/satground-structural-research](https://github.com/akshat131211/satground-structural-research). The initial implementation was pushed in commit `14a25b4`; subsequent commits retain the same source/data separation.
 
@@ -22,4 +22,4 @@ git push
 
 Update the implementation status only from actual run outputs. A synthetic GPU test is software/resource evidence, not real-image quality evidence. CI verifies protocol code on CPU and is separate from CUDA profiling.
 
-Ordinary commits/pushes can continue when work is requested in this task. No recurring background updater or scheduled automation has been created.
+Ordinary checked commits/pushes can continue when work is requested in this task. The existing laptop heartbeat monitor is paused between bounded experiments. Update its prompt to the current authorized protocol before reactivating it, and pause it after verified completion.

@@ -1,0 +1,20 @@
+{
+  "aggregate_recomputed_exactly": true,
+  "controlled_report_reproduced_exactly": true,
+  "exact_target_support_and_provenance_verified": true,
+  "feasibility_rail_passed": true,
+  "finite_checks_verified": 8,
+  "generator_improvement_established": false,
+  "held_out_generalization_evidence": false,
+  "historical_A2_gradient_differences_recomputed": true,
+  "identity_sha256": "283b9508f71346fc1cfe8c600e281a2a83e6abe85ccd146435e31b506fca5103",
+  "optimizer_updates": 0,
+  "parameters_unchanged": true,
+  "receipts_and_gradient_payloads_verified": true,
+  "scope": "completed_zero_update_saturated_surface_feasibility_only",
+  "server_gate_eligible": false,
+  "source_input_pins_verified": 273,
+  "summary_object_sha256": "5ecc852c947fc0712b8f8929dcd454b254bebdbd484d082470fc6dc2857ccf0b",
+  "training_clearance": false,
+  "worker_exit_and_lock_release_verified": true
+}

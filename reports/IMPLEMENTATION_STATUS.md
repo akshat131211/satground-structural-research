@@ -11,12 +11,27 @@
   The old far-shift reversal becomes a plateau; no arbitrary-distance accuracy
   claim follows. The new controlled report reproduces exactly.
 - The new helper and eight-view zero-update probe pass 51 focused CPU tests.
-  GPU feasibility remains pending. A fresh 200-step A2/revised-A3 pair is
-  conditional on the six-view nonzero finite-gradient rail and startup/resume
-  verification. No optimizer update is authorized for the failed v1 candidate.
+  All eight actual GPU checks are finite and retain unchanged parameters;
+  seven have nonzero supported adapter gradients, passing the six-view rail.
+  Exact reviewed mask support/provenance, raw receipts, gradient sums,
+  historical A2 comparisons and 273 source/input pins verify. The aggregate
+  and completion audit reproduce exactly. There are 134,388 scored surface
+  pixels versus 5,690 pixels in the near band; 90 unseeded components remain.
+  These are feasibility measurements, not improved predictions.
+- A fresh 200-step A2/revised-A3 pair is conditional on startup/resume
+  verification. Its sole startup update will count within A2's 200 updates,
+  with retained checkpoint bytes and exact actual state/RNG readback before
+  resuming. No optimizer update is authorized for the failed v1 candidate.
 - Full and nonperimeter boundary errors are co-required for the conditional
   trial, with quality limits fixed before training. This remains fitting evidence
   on eight training views, with incomplete QA and no server/generalization gate.
+- The full local prelaunch suite passes 458 tests with two optional CUDA skips;
+  subsequent fresh-startup guard tests pass 22 cases and the synthetic-input
+  fingerprint tests pass 26. The reporter's 32 tests include exact retained
+  startup bytes, actual restoration evidence and no-update final-checkpoint
+  recovery. A fresh Linux CI run at `f379d229` passes 405 tests with two skips
+  and reproduces all 52 raw synthetic input hashes exactly. An earlier CI
+  identity failure remains unresolved; no raw guard or metric was relaxed.
 
 ## Contour-objective diagnosis completed (29 September)
 
