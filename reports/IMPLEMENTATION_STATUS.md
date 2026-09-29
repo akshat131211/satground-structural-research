@@ -1,6 +1,6 @@
-# Implementation status — updated 28 September 2026 (India)
+# Implementation status — updated 29 September 2026 (India)
 
-## Contour-objective diagnosis in progress
+## Contour-objective diagnosis completed (29 September)
 
 - Preserved the completed eight-view experiment and opened a separate trial
   branch. New diagnosis and candidate scripts do not change historical loss,
@@ -16,10 +16,13 @@
   region supervision remains responsible outside its local band.
 - CPU controlled-case and surface implementation checks pass (52 tests).
   The full suite passes 286 tests with two optional CUDA skips. Actual
-  shared-render gradient measurement remains pending: 24 historical checks
+  shared-render gradient measurement is complete: 24 historical checks
   and a separate eight-check candidate diagnosis, both with zero optimizer
-  updates. No new training has started. A candidate controlled-case reversal
-  blocks training; finite gradients alone cannot clear that failure.
+  updates and verified startup/resume. Seven candidate views have finite,
+  nonzero adapter gradients. All 32 raw receipts, support/provenance records,
+  component sums and source/input pins pass the completion audit. No new
+  training has started. The candidate controlled-case reversal blocks training;
+  finite gradients alone cannot clear that failure.
 - The candidate settings and feasibility/fitting rails are declared before
   candidate measurement. This is one diagnosed correction, with no automatic
   sweep, longer budget, extra seed or server allocation. Seattle, audit,

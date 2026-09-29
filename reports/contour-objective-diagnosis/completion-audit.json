@@ -1,0 +1,68 @@
+{
+  "candidate_aggregate_sha256": "ceb1508f63fba913360574b21e45f2c956b514903f636f2212c037fce3932e22",
+  "candidate_checks": 8,
+  "candidate_identity_sha256": "6f8caecbed2412c13b80cefa383bd5c8c6685a5436bb7c0a4c71a9a9b53b4d25",
+  "candidate_policy": "valid_surface_excess_v1",
+  "candidate_source_input_pin_count": 236,
+  "controlled_case_count": 52,
+  "controlled_case_identity_sha256": "724d8fb9e94ef38674c1baa22a328f78e344a8dc477ab7adc36a6f2876edac77",
+  "controlled_reports_reproduced_exactly": true,
+  "controlled_source_hashes_sha256": "5b7ada305fd43d358062d86d61de73520099025fd52c6020b9b4516e16a6bc70",
+  "current_protocol_source_input_identities_verified": true,
+  "distinct_training_views": 8,
+  "exact_reviewed_target_support_and_provenance_verified": true,
+  "frozen_models_verified": true,
+  "held_out_generalization_evidence": false,
+  "historical_aggregate_sha256": "4a340d6d108e06c368388ec1247674bf2953e1bc972b1e379e1ddd800e940d8e",
+  "historical_checks": 24,
+  "historical_gradient_comparisons_recomputed": true,
+  "historical_identity_sha256": "f1085c35b5e389535a396c712efb5029a2463765ac83c1b8d85950e3b142bf12",
+  "historical_source_input_pin_count": 158,
+  "immutable_raw_receipts_verified": true,
+  "interpretation": {
+    "candidate_feasibility_rail_passed": true,
+    "candidate_supported_nonzero_finite_adapter_views": 7,
+    "candidate_supported_views": 7,
+    "gradient_conflict_is_not_a_causal_or_efficacy_claim": true,
+    "harmful_far_combined_ordering": true,
+    "historical_adapter_gradient_statistics": {
+      "A0": {
+        "median_boundary_vs_A2_cosine": -0.13699956488771375,
+        "median_positive_vs_zero_contour_cosine": -0.19407717671723218,
+        "median_zero_to_positive_contour_gradient_norm": 41.78784172050531,
+        "undefined_zero_to_positive_ratios": 0,
+        "zero_boundary_adapter_views": 0
+      },
+      "A2": {
+        "median_boundary_vs_A2_cosine": 0.13385810218530686,
+        "median_positive_vs_zero_contour_cosine": -0.06193466307802767,
+        "median_zero_to_positive_contour_gradient_norm": 39.93926337124166,
+        "undefined_zero_to_positive_ratios": 0,
+        "zero_boundary_adapter_views": 0
+      },
+      "A3": {
+        "median_boundary_vs_A2_cosine": 0.1039300874997706,
+        "median_positive_vs_zero_contour_cosine": -0.12750639969024358,
+        "median_zero_to_positive_contour_gradient_norm": 37.14225435656985,
+        "undefined_zero_to_positive_ratios": 0,
+        "zero_boundary_adapter_views": 0
+      }
+    },
+    "historical_bitwise_gradient_reproducibility_claim": false,
+    "near_band_controlled_screen_passed": true,
+    "training_blockers": [
+      "Combined structural loss decreases as a farther incorrect building leaves the fixed surface band."
+    ],
+    "training_clearance": false
+  },
+  "label_accuracy_verified": false,
+  "method_selected": false,
+  "optimizer_updates": 0,
+  "parameters_unchanged": true,
+  "project_locks_absent_and_workers_exited": true,
+  "scope": "completed_zero_update_reviewed_training_objective_diagnosis_only",
+  "server_gate_eligible": false,
+  "shared_view_seed_schedules_verified": true,
+  "total_finite_checks": 32,
+  "training_clearance": false
+}

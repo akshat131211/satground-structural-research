@@ -1,4 +1,4 @@
-# Contour-objective diagnosis — preliminary CPU evidence
+# Completed contour-objective diagnosis — 29 September 2026
 
 The completed eight-view fitting experiment is preserved: its declared fitting
 criterion was not met. This separate diagnosis measures one possible weakness
@@ -38,6 +38,37 @@ ordering failure, not harmless saturation. The predeclared harmful-behavior rule
 therefore blocks training. No radius, coefficient or screening gate was changed
 to rescue the candidate. Zero-update gradient feasibility measurements may
 characterize it, but cannot override this controlled failure.
+
+All 24 historical and eight candidate checks completed with finite values,
+unchanged adapter tensors and zero optimizer updates. Startup plus compatible
+resume stayed within the declared counts. Both aggregate reports and the
+completion audit reproduce exactly to fresh local paths. The historical 158
+source/input pins and candidate pins remain intact; raw receipts, gradient
+payloads, reviewed target support and provenance were rechecked independently.
+
+| Adapter-gradient statistic | A0 | Final A2 | Final A3 |
+|---|---:|---:|---:|
+| Median weighted boundary/A2 objective norm | 3.726% | 4.346% | 4.157% |
+| Median zero-contour/positive-contour norm | 41.788 | 39.939 | 37.142 |
+| Boundary opposing A2 objective direction | 6/8 | 4/8 | 4/8 |
+
+Here the A2 objective is RGB plus perceptual plus region at the same model state.
+Zero target contour includes building interiors and nonbuilding regions; it
+does not mean an empty target building mask. These are raw gradients before
+optimizer moments and clipping, not reconstructed historical parameter updates.
+Their norms and cosines alone cannot establish a causal source of poor geometry.
+
+The candidate reaches the adapter on seven views; one has no admissible interface
+and remains in the cohort. Its median weighted surface/A2 norm ratio is 0.428,
+with a maximum of 4.090. Seven finite nonzero gradients pass the six-view
+feasibility rail, but do not clear the harmful controlled-case ordering. The
+maximum historical decomposition error is 8.93e-7 in RGB space and 3.85e-6 in
+adapter space, within the declared tolerances. Repeated A2 gradients differ
+slightly; no bitwise reproducibility claim is made.
+
+This phase is complete with `candidate_training_blocked`. A separately specified
+saturation revision retains distant valid-region penalties; it does not alter
+this phase's method, counts, criteria or negative decision.
 
 No new optimizer updates or generator improvement are reported here. The eight
 views are reviewed training examples with incomplete independent QA. Sealed

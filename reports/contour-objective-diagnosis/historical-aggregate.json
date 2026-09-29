@@ -1,0 +1,1079 @@
+{
+  "fp32_tf32_off_diagnostic_only": true,
+  "held_out_generalization_evidence": false,
+  "optimizer_updates": 0,
+  "parameters_unchanged": true,
+  "scope": "zero_update_reviewed_training_contour_diagnosis_only",
+  "server_gate_eligible": false,
+  "source_and_inputs_unchanged": true,
+  "startup_check_included_in_24": true,
+  "states": {
+    "A0": {
+      "gradients": {
+        "adapter": {
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 8,
+              "maximum": 0.9999009137148986,
+              "mean": 0.9975213348848296,
+              "median": 0.9993354360244346,
+              "minimum": 0.9864898267181347,
+              "unavailable": 0
+            },
+            "boundary_positive_vs_A2": {
+              "available": 8,
+              "maximum": 0.6336473290737715,
+              "mean": -0.011021574341437232,
+              "median": -0.10745330502778404,
+              "minimum": -0.4052941991150393,
+              "unavailable": 0
+            },
+            "boundary_positive_vs_boundary_zero": {
+              "available": 8,
+              "maximum": 0.05297808414284517,
+              "mean": -0.2597604910263257,
+              "median": -0.19407717671723218,
+              "minimum": -0.6812856934958856,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 8,
+              "maximum": 0.5762829321990665,
+              "mean": -0.10581603864217734,
+              "median": -0.13699956488771375,
+              "minimum": -0.7535976209549604,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 8,
+              "maximum": 0.2947767566404212,
+              "mean": 0.036255919820953435,
+              "median": 0.12200443512054704,
+              "minimum": -0.5007435162011304,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 8,
+              "maximum": 0.553967944271663,
+              "mean": -0.10786795245381764,
+              "median": -0.1404798010334262,
+              "minimum": -0.7488882588237645,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 8,
+              "maximum": 0.42848710299284026,
+              "mean": 0.11191017219065463,
+              "median": 0.0942072837033793,
+              "minimum": -0.08517158555109025,
+              "unavailable": 0
+            },
+            "boundary_zero_vs_A2": {
+              "available": 8,
+              "maximum": 0.5761265611125931,
+              "mean": -0.10823516520436616,
+              "median": -0.12953272483496436,
+              "minimum": -0.7808228334539162,
+              "unavailable": 0
+            }
+          },
+          "norm_ratios": {
+            "boundary_vs_A2": {
+              "available": 8,
+              "maximum": 0.23015217207559058,
+              "mean": 0.06383554851258913,
+              "median": 0.03726182801889184,
+              "minimum": 0.016477350341997585,
+              "unavailable": 0
+            },
+            "positive_vs_boundary": {
+              "available": 8,
+              "maximum": 0.09082120917433967,
+              "mean": 0.03674731002724418,
+              "median": 0.02653184105448806,
+              "minimum": 0.0029500300048731815,
+              "unavailable": 0
+            },
+            "zero_vs_positive": {
+              "available": 8,
+              "maximum": 339.2641946858372,
+              "mean": 93.69617539608748,
+              "median": 41.78784172050531,
+              "minimum": 10.912289241333472,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 8,
+              "maximum": 0.05243321336062146,
+              "mean": 0.027354883591778272,
+              "median": 0.025823690758325003,
+              "minimum": 0.014713029152254226,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "maximum": 0.41429845276317123,
+              "mean": 0.19270644394971703,
+              "median": 0.1403543614406067,
+              "minimum": 0.03926129734783252,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 8,
+              "maximum": 0.4064633832793621,
+              "mean": 0.19315074271725097,
+              "median": 0.14053988745264429,
+              "minimum": 0.03910588591654294,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 8,
+              "maximum": 0.02218643797495293,
+              "mean": 0.007866303120848885,
+              "median": 0.005800531238258236,
+              "minimum": 0.002977937207598826,
+              "unavailable": 0
+            },
+            "boundary_positive": {
+              "available": 8,
+              "maximum": 0.0007834106013563636,
+              "mean": 0.0002643846701786243,
+              "median": 0.00017123999675728582,
+              "minimum": 1.5239996260231219e-05,
+              "unavailable": 0
+            },
+            "boundary_zero": {
+              "available": 8,
+              "maximum": 0.02233759670555242,
+              "mean": 0.007940921782698798,
+              "median": 0.005884631496991347,
+              "minimum": 0.002979136039570306,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 8,
+              "maximum": 0.011014571940972339,
+              "mean": 0.006822471318224959,
+              "median": 0.006482138066509291,
+              "minimum": 0.00424785768728026,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "maximum": 0.41889807448753436,
+              "mean": 0.18833134367460846,
+              "median": 0.1374551722878785,
+              "minimum": 0.03320501995382753,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 8,
+              "maximum": 0.05158037378419431,
+              "mean": 0.026594598731755348,
+              "median": 0.026369981706147988,
+              "minimum": 0.012009019211250926,
+              "unavailable": 0
+            }
+          }
+        },
+        "image": {
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 8,
+              "maximum": 0.9998918949978588,
+              "mean": 0.9966211703606003,
+              "median": 0.9991377760940297,
+              "minimum": 0.978747683075755,
+              "unavailable": 0
+            },
+            "boundary_positive_vs_A2": {
+              "available": 8,
+              "maximum": 0.5216773494510754,
+              "mean": 0.13906460324355752,
+              "median": 0.04504250858296556,
+              "minimum": -0.04944228737371013,
+              "unavailable": 0
+            },
+            "boundary_positive_vs_boundary_zero": {
+              "available": 8,
+              "maximum": 0.1286279879963952,
+              "mean": -0.08949014417415639,
+              "median": -0.013511609339705435,
+              "minimum": -0.37338153528347223,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 8,
+              "maximum": 0.5450232998929483,
+              "mean": -0.1300112212449558,
+              "median": -0.16840929281736836,
+              "minimum": -0.7337850790084083,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 8,
+              "maximum": 0.016642954846505343,
+              "mean": 0.005004987869369409,
+              "median": 0.005396580712003796,
+              "minimum": -0.003319360936111044,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 8,
+              "maximum": 0.5452637200560944,
+              "mean": -0.13054803736866252,
+              "median": -0.16855131597178202,
+              "minimum": -0.733797348784774,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 8,
+              "maximum": 0.0057400342579161535,
+              "mean": 0.0009302304080371724,
+              "median": 0.0005272986340477195,
+              "minimum": -0.0021266844905574833,
+              "unavailable": 0
+            },
+            "boundary_zero_vs_A2": {
+              "available": 8,
+              "maximum": 0.544932854048422,
+              "mean": -0.13199552480779314,
+              "median": -0.16930070503139066,
+              "minimum": -0.7432377250371086,
+              "unavailable": 0
+            }
+          },
+          "norm_ratios": {
+            "boundary_vs_A2": {
+              "available": 8,
+              "maximum": 0.22050702734209215,
+              "mean": 0.062451095247921744,
+              "median": 0.04157323395792907,
+              "minimum": 0.014930380599067634,
+              "unavailable": 0
+            },
+            "positive_vs_boundary": {
+              "available": 8,
+              "maximum": 0.05145507414601268,
+              "mean": 0.02547130522157716,
+              "median": 0.023848782426856285,
+              "minimum": 0.00104869393342942,
+              "unavailable": 0
+            },
+            "zero_vs_positive": {
+              "available": 8,
+              "maximum": 953.480514060544,
+              "mean": 162.70325970136113,
+              "median": 46.5650661815902,
+              "minimum": 19.280482937287502,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 8,
+              "maximum": 0.010249486041195141,
+              "mean": 0.008712638975379092,
+              "median": 0.008869457062023977,
+              "minimum": 0.007446789928140519,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "maximum": 1.6008226241842833,
+              "mean": 0.47879791419471335,
+              "median": 0.3688742986036553,
+              "minimum": 0.08787330150266186,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 8,
+              "maximum": 1.5682539484539355,
+              "mean": 0.4762892311113295,
+              "median": 0.3754696966021074,
+              "minimum": 0.08633910163854899,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 8,
+              "maximum": 0.04478679186373642,
+              "mean": 0.017115069973063873,
+              "median": 0.012055456993719196,
+              "minimum": 0.0063776228095443425,
+              "unavailable": 0
+            },
+            "boundary_positive": {
+              "available": 8,
+              "maximum": 0.0016538589404929563,
+              "mean": 0.00040407825796756874,
+              "median": 0.00023953618523160666,
+              "minimum": 2.7850595181054302e-05,
+              "unavailable": 0
+            },
+            "boundary_zero": {
+              "available": 8,
+              "maximum": 0.04537802538618902,
+              "mean": 0.017193317469873473,
+              "median": 0.012011094126900523,
+              "minimum": 0.006375536183193927,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 8,
+              "maximum": 0.009986739523946879,
+              "mean": 0.00837962444746641,
+              "median": 0.008534448229406747,
+              "minimum": 0.0070728259478791584,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "maximum": 1.600805589414991,
+              "mean": 0.4785906478661286,
+              "median": 0.3687346838944878,
+              "minimum": 0.08747344739365441,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 8,
+              "maximum": 0.0022552745562350865,
+              "mean": 0.0022550128087631474,
+              "median": 0.002255191390387039,
+              "minimum": 0.002253742668206503,
+              "unavailable": 0
+            }
+          }
+        }
+      },
+      "maximum_sum_error": {
+        "adapter": 2.7607522657937358e-06,
+        "image": 8.692561004404011e-07
+      },
+      "support": {
+        "boundary_valid_pixels": 418975,
+        "positive_target_contour_pixels": 1043,
+        "scored_building_pixels": 125176,
+        "valid_pixels": 437432,
+        "zero_target_contour_pixels": 417932
+      },
+      "views": 8,
+      "zero_boundary_gradients": 0
+    },
+    "A2": {
+      "gradients": {
+        "adapter": {
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 8,
+              "maximum": 0.9998983014571176,
+              "mean": 0.9982769205001407,
+              "median": 0.999099761279958,
+              "minimum": 0.992393576000917,
+              "unavailable": 0
+            },
+            "boundary_positive_vs_A2": {
+              "available": 8,
+              "maximum": 0.6802491192272677,
+              "mean": 0.22338469791190246,
+              "median": 0.08745613768781194,
+              "minimum": -0.12444991109743274,
+              "unavailable": 0
+            },
+            "boundary_positive_vs_boundary_zero": {
+              "available": 8,
+              "maximum": 0.6906470014522119,
+              "mean": -0.10811332277878179,
+              "median": -0.06193466307802767,
+              "minimum": -0.5839909802834685,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 8,
+              "maximum": 0.6436671599667868,
+              "mean": 0.07125419083607804,
+              "median": 0.13385810218530686,
+              "minimum": -0.8147851601851235,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 8,
+              "maximum": 0.5465329490141003,
+              "mean": 0.12140251259110003,
+              "median": 0.09006049785549046,
+              "minimum": -0.39542504133165907,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 8,
+              "maximum": 0.7213532530364929,
+              "mean": 0.07756499092825919,
+              "median": 0.1349302927804178,
+              "minimum": -0.8200995017022281,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 8,
+              "maximum": 0.5424119623218395,
+              "mean": 0.10352990700099121,
+              "median": 0.07906371606124085,
+              "minimum": -0.130152153286555,
+              "unavailable": 0
+            },
+            "boundary_zero_vs_A2": {
+              "available": 8,
+              "maximum": 0.6374006766024134,
+              "mean": 0.06611637972346779,
+              "median": 0.1294039928260937,
+              "minimum": -0.8283447126825896,
+              "unavailable": 0
+            }
+          },
+          "norm_ratios": {
+            "boundary_vs_A2": {
+              "available": 8,
+              "maximum": 0.1506425520569371,
+              "mean": 0.057899654007247545,
+              "median": 0.04346236044783745,
+              "minimum": 0.014262010893884665,
+              "unavailable": 0
+            },
+            "positive_vs_boundary": {
+              "available": 8,
+              "maximum": 0.07308304860394169,
+              "mean": 0.02956227434795395,
+              "median": 0.026263564273039816,
+              "minimum": 0.0034863088932667935,
+              "unavailable": 0
+            },
+            "zero_vs_positive": {
+              "available": 8,
+              "maximum": 286.8818662060986,
+              "mean": 84.96621373852862,
+              "median": 39.93926337124166,
+              "minimum": 14.161876316199598,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 8,
+              "maximum": 0.14643048660676564,
+              "mean": 0.08161962775746437,
+              "median": 0.08180033638278876,
+              "minimum": 0.041142636889384826,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "maximum": 0.9422507086142096,
+              "mean": 0.5256784697225695,
+              "median": 0.3741577296264049,
+              "minimum": 0.14276361016889164,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 8,
+              "maximum": 0.9289700052075746,
+              "mean": 0.5281299718809117,
+              "median": 0.38527717463036404,
+              "minimum": 0.15208311500285573,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 8,
+              "maximum": 0.040714376462263634,
+              "mean": 0.021559525971907058,
+              "median": 0.01842155396450723,
+              "minimum": 0.010305160879426371,
+              "unavailable": 0
+            },
+            "boundary_positive": {
+              "available": 8,
+              "maximum": 0.0016767484724436947,
+              "mean": 0.0006471237439015059,
+              "median": 0.00046282244327384905,
+              "minimum": 4.59418722887989e-05,
+              "unavailable": 0
+            },
+            "boundary_zero": {
+              "available": 8,
+              "maximum": 0.04073713983883945,
+              "mean": 0.021602494248977252,
+              "median": 0.018669774239813024,
+              "minimum": 0.010292551887396556,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 8,
+              "maximum": 0.0198900045801305,
+              "mean": 0.015976484439233586,
+              "median": 0.016158462639859192,
+              "minimum": 0.012035856676955399,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "maximum": 0.9421198091615409,
+              "mean": 0.5144833530185616,
+              "median": 0.3684033256586371,
+              "minimum": 0.13233887396303975,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 8,
+              "maximum": 0.14323683065197945,
+              "mean": 0.07834256610188273,
+              "median": 0.07797696970797477,
+              "minimum": 0.03754263814845814,
+              "unavailable": 0
+            }
+          }
+        },
+        "image": {
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 8,
+              "maximum": 0.9998953944152015,
+              "mean": 0.9972224831913242,
+              "median": 0.9990083392016496,
+              "minimum": 0.9843869098923198,
+              "unavailable": 0
+            },
+            "boundary_positive_vs_A2": {
+              "available": 8,
+              "maximum": 0.7257983392241898,
+              "mean": 0.17055480409972634,
+              "median": 0.04538704496025475,
+              "minimum": -0.003601693258845869,
+              "unavailable": 0
+            },
+            "boundary_positive_vs_boundary_zero": {
+              "available": 8,
+              "maximum": 0.06493878605881453,
+              "mean": -0.14579824197942323,
+              "median": -0.09487981290923951,
+              "minimum": -0.5083415257170628,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 8,
+              "maximum": 0.5327883707213975,
+              "mean": -0.010349864050016498,
+              "median": 0.04091421857476619,
+              "minimum": -0.7562976161831328,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 8,
+              "maximum": 0.03050420009795908,
+              "mean": 0.0073158707069549455,
+              "median": 0.005436451210478435,
+              "minimum": -0.002886422338587783,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 8,
+              "maximum": 0.5329635130759828,
+              "mean": -0.010735854651496245,
+              "median": 0.04075284590448468,
+              "minimum": -0.7563049276951505,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 8,
+              "maximum": 0.010212978588499653,
+              "mean": 0.002190992579130408,
+              "median": 0.000913573984964316,
+              "minimum": -0.0013463068850625402,
+              "unavailable": 0
+            },
+            "boundary_zero_vs_A2": {
+              "available": 8,
+              "maximum": 0.5327626761480139,
+              "mean": -0.014797967108138865,
+              "median": 0.03564944922886511,
+              "minimum": -0.7768799351764234,
+              "unavailable": 0
+            }
+          },
+          "norm_ratios": {
+            "boundary_vs_A2": {
+              "available": 8,
+              "maximum": 0.22844585147044286,
+              "mean": 0.06476233315622645,
+              "median": 0.04845754299991856,
+              "minimum": 0.015998093445432317,
+              "unavailable": 0
+            },
+            "positive_vs_boundary": {
+              "available": 8,
+              "maximum": 0.0591565165767472,
+              "mean": 0.027560795412577437,
+              "median": 0.025651592074249177,
+              "minimum": 0.0011724596337288002,
+              "unavailable": 0
+            },
+            "zero_vs_positive": {
+              "available": 8,
+              "maximum": 852.9270087602948,
+              "mean": 149.80643731947356,
+              "median": 49.38848157796109,
+              "minimum": 17.390700766700643,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 8,
+              "maximum": 0.00983297210960003,
+              "mean": 0.008613831959573989,
+              "median": 0.00874013511177059,
+              "minimum": 0.0072787065538635586,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "maximum": 1.7567806663880274,
+              "mean": 0.502656309201519,
+              "median": 0.34631392652834425,
+              "minimum": 0.09550514216486529,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 8,
+              "maximum": 1.723156556115704,
+              "mean": 0.50200277115735,
+              "median": 0.3484916557049401,
+              "minimum": 0.09453292230714364,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 8,
+              "maximum": 0.044788269628085776,
+              "mean": 0.018431721723244917,
+              "median": 0.013977731986624494,
+              "minimum": 0.006625741001764091,
+              "unavailable": 0
+            },
+            "boundary_positive": {
+              "available": 8,
+              "maximum": 0.0026495180146976793,
+              "mean": 0.0005336722586899692,
+              "median": 0.00025251571740813694,
+              "minimum": 3.295916740159058e-05,
+              "unavailable": 0
+            },
+            "boundary_zero": {
+              "available": 8,
+              "maximum": 0.046076974969590095,
+              "mean": 0.018608907166458005,
+              "median": 0.013975366476926925,
+              "minimum": 0.006633736373603902,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 8,
+              "maximum": 0.009560682208275871,
+              "mean": 0.008278230209812457,
+              "median": 0.008400425350750057,
+              "minimum": 0.006884284723304803,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "maximum": 1.7567598351316362,
+              "mean": 0.5024590709160438,
+              "median": 0.34618928923334796,
+              "minimum": 0.09499660108087253,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 8,
+              "maximum": 0.0022552745562350865,
+              "mean": 0.0022550206977185122,
+              "median": 0.0022551942583029197,
+              "minimum": 0.0022537713648149546,
+              "unavailable": 0
+            }
+          }
+        }
+      },
+      "maximum_sum_error": {
+        "adapter": 3.84548202640516e-06,
+        "image": 8.920478720421887e-07
+      },
+      "support": {
+        "boundary_valid_pixels": 418975,
+        "positive_target_contour_pixels": 1043,
+        "scored_building_pixels": 125176,
+        "valid_pixels": 437432,
+        "zero_target_contour_pixels": 417932
+      },
+      "views": 8,
+      "zero_boundary_gradients": 0
+    },
+    "A3": {
+      "gradients": {
+        "adapter": {
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 8,
+              "maximum": 0.9998864138907979,
+              "mean": 0.9979083203175549,
+              "median": 0.9993694879890662,
+              "minimum": 0.9890373492047627,
+              "unavailable": 0
+            },
+            "boundary_positive_vs_A2": {
+              "available": 8,
+              "maximum": 0.6929756788038647,
+              "mean": 0.25156101110275264,
+              "median": 0.20484557554560953,
+              "minimum": -0.13205710367479215,
+              "unavailable": 0
+            },
+            "boundary_positive_vs_boundary_zero": {
+              "available": 8,
+              "maximum": 0.4978021967082816,
+              "mean": -0.10484855806300145,
+              "median": -0.12750639969024358,
+              "minimum": -0.6886910184390793,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 8,
+              "maximum": 0.5205116686194798,
+              "mean": 5.137890630900477e-05,
+              "median": 0.1039300874997706,
+              "minimum": -0.7937644774365921,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 8,
+              "maximum": 0.5591783607995607,
+              "mean": 0.2037073824753829,
+              "median": 0.2424428446525126,
+              "minimum": -0.12612626968099286,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 8,
+              "maximum": 0.5296754247453551,
+              "mean": -0.003892749104808503,
+              "median": 0.09931809943768972,
+              "minimum": -0.8025221258730368,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 8,
+              "maximum": 0.49225654308444766,
+              "mean": 0.10887470538176407,
+              "median": 0.09463840872085152,
+              "minimum": -0.12158594645515197,
+              "unavailable": 0
+            },
+            "boundary_zero_vs_A2": {
+              "available": 8,
+              "maximum": 0.5094987052754938,
+              "mean": -0.006476555075962537,
+              "median": 0.09601545556241527,
+              "minimum": -0.806094888841654,
+              "unavailable": 0
+            }
+          },
+          "norm_ratios": {
+            "boundary_vs_A2": {
+              "available": 8,
+              "maximum": 0.162419198553696,
+              "mean": 0.05558827997221852,
+              "median": 0.041572291334366476,
+              "minimum": 0.02067591428007294,
+              "unavailable": 0
+            },
+            "positive_vs_boundary": {
+              "available": 8,
+              "maximum": 0.0752018469862655,
+              "mean": 0.03507056729393615,
+              "median": 0.028882664708471357,
+              "minimum": 0.0028863045391819956,
+              "unavailable": 0
+            },
+            "zero_vs_positive": {
+              "available": 8,
+              "maximum": 346.39250761516126,
+              "mean": 96.22827965461757,
+              "median": 37.14225435656985,
+              "minimum": 13.966455062691086,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 8,
+              "maximum": 0.1480854905742867,
+              "mean": 0.08322554156633766,
+              "median": 0.08185183614776159,
+              "minimum": 0.04302674755135723,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "maximum": 1.0027531414571673,
+              "mean": 0.5410475387341683,
+              "median": 0.47340399990285154,
+              "minimum": 0.10814436459661182,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 8,
+              "maximum": 1.0027234475594846,
+              "mean": 0.5419093439216663,
+              "median": 0.47635704869431633,
+              "minimum": 0.1115459275335948,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 8,
+              "maximum": 0.040341245014101794,
+              "mean": 0.020493187754784776,
+              "median": 0.019214157050090205,
+              "minimum": 0.008879131645953714,
+              "unavailable": 0
+            },
+            "boundary_positive": {
+              "available": 8,
+              "maximum": 0.0017126605779265176,
+              "mean": 0.0006949555774281689,
+              "median": 0.000425856040859205,
+              "minimum": 3.6874857082955456e-05,
+              "unavailable": 0
+            },
+            "boundary_zero": {
+              "available": 8,
+              "maximum": 0.04048048027663288,
+              "mean": 0.020620073314518043,
+              "median": 0.019257510578529966,
+              "minimum": 0.008978944157028167,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 8,
+              "maximum": 0.024010116673445978,
+              "mean": 0.017128241778338035,
+              "median": 0.01676011139690599,
+              "minimum": 0.013798934504437536,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "maximum": 0.9959227322834471,
+              "mean": 0.5268930800968518,
+              "median": 0.46962467552452947,
+              "minimum": 0.08906459617359964,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 8,
+              "maximum": 0.14459732461084182,
+              "mean": 0.07855830854334259,
+              "median": 0.07814442737661939,
+              "minimum": 0.03754595327812733,
+              "unavailable": 0
+            }
+          }
+        },
+        "image": {
+          "cosines": {
+            "A2_vs_A3": {
+              "available": 8,
+              "maximum": 0.9998975537196597,
+              "mean": 0.9971901949801277,
+              "median": 0.9989810729341955,
+              "minimum": 0.9846671149704483,
+              "unavailable": 0
+            },
+            "boundary_positive_vs_A2": {
+              "available": 8,
+              "maximum": 0.7229736429312802,
+              "mean": 0.16410837945150997,
+              "median": 0.042532688923894245,
+              "minimum": -0.03488123528388789,
+              "unavailable": 0
+            },
+            "boundary_positive_vs_boundary_zero": {
+              "available": 8,
+              "maximum": 0.07923238397713943,
+              "mean": -0.15119153159284468,
+              "median": -0.08724648778498621,
+              "minimum": -0.508840900648801,
+              "unavailable": 0
+            },
+            "boundary_vs_A2": {
+              "available": 8,
+              "maximum": 0.5689332536629336,
+              "mean": 0.0010807873940398768,
+              "median": 0.0840851362459095,
+              "minimum": -0.7579387848074689,
+              "unavailable": 0
+            },
+            "boundary_vs_lpips": {
+              "available": 8,
+              "maximum": 0.02671594542913924,
+              "mean": 0.0069810937810668265,
+              "median": 0.005853628144297181,
+              "minimum": -0.002445321968748974,
+              "unavailable": 0
+            },
+            "boundary_vs_region": {
+              "available": 8,
+              "maximum": 0.5691251429735668,
+              "mean": 0.0007145050430019256,
+              "median": 0.08391829505813629,
+              "minimum": -0.7579474996611264,
+              "unavailable": 0
+            },
+            "boundary_vs_rgb": {
+              "available": 8,
+              "maximum": 0.008317395866580826,
+              "mean": 0.0020735965608666305,
+              "median": 0.001143758853749032,
+              "minimum": -0.000880957005518572,
+              "unavailable": 0
+            },
+            "boundary_zero_vs_A2": {
+              "available": 8,
+              "maximum": 0.5688953397631394,
+              "mean": -0.0032708656768069277,
+              "median": 0.08059743321795725,
+              "minimum": -0.7777891897133415,
+              "unavailable": 0
+            }
+          },
+          "norm_ratios": {
+            "boundary_vs_A2": {
+              "available": 8,
+              "maximum": 0.21512348420267002,
+              "mean": 0.06448071724474466,
+              "median": 0.04890786931881383,
+              "minimum": 0.015767079960122048,
+              "unavailable": 0
+            },
+            "positive_vs_boundary": {
+              "available": 8,
+              "maximum": 0.05772970168367724,
+              "mean": 0.026783276849735443,
+              "median": 0.02526170544004326,
+              "minimum": 0.0011567263829119119,
+              "unavailable": 0
+            },
+            "zero_vs_positive": {
+              "available": 8,
+              "maximum": 864.538251523997,
+              "mean": 150.30443643377987,
+              "median": 47.91810900127657,
+              "minimum": 17.809542279155764,
+              "unavailable": 0
+            }
+          },
+          "weighted_norms": {
+            "A1": {
+              "available": 8,
+              "maximum": 0.00983468050759749,
+              "mean": 0.008629511882904766,
+              "median": 0.008713158555240729,
+              "minimum": 0.0074042320804098985,
+              "unavailable": 0
+            },
+            "A2": {
+              "available": 8,
+              "maximum": 1.7590730232587486,
+              "mean": 0.5005228906275434,
+              "median": 0.34237093373070093,
+              "minimum": 0.09336067531960475,
+              "unavailable": 0
+            },
+            "A3": {
+              "available": 8,
+              "maximum": 1.7255117172337164,
+              "mean": 0.49986431225883526,
+              "median": 0.34496795467717467,
+              "minimum": 0.09241786690692037,
+              "unavailable": 0
+            },
+            "boundary": {
+              "available": 8,
+              "maximum": 0.04460338346044224,
+              "mean": 0.018364257535792027,
+              "median": 0.0140474316470596,
+              "minimum": 0.007064287794281629,
+              "unavailable": 0
+            },
+            "boundary_positive": {
+              "available": 8,
+              "maximum": 0.002574940021253994,
+              "mean": 0.0005258470723945658,
+              "median": 0.0002633529929175674,
+              "minimum": 3.3369509495743994e-05,
+              "unavailable": 0
+            },
+            "boundary_zero": {
+              "available": 8,
+              "maximum": 0.04585850317481325,
+              "mean": 0.0185385059071428,
+              "median": 0.01403955972998131,
+              "minimum": 0.00707566789800476,
+              "unavailable": 0
+            },
+            "lpips": {
+              "available": 8,
+              "maximum": 0.009562234235046258,
+              "mean": 0.00829455296845075,
+              "median": 0.008373661031041809,
+              "minimum": 0.0070284584551432265,
+              "unavailable": 0
+            },
+            "region": {
+              "available": 8,
+              "maximum": 1.7590546108045209,
+              "mean": 0.500327393754698,
+              "median": 0.3422474639293618,
+              "minimum": 0.09285088939180786,
+              "unavailable": 0
+            },
+            "rgb": {
+              "available": 8,
+              "maximum": 0.0022552745562350865,
+              "mean": 0.0022550178301768524,
+              "median": 0.002255188522631622,
+              "minimum": 0.002253777104092799,
+              "unavailable": 0
+            }
+          }
+        }
+      },
+      "maximum_sum_error": {
+        "adapter": 2.803515886374847e-06,
+        "image": 8.897228652924598e-07
+      },
+      "support": {
+        "boundary_valid_pixels": 418975,
+        "positive_target_contour_pixels": 1043,
+        "scored_building_pixels": 125176,
+        "valid_pixels": 437432,
+        "zero_target_contour_pixels": 417932
+      },
+      "views": 8,
+      "zero_boundary_gradients": 0
+    }
+  },
+  "total_checks": 24,
+  "views_per_state": 8,
+  "weights": {
+    "boundary": 0.5,
+    "lpips": 0.1,
+    "region": 0.5,
+    "rgb": 1.0
+  }
+}
